@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-17 15:57:09
+ * @LastEditTime: 2020-09-17 16:22:00
 -->
 <template>
   <div class="header">
@@ -41,18 +41,6 @@
             {{ item.name }}
           </router-link>
         </el-menu-item>
-        <!-- <el-submenu index="2">
-          <template slot="title">我的工作台</template>
-          <el-menu-item index="2-1">选项1</el-menu-item>
-          <el-menu-item index="2-2">选项2</el-menu-item>
-          <el-menu-item index="2-3">选项3</el-menu-item>
-          <el-submenu index="2-4">
-            <template slot="title">选项4</template>
-            <el-menu-item index="2-4-1">选项1</el-menu-item>
-            <el-menu-item index="2-4-2">选项2</el-menu-item>
-            <el-menu-item index="2-4-3">选项3</el-menu-item>
-          </el-submenu>
-        </el-submenu> -->
       </el-menu>
       <div class="line"></div>
     </div>
@@ -109,6 +97,34 @@ export default {
     display: flex;
     height: 139.62px;
     background-color: white;
+  }
+}
+</style>
+
+<style lang="less">
+.header {
+  .el-menu {
+    display: flex;
+    align-items: center;
+    .el-menu-item {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      border: 0.1px solid rgba(0, 0, 0, 0.075);
+      border-right: none;
+
+      &:last-child {
+        border-right: 0.1px solid rgba(0, 0, 0, 0.075);
+      }
+
+      > a {
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+    }
   }
 }
 </style>
