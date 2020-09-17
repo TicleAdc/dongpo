@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-17 14:40:21
+ * @LastEditTime: 2020-09-17 15:55:43
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -37,37 +37,37 @@ export const routes = [
   },
   {
     name: '新闻动态',
-    path: '/overview',
+    path: '/news',
     component: () => import('@/views/News.vue'),
   },
   {
     name: '特色医疗',
-    path: '/overview',
+    path: '/featuredmedical',
     component: () => import('@/views/FeaturedMedical.vue'),
   },
   {
     name: '党群工作',
-    path: '/overview',
+    path: '/partywork',
     component: () => import('@/views/PartyWork.vue'),
   },
   {
     name: '医院文化',
-    path: '/overview',
+    path: '/hospitalculture',
     component: () => import('@/views/HospitalCulture.vue'),
   },
   {
     name: '专题活动',
-    path: '/overview',
+    path: '/specialactivity',
     component: () => import('@/views/SpecialActivity.vue'),
   },
   {
     name: '健康科普',
-    path: '/overview',
+    path: '/healthscience',
     component: () => import('@/views/HealthScience.vue'),
   },
   {
     name: '通知公告',
-    path: '/overview',
+    path: '/announcement',
     component: () => import('@/views/Announcement.vue'),
   },
 ];

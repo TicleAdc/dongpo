@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-17 15:13:17
+ * @LastEditTime: 2020-09-17 15:57:09
 -->
 <template>
   <div class="header">
@@ -30,15 +30,58 @@
       <el-input placeholder="请选择日期" suffix-icon="el-icon-search"> </el-input>
     </div>
     <div class="link">
-      <ul>
-        <li></li>
-      </ul>
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+      >
+        <el-menu-item v-for="(item, index) in routes" :key="index" :index="index + 1 + ''">
+          <router-link :to="item.path">
+            {{ item.name }}
+          </router-link>
+        </el-menu-item>
+        <!-- <el-submenu index="2">
+          <template slot="title">我的工作台</template>
+          <el-menu-item index="2-1">选项1</el-menu-item>
+          <el-menu-item index="2-2">选项2</el-menu-item>
+          <el-menu-item index="2-3">选项3</el-menu-item>
+          <el-submenu index="2-4">
+            <template slot="title">选项4</template>
+            <el-menu-item index="2-4-1">选项1</el-menu-item>
+            <el-menu-item index="2-4-2">选项2</el-menu-item>
+            <el-menu-item index="2-4-3">选项3</el-menu-item>
+          </el-submenu>
+        </el-submenu> -->
+      </el-menu>
+      <div class="line"></div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { routes } from '@/router/index.js';
+export default {
+  computed: {
+    routes() {
+      return routes.filter((v) => v.name !== undefined);
+    },
+  },
+  methods: {
+    handleSelect(i) {
+      const route = this.routes[i - 1];
+      if (route.path !== this.$route.path) {
+        this.$router.push(route);
+      }
+    },
+  },
+
+  data() {
+    return {
+      activeIndex: '1',
+    };
+  },
+};
 </script>
 
 <style lang="less" scoped>

@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:15:31
  * @FilePath: /dongpo/src/App.vue
- * @LastEditTime: 2020-09-17 15:12:09
+ * @LastEditTime: 2020-09-17 15:49:39
 -->
 <template>
   <div id="app">
@@ -26,5 +26,6 @@ export default {
   padding: 0 13.5%;
   background-color: #e8f1fa;
   height: 100%;
+  min-width: 1050px;
 }
 </style>
