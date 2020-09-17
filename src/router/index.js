@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-17 11:26:05
+ * @LastEditTime: 2020-09-17 14:25:32
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -10,7 +10,7 @@ import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
     path: '/',
     redirect: '/home',
@@ -21,9 +21,54 @@ const routes = [
     component: Home,
   },
   {
-    name: 'home',
-    path: '/home',
-    component: Home,
+    name: '医院概况',
+    path: '/overview',
+    component: () => import('@/views/Overview.vue'),
+  },
+  {
+    name: '医疗服务',
+    path: '/medicalservice',
+    component: () => import('@/views/MedicalService.vue'),
+  },
+  {
+    name: '医疗保健',
+    path: '/healthcare',
+    component: () => import('@/views/HealthCare.vue'),
+  },
+  {
+    name: '新闻动态',
+    path: '/overview',
+    component: () => import('@/views/News.vue'),
+  },
+  {
+    name: '特色医疗',
+    path: '/overview',
+    component: () => import('@/views/FeaturedMedical.vue'),
+  },
+  {
+    name: '党群工作',
+    path: '/overview',
+    component: () => import('@/views/PartyWork.vue'),
+  },
+  {
+    name: '医院文化',
+    path: '/overview',
+    component: () => import('@/views/HospitalCulture.vue'),
+  },
+  {
+    name: '专题活动',
+    path: '/overview',
+    component: () => import('@/views/SpecialActivity.vue'),
+  },
+  {
+    name: '健康科普',
+    path: '/overview',
+    component: () => import('@/views/HealthScience.vue'),
+  },
+  {
+    name: '通知公告',
+    path: '/overview',
+    component: () => import('@/views/Announcement.vue'),
   },
 ];
 
