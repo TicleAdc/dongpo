@@ -1,9 +1,7 @@
 <template>
   <div>
     <header>
-      <template slot="title">
-        <slot name="title"></slot>
-      </template>
+      {{ '专家门诊' }}
     </header>
     <div></div>
   </div>

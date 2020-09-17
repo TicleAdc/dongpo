@@ -6,19 +6,24 @@
 -->
 <template>
   <div>
-    home
     <banner></banner>
-    <column title="专家门诊"></column>
+    <cardlist></cardlist>
+    <tabs></tabs>
+    <!-- <column> </column> -->
   </div>
 </template>
 
 <script>
 import banner from '@/components/Banner';
-import column from '@/components/Column';
+// import column from '@/components/Column';
+import cardlist from '@/components/CardList';
+import tabs from '@/components/Tabs';
 export default {
   components: {
     banner,
-    column,
+    // column,
+    cardlist,
+    tabs,
   },
 };
 </script>
