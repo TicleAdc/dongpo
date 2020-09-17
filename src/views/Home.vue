@@ -5,11 +5,22 @@
  * @LastEditTime: 2020-09-17 10:58:37
 -->
 <template>
-  <div>home</div>
+  <div>
+    home
+    <banner></banner>
+    <column title="专家门诊"></column>
+  </div>
 </template>
 
 <script>
-export default {};
+import banner from '@/components/Banner';
+import column from '@/components/Column';
+export default {
+  components: {
+    banner,
+    column,
+  },
+};
 </script>
 
 <style lang="less" scoped></style>
