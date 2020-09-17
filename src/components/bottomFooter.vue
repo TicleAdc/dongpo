@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 16:24:45
  * @FilePath: /dongpo/src/components/bottomFooter.vue
- * @LastEditTime: 2020-09-17 16:51:35
+ * @LastEditTime: 2020-09-17 16:54:14
 -->
 <template>
   <div class="footer">
