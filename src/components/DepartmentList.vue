@@ -1,9 +1,106 @@
 <template>
-  <div class="box"></div>
+  <div class="pinklogo">
+    <div class="logoimg"><img :src="backgroundimg" alt="" /></div>
+    <div class="iconlist">
+      <div class="icon" v-for="item in iconlist" :key="item.id">
+        <div class="img">
+          <img :src="item.url" alt="" />
+        </div>
+        <div class="name">{{ item.name }}</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      backgroundimg: require('@/assets/img/home/PinkLogo.png'),
+      iconlist: [
+        {
+          id: '1',
+          url: require('@/assets/img/home/vaccination.png'),
+          name: '预防接种',
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/Pediatrics.png'),
+          name: '儿科',
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/PediatricsHealth.png'),
+          name: '儿童保健科',
+        },
+        {
+          id: '4',
+          url: require('@/assets/img/home/DOG.png'),
+          name: '妇产科住院部',
+        },
+        {
+          id: '5',
+          url: require('@/assets/img/home/newBorn.png'),
+          name: '新生儿病区',
+        },
+        {
+          id: '6',
+          url: require('@/assets/img/home/childrenMessage.png'),
+          name: '小儿中医推拿',
+        },
+        {
+          id: '7',
+          url: require('@/assets/img/home/OGC.png'),
+          name: '妇产科门诊部',
+        },
+        {
+          id: '8',
+          url: require('@/assets/img/home/ClinicalLaboratory.png'),
+          name: '检验科',
+        },
+        {
+          id: '9',
+          url: require('@/assets/img/home/Ultrasonography.png'),
+          name: '超声科',
+        },
+        {
+          id: '10',
+          url: require('@/assets/img/home/anaesthesia.png'),
+          name: '麻醉手术室',
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style></style>
+<style lang="less">
+.pinklogo {
+  background-color: rgba(255, 234, 239, 1);
+  text-align: center;
+  padding: 40px 0;
+  .logoimg {
+    line-height: 60px;
+    img {
+      width: 150px;
+      height: 30px;
+    }
+  }
+  .iconlist {
+    padding: 0 30px;
+    text-align: center;
+    .icon {
+      display: inline-block;
+      text-align: center;
+      padding: 0 20px;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+      .name {
+        font-size: 10px;
+      }
+    }
+  }
+}
+</style>
