@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 16:24:45
  * @FilePath: /dongpo/src/components/bottomFooter.vue
- * @LastEditTime: 2020-09-18 11:20:50
+ * @LastEditTime: 2020-09-18 14:03:45
 -->
 <template>
   <div class="footer">
@@ -437,6 +437,10 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 22px;
+    img {
+      width: 511px;
+      height: 50px;
+    }
   }
 }
 </style>
