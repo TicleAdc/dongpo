@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-18 09:40:41
+ * @LastEditTime: 2020-09-18 14:09:44
 -->
 <template>
   <div class="header">
@@ -182,6 +182,15 @@ export default {
         }
       }
     }
+  }
+  .el-menu--horizontal > .el-menu-item.is-active {
+    background-color: #4a5da3;
+    color: white;
+  }
+  .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
+  .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus {
+    background-color: #4a5da3;
+    color: white;
   }
 }
 </style>
