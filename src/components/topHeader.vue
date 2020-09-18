@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-18 14:09:44
+ * @LastEditTime: 2020-09-18 17:28:38
 -->
 <template>
   <div class="header">
@@ -60,8 +60,18 @@ export default {
 
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '-1',
     };
+  },
+  watch: {
+    $route() {
+      this.activeIndex =
+        this.routes.findIndex((v) => {
+          return v.path === this.$route.fullPath;
+        }) +
+        1 +
+        '';
+    },
   },
 };
 </script>
@@ -132,6 +142,9 @@ export default {
       flex: 1;
     }
   }
+  .link {
+    height: 45px;
+  }
 }
 </style>
 
@@ -146,7 +159,8 @@ export default {
       align-items: center;
       border: 0.1px solid rgba(0, 0, 0, 0.075);
       border-right: none;
-
+      height: 45px;
+      line-height: 45px;
       &:last-child {
         border-right: 0.1px solid rgba(0, 0, 0, 0.075);
       }
@@ -187,6 +201,7 @@ export default {
     background-color: #4a5da3;
     color: white;
   }
+
   .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
   .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus {
     background-color: #4a5da3;
