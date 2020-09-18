@@ -1,11 +1,24 @@
 <template>
   <div class="tabs">
-    <div class="img"></div>
+    <div class="banner">
+      <el-carousel height="200px" direction="vertical" :autoplay="true">
+        <el-carousel-item v-for="item in imglist" :key="item.id">
+          <img :src="item.url" alt="" />
+        </el-carousel-item>
+      </el-carousel>
+    </div>
     <!-- 待调显示 -->
-    <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane v-for="tab in tabs" :key="tab.id" :label="tab.name" :name="tab.name">
-      </el-tab-pane>
-    </el-tabs>
+    <div class="tab">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane v-for="tab in tabs" :key="tab.id" :label="tab.name" :name="tab.name">
+        </el-tab-pane>
+      </el-tabs>
+      <div>
+        <ul>
+          <li v-for="tabitem in tabcontents" :key="tabitem.id">{{ tabitem.title }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -13,6 +26,20 @@
 export default {
   data() {
     return {
+      imglist: [
+        {
+          id: '1',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/news.png'),
+        },
+      ],
       activeName: '',
       tabs: [
         {
@@ -120,11 +147,14 @@ export default {
           ],
         },
       ],
+      tabcontents: [],
     };
   },
+
   methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
+    handleClick(tab) {
+      console.log(this.tabs[tab.index].list);
+      this.tabcontents = this.tabs[tab.index].list;
     },
   },
 };
@@ -133,12 +163,23 @@ export default {
 <style lang="less">
 .tabs {
   display: flex;
-  padding: 20px 80px;
-  .img {
+  padding: 20px 60px;
+  background-color: white;
+  .banner {
     width: 50%;
-    height: 200px;
-    border: 1px solid black;
-    margin-right: 20px;
+    margin-right: 30px;
+  }
+  .tab {
+    width: 50%;
+  }
+  ul {
+    list-style: none;
+    li {
+      border-bottom: 1px solid rgb(209, 205, 205);
+      font-size: 12px;
+      height: 30px;
+      line-height: 30px;
+    }
   }
 }
 </style>

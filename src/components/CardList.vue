@@ -1,10 +1,12 @@
 <template>
   <div class="datalist">
     <div class="card" v-for="item in dataList" :key="item.id">
-      <header class="img"></header>
+      <header class="img">
+        <img :src="item.url" alt="" />
+      </header>
       <div class="icon"></div>
       <div class="name">{{ item.name }}</div>
-      <button>{{ item.btn }}</button>
+      <button><img src="../assets/img/home/CheckMore.png" alt="" /> {{ item.btn }}</button>
     </div>
   </div>
 </template>
@@ -16,22 +18,26 @@ export default {
       dataList: [
         {
           id: '1',
+          url: require('@/assets/img/home/physicalExamination2.png'),
           name: '预约挂号',
           btn: '查看更多',
         },
         {
           id: '2',
-          name: '预约挂号',
+          url: require('@/assets/img/home/ReportQuery2.png'),
+          name: '报告查询',
           btn: '查看更多',
         },
         {
           id: '3',
-          name: '预约挂号',
+          url: require('@/assets/img/home/momAndBaby2.png'),
+          name: '母婴保健',
           btn: '查看更多',
         },
         {
           id: '4',
-          name: '预约挂号',
+          url: require('@/assets/img/home/physicalExamination2.png'),
+          name: '体检查询',
           btn: '查看更多',
         },
       ],
@@ -44,28 +50,23 @@ export default {
 .datalist {
   display: flex;
   padding: 30px 60px;
+  background-color: white;
   .card {
-    margin: 0 17px;
-    display: inline-block;
-    width: 21%;
+    border-radius: 25px 25px 25px 25px;
     text-align: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    .img {
-      height: 100px;
-      border: 1px solid black;
-      border-radius: 10px 10px 0 0;
-    }
+    margin: 0 1%;
+    background-color: white;
     .name {
-      margin-top: 50px;
+      margin: 50px 0 20px 0;
     }
     button {
-      width: 70%;
-      background-color: white;
+      margin-bottom: 38px;
+      width: 60%;
       height: 30px;
-      border: 1px solid black;
-      border-radius: 5px;
-      margin: 30px;
+      img {
+        width: 10px;
+        height: 10px;
+      }
     }
   }
 }

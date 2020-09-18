@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <header>
-      {{ '专家门诊' }}
-    </header>
-    <div></div>
+  <div class="main">
+    <div class="title">
+      <slot name="title"></slot>
+    </div>
+    <div class="contents">
+      <slot name="contents"></slot>
+    </div>
   </div>
 </template>
 
@@ -11,4 +13,13 @@
 export default {};
 </script>
 
-<style></style>
+<style lang="less">
+.main {
+  padding: 30px 30px;
+  background-color: white;
+  .title {
+    height: 60px;
+    line-height: 60px;
+  }
+}
+</style>
