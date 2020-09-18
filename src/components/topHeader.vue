@@ -2,32 +2,26 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-17 16:22:00
+ * @LastEditTime: 2020-09-18 09:40:41
 -->
 <template>
   <div class="header">
     <div class="top">
       <div class="left">
-        <span>保妇幼健康</span>
-        <div class="and">&</div>
-        <span>护东坡未来</span>
+        <img src="~@/assets/img/brand/左上角logo@2x.png" alt="" />
       </div>
       <span class="phone">门诊电话： 028-38235760</span>
       <div class="right">
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src="@/assets/img/home/web@2x.png" alt="" />
+        <img src="@/assets/img/home/weChat@2x.png" alt="" />
       </div>
     </div>
     <div class="position"></div>
     <div class="content-header">
-      <img src="" alt="" />
-      <div class="line"></div>
-      <div class="description">
-        <p class="title">DONGPO +</p>
-        <p class="content">Maternal and Child Headlth Care And Family Planning Service Center</p>
-        <p class="chinese">眉山市东坡区妇幼保健计划生育服务中心</p>
-      </div>
-      <el-input placeholder="请选择日期" suffix-icon="el-icon-search"> </el-input>
+      <img src="@/assets/img/brand/左上角大logo@2x.png" alt="" />
+      <el-input placeholder="请选择日期">
+        <i slot="suffix" class="el-input__icon el-icon-search"></i>
+      </el-input>
     </div>
     <div class="link">
       <el-menu
@@ -86,8 +80,41 @@ export default {
     justify-content: flex-start;
     align-items: center;
     z-index: 10;
+    .phone {
+      color: rgba(74, 93, 163, 1);
+      font-size: 15.54px;
+      text-align: left;
+      font-family: SourceHanSansCN-Normal;
+      margin-left: 5%;
+    }
     .left {
       margin-left: 13.5%;
+      > img {
+        width: 230px;
+        height: 25px;
+      }
+    }
+    .right {
+      position: absolute;
+      right: 13.5%;
+
+      > img {
+        width: 34.96px;
+        height: 27.52px;
+        &:first-child {
+          margin-right: 31px;
+        }
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      .right {
+        right: 0;
+      }
+    }
+    @media screen and (max-width: 720px) {
+      .right {
+        display: none;
+      }
     }
   }
   .position {
@@ -97,6 +124,13 @@ export default {
     display: flex;
     height: 139.62px;
     background-color: white;
+    align-items: center;
+    > img {
+      width: 360px;
+      height: 74px;
+      margin-left: 5%;
+      flex: 1;
+    }
   }
 }
 </style>
@@ -123,6 +157,29 @@ export default {
         width: 100%;
         height: 100%;
         text-decoration: none;
+      }
+    }
+  }
+  .content-header {
+    .el-input {
+      width: 482.77px;
+      height: 39.27px;
+      flex: 2;
+      margin-left: 15%;
+      margin-right: 6%;
+      .el-input__suffix {
+        display: inline-block;
+        width: 78.16px;
+        height: 39.27px;
+        right: 0;
+        cursor: pointer;
+        .el-input__suffix-inner {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(74, 93, 163, 1);
+          font-size: 20px;
+        }
       }
     }
   }
