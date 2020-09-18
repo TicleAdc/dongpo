@@ -12,10 +12,27 @@
     <departmentlist></departmentlist>
     <column>
       <div slot="title" class="img">
-        <img src="@/assets/img/home/introducePressor.png" alt="" />
+        <img src="@/assets/img/home/introducePressor@2x.png" alt="" />
       </div>
       <div slot="contents">
         <personcard></personcard>
+      </div>
+    </column>
+    <column>
+      <div slot="title" class="img">
+        <img src="@/assets/img/home/HealthLeading@2x.png" alt="" />
+      </div>
+      <div slot="contents">
+        <healthscience></healthscience>
+      </div>
+    </column>
+    <works></works>
+    <column>
+      <div class="img" slot="title">
+        <img src="@/assets/img/home/outpatientDepartment@2x.png" alt="" />
+      </div>
+      <div slot="contents">
+        <outpatientservice></outpatientservice>
       </div>
     </column>
   </div>
@@ -28,6 +45,9 @@ import cardlist from '@/components/CardList';
 import tabs from '@/components/Tabs';
 import departmentlist from '@/components/DepartmentList';
 import personcard from '@/components/PersonCard';
+import healthscience from '@/components/HealthScienceCard';
+import works from '@/components/Works';
+import outpatientservice from '@/components/OutpatientService';
 export default {
   data() {
     return {};
@@ -39,6 +59,9 @@ export default {
     cardlist,
     tabs,
     departmentlist,
+    healthscience,
+    works,
+    outpatientservice,
   },
 };
 </script>

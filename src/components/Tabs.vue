@@ -148,13 +148,16 @@ export default {
         },
       ],
       tabcontents: [],
+      tab: '1',
     };
   },
-
+  mounted() {
+    this.handleClick();
+  },
   methods: {
     handleClick(tab) {
-      console.log(this.tabs[tab.index].list);
-      this.tabcontents = this.tabs[tab.index].list;
+      // console.log(this.tabs[tab.index].list);
+      this.tabcontents = this.tabs[tab?.index || 0].list;
     },
   },
 };
