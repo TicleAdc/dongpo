@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 16:24:45
  * @FilePath: /dongpo/src/components/bottomFooter.vue
- * @LastEditTime: 2020-09-18 10:50:14
+ * @LastEditTime: 2020-09-18 11:20:50
 -->
 <template>
   <div class="footer">
@@ -32,6 +32,10 @@
             <p>今日头条号： 坡区妇幼保健院</p>
             <p>网易新闻号： 眉山市东坡区妇幼保健院</p>
             <p>搜狐新闻号： 东坡区妇幼保健院</p>
+          </div>
+          <div class="qrcode">
+            <img src="@/assets/img/brand/位图@2x.png" alt="" />
+            <p>微信公众号</p>
           </div>
         </div>
         <div class="two">
@@ -276,6 +280,19 @@ export default {
           height: 50px;
           margin: 0 auto;
         }
+        .qrcode {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-left: 15%;
+          img {
+            width: 69.6px;
+            height: 69.6;
+          }
+          p {
+            margin-left: 2px;
+          }
+        }
         > div {
           margin: 11px;
           p {
@@ -315,14 +332,16 @@ export default {
       }
     }
     > div {
+      display: flex;
+      flex-direction: column;
       > div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         .title {
           display: flex;
-          justify-content: center;
           align-items: center;
+          margin-left: 10%;
           .circle {
             width: 15px;
             height: 15px;
@@ -332,10 +351,12 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-right: 5px;
           }
         }
         p {
           margin-top: 18px;
+          margin-left: 10%;
           span {
             font-size: 10.81px;
             font-family: SourceHanSansCN-Normal;
@@ -348,6 +369,62 @@ export default {
         p {
           margin-top: 0px;
         }
+      }
+    }
+    .second {
+      .one {
+        flex: 0.31;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .two {
+        flex: 0.47;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .three {
+        flex: 0.22;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0 0;
+      }
+    }
+    .third {
+      .one {
+        flex: 0.31;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .two {
+        flex: 0.69;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0 0;
+      }
+    }
+    .fourth {
+      .one {
+        flex: 0.11;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .two {
+        flex: 0.32;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .three {
+        flex: 0.11;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .four {
+        flex: 0.11;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0.5px 0;
+      }
+      .five {
+        flex: 0.45;
+        border: solid rgba(0, 0, 0, 1);
+        border-width: 0 0.5px 0 0;
       }
     }
   }
