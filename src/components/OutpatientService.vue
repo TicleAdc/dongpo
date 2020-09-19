@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+    <div class="map"></div>
   </div>
 </template>
 
@@ -42,6 +43,7 @@ export default {
 .container {
   padding: 10px 30px;
   display: flex;
+  justify-content: space-between;
   .information {
     display: flex;
     flex-direction: column;
@@ -59,8 +61,18 @@ export default {
       .include {
         height: 60px;
         font-size: 10.81px;
+        padding: 5px 0 0 5px;
+        p {
+          width: 200px;
+        }
       }
     }
+  }
+  .map {
+    margin-top: 10px;
+    width: 800px;
+    height: 250px;
+    border: 1px solid black;
   }
 }
 </style>

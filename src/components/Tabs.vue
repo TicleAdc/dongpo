@@ -7,7 +7,6 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <!-- 待调显示 -->
     <div class="tab">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane v-for="tab in tabs" :key="tab.id" :label="tab.name" :name="tab.name">

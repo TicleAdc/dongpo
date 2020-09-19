@@ -29,6 +29,14 @@
     <works></works>
     <column>
       <div class="img" slot="title">
+        <img src="@/assets/img/home/thematicActivities@2x.png" alt="" />
+      </div>
+      <div slot="contents">
+        <activety></activety>
+      </div>
+    </column>
+    <column>
+      <div class="img" slot="title">
         <img src="@/assets/img/home/outpatientDepartment@2x.png" alt="" />
       </div>
       <div slot="contents">
@@ -48,6 +56,7 @@ import personcard from '@/components/PersonCard';
 import healthscience from '@/components/HealthScienceCard';
 import works from '@/components/Works';
 import outpatientservice from '@/components/OutpatientService';
+import activety from '@/components/Activity';
 export default {
   data() {
     return {};
@@ -62,6 +71,7 @@ export default {
     healthscience,
     works,
     outpatientservice,
+    activety,
   },
 };
 </script>
