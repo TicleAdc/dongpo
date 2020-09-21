@@ -56,6 +56,7 @@ export default {
     text-align: center;
     margin: 0 1%;
     background-color: white;
+    box-shadow: 0px 0px 5px #888888;
     .name {
       margin: 50px 0 20px 0;
     }

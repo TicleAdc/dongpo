@@ -7,7 +7,6 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <!-- 待调显示 -->
     <div class="tab">
       <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane v-for="tab in tabs" :key="tab.id" :label="tab.name" :name="tab.name">
@@ -148,13 +147,16 @@ export default {
         },
       ],
       tabcontents: [],
+      tab: '1',
     };
   },
-
+  mounted() {
+    this.handleClick();
+  },
   methods: {
     handleClick(tab) {
-      console.log(this.tabs[tab.index].list);
-      this.tabcontents = this.tabs[tab.index].list;
+      // console.log(this.tabs[tab.index].list);
+      this.tabcontents = this.tabs[tab?.index || 0].list;
     },
   },
 };
