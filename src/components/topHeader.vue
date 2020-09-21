@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-21 09:07:29
+ * @LastEditTime: 2020-09-21 09:10:53
 -->
 <template>
   <div class="header">
@@ -56,14 +56,13 @@ export default {
         this.$router.push(route);
       }
     },
-    getActiveIndex() {
+    setActiveIndex() {
       this.activeIndex =
         this.routes.findIndex((v) => {
           return v.path === this.$route.fullPath;
         }) +
         1 +
         '';
-      console.log(this.activeIndex);
     },
   },
 
@@ -74,11 +73,11 @@ export default {
   },
   watch: {
     $route() {
-      this.getActiveIndex();
+      this.setActiveIndex();
     },
   },
   mounted() {
-    this.getActiveIndex();
+    this.setActiveIndex();
   },
 };
 </script>
