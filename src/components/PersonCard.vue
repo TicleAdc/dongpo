@@ -67,7 +67,7 @@ export default {
   }
   .img {
     width: 122px;
-    height: 166px;
+
     float: right;
   }
 }

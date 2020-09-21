@@ -23,3 +23,11 @@ export default {};
   }
 }
 </style>
+
+<style lang="less">
+.title {
+  img {
+    height: 43.23px;
+  }
+}
+</style>
