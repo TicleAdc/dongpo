@@ -44,13 +44,16 @@ export default {
 <style lang="less">
 .cardlist {
   padding: 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .personcard {
   display: inline-block;
   height: 122px;
   width: 40%;
   border: 1px solid rgba(107, 107, 107, 0.623);
-  margin: 0 5% 5% 0;
+  margin: 30px 0;
   .describe {
     display: inline-block;
     padding: 20px;
