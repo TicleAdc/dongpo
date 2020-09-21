@@ -42,6 +42,7 @@
 </template>
 
 <script>
+// import { post } from '@/api/request.js';
 import { routes } from '@/router/index.js';
 export default {
   computed: {
@@ -49,6 +50,7 @@ export default {
       return routes.filter((v) => v.name !== undefined);
     },
   },
+
   methods: {
     handleSelect(i) {
       const route = this.routes[i - 1];
@@ -64,6 +66,15 @@ export default {
         1 +
         '';
     },
+    // getMenuList() {
+    //   post('/api/getMenuList', {})
+    //     .then((res) => {
+    //       console.log(res.data);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
   },
 
   data() {
@@ -78,6 +89,7 @@ export default {
   },
   mounted() {
     this.setActiveIndex();
+    // this.getMenuList();
   },
 };
 </script>
@@ -154,7 +166,7 @@ export default {
 }
 </style>
 
-<style lang="less">
+<style lang="less" scoped>
 .header {
   .el-menu {
     display: flex;

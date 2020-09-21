@@ -75,7 +75,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .newslist {
   padding-top: 10px;
   ul {

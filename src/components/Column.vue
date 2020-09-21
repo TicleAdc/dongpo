@@ -13,7 +13,7 @@
 export default {};
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .main {
   padding: 30px 30px;
   background-color: white;

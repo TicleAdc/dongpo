@@ -287,7 +287,7 @@ export default {
 }
 </style>
 
-<style lang="less">
+<style lang="less" scoped>
 .main-featured-medical {
   main {
     .page {

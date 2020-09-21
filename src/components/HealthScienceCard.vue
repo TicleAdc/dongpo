@@ -92,7 +92,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .list {
   background-color: white;
   padding: 0 50px;

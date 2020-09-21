@@ -13,19 +13,19 @@ export default {
       imglist: [
         {
           id: '01',
-          url: require('@/assets/img/home/main.png'),
+          url: require('@/assets/img/home/main@2x.png'),
         },
         {
           id: '02',
-          url: require('@/assets/img/home/main.png'),
+          url: require('@/assets/img/home/main@2x.png'),
         },
         {
           id: '03',
-          url: require('@/assets/img/home/main.png'),
+          url: require('@/assets/img/home/main@2x.png'),
         },
         {
           id: '04',
-          url: require('@/assets/img/home/main.png'),
+          url: require('@/assets/img/home/main@2x.png'),
         },
       ],
     };
@@ -33,8 +33,9 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 img {
   width: 100%;
+  height: 100%;
 }
 </style>

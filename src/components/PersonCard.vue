@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .cardlist {
   padding: 0 30px;
   display: flex;

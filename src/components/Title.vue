@@ -18,7 +18,7 @@
 export default {};
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .headerline {
   height: 150px;
   background-color: #4d5aa2;

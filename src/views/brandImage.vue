@@ -44,7 +44,7 @@
 export default {};
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .contents {
   padding: 50px;
   .text-title {
