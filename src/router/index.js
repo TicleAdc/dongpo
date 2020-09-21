@@ -22,10 +22,8 @@ export const routes = [
   },
   {
     name: '医院概况',
-    // path: '/overview',
-    // component: () => import('@/views/Overview.vue'),
-    path: '/staffstyle',
-    component: () => import('@/views/staffStyle.vue'),
+    path: '/overview',
+    component: () => import('@/views/Overview.vue'),
   },
   {
     name: '医疗服务',

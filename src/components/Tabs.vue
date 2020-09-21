@@ -165,8 +165,9 @@ export default {
 <style lang="less">
 .tabs {
   display: flex;
-  padding: 20px 60px;
+  padding: 0 30px 20px 30px;
   background-color: white;
+  vertical-align: top;
   .banner {
     width: 50%;
     margin-right: 30px;

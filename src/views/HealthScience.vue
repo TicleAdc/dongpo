@@ -4,25 +4,11 @@
       <div slot="theme">健康科普</div>
       <div slot="childtabs">
         <div class="tab" v-for="item in checkList" :key="item.id">
-          <a href="#"> {{ item.name }}</a>
+          <a @click="changeComponent(item.id)"> {{ item.name }}</a>
         </div>
       </div>
     </Title>
-
-    <div class="contents">
-      <ul>
-        <li v-for="item in activitylist" :key="item.id">
-          <div class="pic"><img :src="item.url" alt="" /></div>
-          <div class="info">
-            <div class="title">
-              <a href="#">{{ item.title }}</a>
-            </div>
-            <p class="text">{{ item.text }}</p>
-            <div class="time">{{ item.time }}</div>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <component :is="showComponent"></component>
     <pagenation></pagenation>
   </div>
 </template>
@@ -30,9 +16,13 @@
 <script>
 import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
+import rumorRfutation from '@/components/rumorRefutation';
+import healthTreasure from '@/components/healthTreasure';
+import dongpoEmotion from '@/components/dongpoEmotion';
 export default {
   data() {
     return {
+      showComponent: 'rumorRfutation',
       checkList: [
         {
           id: '01',
@@ -47,48 +37,32 @@ export default {
           name: '情满东坡',
         },
       ],
-      activitylist: [
-        {
-          id: '1',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '4',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '5',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-      ],
     };
   },
   components: {
     Title,
     pagenation,
+    rumorRfutation,
+    healthTreasure,
+    dongpoEmotion,
+  },
+  methods: {
+    changeComponent(id) {
+      switch (Number(id)) {
+        case 1:
+          this.showComponent = 'rumorRfutation';
+          break;
+        case 2:
+          this.showComponent = 'healthTreasure';
+          break;
+        case 3:
+          this.showComponent = 'dongpoEmotion';
+          break;
+        default:
+          this.showComponent = 'rumorRfutation';
+          break;
+      }
+    },
   },
 };
 </script>
@@ -121,7 +95,7 @@ a:visited {
         border-bottom: 1px dotted gray;
         display: flex;
         .pic {
-          margin-right: 60px;
+          margin-right: 30px;
           img {
             width: 200px;
             height: 120px;

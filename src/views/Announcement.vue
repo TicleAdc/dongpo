@@ -4,19 +4,11 @@
       <div slot="theme">通知公告</div>
       <div slot="childtabs">
         <div class="tab" v-for="item in checkList" :key="item.id">
-          <a href="#"> {{ item.name }}</a>
+          <a @click="changeComponent(item.id)"> {{ item.name }}</a>
         </div>
       </div>
     </Title>
-
-    <div class="newslist">
-      <ul>
-        <li v-for="item in newslist" :key="item.id">
-          <i class="el-icon-caret-left"></i>{{ item.context }}
-          <span class="time">{{ item.time }}</span>
-        </li>
-      </ul>
-    </div>
+    <component :is="showComponent"></component>
     <pagenation></pagenation>
   </div>
 </template>
@@ -24,6 +16,9 @@
 <script>
 import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
+import hospitalBulletin from '@/components/HospitalBulletin';
+import tenderInfo from '@/components/tenderInformation';
+import recruitment from '@/components/recruitmentInformation';
 export default {
   data() {
     return {
@@ -41,57 +36,34 @@ export default {
           name: '招聘信息',
         },
       ],
-      newslist: [
-        {
-          id: '01',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '02',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '03',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '04',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '05',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '06',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '07',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '08',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '09',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '10',
-          context: '这是一则公告————示例',
-        },
-        {
-          id: '11',
-          context: '这是一则公告————示例',
-        },
-      ],
+      showComponent: 'hospitalBulletin',
     };
   },
   components: {
     Title,
     pagenation,
+    hospitalBulletin,
+    tenderInfo,
+    recruitment,
+  },
+  methods: {
+    changeComponent(id) {
+      switch (Number(id)) {
+        case 1:
+          this.showComponent = 'hospitalBulletin';
+          break;
+        case 2:
+          this.showComponent = 'tenderInfo';
+          break;
+        case 3:
+          this.showComponent = 'recruitment';
+          break;
+        default:
+          this.showComponent = 'hospitalBulletin';
+          break;
+      }
+      console.log(id);
+    },
   },
 };
 </script>
