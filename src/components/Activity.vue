@@ -66,6 +66,7 @@ export default {
   justify-content: space-between;
   .active {
     margin: 5px;
+    cursor: pointer;
   }
 }
 .showtext {

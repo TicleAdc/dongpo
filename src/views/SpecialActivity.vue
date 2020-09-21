@@ -99,6 +99,7 @@ export default {
         display: flex;
         .pic {
           margin-right: 60px;
+          cursor: pointer;
           img {
             width: 200px;
             height: 120px;

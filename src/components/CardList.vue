@@ -64,6 +64,7 @@ export default {
       margin-bottom: 38px;
       width: 60%;
       height: 30px;
+      cursor: pointer;
       img {
         width: 10px;
         height: 10px;

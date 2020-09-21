@@ -3,8 +3,8 @@
     <Title>
       <div slot="theme">医院文化</div>
       <div slot="childtabs">
-        <div class="tab" v-for="item in checkList" :key="item.id">
-          <a @click="changeComponent(item.id)"> {{ item.name }}</a>
+        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
+          <a> {{ item.name }}</a>
         </div>
       </div>
     </Title>
@@ -83,6 +83,7 @@ export default {
   .tab {
     display: inline-block;
     margin: 20px;
+    cursor: pointer;
     a {
       color: white;
       text-decoration: none;
