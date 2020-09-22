@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { post } from '@/api/request.js';
 export default {
   data() {
     return {
@@ -29,6 +30,21 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    getBannerList() {
+      post('/api/getBannerList', {})
+        .then((res) => {
+          console.log(res.data);
+          // this.imglist = res.data
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  mounted() {
+    this.getBannerList();
   },
 };
 </script>

@@ -55,6 +55,7 @@ export default {
         background-color: rgba(74, 93, 163, 1);
         color: white;
         height: 65px;
+        line-height: 65px;
         font-size: 15px;
         padding: 0 10px;
       }
