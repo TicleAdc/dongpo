@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-21 09:10:53
+ * @LastEditTime: 2020-09-22 15:20:29
 -->
 <template>
   <div class="header">
@@ -30,7 +30,12 @@
         mode="horizontal"
         @select="handleSelect"
       >
-        <el-menu-item v-for="(item, index) in routes" :key="index" :index="index + 1 + ''">
+        <el-menu-item
+          v-for="(item, index) in routes"
+          :key="index"
+          :index="index + 1 + ''"
+          @click="$emit('click', item.path)"
+        >
           <router-link :to="item.path">
             {{ item.name }}
           </router-link>
