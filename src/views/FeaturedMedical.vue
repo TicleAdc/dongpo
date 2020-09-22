@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
+
 export default {
   data() {
     return {
@@ -138,6 +140,12 @@ export default {
         '麻醉手术室',
       ],
     };
+  },
+  created() {
+    // 请求连接
+    axios.post('/api/getClassifyPageList?classifyId=1&pageNo=1&pagesize=5').then((res) => {
+      console.log(res);
+    });
   },
 };
 </script>
