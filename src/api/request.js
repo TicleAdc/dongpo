@@ -3,7 +3,7 @@ import axios from 'axios';
 const request = axios.create({
   // baseURL: 'http://100.123.100.154:8080/',
   baseURL: 'http://100.123.100.162:8080/renren-fast',
-  timeout: 3000,
+  timeout: 10000,
 });
 
 request.interceptors.request.use(
@@ -21,13 +21,13 @@ request.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    const status = error.response.status;
-    if (status >= 500) {
-      console.log('服务繁忙请稍后再试');
-    } else if (status >= 400) {
-      console.log(error.response.data.message);
-    }
-    console.dir(error);
+    // const status = error.response.status;
+    // if (status >= 500) {
+    //   console.log('服务繁忙请稍后再试');
+    // } else if (status >= 400) {
+    //   console.log(error.response.data.message);
+    // }
+    // console.dir(error);
     return Promise.reject(error);
   },
 );

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { post } from '@/api/request.js';
+import axios from '@/api/request.js';
 import { routes } from '@/router/index.js';
 export default {
   computed: {
@@ -67,7 +67,8 @@ export default {
         '';
     },
     getMenuList() {
-      post('/api/getMenuList', {})
+      axios
+        .post('/api/getMenuList', {})
         .then((res) => {
           console.log(res.data);
         })

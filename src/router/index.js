@@ -69,6 +69,13 @@ export const routes = [
     name: '通知公告',
     path: '/announcement',
     component: () => import('@/views/Announcement.vue'),
+    children: [
+      {
+        name: '二级',
+        path: '/test',
+        component: Home,
+      },
+    ],
   },
 ];
 
