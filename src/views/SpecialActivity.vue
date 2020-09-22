@@ -9,7 +9,7 @@
     <Title>
       <div slot="theme">专题活动</div>
     </Title>
-    <div class="topicImg">
+    <div class="headImg">
       <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
     </div>
     <div class="contents">
@@ -83,50 +83,47 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.body {
-  background-color: white;
-  .topicImg {
-    img {
-      height: 300px;
-      width: 100%;
-    }
+.headImg {
+  img {
+    height: 300px;
+    width: 100%;
   }
-  .contents {
-    ul {
-      li {
-        border-bottom: 1px dotted gray;
+}
+.contents {
+  ul {
+    li {
+      border-bottom: 1px dotted gray;
+      display: flex;
+      padding: 2%;
+      .pic {
+        cursor: pointer;
+        img {
+          width: 200px;
+          height: 120px;
+        }
+      }
+      .info {
         display: flex;
-        padding: 2%;
-        .pic {
-          cursor: pointer;
-          img {
-            width: 200px;
-            height: 120px;
+        flex-direction: column;
+        position: relative;
+        padding-left: 20px;
+        .title {
+          width: 100%;
+          height: 30px;
+          line-height: 30px;
+          a {
+            text-decoration: none;
+            color: #888888;
           }
         }
-        .info {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          padding-left: 20px;
-          .title {
-            width: 100%;
-            height: 30px;
-            line-height: 30px;
-            a {
-              text-decoration: none;
-              color: #888888;
-            }
-          }
-          .text {
-            font-size: 10px;
-          }
-          .time {
-            text-align: left;
-            position: absolute;
-            top: 100px;
-            font-size: 10px;
-          }
+        .text {
+          font-size: 10px;
+        }
+        .time {
+          text-align: left;
+          position: absolute;
+          top: 100px;
+          font-size: 10px;
         }
       }
     }

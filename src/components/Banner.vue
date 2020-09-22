@@ -12,26 +12,26 @@ export default {
   data() {
     return {
       imglist: [
-        {
-          id: '01',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '02',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '03',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '04',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
+        // {
+        //   id: '01',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '02',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '03',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '04',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
       ],
     };
   },
@@ -41,6 +41,7 @@ export default {
     // 获取banner 图
     axios.post('/api/getBannerList').then((res) => {
       this.imglist = res.bannerlist;
+      console.log(this.imglist);
     });
   },
 };

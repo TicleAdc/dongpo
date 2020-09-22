@@ -86,7 +86,7 @@ export default {
       width: 40%;
     }
     .topic {
-      width: 40%;
+      padding: 0 3%;
       font-size: 16px;
     }
   }
