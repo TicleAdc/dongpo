@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-21 09:10:53
+ * @LastEditTime: 2020-09-22 15:20:29
 -->
 <template>
   <div class="header">
@@ -30,7 +30,12 @@
         mode="horizontal"
         @select="handleSelect"
       >
-        <el-menu-item v-for="(item, index) in routes" :key="index" :index="index + 1 + ''">
+        <el-menu-item
+          v-for="(item, index) in routes"
+          :key="index"
+          :index="index + 1 + ''"
+          @click="$emit('click', item.path)"
+        >
           <router-link :to="item.path">
             {{ item.name }}
           </router-link>
@@ -42,6 +47,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 import { routes } from '@/router/index.js';
 export default {
   computed: {
@@ -49,6 +55,7 @@ export default {
       return routes.filter((v) => v.name !== undefined);
     },
   },
+
   methods: {
     handleSelect(i) {
       const route = this.routes[i - 1];
@@ -64,6 +71,16 @@ export default {
         1 +
         '';
     },
+    getMenuList() {
+      axios
+        .post('/api/getMenuList', {})
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 
   data() {
@@ -78,6 +95,7 @@ export default {
   },
   mounted() {
     this.setActiveIndex();
+    this.getMenuList();
   },
 };
 </script>
@@ -154,7 +172,7 @@ export default {
 }
 </style>
 
-<style lang="less">
+<style lang="less" scoped>
 .header {
   .el-menu {
     display: flex;

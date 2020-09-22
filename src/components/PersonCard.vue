@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .cardlist {
   padding: 0 30px;
   display: flex;
@@ -67,7 +67,7 @@ export default {
   }
   .img {
     width: 122px;
-    height: 166px;
+
     float: right;
   }
 }

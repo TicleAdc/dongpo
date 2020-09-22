@@ -9,19 +9,12 @@
     <Title>
       <div slot="theme">新闻动态</div>
       <div slot="childtabs">
-        <div class="tab" v-for="item in checkList" :key="item.id">
-          <a href="#"> {{ item.name }}</a>
+        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
+          <a> {{ item.name }}</a>
         </div>
       </div>
     </Title>
-    <div class="newslist">
-      <ul>
-        <li v-for="item in newslist" :key="item.id">
-          <i class="el-icon-caret-left"></i>{{ item.context }}
-          <span class="time">{{ item.time }}</span>
-        </li>
-      </ul>
-    </div>
+    <component :is="showComponent"></component>
     <pagenation></pagenation>
   </div>
 </template>
@@ -29,6 +22,9 @@
 <script>
 import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
+import hospitalnews from '@/components/hospitalNews';
+import linenews from '@/components/lineNews';
+import mediareport from '@/components/mediaReport';
 export default {
   data() {
     return {
@@ -46,68 +42,33 @@ export default {
           name: '媒体报道',
         },
       ],
-      newslist: [
-        {
-          id: '01',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '02',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '03',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '04',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '05',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '06',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '07',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '08',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '09',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '10',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-        {
-          id: '11',
-          context: '这是一则新闻————示例',
-          time: '2020-09-18',
-        },
-      ],
+      showComponent: 'hospitalnews',
     };
   },
   components: {
     Title,
     pagenation,
+    hospitalnews,
+    linenews,
+    mediareport,
+  },
+  methods: {
+    changeComponent(id) {
+      switch (Number(id)) {
+        case 1:
+          this.showComponent = 'hospitalnews';
+          break;
+        case 2:
+          this.showComponent = 'linenews';
+          break;
+        case 3:
+          this.showComponent = 'mediareport';
+          break;
+        default:
+          this.showComponent = 'hospitalnews';
+          break;
+      }
+    },
   },
 };
 </script>
@@ -116,12 +77,15 @@ export default {
 .tab {
   display: inline-block;
   margin: 20px;
+  cursor: pointer;
   a {
     color: white;
     text-decoration: none;
   }
 }
-a:active,
+a:active {
+  border-top: 2px solid white;
+}
 a:visited {
   border-top: 2px solid white;
 }

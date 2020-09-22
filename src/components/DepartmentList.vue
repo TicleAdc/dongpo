@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .pinklogo {
   background-color: rgba(255, 234, 239, 1);
   text-align: center;
@@ -89,14 +89,22 @@ export default {
   .iconlist {
     padding: 0 30px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
     .icon {
-      display: inline-block;
-      text-align: center;
-      padding: 0 20px;
-      img {
-        width: 80px;
-        height: 80px;
-      }
+      cursor: pointer;
+      // display: inline-block;
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-between;
+      // text-align: center;
+      // padding: 0 20px;
+      // img {
+      //   width: 80px;
+      //   height: 80px;
+      // }
       .name {
         font-size: 10px;
       }

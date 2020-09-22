@@ -60,12 +60,13 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .activeImglist {
   display: flex;
   justify-content: space-between;
   .active {
     margin: 5px;
+    cursor: pointer;
   }
 }
 .showtext {

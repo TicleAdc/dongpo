@@ -31,7 +31,7 @@ a:visited {
   justify-content: center;
 }
 </style>
-<style lang="less">
+<style lang="less" scoped>
 .page {
   .el-pagination {
     font-size: 16px;

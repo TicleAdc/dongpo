@@ -1,38 +1,27 @@
 <!--
  * @Author: Spring Breeze
- * @Date: 2020-09-17 11:13:06
- * @FilePath: /dongpo/src/views/SpecialActivity.vue
- * @LastEditTime: 2020-09-22 10:06:36
+ * @Date: 2020-09-21 17:55:39
+ * @FilePath: /dongpo/src/components/rumorRefutation.vue
+ * @LastEditTime: 2020-09-22 11:17:27
 -->
 <template>
-  <div class="body">
-    <Title>
-      <div slot="theme">专题活动</div>
-    </Title>
-    <div class="headImg">
-      <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
-    </div>
-    <div class="contents">
-      <ul>
-        <li v-for="item in activitylist" :key="item.id">
-          <div class="pic"><img :src="item.url" alt="" /></div>
-          <div class="info">
-            <div class="title">
-              <a href="#">{{ item.title }}</a>
-            </div>
-            <p class="text">{{ item.text }}</p>
-            <div class="time">{{ item.time }}</div>
+  <div class="contents">
+    <ul>
+      <li v-for="item in activitylist" :key="item.id">
+        <div class="pic"><img :src="item.url" alt="" /></div>
+        <div class="info">
+          <div class="title">
+            <a href="#">{{ item.title }}</a>
           </div>
-        </li>
-      </ul>
-    </div>
-    <pagenation></pagenation>
+          <p class="text">{{ item.text }}</p>
+          <div class="time">{{ item.time }}</div>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import pagenation from '@/components/pageNation';
-import Title from '@/components/Title';
 export default {
   data() {
     return {
@@ -75,28 +64,17 @@ export default {
       ],
     };
   },
-  components: {
-    Title,
-    pagenation,
-  },
 };
 </script>
 
 <style lang="less" scoped>
-.headImg {
-  img {
-    height: 300px;
-    width: 100%;
-  }
-}
 .contents {
   ul {
     li {
       border-bottom: 1px dotted gray;
       display: flex;
-      padding: 2%;
       .pic {
-        cursor: pointer;
+        margin-right: 30px;
         img {
           width: 200px;
           height: 120px;
@@ -106,7 +84,6 @@ export default {
         display: flex;
         flex-direction: column;
         position: relative;
-        padding-left: 20px;
         .title {
           width: 100%;
           height: 30px;

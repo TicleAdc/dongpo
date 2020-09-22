@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 11:10:24
  * @FilePath: /dongpo/src/views/FeaturedMedical.vue
- * @LastEditTime: 2020-09-18 17:15:43
+ * @LastEditTime: 2020-09-22 11:21:19
 -->
 <template>
   <div class="featured-medical">
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
+
 export default {
   data() {
     return {
@@ -138,6 +140,12 @@ export default {
         '麻醉手术室',
       ],
     };
+  },
+  created() {
+    // 请求连接
+    axios.post('/api/getClassifyPageList?classifyId=1&pageNo=1&pagesize=5').then((res) => {
+      console.log(res);
+    });
   },
 };
 </script>
@@ -228,6 +236,7 @@ export default {
           }
           img {
             flex: 2;
+            height: inherit;
           }
           @media screen and(min-width: 1600px) {
             img {
@@ -287,7 +296,7 @@ export default {
 }
 </style>
 
-<style lang="less">
+<style lang="less" scoped>
 .main-featured-medical {
   main {
     .page {

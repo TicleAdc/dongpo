@@ -6,7 +6,7 @@
         <ul>
           <li v-for="item in card.list" :key="item.id">
             <div class="circle"></div>
-            <a href="">{{ item.content }}</a>
+            <span>{{ item.content }}</span>
           </li>
         </ul>
       </div>
@@ -92,7 +92,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .list {
   background-color: white;
   padding: 0 50px;
@@ -102,7 +102,7 @@ export default {
     display: inline-block;
     border: 1px solid black;
     border-radius: 10%;
-    width: 25%;
+    width: 30%;
     .head {
       width: 80%;
       padding: 10%;
@@ -116,6 +116,7 @@ export default {
         li {
           height: 25px;
           line-height: 25px;
+          width: 100%;
           .circle {
             border-radius: 50%;
             background-color: rgba(74, 93, 163, 1);
@@ -124,9 +125,8 @@ export default {
             margin-right: 5%;
             display: inline-block;
           }
-          a {
-            text-decoration: none;
-            color: black;
+          span {
+            font-size: 12px;
           }
         }
       }

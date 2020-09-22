@@ -22,6 +22,7 @@
 </template>
 
 <script>
+// import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -47,23 +48,23 @@ export default {
           list: [
             {
               id: '01',
-              title: '第一部分',
+              title: '医院新闻第一部分',
             },
             {
               id: '02',
-              title: '第二部分',
+              title: '医院新闻第二部分',
             },
             {
               id: '03',
-              title: '第三部分',
+              title: '医院新闻第三部分',
             },
             {
               id: '04',
-              title: '第四部分',
+              title: '医院新闻第四部分',
             },
             {
               id: '05',
-              title: '第五部分',
+              title: '医院新闻第五部分',
             },
           ],
         },
@@ -73,23 +74,23 @@ export default {
           list: [
             {
               id: '01',
-              title: '第一部分',
+              title: '媒体报道第一部分',
             },
             {
               id: '02',
-              title: '第二部分',
+              title: '媒体报道第二部分',
             },
             {
               id: '03',
-              title: '第三部分',
+              title: '媒体报道第三部分',
             },
             {
               id: '04',
-              title: '第四部分',
+              title: '媒体报道第四部分',
             },
             {
               id: '05',
-              title: '第五部分',
+              title: '媒体报道第五部分',
             },
           ],
         },
@@ -99,23 +100,23 @@ export default {
           list: [
             {
               id: '01',
-              title: '第一部分',
+              title: '公示公告第一部分',
             },
             {
               id: '02',
-              title: '第二部分',
+              title: '公示公告第二部分',
             },
             {
               id: '03',
-              title: '第三部分',
+              title: '公示公告第三部分',
             },
             {
               id: '04',
-              title: '第四部分',
+              title: '公示公告第四部分',
             },
             {
               id: '05',
-              title: '第五部分',
+              title: '公示公告第五部分',
             },
           ],
         },
@@ -125,23 +126,23 @@ export default {
           list: [
             {
               id: '01',
-              title: '第一部分',
+              title: '采购招标第一部分',
             },
             {
               id: '02',
-              title: '第二部分',
+              title: '采购招标第二部分',
             },
             {
               id: '03',
-              title: '第三部分',
+              title: '采购招标第三部分',
             },
             {
               id: '04',
-              title: '第四部分',
+              title: '采购招标第四部分',
             },
             {
               id: '05',
-              title: '第五部分',
+              title: '采购招标第五部分',
             },
           ],
         },
@@ -153,6 +154,7 @@ export default {
   mounted() {
     this.handleClick();
   },
+  created() {},
   methods: {
     handleClick(tab) {
       // console.log(this.tabs[tab.index].list);
@@ -162,11 +164,12 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .tabs {
   display: flex;
-  padding: 20px 60px;
+  padding: 0 30px 20px 30px;
   background-color: white;
+  vertical-align: top;
   .banner {
     width: 50%;
     margin-right: 30px;

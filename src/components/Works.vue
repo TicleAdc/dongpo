@@ -70,7 +70,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .all {
   display: flex;
   justify-content: space-between;
@@ -86,7 +86,7 @@ export default {
       width: 40%;
     }
     .topic {
-      width: 40%;
+      padding: 0 3%;
       font-size: 16px;
     }
   }

@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .container {
   padding: 10px 30px;
   display: flex;
@@ -55,22 +55,23 @@ export default {
         background-color: rgba(74, 93, 163, 1);
         color: white;
         height: 65px;
+        line-height: 65px;
         font-size: 15px;
         padding: 0 10px;
       }
       .include {
         height: 60px;
         font-size: 10.81px;
-        padding: 5px 0 0 5px;
+        padding: 5px 5px 0 5px;
         p {
-          width: 200px;
+          width: 100%;
         }
       }
     }
   }
   .map {
     margin-top: 10px;
-    width: 800px;
+    width: 60%;
     height: 250px;
     border: 1px solid black;
   }
