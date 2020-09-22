@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 11:10:24
  * @FilePath: /dongpo/src/views/FeaturedMedical.vue
- * @LastEditTime: 2020-09-18 17:15:43
+ * @LastEditTime: 2020-09-22 10:16:19
 -->
 <template>
   <div class="featured-medical">
@@ -211,7 +211,7 @@ export default {
       }
       .expert-introduction {
         display: flex;
-        height: 204px;
+        // height: 204px;
         box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.151);
         margin-top: 49px;
         &:last-child {
@@ -236,6 +236,8 @@ export default {
           }
           img {
             flex: 2;
+            width: 100%;
+            height: 100%;
           }
           @media screen and(min-width: 1600px) {
             img {

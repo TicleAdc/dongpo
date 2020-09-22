@@ -1,3 +1,9 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-21 08:52:54
+ * @FilePath: /dongpo/src/views/staffStyle.vue
+ * @LastEditTime: 2020-09-22 09:55:48
+-->
 <template>
   <div class="staffcardlist">
     <div class="staffcard" v-for="item in stafflist" :key="item.id">
@@ -68,7 +74,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   .staffcard {
-    margin: 30px;
+    margin: 2%;
     .img {
       padding: 5px;
       border: 1px solid gray;

@@ -93,6 +93,57 @@ a:visited {
   .contents {
     ul {
       li {
+        padding: 20px;
+        border-bottom: 1px dotted gray;
+        display: flex;
+        .pic {
+          margin-right: 30px;
+          img {
+            width: 200px;
+            height: 120px;
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          .title {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            a {
+              text-decoration: none;
+              color: #888888;
+            }
+          }
+          .text {
+            font-size: 10px;
+          }
+          .time {
+            text-align: left;
+            position: absolute;
+            top: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+</style>
+<style lang="less">
+.body {
+  background-color: white;
+  .topicImg {
+    margin-bottom: 30px;
+    img {
+      height: 300px;
+      width: 100%;
+    }
+  }
+  .contents {
+    ul {
+      li {
+        padding: 20px;
         border-bottom: 1px dotted gray;
         display: flex;
         .pic {

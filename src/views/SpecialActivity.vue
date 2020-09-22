@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 11:13:06
  * @FilePath: /dongpo/src/views/SpecialActivity.vue
- * @LastEditTime: 2020-09-17 11:14:57
+ * @LastEditTime: 2020-09-22 10:06:36
 -->
 <template>
   <div class="body">
@@ -86,7 +86,6 @@ export default {
 .body {
   background-color: white;
   .topicImg {
-    margin-bottom: 30px;
     img {
       height: 300px;
       width: 100%;
@@ -97,8 +96,8 @@ export default {
       li {
         border-bottom: 1px dotted gray;
         display: flex;
+        padding: 2%;
         .pic {
-          margin-right: 60px;
           cursor: pointer;
           img {
             width: 200px;
@@ -109,6 +108,7 @@ export default {
           display: flex;
           flex-direction: column;
           position: relative;
+          padding-left: 20px;
           .title {
             width: 100%;
             height: 30px;
@@ -125,6 +125,7 @@ export default {
             text-align: left;
             position: absolute;
             top: 100px;
+            font-size: 10px;
           }
         }
       }

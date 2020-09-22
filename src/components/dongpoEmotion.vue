@@ -1,3 +1,9 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-21 17:55:39
+ * @FilePath: /dongpo/src/components/dongpoEmotion.vue
+ * @LastEditTime: 2020-09-22 11:16:40
+-->
 <template>
   <div class="contents">
     <ul>
@@ -94,6 +100,7 @@ export default {
           text-align: left;
           position: absolute;
           top: 100px;
+          font-size: 10px;
         }
       }
     }
