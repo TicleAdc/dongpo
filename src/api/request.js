@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'http://100.123.100.154:8080/',
+  // baseURL: 'http://100.123.100.154:8080/',
+  baseURL: 'http://100.123.100.162:8080/renren-fast',
   timeout: 3000,
 });
 
-console.log(request);
-
 request.interceptors.request.use(
   (config) => {
+    // config.token =
     return config;
   },
   (error) => {
@@ -36,3 +36,5 @@ request.interceptors.response.use(
 export function post(url, data) {
   return request.post(url, data);
 }
+
+export default request;

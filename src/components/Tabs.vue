@@ -22,6 +22,7 @@
 </template>
 
 <script>
+// import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -153,6 +154,7 @@ export default {
   mounted() {
     this.handleClick();
   },
+  created() {},
   methods: {
     handleClick(tab) {
       // console.log(this.tabs[tab.index].list);
