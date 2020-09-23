@@ -69,17 +69,20 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           console.log(res.TreeMenu);
+          this.routeData = res.TreeMenu;
         })
         .catch((err) => {
           console.log(err);
         });
     },
+    mapDataToRoutes() {},
   },
 
   data() {
     return {
       activeIndex: '-1',
       trueRoutes: this.$router.options.routes,
+      routeData: [],
     };
   },
   watch: {
