@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:15:31
  * @FilePath: /dongpo/src/main.js
- * @LastEditTime: 2020-09-17 16:16:51
+ * @LastEditTime: 2020-09-23 15:55:36
  */
 import Vue from 'vue';
 import App from './App.vue';
@@ -15,7 +15,7 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
 router.beforeEach((to, from, next) => {
-  document.title = to.name;
+  document.title = to.name || '眉山市东坡区妇幼保健院';
   next();
 });
 new Vue({
