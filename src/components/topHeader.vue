@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-23 11:26:44
+ * @LastEditTime: 2020-09-23 15:22:14
 -->
 <template>
   <div class="header">
@@ -186,7 +186,8 @@ export default {
       &:last-child {
         border-right: 0.1px solid rgba(0, 0, 0, 0.075);
       }
-      > .el-menu-item {
+      > .el-menu-item,
+      .el-submenu {
         flex: 1;
         justify-content: center;
         align-items: center;
@@ -197,13 +198,21 @@ export default {
         width: 100%;
         height: 100%;
         padding: 0;
-        a {
+        a,
+        .el-submenu__title {
           text-align: center;
           display: block;
           width: 100%;
           height: 100%;
           text-decoration: none;
           color: black;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .el-submenu__icon-arrow {
+            right: 12px;
+          }
         }
       }
     }
@@ -247,5 +256,62 @@ export default {
       color: white;
     }
   }
+}
+.el-menu.el-menu--popup.el-menu--popup-right-start {
+  margin: 0;
+  padding: 0;
+  width: 110px;
+  min-width: 110px;
+  overflow: hidden;
+  a {
+    width: 110px;
+    min-width: 110px;
+  }
+}
+.el-menu.el-menu--popup.el-menu--popup-bottom-start {
+  width: 110px;
+  min-width: 110px;
+  margin: 0;
+  padding: 0;
+  > div,
+  .el-menu-item {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px solid rgba(0, 0, 0, 0.075);
+    border-right: none;
+    height: 45px !important;
+    line-height: 45px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  a,
+  .el-submenu__title {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-submenu__icon-arrow {
+      right: 12px;
+    }
+  }
+  .el-submenu__title {
+    height: 45px;
+  }
+}
+.el-menu--popup {
+  margin: 0;
+  padding: 0;
+}
+.el-menu.el-menu--popup.el-menu--popup-bottom-start a,
+.el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
+  width: 110px;
 }
 </style>
