@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-23 10:27:44
+ * @LastEditTime: 2020-09-23 11:26:44
 -->
 <template>
   <div class="header">
@@ -49,12 +49,12 @@
 
 <script>
 import axios from '@/api/request.js';
-import { routes } from '@/router/index.js';
 import sidebarItem from '@/components/sidebarItem';
 export default {
   computed: {
     routes() {
-      return routes.filter((v) => v.name !== undefined);
+      console.log(this.trueRoutes);
+      return this.trueRoutes.filter((v) => v.name !== undefined);
     },
   },
   components: {
@@ -79,16 +79,21 @@ export default {
   data() {
     return {
       activeIndex: '-1',
+      trueRoutes: this.$router.options.routes,
     };
   },
   watch: {
     $route() {
       this.setActiveIndex();
     },
+    routes() {},
   },
   mounted() {
     this.setActiveIndex();
     this.getMenuList();
+  },
+  created() {
+    console.log(this.$router.options.routes);
   },
 };
 </script>
