@@ -22,7 +22,7 @@
 </template>
 
 <script>
-// import axios from '@/api/request.js';
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -148,17 +148,28 @@ export default {
         },
       ],
       tabcontents: [],
-      tab: '1',
     };
   },
   mounted() {
     this.handleClick();
+    this.getColumnData();
   },
   created() {},
   methods: {
     handleClick(tab) {
       // console.log(this.tabs[tab.index].list);
       this.tabcontents = this.tabs[tab?.index || 0].list;
+    },
+    getColumnData() {
+      axios
+        .post('/api/getColumnList', {})
+        .then((res) => {
+          console.log(res.data[1].columndata);
+          console.log(JSON.parse(res.data[1].columndata));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

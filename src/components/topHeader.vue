@@ -50,10 +50,10 @@
 <script>
 import axios from '@/api/request.js';
 import sidebarItem from '@/components/sidebarItem';
+import index from '@/views/Index';
 export default {
   computed: {
     routes() {
-      console.log(this.trueRoutes);
       return this.trueRoutes.filter((v) => v.name !== undefined);
     },
   },
@@ -68,14 +68,36 @@ export default {
       axios
         .get('/api/getTreeList')
         .then((res) => {
-          console.log(res.TreeMenu);
           this.routeData = res.TreeMenu;
+          this.trueRoutes.splice(
+            1,
+            this.trueRoutes.length - 1,
+            ...this.mapDataToRoutes(this.routeData),
+          );
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    mapDataToRoutes() {},
+    mapDataToRoutes(routeData) {
+      const that = this;
+      return routeData.map((v) => {
+        if (Object.is(v.children, null)) {
+          return {
+            path: v.menuuri,
+            name: v.menuname,
+            component: index,
+          };
+        } else {
+          return {
+            path: v.menuuri,
+            name: v.menuname,
+            component: index,
+            children: that.mapDataToRoutes(v.children),
+          };
+        }
+      });
+    },
   },
 
   data() {
@@ -94,9 +116,6 @@ export default {
   mounted() {
     this.setActiveIndex();
     this.getMenuList();
-  },
-  created() {
-    console.log(this.$router.options.routes);
   },
 };
 </script>
