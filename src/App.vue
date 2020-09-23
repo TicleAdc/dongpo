@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:15:31
  * @FilePath: /dongpo/src/App.vue
- * @LastEditTime: 2020-09-23 11:28:05
+ * @LastEditTime: 2020-09-23 11:30:59
 -->
 <template>
   <div id="app">
@@ -16,6 +16,7 @@
 import topHeader from '@/components/topHeader';
 import bottomFooter from '@/components/bottomFooter';
 import { routes } from '@/router/index.js';
+// 至少留一个home在首页
 // import home from '@/views/Home.vue';
 
 export default {
