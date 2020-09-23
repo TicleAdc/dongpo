@@ -2,13 +2,15 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-22 15:14:32
+ * @LastEditTime: 2020-09-23 11:01:58
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Index from '../views/Index.vue';
 
 Vue.use(VueRouter);
+
+// 请在获取路由对象再挂载
 
 export const routes = [
   {
@@ -72,7 +74,19 @@ export const routes = [
     children: [
       {
         name: '二级',
-        path: '/test',
+        path: '/testtwo',
+        component: Index,
+        children: [
+          {
+            name: '三级',
+            path: '/testthree',
+            component: Index,
+          },
+        ],
+      },
+      {
+        name: '二级2',
+        path: '/testtwo2',
         component: Index,
       },
     ],

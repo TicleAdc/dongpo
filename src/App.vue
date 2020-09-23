@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:15:31
  * @FilePath: /dongpo/src/App.vue
- * @LastEditTime: 2020-09-22 15:26:11
+ * @LastEditTime: 2020-09-23 11:01:07
 -->
 <template>
   <div id="app">
@@ -39,13 +39,9 @@ export default {
       this.showComponentName = path.slice(1);
     },
     setActiveIndex() {
-      this.activeIndex =
-        this.routes.findIndex((v) => {
-          return v.path === this.$route.fullPath;
-        }) +
-        1 +
-        '';
-      this.showComponentName = this.routes[this.activeIndex - 1].path.slice(1);
+      this.activeIndex = this.$route.path;
+      const ary = this.activeIndex.split('/');
+      this.showComponentName = ary[ary.length - 1];
     },
   },
   watch: {
