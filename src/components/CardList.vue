@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -45,6 +46,18 @@ export default {
         },
       ],
     };
+  },
+  created() {
+    // column接口调试
+    axios
+      .post('/api/getColumnList', {})
+      .then((res) => {
+        console.log(res.data);
+        // console.log(JSON.parse(res.data[3].columndata));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
 </script>

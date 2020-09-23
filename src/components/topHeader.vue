@@ -73,9 +73,9 @@ export default {
     },
     getMenuList() {
       axios
-        .post('/api/getMenuList', {})
+        .get('/api/getTreeList')
         .then((res) => {
-          console.log(res.data);
+          console.log(res.TreeMenu);
         })
         .catch((err) => {
           console.log(err);
