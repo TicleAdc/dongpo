@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-23 09:18:22
  * @FilePath: /dongpo/src/components/sidebarItem.vue
- * @LastEditTime: 2020-09-23 10:48:44
+ * @LastEditTime: 2020-09-24 16:09:25
 -->
 <template>
   <div v-if="item.children">
@@ -16,9 +16,9 @@
       </el-menu-item>
     </template>
 
-    <el-submenu v-else :index="trueIndex">
+    <el-submenu v-else :index="item.path">
       <template slot="title">
-        <router-link :to="trueIndex">
+        <router-link :to="item.path">
           {{ item.name }}
         </router-link>
       </template>
@@ -31,7 +31,7 @@
         />
         <el-menu-item v-else :key="child.path" :index="child.path">
           <template slot="title">
-            <router-link :to="trueIndex + child.path">
+            <router-link :to="child.path">
               {{ child.name }}
             </router-link>
           </template>
@@ -42,7 +42,7 @@
   <div v-else>
     <el-menu-item :index="item.path" @click="goOtherPage">
       <template slot="title">
-        <router-link :to="trueIndex">
+        <router-link :to="item.path">
           {{ item.name }}
         </router-link>
       </template>
