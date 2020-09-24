@@ -30,6 +30,7 @@
     "sass-loader": "^10.0.2",
     "scss": "^0.2.4",
     "scss-loader": "^0.0.1",
+    "vue-devtools": "^5.1.4",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

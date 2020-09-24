@@ -7,14 +7,17 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="tab">
-      <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane v-for="tab in tabs" :key="tab.id" :label="tab.name" :name="tab.name">
-        </el-tab-pane>
-      </el-tabs>
-      <div>
+    <div class="tablist">
+      <!-- @tab-click="handleClick" -->
+      <div class="tabs">
+        <div class="tab" v-for="item in tabs" :key="item.index" @click="handleClick(item)">
+          {{ item.name }}
+        </div>
+        <!-- <span class="more">查看更多</span> -->
+      </div>
+      <div class="tabcontext">
         <ul>
-          <li v-for="tabitem in tabcontents" :key="tabitem.id">{{ tabitem.title }}</li>
+          <li v-for="data in tabcontents" :key="data.id">{{ data.contentsdata }}</li>
         </ul>
       </div>
     </div>
@@ -40,132 +43,33 @@ export default {
           url: require('@/assets/img/home/news.png'),
         },
       ],
-      activeName: '',
-      tabs: [
-        {
-          id: '1',
-          name: '医院新闻',
-          list: [
-            {
-              id: '01',
-              title: '医院新闻第一部分',
-            },
-            {
-              id: '02',
-              title: '医院新闻第二部分',
-            },
-            {
-              id: '03',
-              title: '医院新闻第三部分',
-            },
-            {
-              id: '04',
-              title: '医院新闻第四部分',
-            },
-            {
-              id: '05',
-              title: '医院新闻第五部分',
-            },
-          ],
-        },
-        {
-          id: '2',
-          name: '媒体报道',
-          list: [
-            {
-              id: '01',
-              title: '媒体报道第一部分',
-            },
-            {
-              id: '02',
-              title: '媒体报道第二部分',
-            },
-            {
-              id: '03',
-              title: '媒体报道第三部分',
-            },
-            {
-              id: '04',
-              title: '媒体报道第四部分',
-            },
-            {
-              id: '05',
-              title: '媒体报道第五部分',
-            },
-          ],
-        },
-        {
-          id: '3',
-          name: '公示公告',
-          list: [
-            {
-              id: '01',
-              title: '公示公告第一部分',
-            },
-            {
-              id: '02',
-              title: '公示公告第二部分',
-            },
-            {
-              id: '03',
-              title: '公示公告第三部分',
-            },
-            {
-              id: '04',
-              title: '公示公告第四部分',
-            },
-            {
-              id: '05',
-              title: '公示公告第五部分',
-            },
-          ],
-        },
-        {
-          id: '4',
-          name: '采购招标',
-          list: [
-            {
-              id: '01',
-              title: '采购招标第一部分',
-            },
-            {
-              id: '02',
-              title: '采购招标第二部分',
-            },
-            {
-              id: '03',
-              title: '采购招标第三部分',
-            },
-            {
-              id: '04',
-              title: '采购招标第四部分',
-            },
-            {
-              id: '05',
-              title: '采购招标第五部分',
-            },
-          ],
-        },
-      ],
+      tabs: [],
       tabcontents: [],
     };
   },
   mounted() {
-    this.handleClick();
-    this.getColumnData();
+    // this.handleClick();
+    setTimeout(this.getColumnData, 1000);
   },
-  created() {},
+  created() {
+    axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=5`, {}).then((res) => {
+      // console.log(res);
+      this.tabcontents = res.page.list;
+    });
+  },
   methods: {
+    // 控制tab切换
     handleClick(tab) {
-      // console.log(this.tabs[tab.index].list);
-      this.tabcontents = this.tabs[tab?.index || 0].list;
+      axios.post(`/api/getTagPageList?tagid=${tab.id}&pageNo=1&pagesize=5`, {}).then((res) => {
+        this.tabcontents = res.page.list;
+      });
     },
+    // 获取tab和轮播图内容，进行数据填充
     getColumnData() {
       axios
         .post('/api/getColumnList', {})
         .then((res) => {
-          console.log(res.data[1].columndata);
-          console.log(JSON.parse(res.data[1].columndata));
+          this.tabs = res.ColumnData[1].columndata.list;
         })
         .catch((err) => {
           console.log(err);
@@ -185,8 +89,28 @@ export default {
     width: 50%;
     margin-right: 30px;
   }
-  .tab {
+  .tablist {
     width: 50%;
+    .tabs {
+      display: flex;
+      .tab {
+        font-size: 14px;
+        flex: 1;
+        cursor: pointer;
+      }
+      .more {
+        font-size: 10px;
+        padding: 0 3px;
+        background-color: blue;
+        color: white;
+      }
+    }
+    .tabcontext {
+      padding: 0 30px;
+      ul {
+        border-top: 1px solid black;
+      }
+    }
   }
   ul {
     list-style: none;

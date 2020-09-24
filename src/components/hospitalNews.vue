@@ -2,7 +2,7 @@
   <div class="newslist">
     <ul>
       <li v-for="item in newslist" :key="item.id">
-        <i class="el-icon-caret-left"></i>{{ item.context }}
+        <i class="el-icon-caret-left"></i>{{ item.contentsdata }}
         <span class="time">{{ item.time }}</span>
       </li>
     </ul>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -71,6 +72,17 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.getNewsList();
+  },
+  methods: {
+    getNewsList() {
+      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
+        // console.log(res);
+        this.newslist = res.page.list;
+      });
+    },
   },
 };
 </script>

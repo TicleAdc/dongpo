@@ -23,6 +23,9 @@ import hospitalculture from '@/views/HospitalCulture';
 import specialactivity from '@/views/SpecialActivity';
 import healthscience from '@/views/HealthScience';
 import announcement from '@/views/Announcement';
+import hospitalnews from '@/components/hospitalNews';
+import linenews from '@/components/lineNews';
+import mediareport from '@/components/mediaReport';
 
 export default {
   components: {
@@ -37,6 +40,9 @@ export default {
     specialactivity,
     healthscience,
     announcement,
+    hospitalnews,
+    linenews,
+    mediareport,
   },
   props: {
     showComponentName: {

@@ -2,7 +2,7 @@
   <div class="datalist">
     <div class="card" v-for="item in dataList" :key="item.index">
       <div class="img">
-        <img :src="item.imgURL" alt="" />
+        <img :src="item.backimgURL" alt="" />
       </div>
       <!-- <div class="icon"><img :src="item.icon" alt="" /></div> -->
       <div class="name">{{ item.description }}</div>
@@ -47,8 +47,8 @@ export default {
       ],
     };
   },
-  mounted() {
-    this.getColumnData();
+  created() {
+    setTimeout(this.getColumnData, 2000);
   },
   methods: {
     getColumnData() {
@@ -56,8 +56,9 @@ export default {
       axios
         .post('/api/getColumnList', {})
         .then((res) => {
+          // console.log(res.ColumnData);
           // console.log(res.data[0].columndata);
-          _this.dataList = JSON.parse(res.data[0].columndata);
+          _this.dataList = res.ColumnData[0].columndata.list;
         })
         .catch((err) => {
           console.log(err);

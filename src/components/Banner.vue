@@ -40,8 +40,7 @@ export default {
   created() {
     // 获取banner 图
     axios.post('/api/getBannerList').then((res) => {
-      this.imglist = res.bannerlist;
-      // console.log(this.imglist);
+      this.imglist = res.bannerlist[0].list;
     });
   },
 };

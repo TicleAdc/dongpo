@@ -68,6 +68,7 @@ export default {
       axios
         .get('/api/getTreeList')
         .then((res) => {
+          console.log(res.TreeMenu);
           this.routeData = res.TreeMenu;
           this.trueRoutes.splice(
             1,
