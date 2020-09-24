@@ -2,7 +2,7 @@
   <div class="newslist">
     <ul>
       <li v-for="item in newslist" :key="item.id">
-        <i class="el-icon-caret-left"></i>{{ item.contentsdata }}
+        <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
         <span class="time">{{ item.time }}</span>
       </li>
     </ul>
