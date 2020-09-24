@@ -37,4 +37,8 @@ export function post(url, data) {
   return request.post(url, data);
 }
 
+export function get(url) {
+  return request.get(url);
+}
+
 export default request;

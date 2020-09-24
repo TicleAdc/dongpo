@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// import axios from '@/api/request.js';
 export default {
   data() {
     return {
@@ -70,6 +71,35 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    // getcontents接口调试
+    // getContents() {
+    //   axios
+    //     .post('/api/getContent?id=1', {})
+    //     .then((res) => {
+    //       console.log(res.data);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
+    // tags接口调试
+    // getTags() {
+    //   axios
+    //     .post('/api/getTagPageList?tagid=1&pageNo=1&pagesize=20', {})
+    //     .then((res) => {
+    //       console.log(res.page.list);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
+  },
+
+  mounted() {
+    // this.getContents();
+    // this.getTags();
   },
 };
 </script>

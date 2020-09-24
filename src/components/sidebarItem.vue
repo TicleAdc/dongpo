@@ -1,0 +1,87 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-23 09:18:22
+ * @FilePath: /dongpo/src/components/sidebarItem.vue
+ * @LastEditTime: 2020-09-23 10:48:44
+-->
+<template>
+  <div v-if="item.children">
+    <template v-if="item.children.length == 0">
+      <el-menu-item :index="item.path">
+        <template slot="title">
+          <router-link :to="item.path">
+            {{ item.name }}
+          </router-link>
+        </template>
+      </el-menu-item>
+    </template>
+
+    <el-submenu v-else :index="trueIndex">
+      <template slot="title">
+        <router-link :to="trueIndex">
+          {{ item.name }}
+        </router-link>
+      </template>
+      <template v-for="child in item.children">
+        <sidebar-item
+          v-if="child.children && child.children.length > 0"
+          :item="child"
+          :key="child.path"
+          :itemFather="item"
+        />
+        <el-menu-item v-else :key="child.path" :index="child.path">
+          <template slot="title">
+            <router-link :to="trueIndex + child.path">
+              {{ child.name }}
+            </router-link>
+          </template>
+        </el-menu-item>
+      </template>
+    </el-submenu>
+  </div>
+  <div v-else>
+    <el-menu-item :index="item.path" @click="goOtherPage">
+      <template slot="title">
+        <router-link :to="trueIndex">
+          {{ item.name }}
+        </router-link>
+      </template>
+    </el-menu-item>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+    itemFather: {
+      type: Object,
+      default() {
+        return null;
+      },
+    },
+  },
+  components: {
+    sidebarItem: () => import('@/components/sidebarItem'),
+  },
+  computed: {
+    trueIndex() {
+      if (Object.is(this.itemFather, null)) {
+        return this.item.path;
+      }
+      return this.itemFather.path + this.item.path;
+    },
+  },
+
+  methods: {
+    goOtherPage() {
+      console.log(this.trueIndex);
+    },
+  },
+};
+</script>
+
+<style lang="less" scoped></style>

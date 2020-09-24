@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-22 15:20:29
+ * @LastEditTime: 2020-09-23 15:22:14
 -->
 <template>
   <div class="header">
@@ -24,22 +24,23 @@
       </el-input>
     </div>
     <div class="link">
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-      >
-        <el-menu-item
-          v-for="(item, index) in routes"
-          :key="index"
-          :index="index + 1 + ''"
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+        <!-- <el-menu-item
+          v-for="item in routes"
+          :key="item.path"
+          :index="item.path"
           @click="$emit('click', item.path)"
         >
-          <router-link :to="item.path">
-            {{ item.name }}
-          </router-link>
-        </el-menu-item>
+          {{ item.name }}
+        </el-menu-item> -->
+
+        <sidebar-item
+          v-for="item in routes"
+          :key="item.path"
+          :index="item.path"
+          :item="item"
+          @click="$emit('click', item.path)"
+        ></sidebar-item>
       </el-menu>
       <div class="line"></div>
     </div>
@@ -48,50 +49,69 @@
 
 <script>
 import axios from '@/api/request.js';
-import { routes } from '@/router/index.js';
+import sidebarItem from '@/components/sidebarItem';
+import index from '@/views/Index';
 export default {
   computed: {
     routes() {
-      return routes.filter((v) => v.name !== undefined);
+      return this.trueRoutes.filter((v) => v.name !== undefined);
     },
   },
-
+  components: {
+    sidebarItem,
+  },
   methods: {
-    handleSelect(i) {
-      const route = this.routes[i - 1];
-      if (route.path !== this.$route.path) {
-        this.$router.push(route);
-      }
-    },
     setActiveIndex() {
-      this.activeIndex =
-        this.routes.findIndex((v) => {
-          return v.path === this.$route.fullPath;
-        }) +
-        1 +
-        '';
+      this.activeIndex = this.$route.path;
     },
     getMenuList() {
       axios
-        .post('/api/getMenuList', {})
+        .get('/api/getTreeList')
         .then((res) => {
-          console.log(res.data);
+          this.routeData = res.TreeMenu;
+          this.trueRoutes.splice(
+            1,
+            this.trueRoutes.length - 1,
+            ...this.mapDataToRoutes(this.routeData),
+          );
         })
         .catch((err) => {
           console.log(err);
         });
+    },
+    mapDataToRoutes(routeData) {
+      const that = this;
+      return routeData.map((v) => {
+        if (Object.is(v.children, null)) {
+          return {
+            path: v.menuuri,
+            name: v.menuname,
+            component: index,
+          };
+        } else {
+          return {
+            path: v.menuuri,
+            name: v.menuname,
+            component: index,
+            children: that.mapDataToRoutes(v.children),
+          };
+        }
+      });
     },
   },
 
   data() {
     return {
       activeIndex: '-1',
+      trueRoutes: this.$router.options.routes,
+      routeData: [],
     };
   },
   watch: {
     $route() {
       this.setActiveIndex();
     },
+    routes() {},
   },
   mounted() {
     this.setActiveIndex();
@@ -172,12 +192,12 @@ export default {
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="less">
 .header {
   .el-menu {
     display: flex;
     align-items: center;
-    .el-menu-item {
+    > div {
       flex: 1;
       justify-content: center;
       align-items: center;
@@ -188,13 +208,34 @@ export default {
       &:last-child {
         border-right: 0.1px solid rgba(0, 0, 0, 0.075);
       }
-
-      > a {
-        text-align: center;
-        display: block;
+      > .el-menu-item,
+      .el-submenu {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        border: 0.1px solid rgba(0, 0, 0, 0.075);
+        border-right: none;
+        height: 45px;
+        line-height: 45px;
         width: 100%;
         height: 100%;
-        text-decoration: none;
+        padding: 0;
+        a,
+        .el-submenu__title {
+          text-align: center;
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: black;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .el-submenu__icon-arrow {
+            right: 12px;
+          }
+        }
       }
     }
   }
@@ -221,15 +262,78 @@ export default {
       }
     }
   }
-  .el-menu--horizontal > .el-menu-item.is-active {
+  .el-menu--horizontal > div > .el-menu-item.is-active {
     background-color: #4a5da3;
     color: white;
+    > a {
+      color: white;
+    }
   }
 
-  .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
-  .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus {
+  .el-menu--horizontal > div > .el-menu-item:not(.is-disabled):hover,
+  .el-menu--horizontal > div > .el-menu-item:not(.is-disabled):focus {
     background-color: #4a5da3;
     color: white;
+    > a {
+      color: white;
+    }
   }
+}
+.el-menu.el-menu--popup.el-menu--popup-right-start {
+  margin: 0;
+  padding: 0;
+  width: 110px;
+  min-width: 110px;
+  overflow: hidden;
+  a {
+    width: 110px;
+    min-width: 110px;
+  }
+}
+.el-menu.el-menu--popup.el-menu--popup-bottom-start {
+  width: 110px;
+  min-width: 110px;
+  margin: 0;
+  padding: 0;
+  > div,
+  .el-menu-item {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px solid rgba(0, 0, 0, 0.075);
+    border-right: none;
+    height: 45px !important;
+    line-height: 45px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  a,
+  .el-submenu__title {
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .el-submenu__icon-arrow {
+      right: 12px;
+    }
+  }
+  .el-submenu__title {
+    height: 45px;
+  }
+}
+.el-menu--popup {
+  margin: 0;
+  padding: 0;
+}
+.el-menu.el-menu--popup.el-menu--popup-bottom-start a,
+.el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
+  width: 110px;
 }
 </style>
