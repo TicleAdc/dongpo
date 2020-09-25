@@ -99,7 +99,7 @@ export default {
         let classifyid = res.ColumnData[4].columndata.id;
         axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
           // console.log(data);
-          // console.log(data.data);
+          console.log(data.data);
           let list = data.data;
           list.forEach((item) => {
             axios
