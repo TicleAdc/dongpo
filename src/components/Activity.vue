@@ -7,7 +7,6 @@
         :key="item.index"
         @click="handleClick(item.index)"
       >
-        这是放图片的位置
         <img :src="item.imgURL" alt="" />
         <!-- <div class="contents">{{ item.imgdescription }}</div> -->
       </div>
@@ -69,6 +68,7 @@ export default {
   }
 }
 .showtext {
+  margin: 0 30px;
   padding: 10px 0 10px 20px;
   border: 1px solid black;
   border-radius: 10px;

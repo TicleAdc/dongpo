@@ -17,7 +17,7 @@
       </div>
       <div class="tabcontext">
         <ul>
-          <li v-for="data in tabcontents" :key="data.id">{{ data.contentsdata }}</li>
+          <li v-for="data in tabcontents" :key="data.id">{{ data.contentsTitle }}</li>
         </ul>
       </div>
     </div>
