@@ -294,8 +294,8 @@ export default {
   }
 }
 .el-menu.el-menu--popup.el-menu--popup-bottom-start {
-  // width: 110px;
-  min-width: 100%;
+  width: 165%;
+  min-width: 60px;
   margin: 0;
   padding: 0;
   display: flex;
