@@ -4,102 +4,90 @@
     <div class="iconlist">
       <div class="icon" v-for="item in iconlist" :key="item.id">
         <div class="img">
-          <img :src="item.url" alt="" />
+          <img :src="item.smallimgurl" alt="" />
         </div>
-        <div class="name">{{ item.name }}</div>
+        <div class="name">{{ item.description }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from '@/api/request.js';
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
       backgroundimg: require('@/assets/img/home/PinkLogo.png'),
       iconlist: [
-        {
-          id: '1',
-          url: require('@/assets/img/home/vaccination.png'),
-          name: '预防接种',
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/home/Pediatrics.png'),
-          name: '儿科',
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/home/PediatricsHealth.png'),
-          name: '儿童保健科',
-        },
-        {
-          id: '4',
-          url: require('@/assets/img/home/DOG.png'),
-          name: '妇产科住院部',
-        },
-        {
-          id: '5',
-          url: require('@/assets/img/home/newBorn.png'),
-          name: '新生儿病区',
-        },
-        {
-          id: '6',
-          url: require('@/assets/img/home/childrenMessage.png'),
-          name: '小儿中医推拿',
-        },
-        {
-          id: '7',
-          url: require('@/assets/img/home/OGC.png'),
-          name: '妇产科门诊部',
-        },
-        {
-          id: '8',
-          url: require('@/assets/img/home/ClinicalLaboratory.png'),
-          name: '检验科',
-        },
-        {
-          id: '9',
-          url: require('@/assets/img/home/Ultrasonography.png'),
-          name: '超声科',
-        },
-        {
-          id: '10',
-          url: require('@/assets/img/home/anaesthesia.png'),
-          name: '麻醉手术室',
-        },
+        //   {
+        //     id: '1',
+        //     url: require('@/assets/img/home/vaccination.png'),
+        //     name: '预防接种',
+        //   },
+        //   {
+        //     id: '2',
+        //     url: require('@/assets/img/home/Pediatrics.png'),
+        //     name: '儿科',
+        //   },
+        //   {
+        //     id: '3',
+        //     url: require('@/assets/img/home/PediatricsHealth.png'),
+        //     name: '儿童保健科',
+        //   },
+        //   {
+        //     id: '4',
+        //     url: require('@/assets/img/home/DOG.png'),
+        //     name: '妇产科住院部',
+        //   },
+        //   {
+        //     id: '5',
+        //     url: require('@/assets/img/home/newBorn.png'),
+        //     name: '新生儿病区',
+        //   },
+        //   {
+        //     id: '6',
+        //     url: require('@/assets/img/home/childrenMessage.png'),
+        //     name: '小儿中医推拿',
+        //   },
+        //   {
+        //     id: '7',
+        //     url: require('@/assets/img/home/OGC.png'),
+        //     name: '妇产科门诊部',
+        //   },
+        //   {
+        //     id: '8',
+        //     url: require('@/assets/img/home/ClinicalLaboratory.png'),
+        //     name: '检验科',
+        //   },
+        //   {
+        //     id: '9',
+        //     url: require('@/assets/img/home/Ultrasonography.png'),
+        //     name: '超声科',
+        //   },
+        //   {
+        //     id: '10',
+        //     url: require('@/assets/img/home/anaesthesia.png'),
+        //     name: '麻醉手术室',
+        //   },
       ],
     };
   },
   methods: {
-    // getcontents接口调试
-    // getContents() {
-    //   axios
-    //     .post('/api/getContent?id=1', {})
-    //     .then((res) => {
-    //       console.log(res.data);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
-    // tags接口调试
-    // getTags() {
-    //   axios
-    //     .post('/api/getTagPageList?tagid=1&pageNo=1&pagesize=20', {})
-    //     .then((res) => {
-    //       console.log(res.page.list);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
+    getDepartmentList() {
+      axios
+        .post('/api/getColumnList', {})
+        .then((res) => {
+          // console.log(res.ColumnData);
+          this.iconlist = res.ColumnData[2].columndata.list;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 
   mounted() {
-    // this.getContents();
-    // this.getTags();
+    this.getDepartmentList();
   },
 };
 </script>

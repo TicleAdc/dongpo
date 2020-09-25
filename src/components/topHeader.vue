@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-23 15:22:14
+ * @LastEditTime: 2020-09-24 16:00:40
 -->
 <template>
   <div class="header">
@@ -24,7 +24,7 @@
       </el-input>
     </div>
     <div class="link">
-      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router="">
         <!-- <el-menu-item
           v-for="item in routes"
           :key="item.path"
@@ -69,11 +69,13 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
+          console.log(this.routeData);
           this.trueRoutes.splice(
             1,
             this.trueRoutes.length - 1,
             ...this.mapDataToRoutes(this.routeData),
           );
+          this.$router.addRoutes(this.mapDataToRoutes(this.routeData));
         })
         .catch((err) => {
           console.log(err);

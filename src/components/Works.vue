@@ -20,7 +20,7 @@
           <div class="context">
             <ul>
               <li v-for="item in contextlist" :key="item.id">
-                <i class="el-icon-caret-left"></i>{{ item.content }}
+                <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
               </li>
             </ul>
           </div>
@@ -34,28 +34,34 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 import column from '@/components/Column';
 export default {
   data() {
     return {
       contextlist: [
-        {
-          id: '01',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
-        {
-          id: '02',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
-        {
-          id: '03',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
+        // {
+        //   id: '01',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
+        // {
+        //   id: '02',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
+        // {
+        //   id: '03',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
       ],
+      bigImg: '',
     };
   },
   components: {
     column,
+  },
+  mounted() {
+    // this.getTime();
+    this.getData();
   },
   methods: {
     getTime() {
@@ -65,6 +71,20 @@ export default {
       let day = date.getDay();
       let time = year + '-' + month + '-' + day;
       return time;
+    },
+    getData() {
+      axios.post('/api/getColumnList', {}).then((res) => {
+        // console.log(res);
+        // console.log(this.contextlist);
+        // console.log(res.ColumnData[5].columndata.list[0].id);
+        let classifyid = res.ColumnData[5].columndata.list[0].id;
+        axios
+          .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
+          .then((data) => {
+            // console.log(data);
+            this.contextlist = data.page.list;
+          });
+      });
     },
   },
 };

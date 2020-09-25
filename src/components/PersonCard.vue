@@ -3,40 +3,64 @@
     <div class="personcard" v-for="item in professorlist" :key="item.id">
       <div class="describe">
         <div class="introduction">{{ '专家简介' }}</div>
-        <div class="detail">{{ item.detail }}</div>
+        <div class="detail">{{ item.contentsTitle }}</div>
       </div>
-      <div class="img"><img :src="item.url" alt="" /></div>
+      <div class="img"><img :src="item.imgurl" alt="" /></div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
       professorlist: [
-        {
-          id: '1',
-          detail: '123456789',
-          url: require('@/assets/img/professor/photo2.png'),
-        },
-        {
-          id: '2',
-          detail: '123456789',
-          url: require('@/assets/img/professor/photo2.png'),
-        },
-        {
-          id: '3',
-          detail: '123456789',
-          url: require('@/assets/img/professor/photo2.png'),
-        },
-        {
-          id: '4',
-          detail: '123456789',
-          url: require('@/assets/img/professor/photo2.png'),
-        },
+        // {
+        //   id: '1',
+        //   detail: '123456789',
+        //   url: require('@/assets/img/professor/photo2.png'),
+        // },
+        // {
+        //   id: '2',
+        //   detail: '123456789',
+        //   url: require('@/assets/img/professor/photo2.png'),
+        // },
+        // {
+        //   id: '3',
+        //   detail: '123456789',
+        //   url: require('@/assets/img/professor/photo2.png'),
+        // },
+        // {
+        //   id: '4',
+        //   detail: '123456789',
+        //   url: require('@/assets/img/professor/photo2.png'),
+        // },
       ],
     };
+  },
+  mounted() {
+    this.getProfessorLsit();
+  },
+  methods: {
+    getProfessorLsit() {
+      axios
+        .post('/api/getColumnList', {})
+        .then((res) => {
+          // console.log(res.ColumnData);
+          let classifyid = res.ColumnData[3].columndata.id;
+          // console.log(classifyid);
+          axios
+            .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
+            .then((data) => {
+              // console.log(data);
+              this.professorlist = data.page.list;
+            });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>

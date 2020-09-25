@@ -4,9 +4,9 @@
       <div class="head"><img :src="card.img" alt="" /></div>
       <div class="content">
         <ul>
-          <li v-for="item in card.list" :key="item.id">
+          <li v-for="item in card" :key="item.index">
             <div class="circle"></div>
-            <span>{{ item.content }}</span>
+            <span>{{ item.contentsTitle }}</span>
           </li>
         </ul>
       </div>
@@ -16,78 +16,103 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 export default {
   data() {
     return {
       healthcardlist: [
-        {
-          id: '1',
-          img: require('@/assets/img/home/healthLeading1@2x.png'),
-          list: [
-            {
-              id: '01',
-              content: '刚过七夕，你又开始为造人发愁？',
-            },
-            {
-              id: '02',
-              content: '上班久坐，下班葛优躺，全身很受伤！',
-            },
-            {
-              id: '03',
-              content: '吹空调吹成了面瘫',
-            },
-            {
-              id: '04',
-              content: '蛋蛋的“忧桑',
-            },
-          ],
-        },
-        {
-          id: '2',
-          img: require('@/assets/img/home/healthLeading2@2x.png'),
-          list: [
-            {
-              id: '01',
-              content: '刚过七夕，你又开始为造人发愁？',
-            },
-            {
-              id: '02',
-              content: '上班久坐，下班葛优躺，全身很受伤！',
-            },
-            {
-              id: '03',
-              content: '吹空调吹成了面瘫',
-            },
-            {
-              id: '04',
-              content: '蛋蛋的“忧桑',
-            },
-          ],
-        },
-        {
-          id: '3',
-          img: require('@/assets/img/home/healthLeading3@2x.png'),
-          list: [
-            {
-              id: '01',
-              content: '刚过七夕，你又开始为造人发愁？',
-            },
-            {
-              id: '02',
-              content: '上班久坐，下班葛优躺，全身很受伤！',
-            },
-            {
-              id: '03',
-              content: '吹空调吹成了面瘫',
-            },
-            {
-              id: '04',
-              content: '蛋蛋的“忧桑',
-            },
-          ],
-        },
+        // {
+        //   id: '1',
+        //   img: require('@/assets/img/home/healthLeading1@2x.png'),
+        //   list: [
+        //     {
+        //       id: '01',
+        //       content: '刚过七夕，你又开始为造人发愁？',
+        //     },
+        //     {
+        //       id: '02',
+        //       content: '上班久坐，下班葛优躺，全身很受伤！',
+        //     },
+        //     {
+        //       id: '03',
+        //       content: '吹空调吹成了面瘫',
+        //     },
+        //     {
+        //       id: '04',
+        //       content: '蛋蛋的“忧桑',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: '2',
+        //   img: require('@/assets/img/home/healthLeading2@2x.png'),
+        //   list: [
+        //     {
+        //       id: '01',
+        //       content: '刚过七夕，你又开始为造人发愁？',
+        //     },
+        //     {
+        //       id: '02',
+        //       content: '上班久坐，下班葛优躺，全身很受伤！',
+        //     },
+        //     {
+        //       id: '03',
+        //       content: '吹空调吹成了面瘫',
+        //     },
+        //     {
+        //       id: '04',
+        //       content: '蛋蛋的“忧桑',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: '3',
+        //   img: require('@/assets/img/home/healthLeading3@2x.png'),
+        //   list: [
+        //     {
+        //       id: '01',
+        //       content: '刚过七夕，你又开始为造人发愁？',
+        //     },
+        //     {
+        //       id: '02',
+        //       content: '上班久坐，下班葛优躺，全身很受伤！',
+        //     },
+        //     {
+        //       id: '03',
+        //       content: '吹空调吹成了面瘫',
+        //     },
+        //     {
+        //       id: '04',
+        //       content: '蛋蛋的“忧桑',
+        //     },
+        //   ],
+        // },
       ],
     };
+  },
+  mounted() {
+    this.getCardList();
+  },
+  methods: {
+    getCardList() {
+      axios.post('/api/getColumnList', {}).then((res) => {
+        let classifyid = res.ColumnData[4].columndata.id;
+        axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
+          // console.log(data);
+          console.log(data.data);
+          let list = data.data;
+          list.forEach((item) => {
+            axios
+              .post(`/api/getTagPageList?tagid=${item.id}&pageNo=1&pagesize=5`)
+              .then((response) => {
+                // console.log(response);
+                this.healthcardlist.push(response.page.list);
+              });
+          });
+        });
+      });
+      console.log(this.healthcardlist);
+    },
   },
 };
 </script>
