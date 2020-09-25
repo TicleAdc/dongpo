@@ -48,55 +48,57 @@
         <div class="one">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>医院概况</span>
+            <span>
+              <a href="#/overview">医院概况</a>
+            </span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>医院介绍</span>
+            <span><a href="#/introduction">医院介绍</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>现任领导</span>
+            <span><a href="#/leader">现任领导</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>医院荣誉</span>
+            <span><a href="#/honor">医院荣誉</a></span>
           </p>
         </div>
         <div class="two">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>医疗服务</span>
+            <span><a href="#/medicalservice">医疗服务</a></span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>预约挂号</span>
+            <span><a href="#/appointment">预约挂号</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>报告查询</span>
+            <span><a href="#/reportquery">报告查询</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>院内导航</span>
+            <span><a href="#/navegation">院内导航</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>就诊指导</span>
+            <span><a href="#/medicalguidance">就诊指导</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>体检查询</span>
+            <span><a href="#/physicalexaminationquery">体检查询</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>常见问题</span>
+            <span><a href="#/ordinaryquestion">常见问题</a></span>
           </p>
         </div>
         <div class="three">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>母婴保健</span>
+            <span><a href="#/healthcare">母婴保健</a></span>
           </div>
         </div>
       </div>
@@ -104,19 +106,19 @@
         <div class="one">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>新闻动态</span>
+            <span><a href="#/news">新闻动态</a></span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>医院新闻</span>
+            <span><a href="#/hospitalnews">医院新闻</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>业界新闻</span>
+            <span><a href="#/linenews">业界新闻</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>媒体报道</span>
+            <span><a href="#/mediareport">媒体报道</a></span>
           </p>
         </div>
         <div class="two">
