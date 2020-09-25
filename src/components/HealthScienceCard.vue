@@ -107,6 +107,9 @@ export default {
               .then((response) => {
                 // console.log(response);
                 this.healthcardlist.push(response.page.list);
+                this.healthcardlist[0].img = require('@/assets/img/home/healthLeading1@2x.png');
+                this.healthcardlist[1].img = require('@/assets/img/home/healthLeading2@2x.png');
+                this.healthcardlist[1].img = require('@/assets/img/home/healthLeading3@2x.png');
               });
           });
         });
