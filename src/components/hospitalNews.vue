@@ -2,7 +2,8 @@
   <div class="newslist">
     <ul>
       <li v-for="item in newslist" :key="item.id">
-        <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
+        <i class="el-icon-caret-left"></i
+        ><span @click="jumpToDetails(item.index)">{{ item.contentsTitle }}</span>
         <span class="time">{{ item.time }}</span>
       </li>
     </ul>
@@ -15,6 +16,7 @@ export default {
   data() {
     return {
       newslist: [],
+      // detail: [],
     };
   },
   mounted() {
@@ -23,8 +25,21 @@ export default {
   methods: {
     getNewsList() {
       axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
-        // console.log(res);
         this.newslist = res.page.list;
+        // this.newslist.forEach((index) => {
+        //   console.log(index);
+        // });
+      });
+    },
+    jumpToDetails(index) {
+      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
+        console.log(index);
+        this.newslist = res.page.list;
+        this.newslist.forEach((item) => {
+          if (item == index) {
+            this.$router.push({ name: '详情', params: { detail: this.newslist[index] } });
+          }
+        });
       });
     },
   },

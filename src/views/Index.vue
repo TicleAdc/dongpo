@@ -26,6 +26,7 @@ import announcement from '@/views/Announcement';
 import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
 import mediareport from '@/components/mediaReport';
+import detail from '@/components/detail';
 
 export default {
   components: {
@@ -43,6 +44,7 @@ export default {
     hospitalnews,
     linenews,
     mediareport,
+    detail,
   },
   props: {
     showComponentName: {
