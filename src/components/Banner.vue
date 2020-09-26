@@ -1,7 +1,8 @@
 <template>
   <el-carousel height="560px" :interval="2000" arrow="always">
     <el-carousel-item v-for="item in imglist" :key="item.id">
-      <img :src="item.imgURL" alt="" :title="item.imgtitle" />
+      <!-- <img :src="item.imgURL" alt="" :title="item.imgtitle" /> -->
+      <img :src="item.imgurl" :title="item.title" alt="" />
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -41,6 +42,8 @@ export default {
     // 获取banner 图
     axios.post('/api/getBannerList').then((res) => {
       this.imglist = res.bannerlist[0].list;
+      this.imglist.push(res.bannerlist[1].list[0]);
+      // console.log(this.imglist);
     });
   },
 };

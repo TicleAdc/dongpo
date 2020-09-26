@@ -69,7 +69,7 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
-          console.log(this.routeData);
+          // console.log(this.routeData);
           this.trueRoutes.splice(
             1,
             this.trueRoutes.length - 1,
@@ -235,7 +235,8 @@ export default {
           justify-content: center;
           align-items: center;
           .el-submenu__icon-arrow {
-            right: 12px;
+            top: 52%;
+            right: 2px;
           }
         }
       }
@@ -293,10 +294,12 @@ export default {
   }
 }
 .el-menu.el-menu--popup.el-menu--popup-bottom-start {
-  width: 110px;
-  min-width: 110px;
+  width: 165%;
+  min-width: 60px;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   > div,
   .el-menu-item {
     flex: 1;
@@ -308,7 +311,7 @@ export default {
     line-height: 45px;
     width: 100%;
     height: 100%;
-    padding: 0;
+    padding: 5px 10%;
   }
   a,
   .el-submenu__title {
@@ -336,6 +339,6 @@ export default {
 }
 .el-menu.el-menu--popup.el-menu--popup-bottom-start a,
 .el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
-  width: 110px;
+  width: 100%;
 }
 </style>

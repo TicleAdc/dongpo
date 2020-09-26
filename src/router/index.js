@@ -6,6 +6,7 @@
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Index from '@/views/Index.vue';
 
 Vue.use(VueRouter);
 
@@ -16,11 +17,11 @@ export const routes = [
     path: '/',
     redirect: '/home',
   },
-  // {
-  //   name: '首页',
-  //   path: '/home',
-  //   component: Index,
-  // },
+  {
+    name: '首页',
+    path: '/home',
+    component: Index,
+  },
   // {
   //   name: '医院概况',
   //   path: '/overview',
@@ -88,7 +89,7 @@ export const routes = [
   //       path: '/testtwo2',
   //       component: Index,
   //     },
-  //   ],
+  // ],
   // },
 ];
 

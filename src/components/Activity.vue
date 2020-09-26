@@ -7,7 +7,8 @@
         :key="item.index"
         @click="handleClick(item.index)"
       >
-        <img :src="item.imgURL" alt="" />
+        <!-- <img :src="item.imgURL" alt="" /> -->
+        <img :src="item.img" alt="" />
         <!-- <div class="contents">{{ item.imgdescription }}</div> -->
       </div>
     </div>
@@ -27,20 +28,30 @@ export default {
   mounted() {
     this.getData();
   },
+  created() {
+    axios.post('/api/getColumnList', {}).then((data) => {
+      this.showtext = data.ColumnData[5].columndata.list[0].imgdescription;
+    });
+  },
   methods: {
     getData() {
       axios.post('/api/getColumnList', {}).then((res) => {
-        this.datalist = res.ColumnData[6].columndata.list;
-        console.log(this.datalist);
+        this.datalist = res.ColumnData[5].columndata.list;
+        // 静态填充图片，从后台获取数据后可删除
+        this.datalist[0].img = require('@/assets/img/home/thematicActivities1@2x.png');
+        this.datalist[1].img = require('@/assets/img/home/thematicActivities2@2x.png');
+        this.datalist[2].img = require('@/assets/img/home/thematicActivities3@2x.png');
+        this.datalist[3].img = require('@/assets/img/home/thematicActivities4@2x.png');
+        // console.log(this.datalist);
       });
     },
     handleClick(id) {
       axios.post('/api/getColumnList', {}).then((res) => {
-        let data = res.ColumnData[6].columndata.list;
+        let data = res.ColumnData[5].columndata.list;
         for (let i = 0; i < data.length; i++) {
           if (id == data[i].index) {
             this.showtext = data[i].imgdescription;
-            console.log(this.showtext);
+            // console.log(this.showtext);
           }
           break;
         }
@@ -58,9 +69,7 @@ export default {
   .active {
     margin: 5px;
     cursor: pointer;
-    background-color: aquamarine;
-    width: 60px;
-    height: 60px;
+
     img {
       width: 100%;
       height: 100%;

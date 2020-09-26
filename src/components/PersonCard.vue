@@ -5,7 +5,7 @@
         <div class="introduction">{{ '专家简介' }}</div>
         <div class="detail">{{ item.contentsTitle }}</div>
       </div>
-      <div class="img"><img :src="item.imgurl" alt="" /></div>
+      <div class="img"><img :src="item.imguri" alt="" /></div>
     </div>
   </div>
 </template>
