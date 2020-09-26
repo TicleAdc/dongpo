@@ -124,39 +124,39 @@
         <div class="two">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>特色医疗</span>
+            <span><a href="#/featuredmedical">特色医疗</a></span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>预防接种</span>
+            <span><a href="#/vaccination">预防接种</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>儿科</span>
+            <span><a href="#/pediatrics">儿科</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>妇产科门诊部</span>
+            <span><a href="#/theoutpatient">妇产科门诊部</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>妇产科住院部</span>
+            <span><a href="#/obstetrics">妇产科住院部</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>检验科</span>
+            <span><a href="#/clinicallaboratory">检验科</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>超声科</span>
+            <span><a href="#/ultrasonography">超声科</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>麻醉手术室</span>
+            <span><a href="#/anaesthesia">麻醉手术室</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>专家介绍</span>
+            <span><a href="#/introductpro">专家介绍</a></span>
           </p>
         </div>
       </div>
@@ -164,59 +164,59 @@
         <div class="one">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>党群工作</span>
+            <span><a href="#/partywork">党群工作</a></span>
           </div>
         </div>
         <div class="two">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>医院文化</span>
+            <span><a href="#/hospitalcultrue">医院文化</a></span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>品牌形象</span>
+            <span><a href="#/brandimage">品牌形象</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>院训宗旨</span>
+            <span><a href="#/tents">院训宗旨</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>特色文化</span>
+            <span><a href="#/specialculture">特色文化</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>职工风采</span>
+            <span><a href="#/stuffstyle">职工风采</a></span>
           </p>
         </div>
         <div class="three">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>专题活动</span>
+            <span><a href="#/specialactivity">专题活动</a></span>
           </div>
         </div>
         <div class="four">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>健康科普</span>
+            <span><a href="#/healthscience">健康科普</a></span>
           </div>
         </div>
         <div class="five">
           <div class="title">
             <div class="circle"><i class="el-icon-arrow-right"></i></div>
-            <span>通知公告</span>
+            <span><a href="#/announcement">通知公告</a></span>
           </div>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>通知公告</span>
+            <span><a href="#/hospitalbulletin">医院公告</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>招标信息</span>
+            <span><a href="#/tenderInfo">招标信息</a></span>
           </p>
           <p>
             <i class="el-icon-caret-right"></i>
-            <span>招聘信息</span>
+            <span><a href="#/recruitment">招聘信息</a></span>
           </p>
         </div>
       </div>

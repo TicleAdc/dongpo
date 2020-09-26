@@ -33,6 +33,7 @@ export default {
 
 <style lang="less" scoped>
 .newslist {
+  background-color: white;
   padding-top: 10px;
   ul {
     list-style: none;
