@@ -10,7 +10,7 @@
       <div slot="theme">新闻动态</div>
       <div slot="childtabs">
         <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.name }}</a>
+          <a> {{ item.tagname }}</a>
         </div>
       </div>
     </Title>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
 import hospitalnews from '@/components/hospitalNews';
@@ -29,18 +30,18 @@ export default {
   data() {
     return {
       checkList: [
-        {
-          id: '1',
-          name: '医院新闻',
-        },
-        {
-          id: '2',
-          name: '业界新闻',
-        },
-        {
-          id: '3',
-          name: '媒体报道',
-        },
+        // {
+        //   id: '1',
+        //   name: '医院新闻',
+        // },
+        // {
+        //   id: '2',
+        //   name: '业界新闻',
+        // },
+        // {
+        //   id: '3',
+        //   name: '媒体报道',
+        // },
       ],
       showComponent: 'hospitalnews',
     };
@@ -52,22 +53,43 @@ export default {
     linenews,
     mediareport,
   },
+  mounted() {
+    this.getTagList();
+  },
   methods: {
+    // changeComponent(id) {
+    //   switch (Number(id)) {
+    //     case 26:
+    //       this.showComponent = 'hospitalnews';
+    //       break;
+    //     case 27:
+    //       this.showComponent = 'linenews';
+    //       break;
+    //     case 28:
+    //       this.showComponent = 'mediareport';
+    //       break;
+    //     default:
+    //       this.showComponent = 'hospitalnews';
+    //       break;
+    //   }
+    //   console.log(id);
+    // },
     changeComponent(id) {
-      switch (Number(id)) {
-        case 1:
-          this.showComponent = 'hospitalnews';
-          break;
-        case 2:
-          this.showComponent = 'linenews';
-          break;
-        case 3:
-          this.showComponent = 'mediareport';
-          break;
-        default:
-          this.showComponent = 'hospitalnews';
-          break;
-      }
+      console.log(id);
+      axios.post(`/api/getTagPageList?tagid=${id}&pageNo=1&pagesize=20`, {}).then((res) => {
+        console.log(res);
+      });
+    },
+    getTagList() {
+      axios
+        .post('/api/getTagPageByClassifyId?classifyid=19', {})
+        .then((res) => {
+          console.log(res);
+          this.checkList = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
 };

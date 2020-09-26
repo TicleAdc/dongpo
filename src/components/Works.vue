@@ -78,6 +78,7 @@ export default {
         // console.log(this.contextlist);
         // console.log(res.ColumnData[5].columndata.list[0].id);
         let classifyid = res.ColumnData[5].columndata.list[0].id;
+        console.log(classifyid);
         axios
           .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
           .then((data) => {

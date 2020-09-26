@@ -6,7 +6,9 @@
         <ul>
           <li v-for="item in card" :key="item.index">
             <div class="circle"></div>
-            <span>{{ item.contentsTitle }}</span>
+            <span
+              ><a href="#/healthscience">{{ item.contentsTitle }}</a></span
+            >
           </li>
         </ul>
       </div>
@@ -98,8 +100,8 @@ export default {
       axios.post('/api/getColumnList', {}).then((res) => {
         let classifyid = res.ColumnData[4].columndata.id;
         axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
-          // console.log(data);
-          console.log(data.data);
+          // console.log(classifyid);
+          // console.log(data.data);
           let list = data.data;
           list.forEach((item) => {
             axios
@@ -114,7 +116,7 @@ export default {
           });
         });
       });
-      console.log(this.healthcardlist);
+      // console.log(this.healthcardlist);
     },
   },
 };
@@ -155,6 +157,9 @@ export default {
           }
           span {
             font-size: 12px;
+            a {
+              color: gray;
+            }
           }
         }
       }

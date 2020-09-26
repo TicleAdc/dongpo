@@ -69,7 +69,7 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
-          console.log(this.routeData);
+          // console.log(this.routeData);
           this.trueRoutes.splice(
             1,
             this.trueRoutes.length - 1,

@@ -2,7 +2,8 @@
   <div class="datalist">
     <div class="card" v-for="item in dataList" :key="item.index">
       <div class="img">
-        <img :src="item.backimgURL" alt="" />
+        <!-- <img :src="item.backimgURL" alt="" /> -->
+        <img :src="item.img" alt="" />
       </div>
       <!-- <div class="icon"><img :src="item.icon" alt="" /></div> -->
       <div class="name">{{ item.description }}</div>
@@ -59,6 +60,11 @@ export default {
           // console.log(res.ColumnData);
           // console.log(res.data[0].columndata);
           _this.dataList = res.ColumnData[0].columndata.list;
+          // 静态挂载图片,后续可删除使用后台返回内容
+          _this.dataList[0].img = require('@/assets/img/home/physicalExamination2.png');
+          _this.dataList[1].img = require('@/assets/img/home/ReportQuery2.png');
+          _this.dataList[2].img = require('@/assets/img/home/momAndBaby2.png');
+          _this.dataList[3].img = require('@/assets/img/home/physicalExamination2.png');
         })
         .catch((err) => {
           console.log(err);
