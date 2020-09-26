@@ -74,18 +74,21 @@ export default {
       return time;
     },
     getData() {
-      axios.post('/api/getColumnList', {}).then((res) => {
-        // console.log(res);
-        // console.log(this.contextlist);
-        // console.log(res.ColumnData[5].columndata.list[0].id);
-        let classifyid = res.ColumnData[5].columndata.list[0].id;
-        console.log(classifyid);
-        axios
-          .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
-          .then((data) => {
-            // console.log(data);
-            this.contextlist = data.page.list;
-          });
+      // axios.post('/api/getColumnList', {}).then((res) => {
+      //   // console.log(res);
+      //   // console.log(this.contextlist);
+      //   // console.log(res.ColumnData[5].columndata.list[0].id);
+      //   let classifyid = res.ColumnData[5].columndata.list[0].id;
+      //   console.log(classifyid);
+      //   axios
+      //     .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
+      //     .then((data) => {
+      //       // console.log(data);
+      //       this.contextlist = data.page.list;
+      //     });
+      // });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=partywork`).then((res) => {
+        console.log(res);
       });
     },
   },

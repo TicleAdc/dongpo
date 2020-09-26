@@ -50,26 +50,32 @@ export default {
     };
   },
   created() {
-    setTimeout(this.getColumnData, 2000);
+    // setTimeout(this.getColumnData, 2000);
+    this.getData();
   },
   methods: {
-    getColumnData() {
-      let _this = this;
-      axios
-        .post('/api/getColumnList', {})
-        .then((res) => {
-          // console.log(res.ColumnData);
-          // console.log(res.data[0].columndata);
-          _this.dataList = res.ColumnData[0].columndata.list;
-          // 静态挂载图片,后续可删除使用后台返回内容
-          _this.dataList[0].img = require('@/assets/img/home/physicalExamination2.png');
-          _this.dataList[1].img = require('@/assets/img/home/ReportQuery2.png');
-          _this.dataList[2].img = require('@/assets/img/home/momAndBaby2.png');
-          _this.dataList[3].img = require('@/assets/img/home/physicalExamination2.png');
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    // getColumnData() {
+    //   let _this = this;
+    //   axios
+    //     .post('/api/getColumnList', {})
+    //     .then((res) => {
+    //       // console.log(res.ColumnData);
+    //       // console.log(res.data[0].columndata);
+    //       _this.dataList = res.ColumnData[0].columndata.list;
+    //       // 静态挂载图片,后续可删除使用后台返回内容
+    //       _this.dataList[0].img = require('@/assets/img/home/physicalExamination2.png');
+    //       _this.dataList[1].img = require('@/assets/img/home/ReportQuery2.png');
+    //       _this.dataList[2].img = require('@/assets/img/home/momAndBaby2.png');
+    //       _this.dataList[3].img = require('@/assets/img/home/physicalExamination2.png');
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=partmentcard`).then((res) => {
+        console.log(res);
+      });
     },
   },
 };
