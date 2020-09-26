@@ -362,6 +362,9 @@ export default {
           span {
             font-size: 10.81px;
             font-family: SourceHanSansCN-Normal;
+            a {
+              color: gray;
+            }
           }
         }
       }
@@ -443,6 +446,11 @@ export default {
       width: 511px;
       height: 50px;
     }
+  }
+}
+span {
+  a {
+    color: black;
   }
 }
 </style>

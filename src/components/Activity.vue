@@ -30,13 +30,13 @@ export default {
   methods: {
     getData() {
       axios.post('/api/getColumnList', {}).then((res) => {
-        this.datalist = res.ColumnData[6].columndata.list;
+        this.datalist = res.ColumnData[5].columndata.list;
         console.log(this.datalist);
       });
     },
     handleClick(id) {
       axios.post('/api/getColumnList', {}).then((res) => {
-        let data = res.ColumnData[6].columndata.list;
+        let data = res.ColumnData[5].columndata.list;
         for (let i = 0; i < data.length; i++) {
           if (id == data[i].index) {
             this.showtext = data[i].imgdescription;

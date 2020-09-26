@@ -4,7 +4,8 @@
     <div class="iconlist">
       <div class="icon" v-for="item in iconlist" :key="item.id">
         <div class="img">
-          <img :src="item.smallimgurl" alt="" />
+          <!-- <img :src="item.smallimgurl" alt="" /> -->
+          <img :src="item.img" alt="" />
         </div>
         <div class="name">{{ item.description }}</div>
       </div>
@@ -79,6 +80,17 @@ export default {
         .then((res) => {
           // console.log(res.ColumnData);
           this.iconlist = res.ColumnData[2].columndata.list;
+          // 静态挂载图片，后续可以进行修改
+          this.iconlist[0].img = require('@/assets/img/home/vaccination.png');
+          this.iconlist[1].img = require('@/assets/img/home/Pediatrics.png');
+          this.iconlist[2].img = require('@/assets/img/home/PediatricsHealth.png');
+          this.iconlist[3].img = require('@/assets/img/home/DOG.png');
+          this.iconlist[4].img = require('@/assets/img/home/newBorn.png');
+          this.iconlist[5].img = require('@/assets/img/home/childrenMessage.png');
+          this.iconlist[6].img = require('@/assets/img/home/OGC.png');
+          this.iconlist[7].img = require('@/assets/img/home/ClinicalLaboratory.png');
+          this.iconlist[8].img = require('@/assets/img/home/Ultrasonography.png');
+          this.iconlist[9].img = require('@/assets/img/home/anaesthesia.png');
         })
         .catch((err) => {
           console.log(err);
