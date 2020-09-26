@@ -29,6 +29,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'newstab',
   data() {
     return {
       imglist: [

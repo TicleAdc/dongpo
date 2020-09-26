@@ -20,6 +20,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'healthscience',
   data() {
     return {
       healthcardlist: [

@@ -10,6 +10,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'topbanner',
   data() {
     return {
       imglist: [

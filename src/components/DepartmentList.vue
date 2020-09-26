@@ -16,6 +16,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'icon',
   data() {
     return {
       backgroundimg: require('@/assets/img/home/PinkLogo.png'),

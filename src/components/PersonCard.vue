@@ -13,6 +13,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'introductioncard',
   data() {
     return {
       professorlist: [

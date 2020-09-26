@@ -15,6 +15,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'partmentcard',
   data() {
     return {
       dataList: [

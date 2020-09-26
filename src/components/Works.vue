@@ -37,6 +37,7 @@
 import axios from '@/api/request.js';
 import column from '@/components/Column';
 export default {
+  name: 'partywork',
   data() {
     return {
       contextlist: [
