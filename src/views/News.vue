@@ -53,6 +53,9 @@ export default {
     linenews,
     mediareport,
   },
+  created() {
+    document.documentElement.scrollTop = 0;
+  },
   mounted() {
     this.getTagList();
   },

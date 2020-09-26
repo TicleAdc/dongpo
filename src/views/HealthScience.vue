@@ -46,6 +46,9 @@ export default {
     healthTreasure,
     dongpoEmotion,
   },
+  created() {
+    document.documentElement.scrollTop = 0;
+  },
   methods: {
     changeComponent(id) {
       switch (Number(id)) {
