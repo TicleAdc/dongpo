@@ -14,7 +14,16 @@
         </div>
       </div>
     </Title>
-    <component :is="showComponent"></component>
+    <!-- <component :is="showComponent"></component> -->
+    <div class="showlist">
+      <ul>
+        <li v-for="item in newslist" :key="item.id">
+          <i class="el-icon-caret-left"></i
+          ><span @click="jumpToDetails(item.id)">{{ item.contentsTitle }}</span>
+          <span class="time">{{ item.time }}</span>
+        </li>
+      </ul>
+    </div>
     <pagenation></pagenation>
   </div>
 </template>
@@ -23,9 +32,9 @@
 import axios from '@/api/request.js';
 import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
-import hospitalnews from '@/components/hospitalNews';
-import linenews from '@/components/lineNews';
-import mediareport from '@/components/mediaReport';
+// import hospitalnews from '@/components/hospitalNews';
+// import linenews from '@/components/lineNews';
+// import mediareport from '@/components/mediaReport';
 export default {
   data() {
     return {
@@ -43,15 +52,16 @@ export default {
         //   name: '媒体报道',
         // },
       ],
-      showComponent: 'hospitalnews',
+      newslist: [],
+      // showComponent: 'hospitalnews',
     };
   },
   components: {
     Title,
     pagenation,
-    hospitalnews,
-    linenews,
-    mediareport,
+    // hospitalnews,
+    // linenews,
+    // mediareport,
   },
   created() {
     document.documentElement.scrollTop = 0;
@@ -80,7 +90,9 @@ export default {
     changeComponent(id) {
       console.log(id);
       axios.post(`/api/getTagPageList?tagid=${id}&pageNo=1&pagesize=20`, {}).then((res) => {
-        console.log(res);
+        // console.log(res);
+        this.showlist = res.page.list;
+        console.log(this.showlist);
       });
     },
     getTagList() {
