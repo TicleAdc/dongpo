@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import axios from '@/api/request.js';
 import sidebarItem from '@/components/sidebarItem';
 import index from '@/views/Index';
 export default {
@@ -64,23 +63,7 @@ export default {
     setActiveIndex() {
       this.activeIndex = this.$route.path;
     },
-    getMenuList() {
-      axios
-        .get('/api/getTreeList')
-        .then((res) => {
-          this.routeData = res.TreeMenu;
-          // console.log(this.routeData);
-          this.trueRoutes.splice(
-            1,
-            this.trueRoutes.length - 1,
-            ...this.mapDataToRoutes(this.routeData),
-          );
-          this.$router.addRoutes(this.mapDataToRoutes(this.routeData));
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+    getMenuList() {},
     mapDataToRoutes(routeData) {
       const that = this;
       return routeData.map((v) => {
@@ -340,5 +323,11 @@ export default {
 .el-menu.el-menu--popup.el-menu--popup-bottom-start a,
 .el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
   width: 100%;
+}
+.el-submenu__icon-arrow {
+  display: none;
+}
+.el-icon-arrow-down:before {
+  display: none;
 }
 </style>

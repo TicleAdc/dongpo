@@ -13,7 +13,7 @@
 <script>
 // 导入组件必须和路径名字一模一样
 import overview from '@/views/Overview.vue';
-import home from '@/views/Home.vue';
+import test from '@/views/Test.vue';
 import medicalservice from '@/views/MedicalService';
 import healthcare from '@/views/HealthCare';
 import news from '@/views/News';
@@ -31,7 +31,7 @@ import detail from '@/components/detail';
 export default {
   components: {
     overview,
-    home,
+    test,
     medicalservice,
     healthcare,
     news,

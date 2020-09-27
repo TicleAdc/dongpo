@@ -3,23 +3,19 @@
     <div class="banner">
       <el-carousel height="200px" direction="vertical" :autoplay="true">
         <el-carousel-item v-for="item in imglist" :key="item.id">
-          <img :src="item.imgurl" alt="" />
+          <img :src="item.url" alt="" />
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="tablist">
-      <!-- @tab-click="handleClick" -->
-      <div class="tabs">
-        <div class="tab" v-for="item in tabs" :key="item.index" @click="handleClick(item)">
-          {{ item.name }}
-        </div>
-        <!-- <span class="more">查看更多</span> -->
-      </div>
-      <div class="tabcontext">
-        <ul>
-          <li v-for="data in tabcontents" :key="data.id">
-            <a href="#/news">{{ data.contentsTitle }}</a>
-          </li>
+    <div class="tab">
+      <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane v-for="(tab, index) in tabs" :key="index" :label="tab.name" :name="tab.name">
+        </el-tab-pane>
+      </el-tabs>
+      <div class="checkmore">查看更多</div>
+      <div>
+        <ul class="showlist">
+          <li v-for="tabitem in tabcontents" :key="tabitem.id">{{ tabitem.title }}</li>
         </ul>
       </div>
     </div>
@@ -27,118 +23,190 @@
 </template>
 
 <script>
-import axios from '@/api/request.js';
 export default {
-  name: 'newstab',
   data() {
     return {
       imglist: [
-        // {
-        //   id: '1',
-        //   url: require('@/assets/img/home/news.png'),
-        // },
-        // {
-        //   id: '2',
-        //   url: require('@/assets/img/home/news.png'),
-        // },
-        // {
-        //   id: '3',
-        //   url: require('@/assets/img/home/news.png'),
-        // },
+        {
+          id: '1',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/news.png'),
+        },
       ],
-      tabs: [],
+      activeName: '',
+      tabs: [
+        {
+          id: '1',
+          name: '医院新闻',
+          list: [
+            {
+              id: '01',
+              title: '第一部分',
+            },
+            {
+              id: '02',
+              title: '第二部分',
+            },
+            {
+              id: '03',
+              title: '第三部分',
+            },
+            {
+              id: '04',
+              title: '第四部分',
+            },
+            {
+              id: '05',
+              title: '第五部分',
+            },
+          ],
+        },
+        {
+          id: '2',
+          name: '媒体报道',
+          list: [
+            {
+              id: '01',
+              title: '第一部分',
+            },
+            {
+              id: '02',
+              title: '第二部分',
+            },
+            {
+              id: '03',
+              title: '第三部分',
+            },
+            {
+              id: '04',
+              title: '第四部分',
+            },
+            {
+              id: '05',
+              title: '第五部分',
+            },
+          ],
+        },
+        {
+          id: '3',
+          name: '公示公告',
+          list: [
+            {
+              id: '01',
+              title: '第一部分',
+            },
+            {
+              id: '02',
+              title: '第二部分',
+            },
+            {
+              id: '03',
+              title: '第三部分',
+            },
+            {
+              id: '04',
+              title: '第四部分',
+            },
+            {
+              id: '05',
+              title: '第五部分',
+            },
+          ],
+        },
+        {
+          id: '4',
+          name: '采购招标',
+          list: [
+            {
+              id: '01',
+              title: '第一部分',
+            },
+            {
+              id: '02',
+              title: '第二部分',
+            },
+            {
+              id: '03',
+              title: '第三部分',
+            },
+            {
+              id: '04',
+              title: '第四部分',
+            },
+            {
+              id: '05',
+              title: '第五部分',
+            },
+          ],
+        },
+      ],
       tabcontents: [],
+      tab: '1',
     };
   },
   mounted() {
-    // this.handleClick();
-    setTimeout(this.getColumnData, 1000);
-    this.getBannerList();
-  },
-  created() {
-    axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=5`, {}).then((res) => {
-      // console.log(res);
-      this.tabcontents = res.page.list;
-    });
+    this.handleClick();
   },
   methods: {
-    // 控制tab切换
     handleClick(tab) {
-      axios.post(`/api/getTagPageList?tagid=${tab.id}&pageNo=1&pagesize=5`, {}).then((res) => {
-        this.tabcontents = res.page.list;
-      });
-    },
-    // 获取tab内容，进行数据填充
-    getColumnData() {
-      // axios
-      //   .post('/api/getColumnList', {})
-      //   .then((res) => {
-      //     this.tabs = res.ColumnData[1].columndata.list;
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=newstab`).then((res) => {
-        console.log(res);
-      });
-    },
-    // 获取轮播图内容进行填充
-    getBannerList() {
-      axios.post('/api/getBannerList').then((res) => {
-        this.imglist = res.bannerlist[2].list;
-        this.imglist.push(res.bannerlist[3].list[0]);
-        this.imglist.push(res.bannerlist[4].list[0]);
-        // console.log(this.imglist);
-      });
+      // console.log(tab);
+      // console.log(this.tabs[tab.index].list);
+      this.tabcontents = this.tabs[tab?.index || 0].list;
     },
   },
 };
 </script>
-
-<style lang="less" scoped>
+<style lang="less">
 .tabs {
   display: flex;
-  padding: 0 30px 20px 30px;
+  padding: 20px 60px;
   background-color: white;
-  vertical-align: top;
   .banner {
     width: 50%;
     margin-right: 30px;
   }
-  .tablist {
+  .tab {
     width: 50%;
-    .tabs {
-      display: flex;
-      .tab {
-        font-size: 14px;
-        flex: 1;
-        cursor: pointer;
-      }
-      .more {
-        font-size: 10px;
-        padding: 0 3px;
-        background-color: blue;
-        color: white;
-      }
-    }
-    .tabcontext {
-      padding: 0 30px;
-      ul {
-        border-top: 1px solid black;
-      }
-    }
   }
-  ul {
+  .showlist {
+    position: relative;
+    top: -30px;
     list-style: none;
     li {
       border-bottom: 1px solid rgb(209, 205, 205);
       font-size: 12px;
       height: 30px;
       line-height: 30px;
-      a {
-        color: gray;
-      }
     }
   }
+}
+.el-tabs__nav {
+  .el-tabs__active-bar {
+    color: #4a5da3;
+  }
+}
+.el-tabs__item:hover {
+  font-weight: 700;
+}
+.checkmore {
+  position: relative;
+  top: -40px;
+  right: -82%;
+  font-size: 10px;
+  color: white;
+  background-color: #4a5da3;
+  width: 15%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
 }
 </style>

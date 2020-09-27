@@ -1,8 +1,8 @@
 <template>
   <el-carousel height="560px" :interval="2000" arrow="always">
     <el-carousel-item v-for="item in imglist" :key="item.id">
-      <!-- <img :src="item.imgURL" alt="" :title="item.imgtitle" /> -->
-      <img :src="item.imgurl" :title="item.title" alt="" />
+      <img :src="item.imgUri" alt="" :title="item.title" />
+      <!-- <img :src="item.imgurl" :title="item.title" alt="" /> -->
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -14,26 +14,26 @@ export default {
   data() {
     return {
       imglist: [
-        // {
-        //   id: '01',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '02',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '03',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '04',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
+        {
+          id: '01',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '02',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '03',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '04',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
       ],
     };
   },
@@ -45,7 +45,7 @@ export default {
     },
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   // created() {
   //   // 获取banner 图
