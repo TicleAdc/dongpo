@@ -2,11 +2,12 @@
   <div class="datalist">
     <div class="card" v-for="item in dataList" :key="item.index">
       <div class="img">
-        <!-- <img :src="item.backimgURL" alt="" /> -->
-        <img :src="item.img" alt="" />
+        <img :src="item.columnBigimg" alt="" />
+        <!-- <img :src="item.img" alt="" /> -->
       </div>
-      <!-- <div class="icon"><img :src="item.icon" alt="" /></div> -->
-      <div class="name">{{ item.description }}</div>
+      <div class="icon"><img :src="item.columnSmallimg" alt="" /></div>
+      <div class="name">{{ item.columnContext }}</div>
+      <!-- <div class="name">{{ item.name }}</div> -->
       <button><img src="../assets/img/home/CheckMore.png" alt="" /> 查看更多</button>
     </div>
   </div>
@@ -22,14 +23,14 @@ export default {
         // {
         //   id: '1',
         //   url: require('@/assets/img/home/physicalExamination2.png'),
-        //   icon: require('@/assets/img/home/register@2x.png'),
+        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
         //   name: '预约挂号',
         //   btn: '查看更多',
         // },
         // {
         //   id: '2',
         //   url: require('@/assets/img/home/ReportQuery2.png'),
-        //   icon: require('@/assets/img/home/momAndBaby@2x.png'),
+        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
         //   name: '报告查询',
         //   btn: '查看更多',
         // },
@@ -43,6 +44,7 @@ export default {
         // {
         //   id: '4',
         //   url: require('@/assets/img/home/physicalExamination2.png'),
+        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
         //   name: '体检查询',
         //   btn: '查看更多',
         // },
@@ -54,27 +56,10 @@ export default {
     this.getData();
   },
   methods: {
-    // getColumnData() {
-    //   let _this = this;
-    //   axios
-    //     .post('/api/getColumnList', {})
-    //     .then((res) => {
-    //       // console.log(res.ColumnData);
-    //       // console.log(res.data[0].columndata);
-    //       _this.dataList = res.ColumnData[0].columndata.list;
-    //       // 静态挂载图片,后续可删除使用后台返回内容
-    //       _this.dataList[0].img = require('@/assets/img/home/physicalExamination2.png');
-    //       _this.dataList[1].img = require('@/assets/img/home/ReportQuery2.png');
-    //       _this.dataList[2].img = require('@/assets/img/home/momAndBaby2.png');
-    //       _this.dataList[3].img = require('@/assets/img/home/physicalExamination2.png');
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
     getData() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=partmentcard`).then((res) => {
-        console.log(res);
+        // console.log(res);
+        this.dataList = res.frontmenuList;
       });
     },
   },
@@ -100,8 +85,16 @@ export default {
         height: 100%;
       }
     }
+    .icon {
+      position: relative;
+      top: -30px;
+      img {
+        width: 20%;
+        height: 20%;
+      }
+    }
     .name {
-      margin: 50px 0 20px 0;
+      margin: 30px 0 20px 0;
     }
     button {
       margin-bottom: 38px;

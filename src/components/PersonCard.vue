@@ -3,7 +3,7 @@
     <div class="personcard" v-for="item in professorlist" :key="item.id">
       <div class="describe">
         <div class="introduction">{{ '专家简介' }}</div>
-        <div class="detail">{{ item.contentsTitle }}</div>
+        <div class="detail">{{ item.contents }}</div>
       </div>
       <div class="img"><img :src="item.imguri" alt="" /></div>
     </div>
@@ -16,28 +16,7 @@ export default {
   name: 'introductioncard',
   data() {
     return {
-      professorlist: [
-        // {
-        //   id: '1',
-        //   detail: '123456789',
-        //   url: require('@/assets/img/professor/photo2.png'),
-        // },
-        // {
-        //   id: '2',
-        //   detail: '123456789',
-        //   url: require('@/assets/img/professor/photo2.png'),
-        // },
-        // {
-        //   id: '3',
-        //   detail: '123456789',
-        //   url: require('@/assets/img/professor/photo2.png'),
-        // },
-        // {
-        //   id: '4',
-        //   detail: '123456789',
-        //   url: require('@/assets/img/professor/photo2.png'),
-        // },
-      ],
+      professorlist: [],
     };
   },
   mounted() {
@@ -45,24 +24,11 @@ export default {
   },
   methods: {
     getProfessorLsit() {
-      // axios
-      //   .post('/api/getColumnList', {})
-      //   .then((res) => {
-      //     // console.log(res.ColumnData);
-      //     let classifyid = res.ColumnData[3].columndata.id;
-      //     // console.log(classifyid);
-      //     axios
-      //       .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
-      //       .then((data) => {
-      //         // console.log(data);
-      //         this.professorlist = data.page.list;
-      //       });
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=introductioncard`).then((res) => {
-        console.log(res);
+        let tagid = res.frontmenuList[0].columnData[0].id;
+        axios.post(`/api/getTagPageList?tagid=${tagid}&pageNo=1&pagesize=5`, {}).then((data) => {
+          console.log(data);
+        });
       });
     },
   },

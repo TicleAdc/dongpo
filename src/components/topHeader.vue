@@ -341,4 +341,7 @@ export default {
 .el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
   width: 100%;
 }
+.el-submenu__icon-arrow::before {
+  display: none;
+}
 </style>

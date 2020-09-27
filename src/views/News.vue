@@ -10,7 +10,7 @@
       <div slot="theme">新闻动态</div>
       <div slot="childtabs">
         <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.tagname }}</a>
+          <router-link :to="item.url">{{ item.tagname }}</router-link>
         </div>
       </div>
     </Title>

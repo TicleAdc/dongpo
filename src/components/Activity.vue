@@ -1,89 +1,152 @@
 <template>
   <div class="activity">
     <div class="activeImglist">
-      <div
-        class="active"
-        v-for="item in datalist"
-        :key="item.index"
-        @click="handleClick(item.index)"
-      >
-        <!-- <img :src="item.imgURL" alt="" /> -->
-        <img :src="item.img" alt="" />
-        <!-- <div class="contents">{{ item.imgdescription }}</div> -->
+      <div class="active" @click="showfirst">
+        <img :src="imglist[0]" alt="" />
+      </div>
+      <div class="active" @click="showsecond">
+        <img :src="imglist[1]" alt="" />
+      </div>
+      <div class="active" @click="showthird">
+        <img :src="imglist[2]" alt="" />
+      </div>
+      <div class="active" @click="showfourth">
+        <img :src="imglist[3]" alt="" />
+      </div>
+      <div class="more">
+        <div class="little"></div>
+        <div class="little"></div>
+        <div class="little"></div>
       </div>
     </div>
-    <div class="showtext">{{ showtext }}</div>
+    <div class="showtext" v-if="first">
+      <div class="triple"></div>
+      <div class="mainbox">{{ this.contexts[0] }}</div>
+    </div>
+    <div class="showtext" v-if="second">
+      <div class="triple"></div>
+      <div class="mainbox">{{ this.contexts[1] }}</div>
+    </div>
+    <div class="showtext" v-if="third">
+      <div class="triple"></div>
+      <div class="mainbox">{{ this.contexts[2] }}</div>
+    </div>
+    <div class="showtext" v-if="fourth">
+      <div class="triple"></div>
+      <div class="mainbox">{{ this.contexts[3] }}</div>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from '@/api/request.js';
 export default {
-  name: 'itemactivity',
   data() {
     return {
-      datalist: [],
-      showtext: '',
+      imglist: [],
+      contexts: [],
+      first: true,
+      second: false,
+      third: false,
+      fourth: false,
     };
   },
   mounted() {
     this.getData();
   },
-  created() {
-    axios.post('/api/getColumnList', {}).then((data) => {
-      this.showtext = data.ColumnData[5].columndata.list[0].imgdescription;
-    });
-  },
   methods: {
-    getData() {
-      // axios.post('/api/getColumnList', {}).then((res) => {
-      //   this.datalist = res.ColumnData[5].columndata.list;
-      //   // 静态填充图片，从后台获取数据后可删除
-      //   this.datalist[0].img = require('@/assets/img/home/thematicActivities1@2x.png');
-      //   this.datalist[1].img = require('@/assets/img/home/thematicActivities2@2x.png');
-      //   this.datalist[2].img = require('@/assets/img/home/thematicActivities3@2x.png');
-      //   this.datalist[3].img = require('@/assets/img/home/thematicActivities4@2x.png');
-      //   // console.log(this.datalist);
-      // });
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=itemactivity`).then((res) => {
-        console.log(res);
-      });
+    showfirst() {
+      this.first = true;
+      this.second = false;
+      this.third = false;
+      this.fourth = false;
     },
-    handleClick(id) {
-      axios.post('/api/getColumnList', {}).then((res) => {
-        let data = res.ColumnData[5].columndata.list;
-        for (let i = 0; i < data.length; i++) {
-          if (id == data[i].index) {
-            this.showtext = data[i].imgdescription;
-            // console.log(this.showtext);
-          }
-          break;
-        }
+    showsecond() {
+      this.first = false;
+      this.second = true;
+      this.third = false;
+      this.fourth = false;
+    },
+    showthird() {
+      this.first = false;
+      this.second = false;
+      this.third = true;
+      this.fourth = false;
+    },
+    showfourth() {
+      this.first = false;
+      this.second = false;
+      this.third = false;
+      this.fourth = true;
+    },
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=itemactivity`, {}).then((res) => {
+        console.log(res);
+        let list = res.frontmenuList;
+        list.forEach((v) => {
+          this.imglist.push(v.columnBigimg);
+          this.contexts.push(v.columnContext);
+        });
+        console.log(this.imglist);
       });
     },
   },
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .activeImglist {
-  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   .active {
     margin: 5px;
-    cursor: pointer;
-
     img {
-      width: 100%;
-      height: 100%;
+      cursor: pointer;
     }
   }
 }
 .showtext {
-  margin: 0 30px;
   padding: 10px 0 10px 20px;
-  border: 1px solid black;
   border-radius: 10px;
+}
+.triple {
+  position: relative;
+  left: 10%;
+  bottom: 20px;
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid transparent;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid ghostwhite;
+}
+.mainbox {
+  width: 90%;
+  position: relative;
+  bottom: 20px;
+  left: 30px;
+  padding: 10px 0 10px 20px;
+  // border: 1px solid black;
+  border-radius: 10px;
+  background-color: ghostwhite;
+}
+.more {
+  padding-top: 5%;
+  width: 10%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(167, 194, 225, 1);
+  .little {
+    // top: 50px;
+    left: 34%;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    background-color: white;
+    border: 8px solid white;
+  }
 }
 </style>
