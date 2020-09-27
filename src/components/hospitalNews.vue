@@ -3,7 +3,7 @@
     <ul>
       <li v-for="item in newslist" :key="item.id">
         <i class="el-icon-caret-left"></i
-        ><span @click="jumpToDetails(item.index)">{{ item.contentsTitle }}</span>
+        ><span @click="jumpToDetails(item.id)">{{ item.contentsTitle }}</span>
         <span class="time">{{ item.time }}</span>
       </li>
     </ul>
@@ -35,10 +35,12 @@ export default {
       axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
         console.log(index);
         this.newslist = res.page.list;
-        this.newslist.forEach((item) => {
-          if (item == index) {
-            this.$router.push({ name: '详情', params: { detail: this.newslist[index] } });
+        this.newslist.forEach((v) => {
+          if (index == v.id) {
+            // console.log(this.newslist);
+            this.$router.push({ name: '详情', query: { ...v } });
           }
+          // console.log(i);
         });
       });
     },

@@ -1,8 +1,9 @@
 <template>
   <div class="home">
-    <ul>
-      <li v-for="item in showtext" :key="item.index">{{ item.contentsTitle }}</li>
-    </ul>
+    <!-- <p>{{ showtext.title }}</p>
+    <p>{{ showtext.data }}</p> -->
+    <p class="title">{{ this.$route.query.contentsTitle }}</p>
+    <p class="content">{{ this.$route.query.contentsdata }}</p>
   </div>
 </template>
 
@@ -10,11 +11,16 @@
 export default {
   data() {
     return {
-      showtext: [],
+      showtext: {
+        title: '',
+        data: '',
+      },
     };
   },
   created() {
-    this.showtext = this.$route.params.detail;
+    // this.showtext = this.$route.params.detail;
+    // console.log(this.showtext);
+    console.log(this.$route.query);
   },
 };
 </script>
@@ -22,5 +28,13 @@ export default {
 <style lang="less" scpoed>
 .home {
   background-color: #fff;
+  padding: 30px;
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+  .content {
+    padding: 30px;
+  }
 }
 </style>
