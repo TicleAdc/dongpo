@@ -19,6 +19,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'itemactivity',
   data() {
     return {
       datalist: [],
@@ -35,14 +36,17 @@ export default {
   },
   methods: {
     getData() {
-      axios.post('/api/getColumnList', {}).then((res) => {
-        this.datalist = res.ColumnData[5].columndata.list;
-        // 静态填充图片，从后台获取数据后可删除
-        this.datalist[0].img = require('@/assets/img/home/thematicActivities1@2x.png');
-        this.datalist[1].img = require('@/assets/img/home/thematicActivities2@2x.png');
-        this.datalist[2].img = require('@/assets/img/home/thematicActivities3@2x.png');
-        this.datalist[3].img = require('@/assets/img/home/thematicActivities4@2x.png');
-        // console.log(this.datalist);
+      // axios.post('/api/getColumnList', {}).then((res) => {
+      //   this.datalist = res.ColumnData[5].columndata.list;
+      //   // 静态填充图片，从后台获取数据后可删除
+      //   this.datalist[0].img = require('@/assets/img/home/thematicActivities1@2x.png');
+      //   this.datalist[1].img = require('@/assets/img/home/thematicActivities2@2x.png');
+      //   this.datalist[2].img = require('@/assets/img/home/thematicActivities3@2x.png');
+      //   this.datalist[3].img = require('@/assets/img/home/thematicActivities4@2x.png');
+      //   // console.log(this.datalist);
+      // });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=itemactivity`).then((res) => {
+        console.log(res);
       });
     },
     handleClick(id) {

@@ -13,6 +13,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'introductioncard',
   data() {
     return {
       professorlist: [
@@ -44,22 +45,25 @@ export default {
   },
   methods: {
     getProfessorLsit() {
-      axios
-        .post('/api/getColumnList', {})
-        .then((res) => {
-          // console.log(res.ColumnData);
-          let classifyid = res.ColumnData[3].columndata.id;
-          // console.log(classifyid);
-          axios
-            .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
-            .then((data) => {
-              // console.log(data);
-              this.professorlist = data.page.list;
-            });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // axios
+      //   .post('/api/getColumnList', {})
+      //   .then((res) => {
+      //     // console.log(res.ColumnData);
+      //     let classifyid = res.ColumnData[3].columndata.id;
+      //     // console.log(classifyid);
+      //     axios
+      //       .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
+      //       .then((data) => {
+      //         // console.log(data);
+      //         this.professorlist = data.page.list;
+      //       });
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=introductioncard`).then((res) => {
+        console.log(res);
+      });
     },
   },
 };

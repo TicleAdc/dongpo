@@ -29,6 +29,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'newstab',
   data() {
     return {
       imglist: [
@@ -69,14 +70,17 @@ export default {
     },
     // 获取tab内容，进行数据填充
     getColumnData() {
-      axios
-        .post('/api/getColumnList', {})
-        .then((res) => {
-          this.tabs = res.ColumnData[1].columndata.list;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // axios
+      //   .post('/api/getColumnList', {})
+      //   .then((res) => {
+      //     this.tabs = res.ColumnData[1].columndata.list;
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=newstab`).then((res) => {
+        console.log(res);
+      });
     },
     // 获取轮播图内容进行填充
     getBannerList() {

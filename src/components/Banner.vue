@@ -10,6 +10,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'topbanner',
   data() {
     return {
       imglist: [
@@ -36,16 +37,24 @@ export default {
       ],
     };
   },
-  methods: {},
-  mounted() {},
-  created() {
-    // 获取banner 图
-    axios.post('/api/getBannerList').then((res) => {
-      this.imglist = res.bannerlist[0].list;
-      this.imglist.push(res.bannerlist[1].list[0]);
-      // console.log(this.imglist);
-    });
+  methods: {
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=topbanner`).then((res) => {
+        console.log(res);
+      });
+    },
   },
+  mounted() {
+    this.getData();
+  },
+  // created() {
+  //   // 获取banner 图
+  //   axios.post('/api/getBannerList').then((res) => {
+  //     this.imglist = res.bannerlist[0].list;
+  //     this.imglist.push(res.bannerlist[1].list[0]);
+  //     // console.log(this.imglist);
+  //   });
+  // },
 };
 </script>
 

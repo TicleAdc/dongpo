@@ -20,6 +20,7 @@
 <script>
 import axios from '@/api/request.js';
 export default {
+  name: 'healthscience',
   data() {
     return {
       healthcardlist: [
@@ -97,26 +98,29 @@ export default {
   },
   methods: {
     getCardList() {
-      axios.post('/api/getColumnList', {}).then((res) => {
-        let classifyid = res.ColumnData[4].columndata.id;
-        axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
-          // console.log(classifyid);
-          // console.log(data.data);
-          let list = data.data;
-          list.forEach((item) => {
-            axios
-              .post(`/api/getTagPageList?tagid=${item.id}&pageNo=1&pagesize=5`)
-              .then((response) => {
-                // console.log(response);
-                this.healthcardlist.push(response.page.list);
-                this.healthcardlist[0].img = require('@/assets/img/home/healthLeading1@2x.png');
-                this.healthcardlist[1].img = require('@/assets/img/home/healthLeading2@2x.png');
-                this.healthcardlist[2].img = require('@/assets/img/home/healthLeading3@2x.png');
-              });
-          });
-        });
-      });
+      // axios.post('/api/getColumnList', {}).then((res) => {
+      //   let classifyid = res.ColumnData[4].columndata.id;
+      //   axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
+      //     // console.log(classifyid);
+      //     // console.log(data.data);
+      //     let list = data.data;
+      //     list.forEach((item) => {
+      //       axios
+      //         .post(`/api/getTagPageList?tagid=${item.id}&pageNo=1&pagesize=5`)
+      //         .then((response) => {
+      //           // console.log(response);
+      //           this.healthcardlist.push(response.page.list);
+      //           this.healthcardlist[0].img = require('@/assets/img/home/healthLeading1@2x.png');
+      //           this.healthcardlist[1].img = require('@/assets/img/home/healthLeading2@2x.png');
+      //           this.healthcardlist[2].img = require('@/assets/img/home/healthLeading3@2x.png');
+      //         });
+      //     });
+      //   });
+      // });
       // console.log(this.healthcardlist);
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
+        console.log(res);
+      });
     },
   },
 };
