@@ -7,21 +7,24 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="tablist">
-      <!-- @tab-click="handleClick" -->
-      <div class="tabsin">
-        <div class="tab" v-for="item in tabs" :key="item.index" @click="handleClick(item)">
-          {{ item.columnContext }}
-        </div>
-        <!-- <span class="more">查看更多</span> -->
-      </div>
-      <div class="tabcontext">
-        <ul>
-          <li v-for="data in tabcontents" :key="data.id">
-            <a>{{ data.columnContext }}</a>
-          </li>
-        </ul>
-      </div>
+    <div class="news-container">
+      <ul class="tab-list">
+        <li v-for="tab in tabList" :key="tab.id" :class="tab.active" @click="handleClick(tab)">
+          {{ tab.name }}
+        </li>
+        <li class="tab-more"><span>查看更多</span></li>
+      </ul>
+      <ul class="news-list">
+        <li
+          v-for="item in tabcontents"
+          :key="item.id"
+          :class="item.visited"
+          @click="goDetail(item)"
+        >
+          <span class="time">{{ item.time }}</span>
+          <span class="title">{{ item.title }}</span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -98,7 +101,7 @@ export default {
     font-size: 16px;
     display: flex;
     text-align: center;
-    border-bottom: 1px solid #4d4d4d;
+    border-bottom: 1px solid #dfe1e6;
     padding-bottom: 10px;
     li {
       min-width: 5.5em;
@@ -148,7 +151,7 @@ export default {
     line-height: 32px;
     position: relative;
     cursor: pointer;
-    border-bottom: 1px solid #4d4d4d;
+    border-bottom: 1px solid #dfe1e6;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

@@ -28,7 +28,7 @@
       </column>
     </div>
     <div class="workImg">
-      <img :src="bigImg" alt="" />
+      <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
     </div>
   </div>
 </template>
@@ -115,6 +115,7 @@ export default {
   }
   .context {
     padding-top: 10px;
+    font-size: 14px;
     ul {
       list-style: none;
       border-top: 1px solid rgba(173, 170, 170, 0.863);

@@ -52,7 +52,7 @@
 <script>
 import sidebarItem from '@/components/sidebarItem';
 import index from '@/views/Index';
-import axios from 'axios';
+import request from '../api/request';
 
 export default {
   computed: {
@@ -68,8 +68,8 @@ export default {
       this.activeIndex = this.$route.path;
     },
     getMenuList() {
-      axios
-        .get('/api/getTreeList')
+      request
+        .post('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
           this.$store.commit('setMenuData', this.routeData);
@@ -111,7 +111,7 @@ export default {
         if (tags[i].nodeType == 1) {
           if (tags[i].getAttribute('class') == data) {
             classobj[classint] = tags[i];
-            classobj[classint].style.width = 73 / (this.$router.options.routes.length - 1) + '%';
+            classobj[classint].style.width = 80 / (this.$router.options.routes.length - 1) + '%';
             classint++;
           }
         }

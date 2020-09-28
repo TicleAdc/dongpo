@@ -286,7 +286,7 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          margin-left: 15%;
+          margin-left: 34%;
           img {
             width: 69.6px;
             height: 69.6px;
@@ -301,7 +301,7 @@ export default {
             &:first-child {
               margin-bottom: 2px;
             }
-            margin-left: 15%;
+            margin-left: 34%;
           }
         }
       }
@@ -345,8 +345,6 @@ export default {
           align-items: center;
           margin-left: 10%;
           .circle {
-            width: 15px;
-            height: 15px;
             border-radius: 50%;
             background-color: black;
             color: white;
@@ -409,26 +407,31 @@ export default {
       .one {
         flex: 0.11;
         border: solid rgba(0, 0, 0, 1);
+        border-right: 0;
         border-width: 0 0.5px 0.5px 0;
       }
       .two {
         flex: 0.32;
         border: solid rgba(0, 0, 0, 1);
+        border-right: 0;
         border-width: 0 0.5px 0.5px 0;
       }
       .three {
         flex: 0.11;
         border: solid rgba(0, 0, 0, 1);
+        border-right: 0;
         border-width: 0 0.5px 0.5px 0;
       }
       .four {
         flex: 0.11;
         border: solid rgba(0, 0, 0, 1);
+        border-right: 0;
         border-width: 0 0.5px 0.5px 0;
       }
       .five {
         flex: 0.45;
         border: solid rgba(0, 0, 0, 1);
+        border-right: 0;
         border-width: 0 0.5px 0 0;
       }
     }
