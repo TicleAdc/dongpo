@@ -1,9 +1,45 @@
 <template>
-  <div>1234536</div>
+  <div class="container">
+    <honorwall
+      v-for="(item, index) in person"
+      :key="index"
+      :img="item.columnBigimg"
+      :title="item.columnContext"
+    ></honorwall>
+  </div>
 </template>
 
 <script>
-export default {};
+import axios from '@/api/request.js';
+import honorwall from '@/components/common/honorwall';
+export default {
+  data() {
+    return {
+      person: [],
+    };
+  },
+  components: {
+    honorwall,
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=YYRY`).then((res) => {
+        console.log(res);
+        this.person = res.frontmenuList;
+      });
+    },
+  },
+};
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.container {
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

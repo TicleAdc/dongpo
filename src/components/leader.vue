@@ -1,26 +1,26 @@
 <template>
   <div class="container">
-    <div class="cardlist">
-      <div class="card" v-for="item in datalist" :key="item.index">
-        <div class="img">
-          <img :src="item.columnBigimg" alt="" />
-        </div>
-        <div class="info">
-          <div class="title">{{ item.columnTitle }}</div>
-          <div class="intro" v-html="item.columnContext"></div>
-        </div>
-      </div>
-    </div>
+    <person
+      v-for="(item, index) in person"
+      :key="index"
+      :img="item.columnBigimg"
+      :name="item.columnTitle"
+      :content="item.columnContext"
+    ></person>
   </div>
 </template>
 
 <script>
 import axios from '@/api/request.js';
+import person from '@/components/common/personIntroduction';
 export default {
   data() {
     return {
-      datalist: [],
+      person: [],
     };
+  },
+  components: {
+    person,
   },
   mounted() {
     this.getData();
@@ -28,8 +28,8 @@ export default {
   methods: {
     getData() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=LDTD`).then((res) => {
-        console.log(res);
-        this.datalist = res.frontmenuList;
+        // console.log(res);
+        this.person = res.frontmenuList;
       });
     },
   },
