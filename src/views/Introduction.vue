@@ -2,7 +2,7 @@
   <div class="container">
     <div class="top">
       <div class="vedio"><img :src="vedio" alt="" /></div>
-      <div class="topcontext">12345647897/87546546455646</div>
+      <div class="topcontext">{{}}</div>
     </div>
     <div class="mid">
       <div class="shownumber" v-for="item in numberList" :key="item.index">

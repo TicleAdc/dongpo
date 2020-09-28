@@ -55,7 +55,7 @@ export default {
       });
     },
     changeComponent(name) {
-      // console.log(name);
+      console.log(name);
       switch (name) {
         case '医院介绍':
           this.showComponent = 'introduction';
