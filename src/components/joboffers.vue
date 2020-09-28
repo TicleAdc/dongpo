@@ -1,15 +1,59 @@
 <!--
  * @Author: Spring Breeze
- * @Date: 2020-09-28 09:14:48
+ * @Date: 2020-09-28 09:13:30
  * @FilePath: /dongpo/src/components/joboffers.vue
- * @LastEditTime: 2020-09-28 09:14:50
+ * @LastEditTime: 2020-09-28 15:25:39
+ * @description 医院公告组件
 -->
 <template>
-  <div></div>
+  <div class="all">
+    <msg-list
+      title="招聘信息"
+      :list="list"
+      :total="total"
+      @changeMsgListPage="getDataByPage"
+    ></msg-list>
+    <div style="padding-bottom: 330px"></div>
+  </div>
 </template>
 
 <script>
-export default {};
+import msgList from './common/msgList';
+export default {
+  components: {
+    msgList,
+  },
+  data() {
+    return {
+      list: [],
+      // 数据条数
+      total: 105,
+    };
+  },
+  methods: {
+    getDataByPage(i) {
+      // 通过页码改变取数据
+      console.log(i);
+    },
+  },
+  created() {
+    // 请求数据
+    this.list = [
+      {
+        content: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+        time: '2020-2-10',
+      },
+    ];
+  },
+};
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.all {
+  background-color: #fff;
+}
+</style>
