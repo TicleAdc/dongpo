@@ -35,7 +35,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      // required: true,
     },
     list: {
       type: Array,
@@ -102,7 +102,8 @@ export default {
   }
   .page {
     margin-top: 247px;
-    margin-bottom: 38px;
+    // margin-bottom: 38px;
+    padding-bottom: 38px;
     display: flex;
     justify-content: center;
   }

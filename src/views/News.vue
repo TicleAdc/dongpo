@@ -6,7 +6,7 @@
 -->
 <template>
   <div class="announcement">
-    <main-component currentRoute="/overview" v-model="showComponent">
+    <main-component currentRoute="/news" v-model="showComponent" title="新闻动态">
       <template #component>
         <component :is="showComponent"></component>
       </template>
