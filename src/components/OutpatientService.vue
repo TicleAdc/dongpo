@@ -72,8 +72,7 @@ export default {
         }
         img {
           position: relative;
-          width: 50%;
-          height: 90%;
+          width: 48%;
           top: -51px;
           right: -78%;
         }
@@ -84,7 +83,7 @@ export default {
     margin-top: 10px;
     width: 68%;
     height: 240px;
-    border: 1px solid black;
+    // border: 1px solid black;
     img {
       width: 100%;
       height: 100%;
