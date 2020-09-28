@@ -98,22 +98,22 @@ export default {
   border: 1px solid #4a5da3;
 }
 .more {
-  padding-top: 5%;
+  padding-top: 6%;
   width: 10%;
-  border-radius: 15px;
+  border-radius: 22px;
   display: flex;
   flex-direction: column;
   background-color: rgba(167, 194, 225, 1);
   .little {
-    // top: 50px;
-    left: 34%;
-    margin-bottom: 30px;
+    left: 41%;
+    text-align: center;
+    margin-bottom: 10px;
     position: relative;
     border-radius: 50%;
     width: 0;
     height: 0;
     background-color: white;
-    border: 8px solid white;
+    border: 6px solid white;
   }
 }
 .brightness {
