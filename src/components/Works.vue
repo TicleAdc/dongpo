@@ -20,7 +20,7 @@
           <div class="context">
             <ul>
               <li v-for="item in contextlist" :key="item.id">
-                <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
+                <i class="el-icon-caret-left"></i>{{ item.content }}
               </li>
             </ul>
           </div>
@@ -40,7 +40,20 @@ export default {
   name: 'partywork',
   data() {
     return {
-      contextlist: [],
+      contextlist: [
+        {
+          id: '01',
+          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        },
+        {
+          id: '02',
+          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        },
+        {
+          id: '03',
+          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        },
+      ],
       bigImg: '',
     };
   },
@@ -49,7 +62,7 @@ export default {
   },
   mounted() {
     // this.getTime();
-    this.getData();
+    // this.getData();
   },
   methods: {
     getTime() {
@@ -88,6 +101,7 @@ export default {
     justify-content: space-between;
     .inImg {
       width: 40%;
+      cursor: pointer;
     }
     .topic {
       padding: 0 3%;

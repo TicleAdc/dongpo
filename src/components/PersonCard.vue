@@ -5,7 +5,7 @@
         <div class="introduction">{{ '专家简介' }}</div>
         <div class="detail">{{ item.contents }}</div>
       </div>
-      <div class="img"><img :src="item.imguri" alt="" /></div>
+      <div class="img"><img :src="item.url" alt="" /></div>
     </div>
   </div>
 </template>
@@ -16,11 +16,32 @@ export default {
   name: 'introductioncard',
   data() {
     return {
-      professorlist: [],
+      professorlist: [
+        {
+          id: '1',
+          detail: '123456789',
+          url: require('@/assets/img/professor/photo2.png'),
+        },
+        {
+          id: '2',
+          detail: '123456789',
+          url: require('@/assets/img/professor/photo2.png'),
+        },
+        {
+          id: '3',
+          detail: '123456789',
+          url: require('@/assets/img/professor/photo2.png'),
+        },
+        {
+          id: '4',
+          detail: '123456789',
+          url: require('@/assets/img/professor/photo2.png'),
+        },
+      ],
     };
   },
   mounted() {
-    this.getProfessorLsit();
+    // this.getProfessorLsit();
   },
   methods: {
     getProfessorLsit() {

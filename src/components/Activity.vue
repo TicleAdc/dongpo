@@ -1,17 +1,18 @@
 <template>
   <div class="activity">
     <div class="activeImglist">
-      <div class="active" @click="showfirst">
-        <img :src="imglist[0]" alt="" />
+      <div class="active" v-bind:class="show != '1' ? 'brightness' : ''" @click="showBox('1')">
+        <div></div>
+        <img src="@/assets/img/home/thematicActivities4@2x.png" alt="" />
       </div>
-      <div class="active" @click="showsecond">
-        <img :src="imglist[1]" alt="" />
+      <div class="active" v-bind:class="show != '2' ? 'brightness' : ''" @click="showBox('2')">
+        <img src="@/assets/img/home/thematicActivities2@2x.png" alt="" />
       </div>
-      <div class="active" @click="showthird">
-        <img :src="imglist[2]" alt="" />
+      <div class="active" v-bind:class="show != '3' ? 'brightness' : ''" @click="showBox('3')">
+        <img src="@/assets/img/home/thematicActivities3@2x.png" alt="" />
       </div>
-      <div class="active" @click="showfourth">
-        <img :src="imglist[3]" alt="" />
+      <div class="active" v-bind:class="show != '4' ? 'brightness' : ''" @click="showBox('4')">
+        <img src="@/assets/img/home/thematicActivities4@2x.png" alt="" />
       </div>
       <div class="more">
         <div class="little"></div>
@@ -19,76 +20,35 @@
         <div class="little"></div>
       </div>
     </div>
-    <div class="showtext" v-if="first">
-      <div class="triple"></div>
-      <div class="mainbox">{{ this.contexts[0] }}</div>
+    <div class="showtext" v-if="show == '1'">
+      <div class="triple" style="left: 10%"></div>
+      <div class="mainbox">第一张图片对应的文字</div>
     </div>
-    <div class="showtext" v-if="second">
-      <div class="triple"></div>
-      <div class="mainbox">{{ this.contexts[1] }}</div>
+    <div class="showtext" v-if="show == '2'">
+      <div class="triple" style="left: 34%"></div>
+      <div class="mainbox">第二张图片对应的文字</div>
     </div>
-    <div class="showtext" v-if="third">
-      <div class="triple"></div>
-      <div class="mainbox">{{ this.contexts[2] }}</div>
+    <div class="showtext" v-if="show == '3'">
+      <div class="triple" style="left: 58%"></div>
+      <div class="mainbox">第三张图片对应的文字</div>
     </div>
-    <div class="showtext" v-if="fourth">
-      <div class="triple"></div>
-      <div class="mainbox">{{ this.contexts[3] }}</div>
+    <div class="showtext" v-if="show == '4'">
+      <div class="triple" style="left: 82%"></div>
+      <div class="mainbox">第四张图片对应的文字</div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from '@/api/request.js';
 export default {
   data() {
     return {
-      imglist: [],
-      contexts: [],
-      first: true,
-      second: false,
-      third: false,
-      fourth: false,
+      show: '1',
     };
   },
-  mounted() {
-    this.getData();
-  },
   methods: {
-    showfirst() {
-      this.first = true;
-      this.second = false;
-      this.third = false;
-      this.fourth = false;
-    },
-    showsecond() {
-      this.first = false;
-      this.second = true;
-      this.third = false;
-      this.fourth = false;
-    },
-    showthird() {
-      this.first = false;
-      this.second = false;
-      this.third = true;
-      this.fourth = false;
-    },
-    showfourth() {
-      this.first = false;
-      this.second = false;
-      this.third = false;
-      this.fourth = true;
-    },
-    getData() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=itemactivity`, {}).then((res) => {
-        console.log(res);
-        let list = res.frontmenuList;
-        list.forEach((v) => {
-          this.imglist.push(v.columnBigimg);
-          this.contexts.push(v.columnContext);
-        });
-        console.log(this.imglist);
-      });
+    showBox(data) {
+      this.show = data;
     },
   },
 };
@@ -96,6 +56,7 @@ export default {
 
 <style lang="less">
 .activeImglist {
+  font-size: 0;
   display: flex;
   justify-content: space-between;
   .active {
@@ -111,14 +72,19 @@ export default {
 }
 .triple {
   position: relative;
-  left: 10%;
   bottom: 20px;
-  width: 0px;
-  height: 0px;
-  border-top: 20px solid transparent;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 30px solid ghostwhite;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4a5da3;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  margin-bottom: -10px;
+  margin-top: 15px;
+  z-index: 2;
+  background-color: #ffffff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(Rotation=0.45);
 }
 .mainbox {
   width: 90%;
@@ -128,25 +94,29 @@ export default {
   padding: 10px 0 10px 20px;
   // border: 1px solid black;
   border-radius: 10px;
-  background-color: ghostwhite;
+  background-color: #ffffff;
+  border: 1px solid #4a5da3;
 }
 .more {
-  padding-top: 5%;
+  padding-top: 6%;
   width: 10%;
-  border-radius: 15px;
+  border-radius: 22px;
   display: flex;
   flex-direction: column;
   background-color: rgba(167, 194, 225, 1);
   .little {
-    // top: 50px;
-    left: 34%;
-    margin-bottom: 30px;
+    left: 41%;
+    text-align: center;
+    margin-bottom: 10px;
     position: relative;
     border-radius: 50%;
     width: 0;
     height: 0;
     background-color: white;
-    border: 8px solid white;
+    border: 6px solid white;
   }
+}
+.brightness {
+  -webkit-filter: brightness(70%);
 }
 </style>

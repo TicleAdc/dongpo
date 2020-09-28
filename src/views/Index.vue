@@ -13,7 +13,7 @@
 <script>
 // 导入组件必须和路径名字一模一样
 import overview from '@/views/Overview.vue';
-import home from '@/views/Home.vue';
+import test from '@/views/Test.vue';
 import medicalservice from '@/views/MedicalService';
 import healthcare from '@/views/HealthCare';
 import news from '@/views/News';
@@ -45,11 +45,12 @@ import recruitmentInformation from '@/components/recruitmentInformation';
 import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
+import yufangjiezhong from '@/views/yufangjiezhong';
 
 export default {
   components: {
     overview,
-    home,
+    test,
     medicalservice,
     healthcare,
     news,
@@ -80,6 +81,7 @@ export default {
     rumorRefutation,
     healthtreasure,
     dongpoEmotion,
+    yufangjiezhong
   },
   props: {
     showComponentName: {

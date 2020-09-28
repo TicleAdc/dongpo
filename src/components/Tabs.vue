@@ -27,94 +27,153 @@
 </template>
 
 <script>
-import axios from '@/api/request.js';
 export default {
-  name: 'newstab',
+  name: 'tabs',
+  props: {
+    tabList: Array,
+  },
   data() {
     return {
-      imglist: [],
-      tabs: [],
+      imglist: [
+        {
+          id: '1',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/news.png'),
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/news.png'),
+        },
+      ],
+      activeName: '',
       tabcontents: [],
+      currentTab: null,
     };
   },
-  mounted() {
-    // this.handleClick();
-    this.getColumnData();
+  created() {
+    this.handleClick();
   },
   methods: {
-    // 控制tab切换
     handleClick(tab) {
-      // console.log(tab.columnData[0].id);
-      axios
-        .post(`/api/getTagPageList?tagid=${tab.columnData[0].id}&pageNo=1&pagesize=5`, {})
-        .then((res) => {
-          this.tabcontents = res.page.list;
-          console.log(this.tabcontents);
-        });
+      if (this.currentTab) {
+        this.currentTab.active = '';
+      }
+      this.myLlist = this.tabList;
+      this.currentTab = tab || this.tabList[0];
+      this.currentTab.active = 'active';
+      this.tabcontents = this.currentTab.list;
     },
-    // 获取tab内容，进行数据填充
-    getColumnData() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=newstab`).then((res) => {
-        console.log(res);
-        this.imglist.push(res.frontmenuList[0]);
-        this.imglist.push(res.frontmenuList[2]);
-        this.imglist.push(res.frontmenuList[4]);
-        this.tabs.push(res.frontmenuList[1]);
-        this.tabs.push(res.frontmenuList[3]);
-        this.tabs.push(res.frontmenuList[5]);
-        this.tabs.push(res.frontmenuList[6]);
-        // console.log(this.tabs);
-      });
+    goDetail(item) {
+      console.log(item);
+      item.visited = 'visited';
+    },
+    more() {
+      this.$emit('more');
+    },
+  },
+  watch: {
+    tabList() {
+      this.handleClick();
     },
   },
 };
 </script>
-
 <style lang="less" scoped>
 .tabs {
   display: flex;
-  padding: 0 30px 20px 30px;
+  padding: 20px 60px;
   background-color: white;
-  vertical-align: top;
   .banner {
     width: 50%;
     margin-right: 30px;
   }
-  .tablist {
+  .news-container {
     width: 50%;
-    .tabsin {
-      padding: 0 30px;
-      display: flex;
-      .tab {
-        font-size: 14px;
-        flex: 1;
-        cursor: pointer;
-      }
-      .more {
-        font-size: 10px;
-        padding: 0 3px;
-        background-color: blue;
-        color: white;
-      }
+  }
+  .tab-list {
+    color: #4a5da3;
+    font-size: 16px;
+    display: flex;
+    text-align: center;
+    border-bottom: 1px solid #4d4d4d;
+    padding-bottom: 10px;
+    li {
+      min-width: 5.5em;
+      cursor: pointer;
     }
-    .tabcontext {
-      padding: 0 30px;
-      ul {
-        border-top: 1px solid black;
-      }
+    li:link,
+    li:active,
+    li:visited {
+      color: #4a5da3;
+    }
+    li.active,
+    li:hover {
+      font-weight: 600;
+    }
+    li::after {
+      content: '|';
+      position: absolute;
+      color: #b1b1b1;
+      margin-left: 0.7em;
+      font-weight: 200;
+    }
+    .tab-more {
+      flex: 1;
+      text-align: right;
+    }
+    .tab-more span {
+      background-color: #4a5da3;
+      font-size: 12px;
+      color: #fff;
+      display: inline-block;
+      padding: 0 10px;
+      border-radius: 4px;
+      height: 24px;
+      line-height: 24px;
+    }
+    li:nth-last-child(2)::after,
+    .tab-more::after {
+      content: '';
     }
   }
-  ul {
-    list-style: none;
-    li {
-      border-bottom: 1px solid rgb(209, 205, 205);
-      font-size: 12px;
-      height: 30px;
-      line-height: 30px;
-      a {
-        color: gray;
-      }
+}
+.news-list {
+  font-size: 12px;
+  color: #333;
+  li {
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #4d4d4d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 3em;
+    span {
+      padding: 0 1em;
     }
+  }
+  li.visited {
+    opacity: 0.6;
+  }
+  li:hover {
+    color: #4a5da3;
+  }
+  li::after {
+    content: '';
+    display: block;
+    font-size: 0;
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    border: 2px solid #000;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    transform: rotate(-45deg);
   }
 }
 </style>

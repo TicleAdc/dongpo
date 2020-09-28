@@ -18,25 +18,93 @@
 </template>
 
 <script>
-import axios from '@/api/request.js';
 export default {
-  name: 'healthscience',
   data() {
     return {
-      healthcardlist: [],
-      contents: [],
+  //     healthcardlist: [],
+  //     contents: [],
+  //   };
+  // },
+  // mounted() {
+  //   this.getCardList();
+  // },
+  // methods: {
+  //   getCardList() {
+  //     axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
+  //       console.log(res);
+  //       this.healthcardlist = res.frontmenuList;
+  //     });
+  //   },
+  // },
+      healthcardlist: [
+        {
+          id: '1',
+          img: require('@/assets/img/home/healthLeading1@2x.png'),
+          list: [
+            {
+              id: '01',
+              content: '刚过七夕，你又开始为造人发愁？',
+            },
+            {
+              id: '02',
+              content: '上班久坐，下班葛优躺，全身很受伤！',
+            },
+            {
+              id: '03',
+              content: '吹空调吹成了面瘫',
+            },
+            {
+              id: '04',
+              content: '蛋蛋的“忧桑',
+            },
+          ],
+        },
+        {
+          id: '2',
+          img: require('@/assets/img/home/healthLeading2@2x.png'),
+          list: [
+            {
+              id: '01',
+              content: '刚过七夕，你又开始为造人发愁？',
+            },
+            {
+              id: '02',
+              content: '上班久坐，下班葛优躺，全身很受伤！',
+            },
+            {
+              id: '03',
+              content: '吹空调吹成了面瘫',
+            },
+            {
+              id: '04',
+              content: '蛋蛋的“忧桑',
+            },
+          ],
+        },
+        {
+          id: '3',
+          img: require('@/assets/img/home/healthLeading3@2x.png'),
+          list: [
+            {
+              id: '01',
+              content: '刚过七夕，你又开始为造人发愁？',
+            },
+            {
+              id: '02',
+              content: '上班久坐，下班葛优躺，全身很受伤！',
+            },
+            {
+              id: '03',
+              content: '吹空调吹成了面瘫',
+            },
+            {
+              id: '04',
+              content: '蛋蛋的“忧桑',
+            },
+          ],
+        },
+      ],
     };
-  },
-  mounted() {
-    this.getCardList();
-  },
-  methods: {
-    getCardList() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
-        console.log(res);
-        this.healthcardlist = res.frontmenuList;
-      });
-    },
   },
 };
 </script>
@@ -49,16 +117,15 @@ export default {
   justify-content: space-between;
   .healthcard {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid #b1b1b1;
     border-radius: 10%;
     width: 30%;
     .head {
       width: 80%;
-      padding: 10%;
+      padding: 5% 10%;
     }
     .content {
-      padding-left: 15%;
-      padding-bottom: 10%;
+      padding: 0 15% 5% 15%;
       font-size: 13px;
       ul {
         list-style: none;
@@ -75,7 +142,8 @@ export default {
             display: inline-block;
           }
           span {
-            font-size: 12px;
+            font-size: 10px;
+            color: #4d4d4d;
             a {
               color: gray;
             }
@@ -84,9 +152,9 @@ export default {
       }
     }
     .blank {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #b1b1b1;
       width: 60%;
-      margin-bottom: 10%;
+      margin-bottom: 8%;
       margin-left: 20%;
     }
   }

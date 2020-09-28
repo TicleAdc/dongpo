@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="map">
-      <img src="@/assets/img/brand/中介logo@2x.png" alt="" />
+      <img src="@/assets/img/home/map.png" alt="" />
     </div>
   </div>
 </template>
@@ -72,8 +72,7 @@ export default {
         }
         img {
           position: relative;
-          width: 50%;
-          height: 90%;
+          width: 48%;
           top: -51px;
           right: -78%;
         }
@@ -84,7 +83,7 @@ export default {
     margin-top: 10px;
     width: 68%;
     height: 240px;
-    border: 1px solid black;
+    // border: 1px solid black;
     img {
       width: 100%;
       height: 100%;

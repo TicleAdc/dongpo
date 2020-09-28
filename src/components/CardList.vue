@@ -2,12 +2,12 @@
   <div class="datalist">
     <div class="card" v-for="item in dataList" :key="item.index">
       <div class="img">
-        <img :src="item.columnBigimg" alt="" />
+        <img :src="item.url" alt="" />
         <!-- <img :src="item.img" alt="" /> -->
       </div>
-      <div class="icon"><img :src="item.columnSmallimg" alt="" /></div>
-      <div class="name">{{ item.columnContext }}</div>
-      <!-- <div class="name">{{ item.name }}</div> -->
+      <div class="icon"><img :src="item.icon" alt="" /></div>
+      <div class="name">{{ item.description }}</div>
+      <div class="name">{{ item.name }}</div>
       <button><img src="../assets/img/home/CheckMore.png" alt="" /> 查看更多</button>
     </div>
   </div>
@@ -20,40 +20,40 @@ export default {
   data() {
     return {
       dataList: [
-        // {
-        //   id: '1',
-        //   url: require('@/assets/img/home/physicalExamination2.png'),
-        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
-        //   name: '预约挂号',
-        //   btn: '查看更多',
-        // },
-        // {
-        //   id: '2',
-        //   url: require('@/assets/img/home/ReportQuery2.png'),
-        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
-        //   name: '报告查询',
-        //   btn: '查看更多',
-        // },
-        // {
-        //   id: '3',
-        //   url: require('@/assets/img/home/momAndBaby2.png'),
-        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
-        //   name: '母婴保健',
-        //   btn: '查看更多',
-        // },
-        // {
-        //   id: '4',
-        //   url: require('@/assets/img/home/physicalExamination2.png'),
-        //   icon: require('@/assets/img/home/Pediatrics@2x.png'),
-        //   name: '体检查询',
-        //   btn: '查看更多',
-        // },
+        {
+          id: '1',
+          url: require('@/assets/img/home/physicalExamination2.png'),
+          icon: require('@/assets/img/home/register@2x.png'),
+          name: '预约挂号',
+          btn: '查看更多',
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/ReportQuery2.png'),
+          icon: require('@/assets/img/home/ReportQuery@2x.png'),
+          name: '报告查询',
+          btn: '查看更多',
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/momAndBaby2.png'),
+          icon: require('@/assets/img/home/momAndBaby@2x.png'),
+          name: '母婴保健',
+          btn: '查看更多',
+        },
+        {
+          id: '4',
+          url: require('@/assets/img/home/physicalExamination2.png'),
+          icon: require('@/assets/img/home/physicalExamination@2x.png'),
+          name: '体检查询',
+          btn: '查看更多',
+        },
       ],
     };
   },
   created() {
     // setTimeout(this.getColumnData, 2000);
-    this.getData();
+    // this.getData();
   },
   methods: {
     getData() {
@@ -73,16 +73,24 @@ export default {
   padding: 30px 60px;
   background-color: white;
   .card {
-    border-radius: 25px;
     text-align: center;
-    flex: 1;
-    margin: 0 1%;
+    width: 272px;
+    border-radius: 26px;
     background-color: white;
-    box-shadow: 0px 0px 5px #888888;
+    box-shadow: 0px 5px 5px #88888838;
     .img {
+      font-size: 0;
       img {
         width: 100%;
-        height: 100%;
+        font-size: 0;
+      }
+    }
+    .icon {
+      position: relative;
+      top: -24px;
+      img {
+        width: 48px;
+        height: 48px;
       }
     }
     .icon {
@@ -94,15 +102,20 @@ export default {
       }
     }
     .name {
-      margin: 30px 0 20px 0;
+      // margin: 30px 0 20px 0;
+      font-size: 21px;
+      font-family: SourceHanSansCN-Normal;
     }
     button {
-      margin-bottom: 38px;
-      width: 60%;
-      height: 30px;
+      margin: 15px 0 38px 0;
+      width: 80%;
+      height: 51px;
       background-color: white;
       border: 1px solid black;
       border-radius: 5px;
+      font-size: 13.7px;
+      font-family: SourceHanSansCN-Normal;
+      color: #666666;
       cursor: pointer;
       img {
         width: 10px;

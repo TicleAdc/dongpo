@@ -1,10 +1,12 @@
 <template>
-  <el-carousel height="560px" :interval="2000" arrow="always">
-    <el-carousel-item v-for="item in imglist" :key="item.index">
-      <!-- <img :src="item.imgURL" alt="" :title="item.imgtitle" /> -->
-      <img :src="item.columnBigimg" :title="item.columnTitle" alt="" />
-    </el-carousel-item>
-  </el-carousel>
+  <div class="banner_index">
+    <el-carousel height="560px" :interval="3000" arrow="always">
+      <el-carousel-item v-for="item in imglist" :key="item.id">
+        <img class="img" :src="item.imgUri" alt="" :title="item.title" />
+        <!-- <img :src="item.imgurl" :title="item.title" alt="" /> -->
+      </el-carousel-item>
+    </el-carousel>
+  </div>
 </template>
 
 <script>
@@ -14,26 +16,26 @@ export default {
   data() {
     return {
       imglist: [
-        // {
-        //   id: '01',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '02',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '03',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
-        // {
-        //   id: '04',
-        //   imgUri: require('@/assets/img/home/main@2x.png'),
-        //   title: 'test',
-        // },
+        {
+          id: '01',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '02',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '03',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
+        {
+          id: '04',
+          imgUri: require('@/assets/img/home/main@2x.png'),
+          title: 'test',
+        },
       ],
     };
   },
@@ -46,7 +48,7 @@ export default {
     },
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   // created() {
   //   // 获取banner 图
@@ -59,9 +61,26 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-img {
-  width: 100%;
-  height: 100%;
+<style lang="less">
+.banner_index {
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+  .el-carousel__arrow {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 38px;
+    line-height: 2;
+    background-color:rgba(255, 255, 255, 0.6);
+  }
+  .el-carousel__button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .el-carousel__indicator.is-active button {
+    background-color: #F3969B;
+  }
 }
 </style>
