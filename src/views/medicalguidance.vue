@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div class="item" v-for="(item, index) in info" :key="index"> <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}</div>
+    <div class="item" v-for="(item, index) in info" :key="index">
+      <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
+    </div>
   </div>
 </template>
 
