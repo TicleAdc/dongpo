@@ -33,6 +33,7 @@ export default {
     return {
       activeName: '',
       routeData: [],
+      index: '',
     };
   },
   props: {
@@ -48,10 +49,17 @@ export default {
   created() {
     this.routeData = this.$router.options.routes.find((v) => v.path === this.currentRoute).children;
     this.activeName = this.routeData[0].path;
+    this.index = this.$router.options.routes.findIndex((v) => v.path === this.currentRoute);
   },
   watch: {
-    activeName() {
+    activeName(val) {
       this.$emit('changeShowComponent', this.activeName.slice(1));
+      let childrenIndex = this.routeData.findIndex((value) => value.path == val);
+      this.$store.commit('setIndex', {
+        index: this.index - 1,
+        children: childrenIndex,
+      });
+      // console.log(this.$store.state.selectIndex);
     },
   },
   model: {
