@@ -3,7 +3,7 @@
     <div>
       <span class="title">{{ title }}</span>
       <span class="img">
-        <img src="../../assets/img/professor/专家介绍背景图.png" />
+        <img src="../../assets/img/professor/professorback.png" />
       </span>
     </div>
     <div class="line"><span></span><span></span></div>

@@ -28,37 +28,37 @@ export default {
       stafflist: [
         {
           id: '1',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },
         {
           id: '2',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },
         {
           id: '3',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },
         {
           id: '4',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },
         {
           id: '5',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },
         {
           id: '6',
-          url: require('@/assets/img/professor/照片2@2x.png'),
+          url: require('@/assets/img/professor/photo2@2x.png'),
           title: '天使风采',
           bottom: '小儿保健科 ｜ 2020-08-17 21:20',
         },

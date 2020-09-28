@@ -16,7 +16,7 @@
         <!-- <p>{{ educationalLevel }}</p>
         <p>{{ work }}</p> -->
         <p class="content" v-html="content"></p>
-        <img src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
+        <img src="@/assets/img/professor/professorback@2x.png" alt="" />
       </div>
     </div>
   </div>

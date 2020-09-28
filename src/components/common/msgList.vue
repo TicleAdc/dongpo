@@ -8,7 +8,7 @@
   <div class="msg-list">
     <div class="title" v-if="showTitle">
       {{ title }}
-      <img src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
+      <img src="@/assets/img/professor/professorback@2x.png" alt="" />
     </div>
     <div class="list" v-for="(item, index) in list" :key="index" @click="goDetail(index)">
       <i class="el-icon-caret-left" :class="!showTime ? 'less' : ''"></i>

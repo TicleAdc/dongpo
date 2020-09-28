@@ -30,7 +30,7 @@
       <main>
         <div class="title">
           专家介绍
-          <img class="head-img" src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
+          <img class="head-img" src="@/assets/img/professor/professorback@2x.png" alt="" />
         </div>
         <div class="expert-introduction" v-for="(item, index) in expertIntroduction" :key="index">
           <div class="left">
@@ -45,7 +45,7 @@
             <p>{{ item.educationalLevel }}</p>
             <p>{{ item.work }}</p>
             <p class="content">{{ item.content }}</p>
-            <img src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
+            <img src="@/assets/img/professor/professorback@2x.png" alt="" />
           </div>
         </div>
         <div class="page">
@@ -64,7 +64,7 @@ export default {
     return {
       expertIntroduction: [
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '吴勇',
           department: '儿童保健科',
           position: '内科主任医师',
@@ -75,7 +75,7 @@ export default {
           糖尿病的诊治。重点研究方向是高校人群心血管疾病的危险因素监测以及防治。负责主持和参研4项国家以及省级、校级科研项目。公开发表医学论文15篇。`,
         },
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '张莉',
           department: '儿童保健科',
           position: '内科主任医师',
@@ -86,7 +86,7 @@ export default {
           糖尿病的诊治。重点研究方向是高校人群心血管疾病的危险因素监测以及防治。负责主持和参研4项国家以及省级、校级科研项目。公开发表医学论文15篇。`,
         },
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '李梅',
           department: '儿童保健科',
           position: '内科主任医师',
@@ -97,7 +97,7 @@ export default {
           糖尿病的诊治。重点研究方向是高校人群心血管疾病的危险因素监测以及防治。负责主持和参研4项国家以及省级、校级科研项目。公开发表医学论文15篇。`,
         },
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '吴勇',
           department: '儿童保健科',
           position: '内科主任医师',
@@ -108,7 +108,7 @@ export default {
           糖尿病的诊治。重点研究方向是高校人群心血管疾病的危险因素监测以及防治。负责主持和参研4项国家以及省级、校级科研项目。公开发表医学论文15篇。`,
         },
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '张莉',
           department: '儿童保健科',
           position: '内科主任医师',
@@ -119,7 +119,7 @@ export default {
           糖尿病的诊治。重点研究方向是高校人群心血管疾病的危险因素监测以及防治。负责主持和参研4项国家以及省级、校级科研项目。公开发表医学论文15篇。`,
         },
         {
-          src: require('@/assets/img/professor/照片2@2x.png'),
+          src: require('@/assets/img/professor/photo2@2x.png'),
           name: '李梅',
           department: '儿童保健科',
           position: '内科主任医师',

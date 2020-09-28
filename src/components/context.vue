@@ -1,7 +1,7 @@
 <template>
   <section class="context">
-    <h1 class="title">{{title}}</h1>
-    <p class="description">{{description}}</p>
+    <h1 class="title">{{ title }}</h1>
+    <p class="description">{{ description }}</p>
     <div class="text-context">
       <slot name="context"></slot>
     </div>
@@ -10,17 +10,15 @@
 
 <script>
 export default {
-   name: 'context',
-   props:{
-     title: String,
-     description: String
-   },
-   data(){
-     return {
-
-     }
-   }
-}
+  name: 'context',
+  props: {
+    title: String,
+    description: String,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -34,7 +32,7 @@ export default {
   margin-bottom: 40px;
   font-weight: 400;
   padding-left: 20px;
-  background: url("../assets/img/professor/专家介绍背景图@2x.png") no-repeat;
+  background: url('../assets/img/professor/professorback@2x.png') no-repeat;
   background-size: auto 100%;
   background-position: 150px top;
 }

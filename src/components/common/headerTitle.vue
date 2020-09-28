@@ -8,7 +8,7 @@
   <div class="title">
     <p>{{ title }}</p>
     <div class="line"></div>
-    <img src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
+    <img src="@/assets/img/professor/professorback@2x.png" alt="" />
   </div>
 </template>
 
