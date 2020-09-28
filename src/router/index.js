@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-28 09:09:35
+ * @LastEditTime: 2020-09-28 09:10:55
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -84,7 +84,7 @@ export const routes = [
         component: Index,
       },
       {
-        name: '招标信息',
+        name: '招聘信息',
         path: '/joboffers',
         component: Index,
       },
