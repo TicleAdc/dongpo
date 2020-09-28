@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-24 14:51:52
  * @FilePath: /dongpo/src/components/common/mainComponent.vue
- * @LastEditTime: 2020-09-28 11:01:47
+ * @LastEditTime: 2020-09-28 11:12:28
 -->
 <template>
   <div class="routeData">
@@ -45,10 +45,14 @@ export default {
     this.routeData = this.$router.options.routes.find((v) => v.path === this.currentRoute).children;
     this.activeName = this.routeData[0].path;
   },
-  computed: {
-    showComponent() {
-      return this.activeName.slice(1);
+  watch: {
+    activeName() {
+      this.$emit('changeShowComponent', this.activeName.slice(1));
     },
+  },
+  model: {
+    props: 'showComponent',
+    event: 'changeShowComponent',
   },
   components: {
     Title,
@@ -91,6 +95,28 @@ a:visited {
 
 <style lang="less">
 .routeData {
+  .el-tabs__nav-wrap.is-top {
+    background-color: #4d5aa2;
+    color: white;
+    padding-left: 15%;
+    margin: 15px 0 0px;
+    .el-tabs__item.is-active {
+      color: white;
+    }
+    .el-tabs__item {
+      color: rgba(255, 255, 255, 0.384);
+      padding: 0 30px;
+    }
+    .el-tabs__active-bar {
+      background-color: #fff;
+      bottom: inherit;
+    }
+  }
+}
+</style>
+
+<style lang="less">
+.announcement {
   .el-tabs__nav-wrap.is-top {
     background-color: #4d5aa2;
     color: white;
