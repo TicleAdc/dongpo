@@ -131,12 +131,12 @@ const debug = {
       path: '/index',
     },
     {
-      name: '特色医疗',
-      path: '/index',
+      name: '党群工作',
+      path: '/partywork',
     },
     {
       name: '预防接种',
-      path: '/yufangjiezhong',
+      path: '/vaccination',
     },
   ],
   menuList: [

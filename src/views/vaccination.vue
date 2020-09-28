@@ -24,7 +24,7 @@ import context from '../components/context';
 import debug from '../data/debug';
 
 export default {
-  name: 'yufangjiezhong',
+  name: 'vaccination',
   components: {
     pathNav,
     menuList,

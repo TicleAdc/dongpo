@@ -133,8 +133,8 @@ export const routes = [
     children: [
       {
         name: '预防接种',
-        path: '/yufangjiezhong',
-        component: () => import('@/views/yufangjiezhong.vue'),
+        path: '/vaccination',
+        component: () => import('@/views/vaccination.vue'),
       },
       {
         name: '儿科',
