@@ -1,13 +1,13 @@
 <template>
   <div class="list">
     <div class="healthcard" v-for="card in healthcardlist" :key="card.id">
-      <div class="head"><img :src="card.columnBigimg" alt="" /></div>
+      <div class="head"><img :src="card.img" alt="" /></div>
       <div class="content">
         <ul>
-          <li v-for="item in contents" :key="item.index">
+          <li v-for="item in card.list" :key="item.index">
             <div class="circle"></div>
             <span
-              ><a>{{ item.contentsTitle }}</a></span
+              ><a>{{ item.content }}</a></span
             >
           </li>
         </ul>
