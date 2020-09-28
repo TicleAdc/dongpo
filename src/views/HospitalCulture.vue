@@ -1,77 +1,57 @@
 <template>
   <div class="body">
-    <Title>
-      <div slot="theme">医院文化</div>
-      <div slot="childtabs">
-        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.name }}</a>
-        </div>
-      </div>
-    </Title>
-    <component :is="showComponentName"></component>
+    <main-component currentRoute="/news" v-model="showComponent" title="新闻动态">
+      <template #component>
+        <component :is="showComponent"></component>
+      </template>
+    </main-component>
+    <!-- <component :is="showComponentName"></component> -->
   </div>
 </template>
 
 <script>
-import Title from '@/components/Title';
+// import Title from '@/components/Title';
 import staffstyle from './staffStyle';
 import tents from './Tents';
 import culture from './Culture';
 import brandImage from './brandImage';
+import mainComponent from '@/components/common/mainComponent';
 export default {
   components: {
-    Title,
+    // Title,
     staffstyle,
     tents,
     culture,
     brandImage,
+    mainComponent,
   },
-  methods: {
-    changeComponent(id) {
-      switch (Number(id)) {
-        case 1:
-          this.showComponentName = 'brandImage';
-          break;
-        case 2:
-          this.showComponentName = 'tents';
-          break;
-        case 3:
-          this.showComponentName = 'culture';
-          break;
-        case 4:
-          this.showComponentName = 'staffstyle';
-          break;
-        default:
-          this.showComponentName = 'brandImage';
-          break;
-      }
-    },
-  },
+  methods: {},
   data() {
     return {
-      checkList: [
-        {
-          id: '1',
-          name: '品牌形象',
-          contents: '',
-        },
-        {
-          id: '2',
-          name: '院训宗旨',
-          contents: '',
-        },
-        {
-          id: '3',
-          name: '特色文化',
-          contents: '',
-        },
-        {
-          id: '4',
-          name: '职工风采',
-          contents: '',
-        },
-      ],
-      showComponentName: 'brandImage',
+      showComponent: '',
+      //     checkList: [
+      //       {
+      //         id: '1',
+      //         name: '品牌形象',
+      //         contents: '',
+      //       },
+      //       {
+      //         id: '2',
+      //         name: '院训宗旨',
+      //         contents: '',
+      //       },
+      //       {
+      //         id: '3',
+      //         name: '特色文化',
+      //         contents: '',
+      //       },
+      //       {
+      //         id: '4',
+      //         name: '职工风采',
+      //         contents: '',
+      //       },
+      //     ],
+      //     showComponentName: 'brandImage',
     };
   },
 };
