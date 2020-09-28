@@ -129,4 +129,7 @@ export default {
     }
   }
 }
+.body {
+  background-color: white;
+}
 </style>

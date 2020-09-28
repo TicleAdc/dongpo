@@ -19,8 +19,49 @@ export default {
   },
   data() {
     return {
-      list: [],
-      total: 100,
+      list: [
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+      ],
+      total: 5,
     };
   },
   methods: {
@@ -35,7 +76,7 @@ export default {
     },
   },
   mounted() {
-    this.getDataList();
+    // this.getDataList();
   },
 };
 </script>

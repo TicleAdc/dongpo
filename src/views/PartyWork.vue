@@ -68,12 +68,24 @@ export default {
     msgList,
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   methods: {
     getData() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=DQGZ`).then((res) => {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=partywork`).then((res) => {
+        // console.log(res);
+        this.columnBigimg = res.frontmenuList[0].columnBigimg;
+      });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=DDJS`).then((res) => {
+        // console.log(res);
+        let id = res.frontmenuList[0].columnData[0].id;
+        axios.post(`/api/getTagPageList?tagid=${id}&pageNo=1&pagesize=5`, {}).then((res) => {
+          console.log(res);
+        });
+      });
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=DFLZ`).then((res) => {
         console.log(res);
+        // this.columnBigimg = res.frontmenuList[0].columnBigimg;
       });
     },
   },

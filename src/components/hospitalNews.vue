@@ -20,33 +20,48 @@ export default {
   data() {
     return {
       list: [
-        // {
-        //   id: '1',
-        //   columnContext: '1564564646',
-        //   time: '2020-03-03',
-        // },
-        // {
-        //   id: '1',
-        //   columnContext: '1564564646',
-        //   time: '2020-03-03',
-        // },
-        // {
-        //   id: '1',
-        //   columnContext: '1564564646',
-        //   time: '2020-03-03',
-        // },
-        // {
-        //   id: '1',
-        //   columnContext: '1564564646',
-        //   time: '2020-03-03',
-        // },
-        // {
-        //   id: '1',
-        //   columnContext: '1564564646',
-        //   time: '2020-03-03',
-        // },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
+        {
+          columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+          time: '2020-2-10',
+        },
       ],
-      total: '',
+      total: 5,
     };
   },
   methods: {
@@ -63,7 +78,7 @@ export default {
     },
   },
   mounted() {
-    this.getDataList();
+    // this.getDataList();
   },
 };
 </script>

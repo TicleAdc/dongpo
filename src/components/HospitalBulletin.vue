@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 import msgList from './common/msgList';
 export default {
   components: {
@@ -32,17 +33,57 @@ export default {
       total: 105,
     };
   },
+  mounted() {
+    // this.getData();
+  },
   methods: {
     getDataByPage(i) {
       // 通过页码改变取数据
       console.log(i);
+    },
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=YYGG`).then((res) => {
+        console.log(res);
+      });
     },
   },
   created() {
     // 请求数据
     this.list = [
       {
-        content: `
+        columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+        time: '2020-2-10',
+      },
+      {
+        columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+        time: '2020-2-10',
+      },
+      {
+        columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+        time: '2020-2-10',
+      },
+      {
+        columnContext: `
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
+    reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
+    provident, magni exercitationem assumenda? Cupiditate, odio?
+    `,
+        time: '2020-2-10',
+      },
+      {
+        columnContext: `
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
     reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
     provident, magni exercitationem assumenda? Cupiditate, odio?

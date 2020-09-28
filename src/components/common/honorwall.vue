@@ -43,6 +43,8 @@ export default {
       border: 1px solid black;
       padding: 5px;
       margin-bottom: 5px;
+      width: 225px;
+      height: 150px;
     }
     .titlepart {
       display: flex;
