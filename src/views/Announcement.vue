@@ -1,68 +1,60 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-24 14:51:52
+ * @FilePath: /dongpo/src/views/Announcement.vue
+ * @LastEditTime: 2020-09-28 09:52:24
+-->
 <template>
-  <div class="body">
+  <div class="announcement">
     <Title>
       <div slot="theme">通知公告</div>
-      <div slot="childtabs">
-        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.name }}</a>
-        </div>
-      </div>
     </Title>
+    <el-tabs v-model="activeName" @tab-click="changeView">
+      <el-tab-pane
+        v-for="item in announcement"
+        :label="item.name"
+        :name="item.path"
+        :key="item.path"
+      >
+      </el-tab-pane>
+    </el-tabs>
     <component :is="showComponent"></component>
-    <pagenation></pagenation>
   </div>
 </template>
 
 <script>
-import pagenation from '@/components/pageNation';
+import hospitalannounc from '@/components/hospitalannounc';
+import biddinginformation from '@/components/biddinginformation';
+import joboffers from '@/components/joboffers';
 import Title from '@/components/Title';
-import hospitalBulletin from '@/components/HospitalBulletin';
-import tenderInfo from '@/components/tenderInformation';
-import recruitment from '@/components/recruitmentInformation';
+
+// 跳转路由
 export default {
   data() {
     return {
-      checkList: [
-        {
-          id: '1',
-          name: '医院公告',
-        },
-        {
-          id: '2',
-          name: '招标信息',
-        },
-        {
-          id: '3',
-          name: '招聘信息',
-        },
-      ],
-      showComponent: 'hospitalBulletin',
+      activeName: '',
+      announcement: [],
     };
   },
-  components: {
-    Title,
-    pagenation,
-    hospitalBulletin,
-    tenderInfo,
-    recruitment,
-  },
   methods: {
-    changeComponent(id) {
-      switch (Number(id)) {
-        case 1:
-          this.showComponent = 'hospitalBulletin';
-          break;
-        case 2:
-          this.showComponent = 'tenderInfo';
-          break;
-        case 3:
-          this.showComponent = 'recruitment';
-          break;
-        default:
-          this.showComponent = 'hospitalBulletin';
-          break;
-      }
+    changeView() {},
+  },
+  created() {
+    this.announcement = this.$router.options.routes.find(
+      (v) => v.path === '/announcement',
+    ).children;
+    this.activeName = this.announcement[0].path;
+  },
+  computed: {
+    showComponent() {
+      return this.activeName.slice(1);
     },
+  },
+  components: {
+    hospitalannounc,
+    biddinginformation,
+    joboffers,
+    Title,
   },
 };
 </script>
@@ -81,7 +73,7 @@ a:active,
 a:visited {
   border-top: 2px solid white;
 }
-.body {
+.announcement {
   background-color: white;
 }
 .newslist {
@@ -95,6 +87,27 @@ a:visited {
       .time {
         float: right;
       }
+    }
+  }
+}
+</style>
+
+<style lang="less">
+.announcement {
+  .el-tabs__nav-wrap.is-top {
+    background-color: #4d5aa2;
+    color: white;
+    padding-left: 15%;
+    .el-tabs__item.is-active {
+      color: white;
+    }
+    .el-tabs__item {
+      color: rgba(255, 255, 255, 0.384);
+      padding: 0 30px;
+    }
+    .el-tabs__active-bar {
+      background-color: #fff;
+      bottom: inherit;
     }
   }
 }
