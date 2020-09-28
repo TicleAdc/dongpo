@@ -10,9 +10,12 @@ import router from './router';
 import ElementUI from 'element-ui';
 import '@/assets/css/base.less';
 import '@/assets/css/element-variables.scss';
+import axios from '@/api/request.js';
+import store from './store'
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
+Vue.prototype.http = axios;
 
 router.beforeEach((to, from, next) => {
   document.title = to.name || '眉山市东坡区妇幼保健院';
@@ -21,4 +24,5 @@ router.beforeEach((to, from, next) => {
 new Vue({
   render: (h) => h(App),
   router,
+  store
 }).$mount('#app');
