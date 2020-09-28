@@ -7,7 +7,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Index from '@/views/Index.vue';
-// import detail from '@/components/detail.vue';
+import detail from '@/components/detail.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +22,11 @@ export const routes = [
     name: '首页',
     path: '/test',
     component: Index,
+  },
+  {
+    name: 'detail',
+    path: '/detail',
+    component: detail,
   },
   {
     name: '医院概况',

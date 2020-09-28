@@ -10,9 +10,10 @@
       {{ title }}
       <img src="@/assets/img/professor/professorback@2x.png" alt="" />
     </div>
-    <div class="list" v-for="(item, index) in list" :key="index" @click="goDetail(index)">
+    <div class="list" v-for="(item, index) in list" :key="index" @click="goDetail(item)">
       <i class="el-icon-caret-left" :class="!showTime ? 'less' : ''"></i>
-      <span class="content">{{ item.columnContext }}</span>
+      <span v-if="item.columnContext" class="content">{{ item.columnContext }}</span>
+      <span v-else class="content">{{ item.contentsTitle }}</span>
       <div class="right" v-if="showTime">
         {{ item.time }}
       </div>
@@ -69,9 +70,10 @@ export default {
     },
   },
   methods: {
-    goDetail(index) {
+    goDetail(item) {
       // 文章跳转详情
-      console.log(index);
+      console.log(item);
+      this.$router.push({ path: '/detail', query: { ...item } });
     },
     changePage(v) {
       this.$emit('changeMsgListPage', v);

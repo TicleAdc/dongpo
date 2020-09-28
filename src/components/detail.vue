@@ -3,7 +3,7 @@
     <!-- <p>{{ showtext.title }}</p>
     <p>{{ showtext.data }}</p> -->
     <p class="title">{{ $route.query.contentsTitle }}</p>
-    <p class="content">{{ this.$route.query.contentsdata }}</p>
+    <p class="content" v-html="this.$route.query.contentsdata"></p>
   </div>
 </template>
 

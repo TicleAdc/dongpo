@@ -7,6 +7,9 @@
       @changeMsgListPage="getDataByPage"
     ></msg-list>
     <!-- <div style="padding-bottom: 330px"></div> -->
+    <!-- <ul>
+      <li v-for="item in datalist" :key="item.index">{{ item.contentsTitle }}</li>
+    </ul> -->
   </div>
 </template>
 
@@ -53,7 +56,8 @@ export default {
     getDataList() {
       axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
         // console.log(res);
-        this.list = res.page.lsit;
+        this.list = res.page.list;
+        // console.log(this.list);
         this.total = res.totalCount;
       });
     },

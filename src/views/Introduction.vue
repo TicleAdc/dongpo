@@ -187,7 +187,7 @@ export default {
     width: 50%;
   }
   .bottom {
-    top: -560px;
+    top: -520px;
     position: relative;
     font-size: 10px;
     width: 80%;

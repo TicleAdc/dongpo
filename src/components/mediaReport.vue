@@ -27,6 +27,8 @@ export default {
     getDataList() {
       axios.post(`/api/getTagPageList?tagid=8&pageNo=1&pagesize=10`, {}).then((res) => {
         console.log(res);
+        this.list = res.page.list;
+        this.total = res.totalCount;
       });
     },
     getDataByPage(i) {
