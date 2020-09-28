@@ -1,17 +1,17 @@
 <!--
  * @Author: Spring Breeze
  * @Date: 2020-09-24 14:51:52
- * @FilePath: /dongpo/src/views/Announcement.vue
- * @LastEditTime: 2020-09-28 10:56:45
+ * @FilePath: /dongpo/src/components/common/mainComponent.vue
+ * @LastEditTime: 2020-09-28 11:01:47
 -->
 <template>
-  <div class="announcement">
+  <div class="routeData">
     <Title>
       <div slot="theme">通知公告</div>
       <template #childtabs>
-        <el-tabs v-model="activeName" @tab-click="changeView">
+        <el-tabs v-model="activeName">
           <el-tab-pane
-            v-for="item in announcement"
+            v-for="item in routeData"
             :label="item.name"
             :name="item.path"
             :key="item.path"
@@ -20,14 +20,11 @@
         </el-tabs>
       </template>
     </Title>
-    <component :is="showComponent"></component>
+    <slot name="component"></slot>
   </div>
 </template>
 
 <script>
-import hospitalannounc from '@/components/hospitalannounc';
-import biddinginformation from '@/components/biddinginformation';
-import joboffers from '@/components/joboffers';
 import Title from '@/components/Title';
 
 // 跳转路由
@@ -35,17 +32,18 @@ export default {
   data() {
     return {
       activeName: '',
-      announcement: [],
+      routeData: [],
     };
   },
-  methods: {
-    changeView() {},
+  props: {
+    currentRoute: {
+      type: String,
+      required: true,
+    },
   },
   created() {
-    this.announcement = this.$router.options.routes.find(
-      (v) => v.path === '/announcement',
-    ).children;
-    this.activeName = this.announcement[0].path;
+    this.routeData = this.$router.options.routes.find((v) => v.path === this.currentRoute).children;
+    this.activeName = this.routeData[0].path;
   },
   computed: {
     showComponent() {
@@ -53,9 +51,6 @@ export default {
     },
   },
   components: {
-    hospitalannounc,
-    biddinginformation,
-    joboffers,
     Title,
   },
 };
@@ -75,7 +70,7 @@ a:active,
 a:visited {
   border-top: 2px solid white;
 }
-.announcement {
+.routeData {
   background-color: white;
 }
 .newslist {
@@ -95,7 +90,7 @@ a:visited {
 </style>
 
 <style lang="less">
-.announcement {
+.routeData {
   .el-tabs__nav-wrap.is-top {
     background-color: #4d5aa2;
     color: white;
