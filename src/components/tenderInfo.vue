@@ -1,12 +1,25 @@
 <!--
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
+<<<<<<< HEAD:src/components/tenderInfo.vue
+ * @FilePath: /dongpo/src/components/joboffers.vue
+ * @LastEditTime: 2020-09-28 15:25:39
+=======
  * @FilePath: /dongpo/src/components/hospitalannounc.vue
  * @LastEditTime: 2020-09-28 16:20:41
+>>>>>>> e8edb836e0b68f067e18ce0c2b6274372839867b:src/components/hospitalannounc.vue
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
+<<<<<<< HEAD:src/components/tenderInfo.vue
+    <msg-list
+      title="招标信息"
+      :list="list"
+      :total="total"
+      @changeMsgListPage="getDataByPage"
+    ></msg-list>
+=======
     <div class="g">
       <msg-list
         title="医院公告"
@@ -16,6 +29,7 @@
       ></msg-list>
     </div>
 
+>>>>>>> e8edb836e0b68f067e18ce0c2b6274372839867b:src/components/hospitalannounc.vue
     <div style="padding-bottom: 330px"></div>
   </div>
 </template>

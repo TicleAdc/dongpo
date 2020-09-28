@@ -35,9 +35,13 @@ export default {
   props: {
     title: {
       type: String,
+<<<<<<< HEAD
+      // required: true,
+=======
       default() {
         return '';
       },
+>>>>>>> e8edb836e0b68f067e18ce0c2b6274372839867b
     },
     list: {
       type: Array,
@@ -127,7 +131,8 @@ export default {
   }
   .page {
     margin-top: 247px;
-    margin-bottom: 38px;
+    // margin-bottom: 38px;
+    padding-bottom: 38px;
     display: flex;
     justify-content: center;
   }

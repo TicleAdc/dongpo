@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'http://100.123.100.154:8080/renren-fast',
+  // baseURL: 'http://100.123.100.154:8080/renren-fast',
   // baseURL: 'http://100.123.100.162:8080/renren-fast',
   // baseURL: 'http://localhost:8080/renren-fast',
-  // baseURL: 'http://182.43.139.247:8080/renren-fast',
+  baseURL: 'http://182.43.139.247:8080/renren-fast',
   // timeout: 10000,
 });
 

@@ -33,12 +33,15 @@ import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
 import mediareport from '@/components/mediaReport';
 import detail from '@/components/detail';
-import hospitalannounc from '@/components/hospitalannounc';
-import biddinginformation from '@/components/biddinginformation';
-import joboffers from '@/components/joboffers';
+// import hospitalannounc from '@/components/hospitalannounc';
+// import biddinginformation from '@/components/biddinginformation';
+// import joboffers from '@/components/joboffers';
 import introduction from '@/views/Introduction';
 import leader from '@/components/leader';
 import honor from '@/components/honor';
+import hospitalbulletin from '@/components/HospitalBulletin';
+import tenderInfo from '@/components/tenderInfo';
+import recruitmentInformation from '@/components/recruitmentInformation';
 
 export default {
   components: {
@@ -62,12 +65,15 @@ export default {
     medicalguidance,
     physicalexaminationquery,
     ordinaryquestion,
-    hospitalannounc,
-    biddinginformation,
-    joboffers,
+    // hospitalannounc,
+    // biddinginformation,
+    // joboffers,
     introduction,
     leader,
     honor,
+    hospitalbulletin,
+    tenderInfo,
+    recruitmentInformation,
   },
   props: {
     showComponentName: {
