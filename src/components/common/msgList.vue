@@ -2,22 +2,22 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:54:49
  * @FilePath: /dongpo/src/components/common/msgList.vue
- * @LastEditTime: 2020-09-28 14:44:49
+ * @LastEditTime: 2020-09-28 16:19:04
 -->
 <template>
   <div class="msg-list">
-    <div class="title">
+    <div class="title" v-if="showTitle">
       {{ title }}
       <img src="@/assets/img/professor/专家介绍背景图@2x.png" alt="" />
     </div>
     <div class="list" v-for="(item, index) in list" :key="index" @click="goDetail(index)">
-      <i class="el-icon-caret-left"></i>
+      <i class="el-icon-caret-left" :class="!showTime ? 'less' : ''"></i>
       <span class="content">{{ item.content }}</span>
-      <div class="right">
+      <div class="right" v-if="showTime">
         {{ item.time }}
       </div>
     </div>
-    <div class="page">
+    <div class="page" v-if="showPagination">
       <el-pagination
         background
         layout="total,prev, pager, next"
@@ -35,7 +35,13 @@ export default {
   props: {
     title: {
       type: String,
+<<<<<<< HEAD
       // required: true,
+=======
+      default() {
+        return '';
+      },
+>>>>>>> e8edb836e0b68f067e18ce0c2b6274372839867b
     },
     list: {
       type: Array,
@@ -43,7 +49,27 @@ export default {
     },
     total: {
       type: Number,
-      required: true,
+      default() {
+        return 0;
+      },
+    },
+    showPagination: {
+      type: Boolean,
+      default() {
+        return true;
+      },
+    },
+    showTitle: {
+      type: Boolean,
+      default() {
+        return true;
+      },
+    },
+    showTime: {
+      type: Boolean,
+      default() {
+        return true;
+      },
     },
   },
   methods: {
@@ -60,7 +86,6 @@ export default {
 
 <style lang="less" scoped>
 .msg-list {
-  padding: 0 30px;
   .title {
     position: relative;
     color: #4d5aa2;
@@ -88,16 +113,20 @@ export default {
       font-size: 10px;
       flex: 0.3;
     }
+    i.less {
+      flex: 0.02;
+    }
     .right {
       flex: 3;
       text-align: right;
       color: gray;
     }
     .content {
-      overflow: hidden;
       display: inline-block;
-      max-width: 700px;
+      max-width: 70%;
+      text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
     }
   }
   .page {
