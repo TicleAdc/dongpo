@@ -72,6 +72,11 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
+          this.routeData.forEach((item) => {
+            item.children?.forEach((child) => {
+              child.children = null;
+            });
+          });
           this.$store.commit('setMenuData', this.routeData);
           this.trueRoutes.splice(
             1,
