@@ -1,5 +1,6 @@
 export default {
     state: {
-        MenuData: []
+        menuData: [],
+        selectIndex: {},
     }
 }

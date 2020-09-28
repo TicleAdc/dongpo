@@ -1,7 +1,9 @@
-const mutations = {
+
+export default {
     setMenuData(state, data) {
-        state.MenuData = data
+        state.menuData = data
+    },
+    setIndex(state, data) {
+        state.selectIndex = data
     }
 }
-
-export default mutations

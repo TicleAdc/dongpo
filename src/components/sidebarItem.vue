@@ -22,7 +22,7 @@
           {{ item.name }}
         </router-link>
       </template>
-      <template v-for="child in item.children">
+      <template v-for="(child, subIndex) in item.children">
         <sidebar-item
           v-if="child.children && child.children.length > 0"
           :item="child"
@@ -32,7 +32,9 @@
         <el-menu-item v-else :key="child.path" :index="child.path">
           <template slot="title">
             <router-link :to="child.path">
-              {{ child.name }}
+              <span @click="goChildrenPage(index, subIndex)">
+                {{ child.name }}
+              </span>
             </router-link>
           </template>
         </el-menu-item>
@@ -63,6 +65,7 @@ export default {
         return null;
       },
     },
+    index: Number,
   },
   components: {
     sidebarItem: () => import('@/components/sidebarItem'),
@@ -77,6 +80,13 @@ export default {
   },
 
   methods: {
+    goChildrenPage(index, subIndex) {
+      this.$store.commit('setIndex', {
+        index: index,
+        children: subIndex,
+      });
+    },
+
     goOtherPage() {
       console.log(this.trueIndex);
     },

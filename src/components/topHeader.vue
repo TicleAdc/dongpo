@@ -35,9 +35,9 @@
         </el-menu-item> -->
 
         <sidebar-item
-          v-for="item in routes"
+          v-for="(item,index) in routes"
           :key="item.path"
-          :index="item.path"
+          :index="index"
           :item="item"
           @click="$emit('click', item.path)"
         ></sidebar-item>
