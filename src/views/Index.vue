@@ -45,7 +45,7 @@ import recruitmentInformation from '@/components/recruitmentInformation';
 import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
-import yufangjiezhong from '@/views/yufangjiezhong';
+import vaccination from '@/views/vaccination';
 
 export default {
   components: {
@@ -81,7 +81,7 @@ export default {
     rumorRefutation,
     healthtreasure,
     dongpoEmotion,
-    yufangjiezhong
+    vaccination
   },
   props: {
     showComponentName: {

@@ -3,7 +3,7 @@
     <div class="personcard" v-for="item in professorlist" :key="item.id">
       <div class="describe">
         <div class="introduction">{{ '专家简介' }}</div>
-        <div class="detail">{{ item.contents }}</div>
+        <div class="detail" v-for="(data, index) in item.detail" :key="index">{{ data }}</div>
       </div>
       <div class="img"><img :src="item.url" alt="" /></div>
     </div>
@@ -19,22 +19,38 @@ export default {
       professorlist: [
         {
           id: '1',
-          detail: '123456789',
+          detail: [
+            'IASLC(国际肺癌研究协会)董事会成员',
+            'ICGC(国际癌症基因组联盟)研讨会组织主席',
+            'WCLC（国际肺癌大会）联合主席',
+          ],
           url: require('@/assets/img/professor/photo2.png'),
         },
         {
           id: '2',
-          detail: '123456789',
+          detail: [
+            'IASLC(国际肺癌研究协会)董事会成员',
+            'ICGC(国际癌症基因组联盟)研讨会组织主席',
+            'WCLC（国际肺癌大会）联合主席',
+          ],
           url: require('@/assets/img/professor/photo2.png'),
         },
         {
           id: '3',
-          detail: '123456789',
+          detail: [
+            'IASLC(国际肺癌研究协会)董事会成员',
+            'ICGC(国际癌症基因组联盟)研讨会组织主席',
+            'WCLC（国际肺癌大会）联合主席',
+          ],
           url: require('@/assets/img/professor/photo2.png'),
         },
         {
           id: '4',
-          detail: '123456789',
+          detail: [
+            'IASLC(国际肺癌研究协会)董事会成员',
+            'ICGC(国际癌症基因组联盟)研讨会组织主席',
+            'WCLC（国际肺癌大会）联合主席',
+          ],
           url: require('@/assets/img/professor/photo2.png'),
         },
       ],
@@ -75,9 +91,12 @@ export default {
     .introduction {
       color: rgba(74, 93, 163, 1);
       font-size: 16.55px;
+      margin-bottom: 10px;
     }
     .detail {
       font-size: 10.81px;
+      color: #515151;
+      font-family: SourceHanSansCN-Normal;
     }
   }
   .img {
