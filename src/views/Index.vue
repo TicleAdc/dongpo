@@ -23,10 +23,17 @@ import hospitalculture from '@/views/HospitalCulture';
 import specialactivity from '@/views/SpecialActivity';
 import healthscience from '@/views/HealthScience';
 import announcement from '@/views/Announcement';
+import navegation from '@/views/navegation';
+import reportquery from '@/views/reportquery';
+import medicalguidance from '@/views/medicalguidance';
+import physicalexaminationquery from '@/views/physicalexaminationquery';
+import ordinaryquestion from '@/views/ordinaryquestion';
+
 import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
 import mediareport from '@/components/mediaReport';
 import detail from '@/components/detail';
+
 
 export default {
   components: {
@@ -45,6 +52,11 @@ export default {
     linenews,
     mediareport,
     detail,
+    navegation,
+    reportquery,
+    medicalguidance,
+    physicalexaminationquery,
+    ordinaryquestion
   },
   props: {
     showComponentName: {
