@@ -1,13 +1,13 @@
 <template>
   <div class="list">
     <div class="healthcard" v-for="card in healthcardlist" :key="card.id">
-      <div class="head"><img :src="card.img" alt="" /></div>
+      <div class="head"><img :src="card.columnBigimg" alt="" /></div>
       <div class="content">
         <ul>
-          <li v-for="item in card" :key="item.index">
+          <li v-for="item in contents" :key="item.index">
             <div class="circle"></div>
             <span
-              ><a href="#/healthscience">{{ item.contentsTitle }}</a></span
+              ><a>{{ item.contentsTitle }}</a></span
             >
           </li>
         </ul>
@@ -23,74 +23,8 @@ export default {
   name: 'healthscience',
   data() {
     return {
-      healthcardlist: [
-        // {
-        //   id: '1',
-        //   img: require('@/assets/img/home/healthLeading1@2x.png'),
-        //   list: [
-        //     {
-        //       id: '01',
-        //       content: '刚过七夕，你又开始为造人发愁？',
-        //     },
-        //     {
-        //       id: '02',
-        //       content: '上班久坐，下班葛优躺，全身很受伤！',
-        //     },
-        //     {
-        //       id: '03',
-        //       content: '吹空调吹成了面瘫',
-        //     },
-        //     {
-        //       id: '04',
-        //       content: '蛋蛋的“忧桑',
-        //     },
-        //   ],
-        // },
-        // {
-        //   id: '2',
-        //   img: require('@/assets/img/home/healthLeading2@2x.png'),
-        //   list: [
-        //     {
-        //       id: '01',
-        //       content: '刚过七夕，你又开始为造人发愁？',
-        //     },
-        //     {
-        //       id: '02',
-        //       content: '上班久坐，下班葛优躺，全身很受伤！',
-        //     },
-        //     {
-        //       id: '03',
-        //       content: '吹空调吹成了面瘫',
-        //     },
-        //     {
-        //       id: '04',
-        //       content: '蛋蛋的“忧桑',
-        //     },
-        //   ],
-        // },
-        // {
-        //   id: '3',
-        //   img: require('@/assets/img/home/healthLeading3@2x.png'),
-        //   list: [
-        //     {
-        //       id: '01',
-        //       content: '刚过七夕，你又开始为造人发愁？',
-        //     },
-        //     {
-        //       id: '02',
-        //       content: '上班久坐，下班葛优躺，全身很受伤！',
-        //     },
-        //     {
-        //       id: '03',
-        //       content: '吹空调吹成了面瘫',
-        //     },
-        //     {
-        //       id: '04',
-        //       content: '蛋蛋的“忧桑',
-        //     },
-        //   ],
-        // },
-      ],
+      healthcardlist: [],
+      contents: [],
     };
   },
   mounted() {
@@ -98,28 +32,9 @@ export default {
   },
   methods: {
     getCardList() {
-      // axios.post('/api/getColumnList', {}).then((res) => {
-      //   let classifyid = res.ColumnData[4].columndata.id;
-      //   axios.post(`/api/getTagPageByClassifyId?classifyid=${classifyid}`, {}).then((data) => {
-      //     // console.log(classifyid);
-      //     // console.log(data.data);
-      //     let list = data.data;
-      //     list.forEach((item) => {
-      //       axios
-      //         .post(`/api/getTagPageList?tagid=${item.id}&pageNo=1&pagesize=5`)
-      //         .then((response) => {
-      //           // console.log(response);
-      //           this.healthcardlist.push(response.page.list);
-      //           this.healthcardlist[0].img = require('@/assets/img/home/healthLeading1@2x.png');
-      //           this.healthcardlist[1].img = require('@/assets/img/home/healthLeading2@2x.png');
-      //           this.healthcardlist[2].img = require('@/assets/img/home/healthLeading3@2x.png');
-      //         });
-      //     });
-      //   });
-      // });
-      // console.log(this.healthcardlist);
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
         console.log(res);
+        this.healthcardlist = res.frontmenuList;
       });
     },
   },

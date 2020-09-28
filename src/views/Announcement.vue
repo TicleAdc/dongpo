@@ -1,101 +1,42 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-24 14:51:52
+ * @FilePath: /dongpo/src/views/Announcement.vue
+ * @LastEditTime: 2020-09-28 15:30:58
+-->
 <template>
-  <div class="body">
-    <Title>
-      <div slot="theme">通知公告</div>
-      <div slot="childtabs">
-        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.name }}</a>
-        </div>
-      </div>
-    </Title>
-    <component :is="showComponent"></component>
-    <pagenation></pagenation>
+  <div class="announcement">
+    <main-component currentRoute="/announcement" v-model="showComponent" title="通知公告">
+      <template #component>
+        <component :is="showComponent"></component>
+      </template>
+    </main-component>
   </div>
 </template>
 
 <script>
-import pagenation from '@/components/pageNation';
+// import hospitalannounc from '@/components/hospitalannounc';
+import hospitalbulletin from '@/components/HospitalBulletin';
+import tenderInfo from '@/components/tenderInfo';
 import Title from '@/components/Title';
-import hospitalBulletin from '@/components/HospitalBulletin';
-import tenderInfo from '@/components/tenderInformation';
-import recruitment from '@/components/recruitmentInformation';
+import recruitmentInformation from '@/components/recruitmentInformation';
+import mainComponent from '@/components/common/mainComponent';
+// 跳转路由
 export default {
   data() {
     return {
-      checkList: [
-        {
-          id: '1',
-          name: '医院公告',
-        },
-        {
-          id: '2',
-          name: '招标信息',
-        },
-        {
-          id: '3',
-          name: '招聘信息',
-        },
-      ],
-      showComponent: 'hospitalBulletin',
+      showComponent: '',
     };
   },
   components: {
-    Title,
-    pagenation,
-    hospitalBulletin,
+    // hospitalannounc,
+    hospitalbulletin,
     tenderInfo,
-    recruitment,
-  },
-  methods: {
-    changeComponent(id) {
-      switch (Number(id)) {
-        case 1:
-          this.showComponent = 'hospitalBulletin';
-          break;
-        case 2:
-          this.showComponent = 'tenderInfo';
-          break;
-        case 3:
-          this.showComponent = 'recruitment';
-          break;
-        default:
-          this.showComponent = 'hospitalBulletin';
-          break;
-      }
-    },
+    Title,
+    recruitmentInformation,
+    mainComponent,
   },
 };
 </script>
 
-<style lang="less" scoped>
-.tab {
-  display: inline-block;
-  margin: 20px;
-  cursor: pointer;
-  a {
-    color: white;
-    text-decoration: none;
-  }
-}
-a:active,
-a:visited {
-  border-top: 2px solid white;
-}
-.body {
-  background-color: white;
-}
-.newslist {
-  padding-top: 10px;
-  ul {
-    list-style: none;
-    li {
-      font-size: 10px;
-      padding: 5px;
-      border-bottom: 1px solid rgba(173, 170, 170, 0.863);
-      .time {
-        float: right;
-      }
-    }
-  }
-}
-</style>
+<style lang="less" scoped></style>

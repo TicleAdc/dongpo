@@ -1,67 +1,75 @@
 <template>
-  <div class="newslist">
-    <ul>
-      <li v-for="item in newslist" :key="item.id">
-        <i class="el-icon-caret-left"></i
-        ><span @click="jumpToDetails(item.id)">{{ item.contentsTitle }}</span>
-        <span class="time">{{ item.time }}</span>
-      </li>
-    </ul>
+  <div class="all">
+    <msg-list
+      title="医院新闻"
+      :list="list"
+      :total="total"
+      @changeMsgListPage="getDataByPage"
+    ></msg-list>
+    <!-- <div style="padding-bottom: 330px"></div> -->
   </div>
 </template>
 
 <script>
 import axios from '@/api/request.js';
+import msgList from '@/components/common/msgList';
 export default {
+  components: {
+    msgList,
+  },
   data() {
     return {
-      newslist: [],
-      // detail: [],
+      list: [
+        // {
+        //   id: '1',
+        //   columnContext: '1564564646',
+        //   time: '2020-03-03',
+        // },
+        // {
+        //   id: '1',
+        //   columnContext: '1564564646',
+        //   time: '2020-03-03',
+        // },
+        // {
+        //   id: '1',
+        //   columnContext: '1564564646',
+        //   time: '2020-03-03',
+        // },
+        // {
+        //   id: '1',
+        //   columnContext: '1564564646',
+        //   time: '2020-03-03',
+        // },
+        // {
+        //   id: '1',
+        //   columnContext: '1564564646',
+        //   time: '2020-03-03',
+        // },
+      ],
+      total: '',
     };
   },
-  mounted() {
-    this.getNewsList();
-  },
   methods: {
-    getNewsList() {
-      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
-        this.newslist = res.page.list;
-        // this.newslist.forEach((index) => {
-        //   console.log(index);
-        // });
+    getDataList() {
+      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
+        // console.log(res);
+        this.list = res.page.lsit;
+        this.total = res.totalCount;
       });
     },
-    jumpToDetails(index) {
-      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=20`, {}).then((res) => {
-        console.log(index);
-        this.newslist = res.page.list;
-        this.newslist.forEach((v) => {
-          if (index == v.id) {
-            // console.log(this.newslist);
-            this.$router.push({ name: '详情', query: { ...v } });
-          }
-          // console.log(i);
-        });
-      });
+    getDataByPage(i) {
+      // 通过页码改变取数据
+      console.log(i);
     },
+  },
+  mounted() {
+    this.getDataList();
   },
 };
 </script>
 
 <style lang="less" scoped>
-.newslist {
-  background-color: white;
-  padding-top: 10px;
-  ul {
-    list-style: none;
-    li {
-      font-size: 10px;
-      padding: 5px;
-      border-bottom: 1px solid rgba(173, 170, 170, 0.863);
-      .time {
-        float: right;
-      }
-    }
-  }
+.all {
+  background-color: #fff;
 }
 </style>

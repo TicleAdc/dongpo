@@ -1,8 +1,8 @@
 <template>
   <el-carousel height="560px" :interval="2000" arrow="always">
-    <el-carousel-item v-for="item in imglist" :key="item.id">
+    <el-carousel-item v-for="item in imglist" :key="item.index">
       <!-- <img :src="item.imgURL" alt="" :title="item.imgtitle" /> -->
-      <img :src="item.imgurl" :title="item.title" alt="" />
+      <img :src="item.columnBigimg" :title="item.columnTitle" alt="" />
     </el-carousel-item>
   </el-carousel>
 </template>
@@ -40,7 +40,8 @@ export default {
   methods: {
     getData() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=topbanner`).then((res) => {
-        console.log(res);
+        // console.log(res);
+        this.imglist = res.frontmenulist;
       });
     },
   },

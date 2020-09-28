@@ -1,15 +1,53 @@
-<!--
- * @Author: Spring Breeze
- * @Date: 2020-09-17 11:09:14
- * @FilePath: /dongpo/src/views/HealthCare.vue
- * @LastEditTime: 2020-09-17 11:14:30
--->
 <template>
-  <div></div>
+  <div>
+    <Title>
+      <div slot="theme">母婴保健</div>
+    </Title>
+    <div class="showlist">
+      <msg-list
+        title="母婴保健"
+        :list="list"
+        :total="total"
+        @changeMsgListPage="getDataByPage"
+      ></msg-list>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import axios from '@/api/request.js';
+import msgList from '@/components/common/msgList';
+import Title from '@/components/Title';
+export default {
+  components: {
+    Title,
+    msgList,
+  },
+  data() {
+    return {
+      list: [],
+      total: 0,
+    };
+  },
+  methods: {
+    getDataList() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=MYBJ`).then((res) => {
+        console.log(res);
+      });
+    },
+    getDataByPage(i) {
+      // 通过页码改变取数据
+      console.log(i);
+    },
+  },
+  mounted() {
+    this.getDataList();
+  },
+};
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.showlist {
+  background-color: white;
+}
+</style>

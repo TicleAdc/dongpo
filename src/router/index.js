@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-23 11:11:05
+ * @LastEditTime: 2020-09-28 14:47:14
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -23,6 +23,11 @@ export const routes = [
     path: '/detail',
     component: detail,
   },
+  // {
+  //   name: '首页',
+  //   path: '/home',
+  //   component: Index,
+  // },
   // {
   //   name: '医院概况',
   //   path: '/overview',
@@ -74,23 +79,21 @@ export const routes = [
   //   component: Index,
   //   children: [
   //     {
-  //       name: '二级',
-  //       path: '/testtwo',
+  //       name: '医院公告',
+  //       path: '/hospitalannounc',
   //       component: Index,
-  //       children: [
-  //         {
-  //           name: '三级',
-  //           path: '/testthree',
-  //           component: Index,
-  //         },
-  //       ],
   //     },
   //     {
-  //       name: '二级2',
-  //       path: '/testtwo2',
+  //       name: '招标信息',
+  //       path: '/biddinginformation',
   //       component: Index,
   //     },
-  // ],
+  //     {
+  //       name: '招聘信息',
+  //       path: '/joboffers',
+  //       component: Index,
+  //     },
+  //   ],
   // },
 ];
 

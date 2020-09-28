@@ -24,10 +24,13 @@
           <p>微信扫一扫</p>
           <p>关注东坡妇幼公众号</p>
           <p>享便捷医疗服务</p>
+          <img src="@/assets/img/brand/位图@2x.png" alt="" />
         </div>
       </div>
     </div>
-    <div class="map"></div>
+    <div class="map">
+      <img src="@/assets/img/brand/中介logo@2x.png" alt="" />
+    </div>
   </div>
 </template>
 
@@ -48,6 +51,7 @@ export default {
     display: flex;
     flex-direction: column;
     .out {
+      width: 108%;
       display: flex;
       margin: 10px 0;
       border: 1px solid black;
@@ -66,14 +70,25 @@ export default {
         p {
           width: 100%;
         }
+        img {
+          position: relative;
+          width: 50%;
+          height: 90%;
+          top: -51px;
+          right: -78%;
+        }
       }
     }
   }
   .map {
     margin-top: 10px;
-    width: 60%;
-    height: 250px;
+    width: 68%;
+    height: 240px;
     border: 1px solid black;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>

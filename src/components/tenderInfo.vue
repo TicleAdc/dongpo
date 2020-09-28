@@ -1,20 +1,21 @@
 <!--
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
- * @FilePath: /dongpo/src/components/HospitalBulletin.vue
- * @LastEditTime: 2020-09-28 17:50:57
+ * @FilePath: /dongpo/src/components/tenderInfo.vue
+ * @LastEditTime: 2020-09-28 17:52:08
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
     <div class="g">
       <msg-list
-        title="医院公告"
+        title="招标信息"
         :list="list"
         :total="total"
         @changeMsgListPage="getDataByPage"
       ></msg-list>
     </div>
+
     <div style="padding-bottom: 330px"></div>
   </div>
 </template>

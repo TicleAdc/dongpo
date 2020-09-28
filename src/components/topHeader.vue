@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 14:26:08
  * @FilePath: /dongpo/src/components/topHeader.vue
- * @LastEditTime: 2020-09-24 16:00:40
+ * @LastEditTime: 2020-09-28 09:00:08
 -->
 <template>
   <div class="header">
@@ -35,9 +35,9 @@
         </el-menu-item> -->
 
         <sidebar-item
-          v-for="item in routes"
+          v-for="(item,index) in routes"
           :key="item.path"
-          :index="item.path"
+          :index="index"
           :item="item"
           @click="$emit('click', item.path)"
         ></sidebar-item>
@@ -69,7 +69,7 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
-          // console.log(this.routeData);
+          this.$store.commit('setMenuData', this.routeData);
           this.trueRoutes.splice(
             1,
             this.trueRoutes.length - 1,
@@ -340,5 +340,8 @@ export default {
 .el-menu.el-menu--popup.el-menu--popup-bottom-start a,
 .el-menu.el-menu--popup.el-menu--popup-bottom-start .el-submenu__title {
   width: 100%;
+}
+.el-submenu__icon-arrow::before {
+  display: none;
 }
 </style>

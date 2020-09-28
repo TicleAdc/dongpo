@@ -28,7 +28,7 @@
       </column>
     </div>
     <div class="workImg">
-      <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
+      <img :src="bigImg" alt="" />
     </div>
   </div>
 </template>
@@ -40,20 +40,7 @@ export default {
   name: 'partywork',
   data() {
     return {
-      contextlist: [
-        // {
-        //   id: '01',
-        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        // },
-        // {
-        //   id: '02',
-        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        // },
-        // {
-        //   id: '03',
-        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        // },
-      ],
+      contextlist: [],
       bigImg: '',
     };
   },
@@ -74,21 +61,13 @@ export default {
       return time;
     },
     getData() {
-      // axios.post('/api/getColumnList', {}).then((res) => {
-      //   // console.log(res);
-      //   // console.log(this.contextlist);
-      //   // console.log(res.ColumnData[5].columndata.list[0].id);
-      //   let classifyid = res.ColumnData[5].columndata.list[0].id;
-      //   console.log(classifyid);
-      //   axios
-      //     .post(`/api/getClassifyPageList?classifyId=${classifyid}&pageNo=1&pagesize=4`, {})
-      //     .then((data) => {
-      //       // console.log(data);
-      //       this.contextlist = data.page.list;
-      //     });
-      // });
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=partywork`).then((res) => {
         console.log(res);
+        this.bigImg = res.frontmenuList[0].columnBigimg;
+        let tagid = res.frontmenuList[1].columnData[0].id;
+        axios.post(`/api/getTagPageList?tagid=${tagid}&pageNo=1&pagesize=10`, {}).then((data) => {
+          console.log(data);
+        });
       });
     },
   },
