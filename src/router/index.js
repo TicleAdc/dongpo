@@ -16,11 +16,11 @@ Vue.use(VueRouter);
 export const routes = [
   {
     path: '/',
-    redirect: '/test',
+    redirect: '/home',
   },
   {
     name: '首页',
-    path: '/test',
+    path: '/home',
     component: Index,
   },
   {

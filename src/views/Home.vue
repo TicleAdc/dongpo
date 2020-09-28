@@ -56,7 +56,7 @@ import activety from '@/components/Activity';
 import debug from '../data/debug';
 
 export default {
-  name: 'Test',
+  name: 'Home',
   data() {
     return {
       tabs: {
