@@ -20,13 +20,15 @@ export default {
   data() {
     return {
       list: [],
-      total: 0,
+      total: '',
     };
   },
   methods: {
     getDataList() {
       axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
-        console.log(res);
+        // console.log(res);
+        this.list = res.page.lsit;
+        this.total = res.totalCount;
       });
     },
     getDataByPage(i) {

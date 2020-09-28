@@ -7,7 +7,7 @@
 <template>
   <div class="contents">
     <ul>
-      <li v-for="item in activitylist" :key="item.id">
+      <li v-for="item in list" :key="item.id">
         <div class="pic"><img :src="item.url" alt="" /></div>
         <div class="info">
           <div class="title">
@@ -25,42 +25,42 @@
 export default {
   data() {
     return {
-      activitylist: [
-        {
-          id: '1',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '4',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '5',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
+      list: [
+        // {
+        //   id: '1',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '2',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '3',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '4',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '5',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
       ],
     };
   },
@@ -69,8 +69,12 @@ export default {
 
 <style lang="less" scoped>
 .contents {
+  padding: 20px 0;
+  background-color: white;
   ul {
+    padding: 0 30px;
     li {
+      padding: 20px 0;
       border-bottom: 1px dotted gray;
       display: flex;
       .pic {

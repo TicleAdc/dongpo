@@ -42,6 +42,9 @@ import honor from '@/components/honor';
 import hospitalbulletin from '@/components/HospitalBulletin';
 import tenderInfo from '@/components/tenderInfo';
 import recruitmentInformation from '@/components/recruitmentInformation';
+import rumorRefutation from '@/components/rumorRefutation';
+import healthtreasure from '@/components/healthTreasure';
+import dongpoEmotion from '@/components/dongpoEmotion';
 
 export default {
   components: {
@@ -74,6 +77,9 @@ export default {
     hospitalbulletin,
     tenderInfo,
     recruitmentInformation,
+    rumorRefutation,
+    healthtreasure,
+    dongpoEmotion,
   },
   props: {
     showComponentName: {
