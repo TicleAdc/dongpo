@@ -2,14 +2,14 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
  * @FilePath: /dongpo/src/components/tenderInfo.vue
- * @LastEditTime: 2020-09-28 17:48:19
+ * @LastEditTime: 2020-09-28 17:52:08
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
     <div class="g">
       <msg-list
-        title="医院公告"
+        title="招标信息"
         :list="list"
         :total="total"
         @changeMsgListPage="getDataByPage"

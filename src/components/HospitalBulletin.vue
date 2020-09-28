@@ -1,18 +1,20 @@
 <!--
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
- * @FilePath: /dongpo/src/components/hospitalannounc.vue
- * @LastEditTime: 2020-09-28 15:25:30
+ * @FilePath: /dongpo/src/components/HospitalBulletin.vue
+ * @LastEditTime: 2020-09-28 17:50:57
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
-    <msg-list
-      title="医院公告"
-      :list="list"
-      :total="total"
-      @changeMsgListPage="getDataByPage"
-    ></msg-list>
+    <div class="g">
+      <msg-list
+        title="医院公告"
+        :list="list"
+        :total="total"
+        @changeMsgListPage="getDataByPage"
+      ></msg-list>
+    </div>
     <div style="padding-bottom: 330px"></div>
   </div>
 </template>
@@ -55,5 +57,8 @@ export default {
 <style lang="less" scoped>
 .all {
   background-color: #fff;
+  .g {
+    padding: 0 30px;
+  }
 }
 </style>
