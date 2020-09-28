@@ -124,6 +124,32 @@ const debug = {
         },
       ],
     },
+  ],
+  pathes: [
+    {
+      name: '首页',
+      path: '/index',
+    },
+    {
+      name: '特色医疗',
+      path: '/index',
+    },
+    {
+      name: '预防接种',
+      path: '/yufangjiezhong',
+    },
+  ],
+  menuList: [
+    {
+      name: '预防接种',
+      active: 'active',
+    },
+    {
+      name: '儿科',
+    },
+    {
+      name: '妇产科',
+    },
   ]
 };
 export default debug;

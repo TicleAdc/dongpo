@@ -69,12 +69,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+@import url("./assets/css/base.less");
 #app {
-  padding: 0 13.5%;
+  position: relative;
   background-color: #e8f1fa;
+  width: @width;
   height: 100%;
+  margin: 0 auto;
   min-height: 900px;
-  min-width: 1050px;
+  min-width: @minWidth;
+  max-width: @maxWidth;
 }
 </style>

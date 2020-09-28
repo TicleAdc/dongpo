@@ -7,13 +7,15 @@
 <template>
   <div class="header">
     <div class="top">
-      <div class="left">
-        <img src="~@/assets/img/brand/左上角logo@2x.png" alt="" />
-      </div>
-      <span class="phone">门诊电话： 028-38235760</span>
-      <div class="right">
-        <img src="@/assets/img/home/web@2x.png" alt="" />
-        <img src="@/assets/img/home/weChat@2x.png" alt="" />
+      <div class="top-content flex-box">
+        <div class="left">
+          <img src="~@/assets/img/brand/左上角logo@2x.png" alt="" />
+        </div>
+        <span class="phone flex-1">门诊电话： 028-38235760</span>
+        <div class="right">
+          <img src="@/assets/img/home/web@2x.png" alt="" />
+          <img src="@/assets/img/home/weChat@2x.png" alt="" />
+        </div>
       </div>
     </div>
     <div class="position"></div>
@@ -122,6 +124,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import url('../assets/css/base.less');
 .header {
   .top {
     position: fixed;
@@ -135,39 +138,33 @@ export default {
     justify-content: flex-start;
     align-items: center;
     z-index: 10;
-    .phone {
-      color: rgba(74, 93, 163, 1);
-      font-size: 15.54px;
-      text-align: left;
-      font-family: SourceHanSansCN-Normal;
-      margin-left: 5%;
-    }
-    .left {
-      margin-left: 13.5%;
-      > img {
-        width: 230px;
-        height: 25px;
+    .top-content {
+      width: @width;
+      min-width: @minWidth;
+      max-width: @maxWidth;
+      margin: 0 auto;
+      padding-top: 15px;
+      .phone {
+        color: rgba(74, 93, 163, 1);
+        font-size: 15.54px;
+        text-align: left;
+        font-family: SourceHanSansCN-Normal;
+        margin-left: 5%;
       }
-    }
-    .right {
-      position: absolute;
-      right: 13.5%;
-      > img {
-        height: 34px;
-        width: auto;
-        &:first-child {
-          margin-right: 20px;
+      .left {
+        > img {
+          width: 230px;
+          height: 25px;
         }
       }
-    }
-    @media screen and (max-width: 1000px) {
       .right {
-        right: 0;
-      }
-    }
-    @media screen and (max-width: 720px) {
-      .right {
-        display: none;
+        > img {
+          height: 30px;
+          width: auto;
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
       }
     }
   }

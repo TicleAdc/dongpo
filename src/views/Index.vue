@@ -27,6 +27,7 @@ import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
 import mediareport from '@/components/mediaReport';
 import detail from '@/components/detail';
+import yufangjiezhong from '@/views/yufangjiezhong';
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     linenews,
     mediareport,
     detail,
+    yufangjiezhong
   },
   props: {
     showComponentName: {

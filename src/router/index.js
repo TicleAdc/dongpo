@@ -134,7 +134,7 @@ export const routes = [
       {
         name: '预防接种',
         path: '/yufangjiezhong',
-        component: Index,
+        component: () => import('@/views/yufangjiezhong.vue'),
       },
       {
         name: '儿科',
