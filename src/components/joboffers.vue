@@ -2,12 +2,17 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
  * @FilePath: /dongpo/src/components/joboffers.vue
- * @LastEditTime: 2020-09-28 14:45:13
+ * @LastEditTime: 2020-09-28 15:25:39
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
-    <msg-list title="招聘信息" :list="list" :total="total" @changeMsgListPage="i"></msg-list>
+    <msg-list
+      title="招聘信息"
+      :list="list"
+      :total="total"
+      @changeMsgListPage="getDataByPage"
+    ></msg-list>
     <div style="padding-bottom: 330px"></div>
   </div>
 </template>

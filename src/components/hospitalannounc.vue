@@ -2,12 +2,17 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:13:30
  * @FilePath: /dongpo/src/components/hospitalannounc.vue
- * @LastEditTime: 2020-09-28 14:43:10
+ * @LastEditTime: 2020-09-28 15:25:30
  * @description 医院公告组件
 -->
 <template>
   <div class="all">
-    <msg-list title="医院公告" :list="list" :total="total" @changeMsgListPage="i"></msg-list>
+    <msg-list
+      title="医院公告"
+      :list="list"
+      :total="total"
+      @changeMsgListPage="getDataByPage"
+    ></msg-list>
     <div style="padding-bottom: 330px"></div>
   </div>
 </template>
