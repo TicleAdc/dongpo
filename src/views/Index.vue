@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-22 15:03:39
  * @FilePath: /dongpo/src/views/Index.vue
- * @LastEditTime: 2020-09-24 16:05:48
+ * @LastEditTime: 2020-09-28 09:14:40
 -->
 <template>
   <div>
@@ -27,6 +27,9 @@ import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
 import mediareport from '@/components/mediaReport';
 import detail from '@/components/detail';
+import hospitalannounc from '@/components/hospitalannounc';
+import biddinginformation from '@/components/biddinginformation';
+import joboffers from '@/components/joboffers';
 
 export default {
   components: {
@@ -45,6 +48,9 @@ export default {
     linenews,
     mediareport,
     detail,
+    hospitalannounc,
+    biddinginformation,
+    joboffers,
   },
   props: {
     showComponentName: {

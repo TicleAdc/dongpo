@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-28 09:10:55
+ * @LastEditTime: 2020-09-28 09:27:31
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
