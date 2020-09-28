@@ -3,7 +3,7 @@
     <div class="banner">
       <el-carousel height="200px" direction="vertical" :autoplay="true">
         <el-carousel-item v-for="item in imglist" :key="item.index">
-          <img :src="item.columnBigimg" alt="" />
+          <img :src="item.url" alt="" />
         </el-carousel-item>
       </el-carousel>
     </div>
