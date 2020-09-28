@@ -15,7 +15,7 @@
     <div class="bottom">
       <div class="first">
         <div class="one">
-          <img src="@/assets/img/brand/左下角logo@2x.png" alt="" />
+          <img src="@/assets/img/brand/leftLogoBotton@2x.png" alt="" />
           <div>
             <p>查看地图</p>
             <p>眉山市东坡区府街92号</p>
@@ -34,7 +34,7 @@
             <p>搜狐新闻号： 东坡区妇幼保健院</p>
           </div>
           <div class="qrcode">
-            <img src="@/assets/img/brand/位图@2x.png" alt="" />
+            <img src="@/assets/img/brand/qrCode.png" alt="" />
             <p>微信公众号</p>
           </div>
         </div>
@@ -222,7 +222,7 @@
       </div>
     </div>
     <div class="foot">
-      <img src="@/assets/img/brand/底部logo@2x.png" alt="" />
+      <img src="@/assets/img/brand/bottonLogo@2x.png" alt="" />
     </div>
   </div>
 </template>
@@ -289,7 +289,7 @@ export default {
           margin-left: 15%;
           img {
             width: 69.6px;
-            height: 69.6;
+            height: 69.6px;
           }
           p {
             margin-left: 2px;

@@ -9,7 +9,7 @@
     <div class="top">
       <div class="top-content flex-box">
         <div class="left">
-          <img src="~@/assets/img/brand/左上角logo@2x.png" alt="" />
+          <img src="~@/assets/img/brand/leftLogo@2x.png" alt="" />
         </div>
         <span class="phone flex-1">门诊电话： 028-38235760</span>
         <div class="right">
@@ -20,7 +20,7 @@
     </div>
     <div class="position"></div>
     <div class="content-header">
-      <img src="@/assets/img/brand/左上角大logo@2x.png" alt="" />
+      <img src="@/assets/img/brand/leftLogoBig@2x.png" alt="" />
       <el-input placeholder="请选择日期">
         <i slot="suffix" class="el-input__icon el-icon-search"></i>
       </el-input>

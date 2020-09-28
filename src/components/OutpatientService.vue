@@ -24,7 +24,7 @@
           <p>微信扫一扫</p>
           <p>关注东坡妇幼公众号</p>
           <p>享便捷医疗服务</p>
-          <img src="@/assets/img/brand/位图@2x.png" alt="" />
+          <img src="@/assets/img/brand/qrCode.png" alt="" />
         </div>
       </div>
     </div>
