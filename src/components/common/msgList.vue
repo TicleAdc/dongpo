@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-28 09:54:49
  * @FilePath: /dongpo/src/components/common/msgList.vue
- * @LastEditTime: 2020-09-28 16:19:04
+ * @LastEditTime: 2020-09-28 17:47:27
 -->
 <template>
   <div class="msg-list">
@@ -35,13 +35,9 @@ export default {
   props: {
     title: {
       type: String,
-<<<<<<< HEAD
-      // required: true,
-=======
       default() {
         return '';
       },
->>>>>>> e8edb836e0b68f067e18ce0c2b6274372839867b
     },
     list: {
       type: Array,
