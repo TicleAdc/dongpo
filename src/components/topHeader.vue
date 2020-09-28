@@ -37,7 +37,7 @@
         </el-menu-item> -->
 
         <sidebar-item
-          v-for="(item,index) in routes"
+          v-for="(item, index) in routes"
           :key="item.path"
           :index="index"
           :item="item"
@@ -69,7 +69,7 @@ export default {
     },
     getMenuList() {
       request
-        .post('/api/getTreeList')
+        .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
           this.$store.commit('setMenuData', this.routeData);
@@ -383,7 +383,7 @@ export default {
   font-family: SourceHanSansCN-Normal;
 }
 .el-menu.el-menu--popup li:hover {
-  background-color: rgba(74, 93, 165, .6);
+  background-color: rgba(74, 93, 165, 0.6);
 }
 .el-menu.el-menu--popup li a:hover {
   color: #fff;

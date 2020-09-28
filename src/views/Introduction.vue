@@ -25,6 +25,7 @@
         <p v-html="item.columnContext"></p>
       </div>
     </div>
+    <div class="contents" v-html="bottomContext"></div>
   </div>
 </template>
 
@@ -39,6 +40,7 @@ export default {
       column: [],
       content: '',
       contentTitle: '',
+      bottomContext: '',
     };
   },
   components: {
@@ -65,7 +67,7 @@ export default {
       });
       axios.get(`/api/info/2`).then((res) => {
         console.log(res);
-        // this.content = res.contents.contentsdata;
+        this.bottomContext = res.contents.contentsdata;
         // this.contentTitle = res.contents.contentsTitle;
       });
     },
