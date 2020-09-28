@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:55:25
  * @FilePath: /dongpo/src/router/index.js
- * @LastEditTime: 2020-09-28 09:27:31
+ * @LastEditTime: 2020-09-28 09:59:16
  */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -22,6 +22,11 @@ export const routes = [
     name: '详情',
     path: '/detail',
     component: detail,
+  },
+  {
+    name: '首页',
+    path: '/home',
+    component: Index,
   },
   {
     name: '医院概况',
