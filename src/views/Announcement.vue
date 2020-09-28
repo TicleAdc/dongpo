@@ -1,24 +1,21 @@
+<!--
+ * @Author: Spring Breeze
+ * @Date: 2020-09-24 14:51:52
+ * @FilePath: /dongpo/src/views/Announcement.vue
+ * @LastEditTime: 2020-09-28 09:06:01
+-->
 <template>
   <div class="body">
-    <Title>
-      <div slot="theme">通知公告</div>
-      <div slot="childtabs">
-        <div @click="changeComponent(item.id)" class="tab" v-for="item in checkList" :key="item.id">
-          <a> {{ item.name }}</a>
-        </div>
-      </div>
-    </Title>
-    <component :is="showComponent"></component>
-    <pagenation></pagenation>
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="医院公告" name="first">用户管理</el-tab-pane>
+      <el-tab-pane label="招标信息" name="second">配置管理</el-tab-pane>
+      <el-tab-pane label="招聘信息" name="third">角色管理</el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
-import pagenation from '@/components/pageNation';
-import Title from '@/components/Title';
-import hospitalBulletin from '@/components/HospitalBulletin';
-import tenderInfo from '@/components/tenderInformation';
-import recruitment from '@/components/recruitmentInformation';
+// 跳转路由
 export default {
   data() {
     return {
@@ -39,13 +36,7 @@ export default {
       showComponent: 'hospitalBulletin',
     };
   },
-  components: {
-    Title,
-    pagenation,
-    hospitalBulletin,
-    tenderInfo,
-    recruitment,
-  },
+  components: {},
   methods: {
     changeComponent(id) {
       switch (Number(id)) {
