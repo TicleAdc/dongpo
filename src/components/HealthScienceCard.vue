@@ -21,21 +21,22 @@
 export default {
   data() {
     return {
-  //     healthcardlist: [],
-  //     contents: [],
-  //   };
-  // },
-  // mounted() {
-  //   this.getCardList();
-  // },
-  // methods: {
-  //   getCardList() {
-  //     axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
-  //       console.log(res);
-  //       this.healthcardlist = res.frontmenuList;
-  //     });
-  //   },
-  // },
+      //     healthcardlist: [],
+      //     contents: [],
+      //   };
+      // },
+      // mounted() {
+      //   this.getCardList();
+      // },
+      // methods: {
+      //   getCardList() {
+      //     axios.get(`/api/getColumnDataByPositionId?columnPositionId=healthscience`).then((res) => {
+      //       console.log(res);
+      //       this.healthcardlist = res.frontmenuList;
+      //     });
+      //   },
+      // },
+      contents: [],
       healthcardlist: [
         {
           id: '1',
