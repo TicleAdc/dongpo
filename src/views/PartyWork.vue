@@ -14,10 +14,10 @@
         <header-title title="党建动态"></header-title>
       </div>
       <div class="bottom">
-        <img :src="bigImg" alt="" class="big" />
+        <img :src="columnBigimg" alt="" class="big" />
         <div class="bottom-right">
           <div class="head">
-            <img :src="smallImg" alt="" class="small" />
+            <img :src="columnSmallimg" alt="" class="small" />
             <div class="right-content">
               <p>{{ content }}</p>
               <span class="bottom">{{ time }}</span>
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import axios from '@/api/request.js';
 import Title from '@/components/Title';
 import headerTitle from '@/components/common/headerTitle';
 import msgList from '@/components/common/msgList';
@@ -65,6 +66,16 @@ export default {
     Title,
     headerTitle,
     msgList,
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    getData() {
+      axios.get(`/api/getColumnDataByPositionId?columnPositionId=DQGZ`).then((res) => {
+        console.log(res);
+      });
+    },
   },
   data() {
     return {
@@ -75,23 +86,23 @@ export default {
       // 显示的时间
       time: '2020-2-3',
       // 大图片的地址
-      bigImg: '',
+      columnBigimg: '',
       // 小图片的地址
-      smallImg: '',
+      columnSmallimg: '',
       // 党建动态列表
       partyDynamic: [
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
@@ -99,27 +110,27 @@ export default {
       // 党的建设
       partyBuilding: [
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
@@ -127,27 +138,27 @@ export default {
       // 党风廉政
       partyStyle: [
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },
         {
-          content:
+          columnContext:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
           time: '2020-2-10',
         },

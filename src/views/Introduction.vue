@@ -2,7 +2,11 @@
   <div class="container">
     <div class="top">
       <div class="vedio"><img :src="vedio" alt="" /></div>
-      <div class="topcontext"></div>
+      <!-- <div>{{}}</div> -->
+      <div>
+        <subtitle :title="contentTitle"></subtitle>
+        <div class="topcontext" v-html="content"></div>
+      </div>
     </div>
     <div class="mid">
       <div class="shownumber" v-for="item in numberList" :key="item.index">
@@ -25,6 +29,7 @@
 </template>
 
 <script>
+import subtitle from '@/components/common/subTitle';
 import axios from '@/api/request.js';
 export default {
   data() {
@@ -32,7 +37,12 @@ export default {
       vedio: '',
       numberList: [],
       column: [],
+      content: '',
+      contentTitle: '',
     };
+  },
+  components: {
+    subtitle,
   },
   methods: {
     getData() {
@@ -48,6 +58,16 @@ export default {
         // console.log(data);
         this.column = data.frontmenuList;
       });
+      axios.get(`/api/info/1`).then((res) => {
+        // console.log(res);
+        this.content = res.contents.contentsdata;
+        this.contentTitle = res.contents.contentsTitle;
+      });
+      axios.get(`/api/info/2`).then((res) => {
+        console.log(res);
+        // this.content = res.contents.contentsdata;
+        // this.contentTitle = res.contents.contentsTitle;
+      });
     },
   },
   mounted() {
@@ -62,15 +82,20 @@ export default {
   .top {
     display: flex;
     padding: 30px;
+    // justify-content: space-between;
     .vedio {
-      width: 50%;
-      height: 250px;
+      flex: 1;
+      // width: 180%;
+      // height: 250px;
+      margin-right: 50px;
       // background-color: aquamarine;
     }
     .topcontext {
-      width: 40%;
-      height: 250px;
+      flex: 1;
+      width: 90%;
+      // height: 250px;
       padding: 0 20px;
+      font-size: 10px;
     }
   }
   .mid {

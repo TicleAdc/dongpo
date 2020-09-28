@@ -12,7 +12,7 @@
     </div>
     <div class="list" v-for="(item, index) in list" :key="index" @click="goDetail(index)">
       <i class="el-icon-caret-left" :class="!showTime ? 'less' : ''"></i>
-      <span class="content">{{ item.content }}</span>
+      <span class="content">{{ item.columnContext }}</span>
       <div class="right" v-if="showTime">
         {{ item.time }}
       </div>
@@ -82,6 +82,7 @@ export default {
 
 <style lang="less" scoped>
 .msg-list {
+  padding: 20px;
   .title {
     position: relative;
     color: #4d5aa2;
