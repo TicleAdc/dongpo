@@ -72,6 +72,7 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
+          // this.getElementsClass('el-menu--horizontal');
           this.routeData.forEach((item) => {
             item.children?.forEach((child) => {
               child.children = null;
@@ -116,7 +117,7 @@ export default {
         if (tags[i].nodeType == 1) {
           if (tags[i].getAttribute('class') == data) {
             classobj[classint] = tags[i];
-            classobj[classint].style.width = 80 / (this.routeData.length - 1) + '%';
+            classobj[classint].style.width = 80 / (this.routeData.length) + '%';
             classint++;
           }
         }
@@ -141,7 +142,7 @@ export default {
   mounted() {
     this.setActiveIndex();
     this.getMenuList();
-    this.getElementsClass('el-menu--horizontal');
+    // this.getElementsClass('el-menu--horizontal');
   },
 };
 </script>
@@ -392,5 +393,8 @@ export default {
 }
 .el-menu.el-menu--popup li a:hover {
   color: #fff;
+}
+body > div.el-menu--horizontal {
+  width: 7.27%;
 }
 </style>
