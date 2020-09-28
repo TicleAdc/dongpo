@@ -19,25 +19,29 @@
         </div>
       </div>
     </Title>
-    <component :is="isShowComponent"></component>
+    <component :is="showComponent"></component>
   </div>
 </template>
 
 <script>
 import axios from '@/api/request.js';
 import introduction from '@/views/Introduction';
+import leader from '@/components/leader';
+import honor from '@/components/honor';
 import Title from '@/components/Title';
 export default {
   data() {
     return {
       tabs: [],
       showlist: [],
-      isShowComponent: 'introduction',
+      showComponent: 'introduction',
     };
   },
   components: {
     Title,
     introduction,
+    leader,
+    honor,
   },
   mounted() {
     this.getTabs();
@@ -45,21 +49,24 @@ export default {
   methods: {
     getTabs() {
       axios.get('/api/getTreeList').then((res) => {
-        console.log(res);
+        // console.log(res);
         this.tabs = res.TreeMenu[5].children;
-        console.log(this.tabs);
+        // console.log(this.tabs);
       });
     },
     changeComponent(name) {
+      // console.log(name);
       switch (name) {
         case '医院介绍':
           this.showComponent = 'introduction';
+          // console.log(this.showComponent);
           break;
-        case '现任介绍':
-          this.showComponent = 'introduction';
+        case '领导团队':
+          this.showComponent = 'leader';
+          // console.log(this.showComponent);
           break;
         case '医院荣誉':
-          this.showComponent = 'introduction';
+          this.showComponent = 'honor';
           break;
         default:
           this.showComponent = 'introduction';
