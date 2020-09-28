@@ -360,4 +360,10 @@ export default {
   font-size: 12px;
   font-family: SourceHanSansCN-Normal;
 }
+.el-menu.el-menu--popup li:hover {
+  background-color: rgba(74, 93, 165, .6);
+}
+.el-menu.el-menu--popup li a:hover {
+  color: #fff;
+}
 </style>
