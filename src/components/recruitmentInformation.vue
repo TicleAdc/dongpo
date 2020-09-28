@@ -34,16 +34,39 @@ export default {
   },
   created() {
     // 请求数据
-    // this.list = [
-    //   {
-    //     content: `
-    // Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro id
-    // reiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eius
-    // provident, magni exercitationem assumenda? Cupiditate, odio?
-    // `,
-    //     time: '2020-2-10',
-    //   },
-    // ];
+    this.list = [
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+      {
+        columnContext:
+          '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+        time: '2020-2-10',
+      },
+    ];
   },
 };
 </script>

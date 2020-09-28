@@ -25,14 +25,53 @@ export default {
   },
   data() {
     return {
-      list: [],
+      list: [
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+        {
+          columnContext:
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
+          time: '2020-2-10',
+        },
+      ],
       total: 0,
     };
   },
   methods: {
     getDataList() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=MYBJ`).then((res) => {
-        console.log(res);
+      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
+        // console.log(res);
+        this.list = res.page.list;
+        // console.log(this.list);
+        this.total = res.totalCount;
       });
     },
     getDataByPage(i) {
@@ -41,7 +80,7 @@ export default {
     },
   },
   mounted() {
-    this.getDataList();
+    // this.getDataList();
   },
 };
 </script>
