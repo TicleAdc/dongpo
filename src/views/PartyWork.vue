@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 11:10:50
  * @FilePath: /dongpo/src/views/PartyWork.vue
- * @LastEditTime: 2020-09-28 16:18:14
+ * @LastEditTime: 2020-09-28 16:45:15
 -->
 <template>
   <div class="party-work">
@@ -19,14 +19,30 @@
           <div class="head">
             <img :src="smallImg" alt="" class="small" />
             <div class="right-content">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos nisi
-                molestiae, consectetur ea nobis, minima placeat ex sint voluptatum maiores voluptas
-                expedita quos dolores dolore nemo ducimus, adipisci culpa quasi.
-              </p>
-              <span class="bottom">2020</span>
+              <p>{{ content }}</p>
+              <span class="bottom">{{ time }}</span>
             </div>
           </div>
+          <msg-list
+            :showTitle="false"
+            :showPagination="false"
+            :list="partyDynamic"
+            :showTime="false"
+          ></msg-list>
+        </div>
+      </div>
+      <div class="building">
+        <div class="left">
+          <header-title title="党的建设"></header-title>
+          <msg-list
+            :showTitle="false"
+            :showPagination="false"
+            :list="partyBuilding"
+            :showTime="false"
+          ></msg-list>
+        </div>
+        <div class="right">
+          <header-title title="党风廉政"></header-title>
           <msg-list
             :showTitle="false"
             :showPagination="false"
@@ -36,6 +52,7 @@
         </div>
       </div>
     </div>
+    <div class="b"></div>
   </div>
 </template>
 
@@ -51,12 +68,54 @@ export default {
   },
   data() {
     return {
+      // 右边区域的内容
+      content: ` Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos nisi
+                molestiae, consectetur ea nobis, minima placeat ex sint voluptatum maiores voluptas
+                expedita quos dolores dolore nemo ducimus, adipisci culpa quasi.`,
+      // 显示的时间
+      time: '2020-2-3',
       // 大图片的地址
       bigImg: '',
       // 小图片的地址
       smallImg: '',
       // 党建动态列表
+      partyDynamic: [
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+      ],
+      // 党的建设
       partyBuilding: [
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+        {
+          content:
+            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+          time: '2020-2-10',
+        },
+      ],
+      // 党风廉政
+      partyStyle: [
         {
           content:
             'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
@@ -88,7 +147,7 @@ export default {
       display: flex;
       margin-top: 20px;
       .big {
-        min-width: 300px;
+        min-width: 425px;
         min-height: 300px;
         margin-right: 40px;
         flex: 1;
@@ -102,13 +161,44 @@ export default {
           .small {
             flex: 1;
             margin-right: 30px;
+            min-width: 200px;
+            min-height: 150px;
           }
           .right-content {
             flex: 1.5;
+            color: rgba(74, 93, 163, 1);
+            position: relative;
+            p {
+              text-overflow: ellipsis;
+              overflow: hidden;
+              height: 46px;
+            }
+            > .bottom {
+              position: absolute;
+              bottom: 0;
+              color: gray;
+              font-size: 14px;
+            }
           }
         }
       }
     }
+    .building {
+      display: flex;
+      margin-top: 20px;
+      .left {
+        flex: 1;
+        overflow: hidden;
+        margin-right: 50px;
+      }
+      .right {
+        flex: 1;
+        overflow: hidden;
+      }
+    }
+  }
+  .b {
+    padding-bottom: 50px;
   }
 }
 </style>
