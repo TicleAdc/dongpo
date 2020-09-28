@@ -36,7 +36,9 @@ import detail from '@/components/detail';
 import hospitalannounc from '@/components/hospitalannounc';
 import biddinginformation from '@/components/biddinginformation';
 import joboffers from '@/components/joboffers';
-
+import introduction from '@/views/Introduction';
+import leader from '@/components/leader';
+import honor from '@/components/honor';
 
 export default {
   components: {
@@ -63,6 +65,9 @@ export default {
     hospitalannounc,
     biddinginformation,
     joboffers,
+    introduction,
+    leader,
+    honor,
   },
   props: {
     showComponentName: {

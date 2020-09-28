@@ -5,6 +5,7 @@
       :key="index"
       :img="item.columnBigimg"
       :title="item.columnContext"
+      :time="item.columnData"
     ></honorwall>
   </div>
 </template>
