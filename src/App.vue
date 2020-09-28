@@ -76,7 +76,8 @@ export default {
   background-color: #e8f1fa;
   width: @width;
   height: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
+  padding: 0 10%;
   min-height: 900px;
   min-width: @minWidth;
   max-width: @maxWidth;

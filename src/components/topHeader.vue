@@ -93,7 +93,7 @@ export default {
         if (tags[i].nodeType == 1) {
           if (tags[i].getAttribute('class') == data) {
             classobj[classint] = tags[i];
-            classobj[classint].style.width = 73 / (this.$router.options.routes.length - 1) + '%';
+            classobj[classint].style.width = 80 / (this.$router.options.routes.length - 1) + '%';
             classint++;
           }
         }
