@@ -252,6 +252,10 @@ export default {
             right: 2px;
           }
         }
+        .el-submenu__title a.active {
+          color: #fff;
+          background-color: #4a5da3;
+        }
       }
     }
   }
