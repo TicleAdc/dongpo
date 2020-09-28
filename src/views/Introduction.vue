@@ -26,6 +26,7 @@
       </div>
     </div>
     <div class="contents" v-html="bottomContext"></div>
+    <div class="bottom" v-html="bottom"></div>
   </div>
 </template>
 
@@ -41,6 +42,7 @@ export default {
       content: '',
       contentTitle: '',
       bottomContext: '',
+      bottom: '',
     };
   },
   components: {
@@ -66,8 +68,13 @@ export default {
         this.contentTitle = res.contents.contentsTitle;
       });
       axios.get(`/api/info/2`).then((res) => {
-        console.log(res);
+        // console.log(res.contents.contentsdata);
         this.bottomContext = res.contents.contentsdata;
+        // this.contentTitle = res.contents.contentsTitle;
+      });
+      axios.get(`/api/info/254`).then((res) => {
+        console.log(res.contents.contentsdata);
+        this.bottom = res.contents.contentsdata;
         // this.contentTitle = res.contents.contentsTitle;
       });
     },
@@ -86,14 +93,17 @@ export default {
     padding: 30px;
     // justify-content: space-between;
     .vedio {
-      flex: 1;
+      // flex: 1;
       // width: 180%;
       // height: 250px;
       margin-right: 50px;
       // background-color: aquamarine;
+      img {
+        width: 400px;
+      }
     }
     .topcontext {
-      flex: 1;
+      // flex: 1;
       width: 90%;
       // height: 250px;
       padding: 0 20px;
@@ -168,6 +178,20 @@ export default {
         height: 100px;
       }
     }
+  }
+  .contents {
+    position: relative;
+    left: 40%;
+    top: -610px;
+    font-size: 10px;
+    width: 50%;
+  }
+  .bottom {
+    top: -560px;
+    position: relative;
+    font-size: 10px;
+    width: 80%;
+    margin-left: 10%;
   }
 }
 </style>
