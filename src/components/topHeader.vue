@@ -72,6 +72,11 @@ export default {
         .get('/api/getTreeList')
         .then((res) => {
           this.routeData = res.TreeMenu;
+          this.routeData.forEach((item) => {
+            item.children?.forEach((child) => {
+              child.children = null;
+            });
+          });
           this.$store.commit('setMenuData', this.routeData);
           this.trueRoutes.splice(
             1,
@@ -111,7 +116,7 @@ export default {
         if (tags[i].nodeType == 1) {
           if (tags[i].getAttribute('class') == data) {
             classobj[classint] = tags[i];
-            classobj[classint].style.width = 80 / (this.$router.options.routes.length - 1) + '%';
+            classobj[classint].style.width = 80 / (this.routeData.length - 1) + '%';
             classint++;
           }
         }

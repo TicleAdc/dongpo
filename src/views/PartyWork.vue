@@ -72,17 +72,36 @@ export default {
   },
   methods: {
     getData() {
-      axios.get(`/api/getColumnDataByPositionId?columnPositionId=DQGZ`).then((res) => {
-        console.log(res);
+      axios
+        .get(`/api/getColumnDataByPositionId?columnPositionId=partywork`)
+        .then((res) => {
+          console.log(res);
+          this.columnBigimg = res.frontmenuList[0].columnBigimg;
+          this.columnSmallimg = res.frontmenuList[0].columnBigimg;
+          let id = res.frontmenuList[1].columnData[0].id;
+          return Promise.resolve(id);
+        })
+        .then((res) => {
+          console.log(res);
+          return axios.post(`/api/getTagPageList?tagid=${res}&pageNo=1&pagesize=20`);
+        })
+        .then((res) => {
+          console.log(`20 ${res}`);
+        });
+
+      axios.post(`/api/getTagPageList?tagid=30&pageNo=1&pagesize=20`).then((res) => {
+        console.log(`30 ${res}`);
+      });
+      axios.post(`/api/getTagPageList?tagid=31&pageNo=1&pagesize=20`).then((res) => {
+        console.log(`31 ${res}`);
       });
     },
   },
   data() {
     return {
+      id: '',
       // 右边区域的内容
-      content: ` Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos nisi
-                molestiae, consectetur ea nobis, minima placeat ex sint voluptatum maiores voluptas
-                expedita quos dolores dolore nemo ducimus, adipisci culpa quasi.`,
+      content: ` 我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。`,
       // 显示的时间
       time: '2020-2-3',
       // 大图片的地址
@@ -93,17 +112,17 @@ export default {
       partyDynamic: [
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
       ],
@@ -111,27 +130,27 @@ export default {
       partyBuilding: [
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
       ],
@@ -139,27 +158,27 @@ export default {
       partyStyle: [
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。<br/><br/>现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。<br/><br/>现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。<br/><br/>现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。<br/><br/>现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
         {
           columnContext:
-            'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet voluptates eaque porro idreiciendis sequi placeat sit libero dignissimos expedita accusamus ducimus, delectus eiusprovident, magni exercitationem assumenda? Cupiditate, odio?',
+            '我院儿童保健科成立于1996年,成立至今已有24年历史。<br/><br/>现有医务人员13人,其中副主任医师3名,主治医师7名,早期综合发展训练师1名，护士2名。',
           time: '2020-2-10',
         },
       ],
