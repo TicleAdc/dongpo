@@ -8,7 +8,7 @@
   <div>
     <banner></banner>
     <cardlist></cardlist>
-    <tabs></tabs>
+    <tabs :tabList="tabs.list" @more="tabMore"></tabs>
     <departmentlist></departmentlist>
     <column>
       <div slot="title" class="img">
@@ -59,9 +59,15 @@ import healthscience from '@/components/HealthScienceCard';
 import works from '@/components/Works';
 import outpatientservice from '@/components/OutpatientService';
 import activety from '@/components/Activity';
+import debug from '../data/debug';
+
 export default {
   data() {
-    return {};
+    return {
+      tabs: {
+        list: debug.tabs,
+      },
+    };
   },
   components: {
     personcard,
@@ -74,6 +80,11 @@ export default {
     works,
     outpatientservice,
     activety,
+  },
+  methods: {
+    tabMore() {
+      console.log('tab more');
+    },
   },
 };
 </script>
