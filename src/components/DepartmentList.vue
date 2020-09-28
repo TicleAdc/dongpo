@@ -3,9 +3,9 @@
     <div class="logoimg"><img :src="backgroundimg" alt="" /></div>
     <div class="iconlist">
       <div class="icon" v-for="item in iconlist" :key="item.id">
-        <div class="img">
+        <div>
           <!-- <img :src="item.smallimgurl" alt="" /> -->
-          <img :src="item.url" alt="" />
+          <img class="img" :src="item.url" alt="" />
         </div>
         <div class="name">{{ item.name }}</div>
       </div>
@@ -112,12 +112,12 @@ export default {
 .pinklogo {
   background-color: rgba(255, 234, 239, 1);
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 0 50px 0;
   .logoimg {
     line-height: 60px;
     img {
-      width: 150px;
-      height: 30px;
+      width: 292px;
+      height: 38px;
     }
   }
   .iconlist {
@@ -140,7 +140,13 @@ export default {
       //   height: 80px;
       // }
       .name {
-        font-size: 10px;
+        color: #666666;
+        font-size: 15px;
+        font-family: Helvetica;
+      }
+      .img {
+        width: 80px;
+        height: 80px;
       }
     }
   }

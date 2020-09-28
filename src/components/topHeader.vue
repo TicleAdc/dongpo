@@ -136,12 +136,11 @@ export default {
     .right {
       position: absolute;
       right: 13.5%;
-
       > img {
-        width: 34.96px;
-        height: 27.52px;
+        height: 34px;
+        width: auto;
         &:first-child {
-          margin-right: 31px;
+          margin-right: 20px;
         }
       }
     }

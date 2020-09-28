@@ -100,16 +100,15 @@ export default {
   justify-content: space-between;
   .healthcard {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid #b1b1b1;
     border-radius: 10%;
     width: 30%;
     .head {
       width: 80%;
-      padding: 10%;
+      padding: 5% 10%;
     }
     .content {
-      padding-left: 15%;
-      padding-bottom: 10%;
+      padding: 0 15% 5% 15%;
       font-size: 13px;
       ul {
         list-style: none;
@@ -127,6 +126,7 @@ export default {
           }
           span {
             font-size: 10px;
+            color: #4d4d4d;
             a {
               color: gray;
             }
@@ -135,9 +135,9 @@ export default {
       }
     }
     .blank {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #b1b1b1;
       width: 60%;
-      margin-bottom: 10%;
+      margin-bottom: 8%;
       margin-left: 20%;
     }
   }
