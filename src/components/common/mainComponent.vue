@@ -2,12 +2,12 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-24 14:51:52
  * @FilePath: /dongpo/src/components/common/mainComponent.vue
- * @LastEditTime: 2020-09-28 11:12:28
+ * @LastEditTime: 2020-09-28 15:30:43
 -->
 <template>
   <div class="routeData">
     <Title>
-      <div slot="theme">通知公告</div>
+      <div slot="theme">{{ title }}</div>
       <template #childtabs>
         <el-tabs v-model="activeName">
           <el-tab-pane
@@ -37,6 +37,10 @@ export default {
   },
   props: {
     currentRoute: {
+      type: String,
+      required: true,
+    },
+    title: {
       type: String,
       required: true,
     },
