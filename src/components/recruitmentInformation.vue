@@ -24,7 +24,7 @@ export default {
     return {
       list: [],
       // 数据条数
-      total: 105,
+      total: 0,
     };
   },
   mounted() {

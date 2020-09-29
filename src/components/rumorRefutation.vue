@@ -5,7 +5,7 @@
         <div class="pic"><img :src="item.url" alt="" /></div>
         <div class="info">
           <div class="title">
-            <a href="#">{{ item.title }}</a>
+            <a>{{ item.title }}</a>
           </div>
           <p class="text">{{ item.text }}</p>
           <div class="time">{{ item.time }}</div>
@@ -16,47 +16,53 @@
 </template>
 
 <script>
+import request from '@/api/request.js';
 export default {
   data() {
     return {
       list: [
-        // {
-        //   id: '1',
-        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
-        //   title: '新时代，新征程，新目标',
-        //   text: '新时代新征程新目标',
-        //   time: '发布时间:2020-09-19',
-        // },
-        // {
-        //   id: '2',
-        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
-        //   title: '新时代，新征程，新目标',
-        //   text: '新时代新征程新目标',
-        //   time: '发布时间:2020-09-19',
-        // },
-        // {
-        //   id: '3',
-        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
-        //   title: '新时代，新征程，新目标',
-        //   text: '新时代新征程新目标',
-        //   time: '发布时间:2020-09-19',
-        // },
-        // {
-        //   id: '4',
-        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
-        //   title: '新时代，新征程，新目标',
-        //   text: '新时代新征程新目标',
-        //   time: '发布时间:2020-09-19',
-        // },
-        // {
-        //   id: '5',
-        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
-        //   title: '新时代，新征程，新目标',
-        //   text: '新时代新征程新目标',
-        //   time: '发布时间:2020-09-19',
-        // },
+        {
+          id: '1',
+          url: require('@/assets/img/home/thematicActivities1@2x.png'),
+          title: '新时代，新征程，新目标',
+          text: '新时代新征程新目标',
+          time: '发布时间:2020-09-19',
+        },
+        {
+          id: '2',
+          url: require('@/assets/img/home/thematicActivities1@2x.png'),
+          title: '新时代，新征程，新目标',
+          text: '新时代新征程新目标',
+          time: '发布时间:2020-09-19',
+        },
+        {
+          id: '3',
+          url: require('@/assets/img/home/thematicActivities1@2x.png'),
+          title: '新时代，新征程，新目标',
+          text: '新时代新征程新目标',
+          time: '发布时间:2020-09-19',
+        },
+        {
+          id: '4',
+          url: require('@/assets/img/home/thematicActivities1@2x.png'),
+          title: '新时代，新征程，新目标',
+          text: '新时代新征程新目标',
+          time: '发布时间:2020-09-19',
+        },
+        {
+          id: '5',
+          url: require('@/assets/img/home/thematicActivities1@2x.png'),
+          title: '新时代，新征程，新目标',
+          text: '新时代新征程新目标',
+          time: '发布时间:2020-09-19',
+        },
       ],
     };
+  },
+  methods: {
+    getData() {
+      request.get(``);
+    },
   },
 };
 </script>

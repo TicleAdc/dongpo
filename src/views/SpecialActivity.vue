@@ -10,74 +10,92 @@
       <div slot="theme">专题活动</div>
     </Title>
     <div class="headImg">
-      <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
+      <el-carousel indicator-position="none">
+        <el-carousel-item v-for="item in list" :key="item.index">
+          <img :src="item.columnBigimg" alt="" />
+        </el-carousel-item>
+      </el-carousel>
     </div>
     <div class="contents">
-      <ul>
-        <li v-for="item in activitylist" :key="item.id">
-          <div class="pic"><img :src="item.url" alt="" /></div>
-          <div class="info">
-            <div class="title">
-              <a href="#">{{ item.title }}</a>
-            </div>
-            <p class="text">{{ item.text }}</p>
-            <div class="time">{{ item.time }}</div>
-          </div>
-        </li>
-      </ul>
+      <honorwall
+        v-for="(item, index) in honor"
+        :key="index"
+        :img="item.columnBigimg"
+        :title="item.columnContext"
+        :time="item.columnData"
+      ></honorwall>
     </div>
-    <pagenation></pagenation>
+    <!-- <pagenation></pagenation> -->
   </div>
 </template>
 
 <script>
-import pagenation from '@/components/pageNation';
+import request from '@/api/request.js';
+// import pagenation from '@/components/pageNation';
 import Title from '@/components/Title';
+import honorwall from '@/components/common/honorwall';
 export default {
   data() {
     return {
-      activitylist: [
-        {
-          id: '1',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '4',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
-        {
-          id: '5',
-          url: require('@/assets/img/home/thematicActivities1@2x.png'),
-          title: '新时代，新征程，新目标',
-          text: '新时代新征程新目标',
-          time: '发布时间:2020-09-19',
-        },
+      list: [
+        // {
+        //   id: '1',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '2',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '3',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '4',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
+        // {
+        //   id: '5',
+        //   url: require('@/assets/img/home/thematicActivities1@2x.png'),
+        //   title: '新时代，新征程，新目标',
+        //   text: '新时代新征程新目标',
+        //   time: '发布时间:2020-09-19',
+        // },
       ],
+      honor: [],
     };
   },
   components: {
     Title,
-    pagenation,
+    // pagenation,
+    honorwall,
+  },
+  methods: {
+    getData() {
+      request.get(`/api/getColumnDataByPositionId?columnPositionId=ZTHDLB`).then((res) => {
+        // console.log(res);
+        this.list = res.frontmenuList;
+      });
+      request.get(`/api/getColumnDataByPositionId?columnPositionId=YYRY`).then((res) => {
+        // console.log(res);
+        this.honor = res.frontmenuList;
+      });
+    },
+  },
+  mounted() {
+    this.getData();
   },
 };
 </script>
@@ -85,49 +103,17 @@ export default {
 <style lang="less" scoped>
 .headImg {
   img {
-    height: 300px;
+    height: 100%;
     width: 100%;
   }
 }
 .contents {
-  ul {
-    li {
-      border-bottom: 1px dotted gray;
-      display: flex;
-      padding: 2%;
-      .pic {
-        cursor: pointer;
-        img {
-          width: 200px;
-          height: 120px;
-        }
-      }
-      .info {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        padding-left: 20px;
-        .title {
-          width: 100%;
-          height: 30px;
-          line-height: 30px;
-          a {
-            text-decoration: none;
-            color: #888888;
-          }
-        }
-        .text {
-          font-size: 10px;
-        }
-        .time {
-          text-align: left;
-          position: absolute;
-          top: 100px;
-          font-size: 10px;
-        }
-      }
-    }
-  }
+  display: flex;
+  padding: 30px;
+  // padding-left: 10%;
+  // display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .body {
   background-color: #fff;
