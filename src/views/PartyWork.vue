@@ -75,27 +75,27 @@ export default {
       axios
         .get(`/api/getColumnDataByPositionId?columnPositionId=partywork`)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           this.columnBigimg = res.frontmenuList[0].columnBigimg;
           this.columnSmallimg = res.frontmenuList[0].columnBigimg;
           let id = res.frontmenuList[1].columnData[0].id;
           return Promise.resolve(id);
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           return axios.post(`/api/getTagPageList?tagid=${res}&pageNo=1&pagesize=5`);
         })
         .then((res) => {
-          console.log(`20 ${res}`);
+          // console.log(`20 ${res}`);
           this.partyDynamic = res.page.list;
         });
 
-      axios.post(`/api/getTagPageList?tagid=30&pageNo=1&pagesize=20`).then((res) => {
-        console.log(`30 ${res}`);
+      axios.post(`/api/getTagPageList?tagid=30&pageNo=1&pagesize=6`).then((res) => {
+        // console.log(`30 ${res}`);
         this.partyBuilding = res.page.list;
       });
-      axios.post(`/api/getTagPageList?tagid=31&pageNo=1&pagesize=20`).then((res) => {
-        console.log(`31 ${res}`);
+      axios.post(`/api/getTagPageList?tagid=31&pageNo=1&pagesize=6`).then((res) => {
+        // console.log(`31 ${res}`);
         this.partyStyle = res.page.list;
       });
     },

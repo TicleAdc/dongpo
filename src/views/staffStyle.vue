@@ -8,15 +8,16 @@
   <div class="staffcardlist">
     <div class="staffcard" v-for="item in stafflist" :key="item.id">
       <div class="img">
-        <img :src="item.url" alt="" />
+        <img :src="item.columnBigimg" alt="" />
       </div>
       <div class="title">
         <div class="round"></div>
-        <div class="stafftitle">
-          {{ item.title }}
-        </div>
+        <div class="stafftitle">天使风采</div>
       </div>
-      <div class="staffbottom">{{ item.bottom }}</div>
+      <div class="staffbottom">
+        <span>{{ item.columnTitle }}</span
+        >|<span>{{ item.savetime }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -27,49 +28,50 @@ export default {
   data() {
     return {
       stafflist: [
-        {
-          id: '1',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
-        {
-          id: '4',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
-        {
-          id: '5',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
-        {
-          id: '6',
-          url: require('@/assets/img/professor/photo2@2x.png'),
-          title: '天使风采',
-          bottom: '小儿保健科 ｜ 2020-08-17 21:20',
-        },
+        // {
+        //   id: '1',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
+        // {
+        //   id: '2',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
+        // {
+        //   id: '3',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
+        // {
+        //   id: '4',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
+        // {
+        //   id: '5',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
+        // {
+        //   id: '6',
+        //   url: require('@/assets/img/professor/photo2@2x.png'),
+        //   title: '天使风采',
+        //   bottom: '小儿保健科 ｜ 2020-08-17 21:20',
+        // },
       ],
     };
   },
   methods: {
     getData() {
-      request.post(`/api/getColumnDataByPositionId?columnPositionId=TSFC`, {}).then((res) => {
-        console.log(res);
+      request.get(`/api/getColumnDataByPositionId?columnPositionId=TSFC`).then((res) => {
+        // console.log(res);
+        this.stafflist = res.frontmenuList;
       });
     },
   },
@@ -87,6 +89,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   .staffcard {
+    flex: 27%;
     margin: 2%;
     .img {
       padding: 5px;
