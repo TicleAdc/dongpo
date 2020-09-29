@@ -28,6 +28,7 @@ import reportquery from '@/views/reportquery';
 import medicalguidance from '@/views/medicalguidance';
 import physicalexaminationquery from '@/views/physicalexaminationquery';
 import ordinaryquestion from '@/views/ordinaryquestion';
+import brandImage from '@/views/brandImage';
 
 import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
@@ -45,8 +46,8 @@ import recruitmentInformation from '@/components/recruitmentInformation';
 import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
+import appointment from '@/components/appointment';
 import vaccination from '@/views/vaccination';
-import recruitmentinformation from '@/components/recruitmentInformation';
 import tents from '@/views/Tents';
 import brandimage from '@/views/brandImage';
 import stuffstyle from '@/views/staffStyle';
@@ -87,7 +88,8 @@ export default {
     healthtreasure,
     dongpoEmotion,
     vaccination,
-    recruitmentinformation,
+    brandImage,
+    appointment,
     tents,
     brandimage,
     stuffstyle,
