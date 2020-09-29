@@ -138,6 +138,9 @@ export default {
     getDepartmentInfo(department) {
       department = department || this.department[0];
       this.info.name = department.name;
+      this.pathes[this.pathes.length-1]={
+        name: department.name
+      };
       this.getIntorduce(department);
       this.getDoctors(department);
       this.getWorkDate(department);
