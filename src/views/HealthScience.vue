@@ -7,6 +7,7 @@
       <msg-list
         title="健康科普"
         :list="list"
+        :total="total"
         @changeMsgListPage="getDataByPage"
       ></msg-list>
     </div>
@@ -21,6 +22,7 @@ export default {
     return {
       showComponent: '',
       list: [],
+      total: 0,
     };
   },
   components: {
@@ -36,6 +38,7 @@ export default {
       axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
         // console.log(res);
         this.list = res.page.list;
+        this.total = res.page.totalCount;
         // console.log(this.list);
         // this.total = res.page.totalCount;
       });
