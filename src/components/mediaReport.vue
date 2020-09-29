@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       list: [],
-      total: 100,
+      total: 0,
     };
   },
   methods: {

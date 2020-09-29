@@ -73,7 +73,7 @@ export default {
         // this.contentTitle = res.contents.contentsTitle;
       });
       axios.get(`/api/info/254`).then((res) => {
-        console.log(res.contents.contentsdata);
+        // console.log(res.contents.contentsdata);
         this.bottom = res.contents.contentsdata;
         // this.contentTitle = res.contents.contentsTitle;
       });

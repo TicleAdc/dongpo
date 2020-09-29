@@ -19,7 +19,7 @@
 import hospitalbulletin from '@/components/HospitalBulletin';
 import tenderInfo from '@/components/tenderInfo';
 import Title from '@/components/Title';
-import recruitmentInformation from '@/components/recruitmentInformation';
+import recruitmentinformation from '@/components/recruitmentInformation';
 import mainComponent from '@/components/common/mainComponent';
 // 跳转路由
 export default {
@@ -33,7 +33,7 @@ export default {
     hospitalbulletin,
     tenderInfo,
     Title,
-    recruitmentInformation,
+    recruitmentinformation,
     mainComponent,
   },
 };
