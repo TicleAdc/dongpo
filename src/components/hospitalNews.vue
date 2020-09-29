@@ -49,7 +49,7 @@ export default {
         //   time: '2020-03-03',
         // },
       ],
-      total: '',
+      total: 0,
     };
   },
   methods: {

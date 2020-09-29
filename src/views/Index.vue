@@ -46,6 +46,11 @@ import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
 import vaccination from '@/views/vaccination';
+import recruitmentinformation from '@/components/recruitmentInformation';
+import tents from '@/views/Tents';
+import brandimage from '@/views/brandImage';
+import stuffstyle from '@/views/staffStyle';
+import specialculture from '@/views/specialCulture';
 
 export default {
   components: {
@@ -81,7 +86,12 @@ export default {
     rumorRefutation,
     healthtreasure,
     dongpoEmotion,
-    vaccination
+    vaccination,
+    recruitmentinformation,
+    tents,
+    brandimage,
+    stuffstyle,
+    specialculture,
   },
   props: {
     showComponentName: {

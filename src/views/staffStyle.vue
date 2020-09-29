@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import request from '@/api/request.js';
 export default {
   data() {
     return {
@@ -65,11 +66,23 @@ export default {
       ],
     };
   },
+  methods: {
+    getData() {
+      request.post(`/api/getColumnDataByPositionId?columnPositionId=TSFC`, {}).then((res) => {
+        console.log(res);
+      });
+    },
+  },
+  mounted() {
+    this.getData();
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .staffcardlist {
+  padding: 30px;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
