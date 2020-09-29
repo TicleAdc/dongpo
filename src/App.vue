@@ -2,11 +2,11 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-17 10:15:31
  * @FilePath: /dongpo/src/App.vue
- * @LastEditTime: 2020-09-23 11:30:59
+ * @LastEditTime: 2020-09-29 14:11:59
 -->
 <template>
   <div id="app">
-    <top-header @click="jumpComponent"></top-header>
+    <top-header></top-header>
     <router-view :showComponentName="showComponentName"></router-view>
     <bottom-footer></bottom-footer>
   </div>
@@ -16,6 +16,7 @@
 import topHeader from '@/components/topHeader';
 import bottomFooter from '@/components/bottomFooter';
 import { routes } from '@/router/index.js';
+import { msgListContainer } from '@/util/mapComponent.js';
 // 至少留一个home在首页
 // import home from '@/views/Home.vue';
 
@@ -37,13 +38,22 @@ export default {
     };
   },
   methods: {
-    jumpComponent(path) {
-      this.showComponentName = path.slice(1);
+    jumpComponent() {
+      // if (msgListContainer[path.slice(1)] !== undefined) {
+      //   this.showComponentName = msgListContainer[path.slice(1)];
+      // } else {
+      //   this.showComponentName = path.slice(1);
+      // }
     },
     setActiveIndex() {
       this.activeIndex = this.$route.path;
       const ary = this.activeIndex.split('/');
-      this.showComponentName = ary[ary.length - 1];
+      const componentName = ary[ary.length - 1];
+      if (msgListContainer[componentName] !== undefined) {
+        this.showComponentName = msgListContainer[componentName];
+      } else {
+        this.showComponentName = componentName;
+      }
     },
   },
   watch: {
@@ -70,7 +80,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import url("./assets/css/base.less");
+@import url('./assets/css/base.less');
 #app {
   position: relative;
   background-color: #e8f1fa;
