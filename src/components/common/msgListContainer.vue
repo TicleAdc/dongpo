@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <div>1321{{ selectIndex }}</div>
     <msg-list :list="list" :title="title"></msg-list>
   </div>
 </template>
@@ -33,12 +32,8 @@ export default {
   },
 
   watch: {
-    index(val) {
-      console.log(val);
-      // this.getList()
-    },
-    selectIndex(val) {
-      console.log(val);
+    selectIndex() {
+      this.getList();
     },
   },
 
@@ -53,6 +48,7 @@ export default {
     },
 
     async getList() {
+      this.list = [];
       this.getInfo();
       let query = `tagid=${this.id}&pageNo=1&pagesize=20`;
       await this.http.post(`/api/getTagPageList?${query}`).then((res) => {
