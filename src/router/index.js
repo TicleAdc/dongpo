@@ -31,6 +31,9 @@ export const routes = [
   {
     path: '/departmentsetting',
     redirect: '/featuredmedical'
+  }, {
+    path: '/introductpro',
+    redirect: '/featuredmedical'
   }
   // {
   //   name: '医院概况',
