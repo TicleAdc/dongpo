@@ -17,6 +17,7 @@
 <script>
 import msgList from '@/components/common/msgList';
 import axios from '@/api/request.js';
+import Title from '@/components/Title';
 export default {
   data() {
     return {
@@ -27,6 +28,7 @@ export default {
   },
   components: {
     msgList,
+    Title
   },
 
   created() {
