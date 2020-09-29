@@ -62,7 +62,7 @@ export default {
         //   time: '2020-2-10',
         // },
       ],
-      total: '',
+      total: 0,
     };
   },
   methods: {
