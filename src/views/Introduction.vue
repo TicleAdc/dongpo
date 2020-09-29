@@ -18,15 +18,17 @@
         <div class="description">{{ item.columnTitle }}</div>
       </div>
     </div>
-    <div class="bottomleft">
-      <div class="showcontact" v-for="item in column" :key="item.index">
-        <div class="img"><img :src="item.columnBigimg" alt="" /></div>
-        <p class="title"></p>
-        <p v-html="item.columnContext"></p>
+    <div class="bottom">
+      <div class="column">
+        <div class="contact" v-for="item in column" :key="item.index">
+          <div class="img">
+            <img :src="item.columnBigimg" alt="" />
+          </div>
+          <div class="number" v-html="item.columnContext"></div>
+        </div>
       </div>
+      <div class="text" v-html="bottomContext"></div>
     </div>
-    <div class="contents" v-html="bottomContext"></div>
-    <div class="bottom" v-html="bottom"></div>
   </div>
 </template>
 
@@ -107,7 +109,7 @@ export default {
       width: 90%;
       // height: 250px;
       padding: 0 20px;
-      font-size: 10px;
+      font-size: 14px;
     }
   }
   .mid {
@@ -155,43 +157,41 @@ export default {
       }
     }
   }
-  .bottomleft {
-    top: -70px;
-    left: 10%;
-    position: relative;
-    height: 500px;
-    width: 15%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    background-color: #4a5da3;
-    // padding: 50px 50px 0 50px;
-    padding-left: 4%;
-    padding-right: 3%;
-    padding-top: 50px;
-    padding-bottom: 80px;
-    .showcontact {
+  .bottom {
+    padding: 0 30px;
+    .column {
+      width: 15%;
+      padding: 50px;
+      background-color: #4a5da3;
       color: white;
-      padding-bottom: 30px;
-      img {
-        width: 155px;
-        height: 100px;
+      float: left;
+      margin-top: -70px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      .contact {
+        padding-bottom: 50px;
+        .img {
+          margin-bottom: 10px;
+        }
+      }
+      .number {
+        font-size: 12px;
       }
     }
   }
-  .contents {
-    position: relative;
-    left: 40%;
-    top: -610px;
-    font-size: 10px;
-    width: 50%;
-  }
-  .bottom {
-    top: -520px;
-    position: relative;
-    font-size: 10px;
-    width: 80%;
-    margin-left: 10%;
-  }
 }
+.contact:last-child {
+  margin-bottom: 80px;
+}
+.text {
+  padding-bottom: 60px;
+  font-size: 14px;
+}
+</style>
+
+<style lang="less">
+// p {
+//   padding: 3px 0;
+// }
+//
 </style>
