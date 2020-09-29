@@ -8,7 +8,7 @@
 <script>
 import msgList from './msgList';
 import store from '../../store';
-import {mapState} from 'vuex'
+import { mapState } from 'vuex';
 
 export default {
   store,
@@ -30,15 +30,15 @@ export default {
 
   computed: {
     ...mapState(['selectIndex']),
-    index() {
-      return this.$store.state.selectIndex;
-    },
   },
 
   watch: {
     index(val) {
       console.log(val);
       // this.getList()
+    },
+    selectIndex(val) {
+      console.log(val);
     },
   },
 
