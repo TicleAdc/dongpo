@@ -73,7 +73,7 @@ export default {
     goDetail(item) {
       // 文章跳转详情
       console.log(item);
-      this.$router.push({ path: '/detail', query: { ...item } });
+      this.$router.push({ path: '/detail', query: { id: item.id } });
     },
     changePage(v) {
       this.$emit('changeMsgListPage', v);

@@ -2,25 +2,40 @@
   <div class="home">
     <!-- <p>{{ showtext.title }}</p>
     <p>{{ showtext.data }}</p> -->
-    <p class="title">{{ $route.query.contentsTitle }}</p>
-    <p class="content" v-html="this.$route.query.contentsdata"></p>
+    <p class="title">{{ title }}</p>
+    <p class="content" v-html="data"></p>
   </div>
 </template>
 
 <script>
+import request from '@/api/request.js';
 export default {
   data() {
     return {
-      showtext: {
-        title: '',
-        data: '',
-      },
+      title: '',
+      data: '',
+      tagid: '',
+      id: '',
     };
   },
   created() {
     // this.showtext = this.$route.params.detail;
     // console.log(this.showtext);
-    console.log(this.$route.query);
+    // console.log(this.$route.query);
+    // this.tagid = this.$route.query.tagid;
+    this.id = this.$route.query.id;
+    // console.log(this.tagid);
+    request.get(`/api/info/${this.id}`, {}).then((res) => {
+      console.log(res);
+      // let list = res.page.list;
+      // list.forEach((v) => {
+      //   // console.log(v);
+      //   if (this.id == v.id) {
+      this.title = res.contents.contentsTitle;
+      this.data = res.contents.contentsdata;
+      //   }
+      // });
+    });
   },
 };
 </script>

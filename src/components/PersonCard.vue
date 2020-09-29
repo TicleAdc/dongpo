@@ -57,11 +57,12 @@ export default {
     };
   },
   mounted() {
-    // this.getProfessorLsit();
+    this.getProfessorLsit();
   },
   methods: {
     getProfessorLsit() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=introductioncard`).then((res) => {
+        // console.log(res.frontmenuList[0].columnData[0].id);
         let tagid = res.frontmenuList[0].columnData[0].id;
         axios.post(`/api/getTagPageList?tagid=${tagid}&pageNo=1&pagesize=5`, {}).then((data) => {
           console.log(data);

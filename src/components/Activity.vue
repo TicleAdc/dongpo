@@ -40,15 +40,26 @@
 </template>
 
 <script>
+import request from '@/api/request.js';
 export default {
   data() {
     return {
       show: '1',
+      imglist: [],
     };
+  },
+  mounted() {
+    this.getData();
   },
   methods: {
     showBox(data) {
       this.show = data;
+    },
+    getData() {
+      request.get('/api/getColumnDataByPositionId?columnPositionId=itemactivity').then((res) => {
+        console.log(res);
+        this.imglist = res.frontmenuList.slice(0, 4);
+      });
     },
   },
 };

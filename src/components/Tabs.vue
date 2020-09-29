@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import request from '@/api/request.js';
 export default {
   name: 'tabs',
   props: {
@@ -38,18 +39,18 @@ export default {
   data() {
     return {
       imglist: [
-        {
-          id: '1',
-          url: require('@/assets/img/home/news.png'),
-        },
-        {
-          id: '2',
-          url: require('@/assets/img/home/news.png'),
-        },
-        {
-          id: '3',
-          url: require('@/assets/img/home/news.png'),
-        },
+        // {
+        //   id: '1',
+        //   url: require('@/assets/img/home/news.png'),
+        // },
+        // {
+        //   id: '2',
+        //   url: require('@/assets/img/home/news.png'),
+        // },
+        // {
+        //   id: '3',
+        //   url: require('@/assets/img/home/news.png'),
+        // },
       ],
       activeName: '',
       tabcontents: [],
@@ -76,11 +77,22 @@ export default {
     more() {
       this.$emit('more');
     },
+    getData() {
+      request.get(`/api/getColumnDataByPositionId?columnPositionId=newstab`).then((res) => {
+        console.log(res);
+        this.imglist.push(res.frontmenuList[0]);
+        this.imglist.push(res.frontmenuList[2]);
+        this.imglist.push(res.frontmenuList[4]);
+      });
+    },
   },
   watch: {
     tabList() {
       this.handleClick();
     },
+  },
+  mounted() {
+    this.getData();
   },
 };
 </script>

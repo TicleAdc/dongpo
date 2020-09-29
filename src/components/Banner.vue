@@ -2,7 +2,7 @@
   <div class="banner_index">
     <el-carousel height="560px" :interval="3000" arrow="always">
       <el-carousel-item v-for="item in imglist" :key="item.id">
-        <img class="img" :src="item.imgUri" alt="" :title="item.title" />
+        <img class="img" :src="item.columnBigimg" alt="" :title="item.title" />
         <!-- <img :src="item.imgurl" :title="item.title" alt="" /> -->
       </el-carousel-item>
     </el-carousel>
@@ -16,26 +16,26 @@ export default {
   data() {
     return {
       imglist: [
-        {
-          id: '01',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '02',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '03',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
-        {
-          id: '04',
-          imgUri: require('@/assets/img/home/main@2x.png'),
-          title: 'test',
-        },
+        // {
+        //   id: '01',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '02',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '03',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
+        // {
+        //   id: '04',
+        //   imgUri: require('@/assets/img/home/main@2x.png'),
+        //   title: 'test',
+        // },
       ],
     };
   },
@@ -43,21 +43,16 @@ export default {
     getData() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=topbanner`).then((res) => {
         // console.log(res);
-        this.imglist = res.frontmenulist;
+        // this.imglist.push(res.frontmenulist[2].columnBigimg);
+        // this.imglist.push(res.frontmenulist[3].columnBigimg);
+        this.imglist = res.frontmenuList;
+        // console.log(this.imglist);
       });
     },
   },
   mounted() {
-    // this.getData();
+    this.getData();
   },
-  // created() {
-  //   // 获取banner 图
-  //   axios.post('/api/getBannerList').then((res) => {
-  //     this.imglist = res.bannerlist[0].list;
-  //     this.imglist.push(res.bannerlist[1].list[0]);
-  //     // console.log(this.imglist);
-  //   });
-  // },
 };
 </script>
 
@@ -72,7 +67,7 @@ export default {
     height: 80px !important;
     font-size: 38px;
     line-height: 2;
-    background-color:rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
   }
   .el-carousel__button {
     width: 10px;
@@ -80,7 +75,7 @@ export default {
     border-radius: 50%;
   }
   .el-carousel__indicator.is-active button {
-    background-color: #F3969B;
+    background-color: #f3969b;
   }
 }
 </style>

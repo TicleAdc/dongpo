@@ -20,7 +20,7 @@
           <div class="context">
             <ul>
               <li v-for="item in contextlist" :key="item.id">
-                <i class="el-icon-caret-left"></i>{{ item.content }}
+                <i class="el-icon-caret-left"></i>{{ item.contentsTitle }}
               </li>
             </ul>
           </div>
@@ -28,7 +28,7 @@
       </column>
     </div>
     <div class="workImg">
-      <img src="@/assets/img/home/PartyMassWorkPic@2x.png" alt="" />
+      <img :src="bigImg" alt="" />
     </div>
   </div>
 </template>
@@ -41,18 +41,18 @@ export default {
   data() {
     return {
       contextlist: [
-        {
-          id: '01',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
-        {
-          id: '02',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
-        {
-          id: '03',
-          content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
-        },
+        // {
+        //   id: '01',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
+        // {
+        //   id: '02',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
+        // {
+        //   id: '03',
+        //   content: '以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼...',
+        // },
       ],
       bigImg: '',
     };
@@ -62,7 +62,7 @@ export default {
   },
   mounted() {
     // this.getTime();
-    // this.getData();
+    this.getData();
   },
   methods: {
     getTime() {
@@ -75,11 +75,13 @@ export default {
     },
     getData() {
       axios.get(`/api/getColumnDataByPositionId?columnPositionId=partywork`).then((res) => {
-        console.log(res);
+        // console.log(res);
         this.bigImg = res.frontmenuList[0].columnBigimg;
         let tagid = res.frontmenuList[1].columnData[0].id;
-        axios.post(`/api/getTagPageList?tagid=${tagid}&pageNo=1&pagesize=10`, {}).then((data) => {
-          console.log(data);
+        axios.post(`/api/getTagPageList?tagid=${tagid}&pageNo=1&pagesize=5`, {}).then((data) => {
+          // console.log(data);
+          this.contextlist = data.page.list;
+          // console.log(this.contextlist);
         });
       });
     },
@@ -129,5 +131,8 @@ export default {
 .workImg {
   margin-top: 75px;
   margin-right: 50px;
+  img {
+    width: 500px;
+  }
 }
 </style>
