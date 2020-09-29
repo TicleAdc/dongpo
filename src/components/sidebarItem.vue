@@ -32,7 +32,7 @@
         <el-menu-item v-else :key="child.path" :index="child.path">
           <template slot="title">
             <router-link :to="child.path">
-              <span @click="goChildrenPage(index, subIndex)">
+              <span @click="getInfo(index, subIndex)">
                 {{ child.name }}
               </span>
             </router-link>
@@ -80,12 +80,24 @@ export default {
   },
 
   methods: {
-    goChildrenPage(index, subIndex) {
+    getInfo(index, subIndex) {
       this.$store.commit('setIndex', {
         index: index,
         children: subIndex,
       });
     },
+
+    // getInfo(index, subIndex) {
+    //   let data = this.$store.state.menuData;
+    //   let infoVal = data[index].children[subIndex].menueparam[0];
+    //   let menuname = data[index].children[subIndex].menuname;
+    //   let id = infoVal.id;
+    //   let title = menuname;
+    //   let query = `tagid=${id}&pageNo=1&pagesize=20`;
+    //   this.http.post(`/api/getTagPageList?${query}`).then((res) => {
+    //     console.log(res.page.list, title);
+    //   });
+    // },
 
     goOtherPage() {
       console.log(this.trueIndex);

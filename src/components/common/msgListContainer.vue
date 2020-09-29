@@ -1,12 +1,17 @@
 <template>
   <div class="container">
+    <div>1321{{ selectIndex }}</div>
     <msg-list :list="list" :title="title"></msg-list>
   </div>
 </template>
 
 <script>
 import msgList from './msgList';
+import store from '../../store';
+import {mapState} from 'vuex'
+
 export default {
+  store,
   components: {
     msgList,
   },
@@ -21,6 +26,20 @@ export default {
 
   created() {
     this.getList();
+  },
+
+  computed: {
+    ...mapState(['selectIndex']),
+    index() {
+      return this.$store.state.selectIndex;
+    },
+  },
+
+  watch: {
+    index(val) {
+      console.log(val);
+      // this.getList()
+    },
   },
 
   methods: {
@@ -38,7 +57,6 @@ export default {
       let query = `tagid=${this.id}&pageNo=1&pagesize=20`;
       await this.http.post(`/api/getTagPageList?${query}`).then((res) => {
         this.list = res.page.list;
-        // console.log(this.list);
       });
     },
   },
