@@ -8,7 +8,7 @@
   <div class="announcement">
     <main-component currentRoute="/announcement" v-model="showComponent" title="通知公告">
       <template #component>
-        <component :is="showComponent"></component>
+        <component :is="'msgListContainer'"></component>
       </template>
     </main-component>
   </div>
@@ -16,11 +16,13 @@
 
 <script>
 // import hospitalannounc from '@/components/hospitalannounc';
-import hospitalbulletin from '@/components/HospitalBulletin';
-import tenderInfo from '@/components/tenderInfo';
-import Title from '@/components/Title';
-import recruitmentinformation from '@/components/recruitmentInformation';
+// import hospitalbulletin from '@/components/HospitalBulletin';
+// import tenderInfo from '@/components/tenderInfo';
+// import Title from '@/components/Title';
+// import recruitmentinformation from '@/components/recruitmentInformation';
+import msgListContainer from '@/components/common/mainComponent';
 import mainComponent from '@/components/common/mainComponent';
+
 // 跳转路由
 export default {
   data() {
@@ -30,11 +32,12 @@ export default {
   },
   components: {
     // hospitalannounc,
-    hospitalbulletin,
-    tenderInfo,
-    Title,
-    recruitmentinformation,
+    // hospitalbulletin,
+    // tenderInfo,
+    // Title,
+    // recruitmentinformation,
     mainComponent,
+    msgListContainer,
   },
 };
 </script>

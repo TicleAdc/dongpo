@@ -6,7 +6,7 @@
  */
 
 const map = Object.create(null);
-const mapMsgList = ['hospitalnews', 'linenews', 'mediareport'];
+const mapMsgList = ['hospitalnews', 'linenews', 'mediareport', 'medicalguidance', 'ordinaryquestion', 'hospitalbulletin', 'tenderInfo', 'recruitmentinformation'];
 mapMsgList.forEach((v) => {
   map[v] = 'msgListContainer';
 });

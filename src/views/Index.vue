@@ -29,6 +29,12 @@ import medicalguidance from '@/views/medicalguidance';
 import physicalexaminationquery from '@/views/physicalexaminationquery';
 import ordinaryquestion from '@/views/ordinaryquestion';
 import brandImage from '@/views/brandImage';
+import vaccination from '@/views/vaccination';
+import tents from '@/views/Tents';
+import brandimage from '@/views/brandImage';
+import stuffstyle from '@/views/staffStyle';
+import specialculture from '@/views/specialCulture';
+import introduction from '@/views/Introduction';
 
 import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
@@ -37,7 +43,6 @@ import detail from '@/components/detail';
 // import hospitalannounc from '@/components/hospitalannounc';
 // import biddinginformation from '@/components/biddinginformation';
 // import joboffers from '@/components/joboffers';
-import introduction from '@/views/Introduction';
 import leader from '@/components/leader';
 import honor from '@/components/honor';
 import hospitalbulletin from '@/components/HospitalBulletin';
@@ -47,11 +52,10 @@ import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
 import appointment from '@/components/appointment';
-import vaccination from '@/views/vaccination';
-import tents from '@/views/Tents';
-import brandimage from '@/views/brandImage';
-import stuffstyle from '@/views/staffStyle';
-import specialculture from '@/views/specialCulture';
+import msgListContainer from '@/components/common/msgListContainer';
+
+
+
 
 export default {
   components: {
@@ -94,6 +98,7 @@ export default {
     brandimage,
     stuffstyle,
     specialculture,
+    msgListContainer
   },
   props: {
     showComponentName: {
