@@ -27,4 +27,23 @@ export default new Vuex.Store({
       return state.menuData;
     },
   },
+  actions: {
+    getMenuByPath(store, path) {
+      let find = (list, path) => {
+        if (!list || !list.length) return null;
+        let i = 0, len = list.length;
+        for (i; i < len; i++) {
+          if (list[i].menuuri === path) {
+            return list[i];
+          } else {
+            let result = find(list[i].children, path);
+            if (result) {
+              return result;
+            }
+          }
+        }
+      }
+      return find(store.state.menuData, path);
+    }
+  }
 });
