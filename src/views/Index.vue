@@ -28,6 +28,7 @@ import reportquery from '@/views/reportquery';
 import medicalguidance from '@/views/medicalguidance';
 import physicalexaminationquery from '@/views/physicalexaminationquery';
 import ordinaryquestion from '@/views/ordinaryquestion';
+import brandImage from '@/views/brandImage';
 
 import hospitalnews from '@/components/hospitalNews';
 import linenews from '@/components/lineNews';
@@ -45,6 +46,7 @@ import recruitmentInformation from '@/components/recruitmentInformation';
 import rumorRefutation from '@/components/rumorRefutation';
 import healthtreasure from '@/components/healthTreasure';
 import dongpoEmotion from '@/components/dongpoEmotion';
+import appointment from '@/components/appointment';
 import vaccination from '@/views/vaccination';
 
 export default {
@@ -81,7 +83,9 @@ export default {
     rumorRefutation,
     healthtreasure,
     dongpoEmotion,
-    vaccination
+    vaccination,
+    brandImage,
+    appointment
   },
   props: {
     showComponentName: {
