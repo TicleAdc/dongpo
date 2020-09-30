@@ -1,9 +1,3 @@
-<!--
- * @Author: Spring Breeze
- * @Date: 2020-09-24 14:51:52
- * @FilePath: /dongpo/src/views/Announcement.vue
- * @LastEditTime: 2020-09-28 15:30:58
--->
 <template>
   <div class="announcement">
     <main-component currentRoute="/announcement" v-model="showComponent" title="通知公告">

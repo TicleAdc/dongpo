@@ -3,14 +3,14 @@
     <div class="banner">
       <el-carousel height="200px" direction="vertical" :autoplay="true">
         <el-carousel-item v-for="item in imglist" :key="item.index">
-          <img :src="item.url" alt="" />
+          <img :src="item.columnBigimg" alt="" />
         </el-carousel-item>
       </el-carousel>
     </div>
     <div class="news-container">
       <ul class="tab-list">
         <li v-for="tab in tabList" :key="tab.id" :class="tab.active" @click="handleClick(tab)">
-          {{ tab.name }}
+          {{ tab.columnContext }}
         </li>
         <li class="tab-more"><span>查看更多</span></li>
       </ul>
@@ -33,9 +33,9 @@
 import request from '@/api/request.js';
 export default {
   name: 'tabs',
-  props: {
-    tabList: Array,
-  },
+  // props: {
+  //   tabList: Array,
+  // },
   data() {
     return {
       imglist: [
@@ -53,6 +53,7 @@ export default {
         // },
       ],
       activeName: '',
+      tabList: [],
       tabcontents: [],
       currentTab: null,
     };
@@ -83,6 +84,10 @@ export default {
         this.imglist.push(res.frontmenuList[0]);
         this.imglist.push(res.frontmenuList[2]);
         this.imglist.push(res.frontmenuList[4]);
+        this.tabList.push(res.frontmenuList[1]);
+        this.tabList.push(res.frontmenuList[3]);
+        this.tabList.push(res.frontmenuList[5]);
+        this.tabList.push(res.frontmenuList[6]);
       });
     },
   },
