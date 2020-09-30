@@ -1,9 +1,3 @@
-<!--
- * @Author: Spring Breeze
- * @Date: 2020-09-30 11:20:37
- * @FilePath: /test/medicalservice.html
- * @LastEditTime: 2020-09-30 11:32:12
--->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,14 +9,13 @@
     <link href="css/chunk-vendors.5a09fdfb.css" rel="preload" as="style" />
     <link href="css/chunk-vendors.5a09fdfb.css" rel="stylesheet" />
     <link href="css/app.795a00b5.css" rel="stylesheet" />
+    <style>
+      #app[data-v-1ac6e9be] {
+        height: inherit;
+      }
+    </style>
   </head>
   <body>
-    <noscript
-      ><strong
-        >We're sorry but dongpo doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
-      ></noscript
-    >
     <div data-v-1ac6e9be="" id="app">
       <div data-v-2203a505="" data-v-1ac6e9be="">
         <div data-v-83a5c4f4="" data-v-2203a505="">
@@ -193,111 +186,34 @@
               <!---->
               <div data-v-f8049362="" data-v-3b6f33ba="" class="msg-list">
                 <div data-v-f8049362="" class="title">
-                  预约挂号
+                  医院新闻
                   <img
                     data-v-f8049362=""
                     src="img/professorback@2x.png"
                     alt=""
                   />
                 </div>
-                <div data-v-f8049362="" class="page">
-                  <div data-v-f8049362="" class="el-pagination is-background">
-                    <span class="el-pagination__total">共 0 条</span
-                    ><button type="button" disabled="disabled" class="btn-prev">
-                      <i class="el-icon el-icon-arrow-left"></i>
-                    </button>
-                    <ul class="el-pager">
-                      <li class="number active">1</li>
-                      <!----><!----><!---->
-                    </ul>
-                    <button type="button" disabled="disabled" class="btn-next">
-                      <i class="el-icon el-icon-arrow-right"></i>
-                    </button>
-                  </div>
+                <!-- 循环从服务器拿取数据 -->
+                <div data-v-f8049362="" class="list">
+                  <i data-v-f8049362="" class="el-icon-caret-left"></i
+                  ><span data-v-f8049362="" class="content"
+                    >个人和家庭应知应会内容</span
+                  >
+                  <div data-v-f8049362="" class="right"></div>
+                </div>
+                <div data-v-f8049362="" class="list">
+                  <i data-v-f8049362="" class="el-icon-caret-left"></i
+                  ><span data-v-f8049362="" class="content"
+                    >中国毕产妇关爱行动计划“公众料普7一
+                    早孕B超检查的重要性</span
+                  >
+                  <div data-v-f8049362="" class="right"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div
-      class="el-menu--horizontal"
-      x-placement="bottom-start"
-      style="
-        position: absolute;
-        top: 246px;
-        left: 468px;
-        z-index: 2002;
-        display: none;
-      "
-    >
-      <ul
-        role="menu"
-        class="el-menu el-menu--popup el-menu--popup-bottom-start"
-      >
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/appointment" class=""
-            ><span data-v-0364a38d=""> 预约挂号 </span></a
-          >
-        </li>
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/reportquery" class=""
-            ><span data-v-0364a38d=""> 报告查询 </span></a
-          >
-        </li>
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/navegation" class=""
-            ><span data-v-0364a38d=""> 院内导航 </span></a
-          >
-        </li>
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/medicalguidance" class=""
-            ><span data-v-0364a38d=""> 就诊指导 </span></a
-          >
-        </li>
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/physicalexaminationquery" class=""
-            ><span data-v-0364a38d=""> 体检查询 </span></a
-          >
-        </li>
-        <li
-          data-v-0364a38d=""
-          role="menuitem"
-          tabindex="-1"
-          class="el-menu-item"
-        >
-          <a data-v-0364a38d="" href="#/ordinaryquestion" class=""
-            ><span data-v-0364a38d=""> 常见问题 </span></a
-          >
-        </li>
-      </ul>
     </div>
   </body>
 </html>
