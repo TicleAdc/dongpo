@@ -457,11 +457,19 @@ a:hover {
 .activeImglist .active {
   margin: 5px
 }
-
+.activeImglist > div {
+  flex: 1;
+}
+.activeImglist img {
+  width: 100%;
+}
 .activeImglist .active img {
   cursor: pointer
 }
-
+.activeImglist .more {
+  flex: none;
+  width: 10rem;
+}
 .showtext {
   padding: 10px 0 10px 20px;
   border-radius: 10px
