@@ -107,12 +107,9 @@ export default {
         // console.log(res);
         this.healthcardlist = res.frontmenuList;
         this.healthcardlist.forEach((v) => {
-          let id = v.columnData[0].id;
-          request.post(`/api/getTagPageList?tagid=${id}&pageNo=1&pagesize=10`).then((res) => {
-            // console.log(res);
-            this.contents.push(res.page);
-            console.log(this.contents);
-          });
+          let idlist = [];
+          idlist.push(v.columnData[0].id);
+          console.log(v);
         });
       });
     },
