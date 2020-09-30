@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Title v-if="showTitle">
-      <div slot="theme">{{ title }}</div>
+      <div slot="theme">{{ Navtitle }}</div>
       <template #childtabs>
         <el-tabs v-model="activeName">
           <el-tab-pane
@@ -36,6 +36,7 @@ export default {
       list: [],
       id: '',
       title: '',
+      Navtitle: '',
       showTitle: false,
       activeName: '',
       routeData: [],
@@ -46,6 +47,8 @@ export default {
   created() {
     this.getList();
     this.setTab();
+    this.setNavTitle();
+    console.log(this.$route);
   },
 
   computed: {
@@ -69,6 +72,9 @@ export default {
   },
 
   methods: {
+    setNavTitle() {
+      this.Navtitle = this.$route.matched[0].name;
+    },
     getInfo() {
       let data = this.$store.state.menuData;
       let index = this.$store.state.selectIndex;
