@@ -1,0 +1,27 @@
+html,
+body,
+ul,
+li,
+p,
+h1,
+h2,
+form {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 12px;
+  color: #293040;
+}
+.home-container {
+  min-width: 1024px;
+  max-width: 1600px;
+  width: 80%;
+  margin: 0 auto;
+}
+.flex-box {
+  display: flex;
+}
+.flex-1 {
+  flex: 1
+}
