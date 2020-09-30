@@ -1,0 +1,89 @@
+.foot-container {
+  margin-top: 2rem;
+  border: 1px solid #dfe1e6;
+}
+.foot-about {
+  flex: 4;
+  background: url("../img/home/ButtomLeftLogo.png") no-repeat;
+  background-position: 2rem 4rem;
+  padding: 12rem 0 5rem 0;
+}
+.foot-about p {
+  padding-left: 5rem;
+}
+.foot-about-title {
+  margin-top: 2rem;
+}
+.foot-qrcode {
+  width: 6rem;
+  margin: 2rem 0 0 5rem;
+}
+.foot-wechat {
+  margin-bottom: 5rem;
+}
+.support {
+  border-top: 1px solid #dfe1e6;
+  padding: 3rem 0 0 0;
+}
+.foot-link-container {
+  flex: 3;
+  border-left: 1px solid #dfe1e6;
+}
+.foot-link-container > ul:last-child {
+  border: none;
+}
+.foot-link {
+  border-bottom: 1px solid #dfe1e6;
+  padding: 3rem 2rem;
+}
+.foot-link-title {
+  font-size: 1.2rem;
+}
+.foot-link li {
+  height: 3rem;
+  line-height: 3rem;
+  color: #717787;
+  padding: .5rem 0 0 1rem;
+}
+.foot-link li::before {
+  content: "";
+  display:inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: .3rem solid #717787;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-135deg);
+  margin-right: .3rem;
+}
+.foot-link .foot-link-title {
+  height: 2rem;
+  color: #293040;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.foot-link .foot-link-title::before {
+  content: ">";
+  display: inline-block;
+  color: #fff;
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  font-family: serif, fangsong;
+  font-size: 1.2rem;
+  background-color: #293040;
+  border-radius: 50%;
+  margin-right: .3rem;
+  text-align: center;
+  border: none;
+  transform: none;
+}
+
+.foot-logo {
+  text-align: center;
+  height: 10rem;
+  background: url("../img/home/ButtomLogo.png") no-repeat #4a5da3;
+  background-position: center center;
+  /* background-size: 10rem; */
+}
