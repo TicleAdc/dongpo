@@ -9,6 +9,11 @@ form {
   margin: 0;
   padding: 0;
 }
+ul,
+li {
+  list-style: none;
+}
+html,
 body {
   font-size: 12px;
   color: #293040;
@@ -24,4 +29,20 @@ body {
 }
 .flex-1 {
   flex: 1
+}
+a:link {
+  color: #293040;
+  text-decoration: none;
+}
+a:active {
+  color: #293040;
+  text-decoration: none;
+}
+a:visited {
+  color: #293040;
+  text-decoration: none;
+}
+a:hover {
+  color: #293040;
+  text-decoration: none;
 }
