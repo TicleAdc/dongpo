@@ -70,7 +70,29 @@ a:hover {
 .flex-1 {
   flex: 1
 }
+.index-swiper img {
+  width: 100%;
+}
 
+.index-swiper .swiper-button-prev::after {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  margin-left: 4rem;
+  background: url("../img/home/preview.png") no-repeat;
+  background-size: 100%;
+}
+
+.index-swiper .swiper-button-next::after {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 4rem;
+  background: url("../img/home/next.png") no-repeat;
+  background-size: 100%;
+}
 .home_center .service_entrance {
   display: flex;
   justify-content: space-between;
@@ -128,7 +150,7 @@ a:hover {
   background-color: #fff;
 }
 
-.home_center .tabs .banner {
+.home_center .tabs .index-banners {
   width: 50%;
   margin-right: 30px;
 }

@@ -35,7 +35,7 @@
   height: 10rem;
   margin-top: 3rem;
   font-size: 0;
-  background: url("../img/head-logo.png") no-repeat;
+  background: url("../img/home/head-logo.png") no-repeat;
   background-size: auto 4rem;
   background-position: 2rem center;
   padding: 3rem 5rem 2rem 2rem;
@@ -60,9 +60,11 @@
 }
 
 .head-nav-container {
+  position: relative;
   text-align: center;
   font-size: 1rem;
   border: 1px solid #dfe1e6;
+  z-index: 10;
 }
 
 .head-nav>li {
@@ -76,20 +78,38 @@
 .head-nav>li:last-child {
   border: none;
 }
+
 .head-nav-list {
   display: none;
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 .head-nav-list li {
   border: 1px solid #dfe1e6;
   border-top: none;
 }
-.head-nav>li:hover {
-  background-color: #dfe1e6;
+
+.head-nav>li.active {
+  background-color: #4a5da3;
+  color: #fff;
 }
+
+.head-nav>li.active>a {
+  color: #fff;
+}
+
+.head-nav>li:hover {
+  background-color: #4a5da3;
+}
+
+.head-nav>li:hover > a {
+  color: #293040;
+}
+
 .head-nav>li:hover .head-nav-list {
   display: block;
 }
+
 .head-nav-list li:hover {
   background-color: rgba(74, 93, 165, 0.6);
 }

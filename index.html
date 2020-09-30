@@ -7,40 +7,27 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./js/swiper-bundle.min.css">
+  <script src="./js/swiper-bundle.min.js"></script>
 </head>
 
 <body>
  
   <div class="home_center">
-    <div class="rotation-container">
-      <!-- 轮播器 -->
-      <div>
-        <ul class="rotation_ul">
-          <li class="rotation-item rotation-item1"> </li>
-          <li class="rotation-item rotation-item2"> </li>
-          <li class="rotation-item rotation-item3"> </li>
-          <li class="rotation-item rotation-item4"> </li>
-        </ul>
-      </div> <!-- 轮播焦点 -->
-      <div class="focus-container">
-        <ul class="focus_ul">
-          <li>
-            <div class="focus-item focus-item1"></div>
-          </li>
-          <li>
-            <div class="focus-item focus-item2"></div>
-          </li>
-          <li>
-            <div class="focus-item focus-item3"></div>
-          </li>
-          <li>
-            <div class="focus-item focus-item4"></div>
-          </li>
-          <li>
-            <div class="focus-item focus-item5"></div>
-          </li>
-        </ul>
+    <div class="swiper-container index-swiper index-top-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./img/main.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/main@2x.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/main.png" alt="">
+        </div>
       </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
     <!--分割  -->
     <div class="service_entrance">
@@ -72,7 +59,22 @@
     </div>
     <!--分割  -->
     <div class="tabs">
-      <div class="banner">
+      <div class="index-banners">
+        <div class="swiper-container index-swiper index-banner-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/main.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/main@2x.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/main.png" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
       <div class="news-container">
         <ul class="tab-list">
@@ -361,7 +363,7 @@
       </div>
     </div>
   </div>
-
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
