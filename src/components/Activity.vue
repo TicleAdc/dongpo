@@ -1,11 +1,17 @@
 <template>
   <div class="activity">
     <div class="activeImglist">
-      <div class="active" v-bind:class="show != '1' ? 'brightness' : ''" @click="showBox('1')">
+      <div
+        class="active"
+        v-for="(item, index) in imglist"
+        :key="index"
+        v-bind:class="show != index + 1 ? 'brightness' : ''"
+        @click="showBox(index)"
+      >
         <div></div>
-        <img src="@/assets/img/home/thematicActivities4@2x.png" alt="" />
+        <img :src="item.columnBigimg" alt="" />
       </div>
-      <div class="active" v-bind:class="show != '2' ? 'brightness' : ''" @click="showBox('2')">
+      <!-- <div class="active" v-bind:class="show != '2' ? 'brightness' : ''" @click="showBox('2')">
         <img src="@/assets/img/home/thematicActivities2@2x.png" alt="" />
       </div>
       <div class="active" v-bind:class="show != '3' ? 'brightness' : ''" @click="showBox('3')">
@@ -13,18 +19,20 @@
       </div>
       <div class="active" v-bind:class="show != '4' ? 'brightness' : ''" @click="showBox('4')">
         <img src="@/assets/img/home/thematicActivities4@2x.png" alt="" />
-      </div>
+      </div> -->
       <div class="more">
         <div class="little"></div>
         <div class="little"></div>
         <div class="little"></div>
       </div>
     </div>
-    <div class="showtext" v-if="show == '1'">
-      <div class="triple" style="left: 10%"></div>
-      <div class="mainbox">第一张图片对应的文字</div>
+    <div v-for="(item, index) in imglist" :key="index">
+      <div class="showtext" v-if="show == index + 1">
+        <div class="triple" :style="{ left: item.style }"></div>
+        <div class="mainbox">{{ item.columnTitle }}</div>
+      </div>
     </div>
-    <div class="showtext" v-if="show == '2'">
+    <!-- <div class="showtext" v-if="show == '2'">
       <div class="triple" style="left: 34%"></div>
       <div class="mainbox">第二张图片对应的文字</div>
     </div>
@@ -35,7 +43,7 @@
     <div class="showtext" v-if="show == '4'">
       <div class="triple" style="left: 82%"></div>
       <div class="mainbox">第四张图片对应的文字</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -53,12 +61,16 @@ export default {
   },
   methods: {
     showBox(data) {
-      this.show = data;
+      this.show = data + 1;
     },
     getData() {
       request.get('/api/getColumnDataByPositionId?columnPositionId=itemactivity').then((res) => {
         console.log(res);
         this.imglist = res.frontmenuList.slice(0, 4);
+        for (let i = 0; i < this.imglist.length; i++) {
+          this.imglist[i].style = 10 + 24 * i + '' + '%';
+        }
+        console.log(this.imglist);
       });
     },
   },
@@ -72,6 +84,7 @@ export default {
   justify-content: space-between;
   .active {
     margin: 5px;
+    width: 500px;
     img {
       cursor: pointer;
     }
