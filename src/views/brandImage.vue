@@ -2,7 +2,7 @@
   <div class="contents">
     <div class="text-title">品牌标识</div>
     <div class="text" v-html="text">
-      <!-- <p>
+      <p>
         眉山市东坡区妇幼保健院成立于1952年，经过近70年的发展，我院被评为二级甲等妇幼保健院，获得了“国家级爱婴医院”的称号，是四川省产前筛查技术服务机构、市级文明单位、东坡区妇女儿童保健及疾病治疗中心。
       </p>
       <p>
@@ -35,7 +35,7 @@
       <p>
         “保妇幼健康·护东坡未来”
         我们希望东坡区的每一位妇女儿童都有好的身体、好的未来，因为孩子是我们的未来，只有他们好了，东坡区的未来才会好，东坡文化才会代代传承！
-      </p> -->
+      </p>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
     };
   },
   mounted() {
-    this.getData();
+    // this.getData();
   },
   methods: {
     getData() {

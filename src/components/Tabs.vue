@@ -21,8 +21,8 @@
           :class="item.visited"
           @click="goDetail(item)"
         >
-          <span class="time">{{ item.time }}</span>
-          <span class="title">{{ item.title }}</span>
+          <span class="time">{{ item.savetime }}</span>
+          <span class="title">{{ item.contentsTitle }}</span>
         </li>
       </ul>
     </div>
@@ -63,13 +63,21 @@ export default {
   },
   methods: {
     handleClick(tab) {
+      // console.log(tab);
       if (this.currentTab) {
         this.currentTab.active = '';
       }
       this.myLlist = this.tabList;
       this.currentTab = tab || this.tabList[0];
       this.currentTab.active = 'active';
-      this.tabcontents = this.currentTab.list;
+      // this.tabcontents = this.currentTab.list;
+      console.log(tab.columnData[0].id);
+      request
+        .post(`/api/getTagPageList?tagid=${tab.columnData[0].id}&pageNo=1&pagesize=5`, {})
+        .then((res) => {
+          console.log(res);
+          this.tabcontents = res.page.list;
+        });
     },
     goDetail(item) {
       console.log(item);
