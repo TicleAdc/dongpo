@@ -27,7 +27,7 @@ export default {
   border-bottom: 1px solid #dfe1e6;
 }
 .title {
-  font-size: 36px;
+  font-size: 32px;
   color: #4a5da3;
   margin-bottom: 40px;
   font-weight: 400;
@@ -37,20 +37,22 @@ export default {
   background-position: 150px top;
 }
 .description {
-  display: inline;
-  font-size: 32px;
+  display: inline-block;
+  font-size: 24px;
   background-color: #4a5da3;
-  padding: 5px 30px;
+  padding: 5px 20px;
+  margin-left: 20px;
   border-radius: 30px;
   color: #fff;
   font-weight: 200;
 }
 .text-context {
-  font-size: 20px;
+  font-size: 18px;
   color: #787778;
   padding-left: 20px;
   font-weight: 200;
   line-height: 30px;
+  margin-top: 50px;
 }
 .text-context p {
   margin-top: 20px;

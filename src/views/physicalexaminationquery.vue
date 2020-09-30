@@ -35,6 +35,7 @@ export default {
         api = `/api/getTagPageList`;
         method = 'post';
         query = `tagid=${id}&pageNo="1"&pagesize="20"`;
+        console.log(23313);
       }
       if (type === 2) {
         api = `/api/getColumnDataByPositionId`;

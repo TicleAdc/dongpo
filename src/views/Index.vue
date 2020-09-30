@@ -54,9 +54,6 @@ import dongpoEmotion from '@/components/dongpoEmotion';
 import appointment from '@/components/appointment';
 import msgListContainer from '@/components/common/msgListContainer';
 
-
-
-
 export default {
   components: {
     overview,
@@ -98,7 +95,7 @@ export default {
     brandimage,
     stuffstyle,
     specialculture,
-    msgListContainer
+    msgListContainer,
   },
   props: {
     showComponentName: {

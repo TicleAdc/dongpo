@@ -6,7 +6,11 @@
 
 <script>
 import msgList from './msgList';
+import store from '../../store';
+import { mapState } from 'vuex';
+
 export default {
+  store,
   components: {
     msgList,
   },
@@ -23,6 +27,16 @@ export default {
     this.getList();
   },
 
+  computed: {
+    ...mapState(['selectIndex']),
+  },
+
+  watch: {
+    selectIndex() {
+      this.getList();
+    },
+  },
+
   methods: {
     getInfo() {
       let data = this.$store.state.menuData;
@@ -31,14 +45,16 @@ export default {
       let menuname = data[index.index].children[index.children].menuname;
       this.id = infoVal.id;
       this.title = menuname;
+      this.type = infoVal.type;
     },
 
     async getList() {
+      this.list = [];
       this.getInfo();
+      if (this.type !== 0) return;
       let query = `tagid=${this.id}&pageNo=1&pagesize=20`;
       await this.http.post(`/api/getTagPageList?${query}`).then((res) => {
         this.list = res.page.list;
-        // console.log(this.list);
       });
     },
   },

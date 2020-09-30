@@ -11,9 +11,12 @@ import ElementUI from 'element-ui';
 import '@/assets/css/base.less';
 import '@/assets/css/element-variables.scss';
 import axios from '@/api/request.js';
-import store from './store'
+import store from './store';
+import 'viewerjs/dist/viewer.css';
+import Viewer from 'v-viewer';
 
 Vue.use(ElementUI);
+Vue.use(Viewer);
 Vue.config.productionTip = false;
 Vue.prototype.http = axios;
 

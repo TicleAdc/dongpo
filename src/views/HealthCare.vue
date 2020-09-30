@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     getDataList() {
-      axios.post(`/api/getTagPageList?tagid=6&pageNo=1&pagesize=10`, {}).then((res) => {
+      axios.post(`/api/getTagPageList?tagid=21&pageNo=1&pagesize=10`, {}).then((res) => {
         // console.log(res);
         this.list = res.page.list;
         // console.log(this.list);

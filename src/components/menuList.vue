@@ -1,10 +1,14 @@
 <template>
   <section class="menu">
-    <p class="title">{{title}}</p>
-    <ul class="menu-list">
-      <li v-for="menu in list" :key="menu.index" :class="menu.active">{{menu.name}}</li>
-    </ul>
-    <p class="foot">{{bottom}}</p>
+    <div class="main">
+      <p class="title">{{ title }}</p>
+      <ul class="menu-list">
+        <li v-for="menu in list" :key="menu.id" :class="menu.active" @click="active(menu)">
+          {{ menu.name }}
+        </li>
+      </ul>
+      <p class="foot">{{ bottom }}</p>
+    </div>
   </section>
 </template>
 
@@ -14,15 +18,31 @@ export default {
   props: {
     title: String,
     list: Array,
-    bottom: String
-  }
-}
+    bottom: String,
+  },
+  data() {
+    return {
+      current: null,
+    };
+  },
+  methods: {
+    active(menu) {
+      this.current = this.current || this.list[0];
+      this.current.active = '';
+      menu.active = 'active';
+      this.current = menu;
+      this.$emit('active', menu);
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
 .menu {
   display: inline-block;
   width: 260px;
+}
+.main {
   padding: 12px 20px;
   box-shadow: 10px 10px 10px #aaa;
 }
@@ -38,7 +58,7 @@ export default {
   position: relative;
 }
 .title::after {
-  content: ">";
+  content: '>';
   position: absolute;
   font-family: serif, fangsong;
   font-size: 28px;
@@ -59,7 +79,7 @@ export default {
     color: #4a5da3;
   }
   li.active::before {
-    content: "";
+    content: '';
     position: absolute;
     font-size: 0;
     width: 6px;

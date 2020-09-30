@@ -71,14 +71,14 @@ export default {
       request
         .get('/api/getTreeList')
         .then((res) => {
-          this.routeData = res.TreeMenu;
+          this.routeData = JSON.parse(JSON.stringify(res.TreeMenu));
           // this.getElementsClass('el-menu--horizontal');
           this.routeData.forEach((item) => {
             item.children?.forEach((child) => {
               child.children = null;
             });
           });
-          this.$store.commit('setMenuData', this.routeData);
+          this.$store.commit('setMenuData', res.TreeMenu);
           this.trueRoutes.splice(
             1,
             this.trueRoutes.length - 1,

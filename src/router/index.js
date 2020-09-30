@@ -28,6 +28,13 @@ export const routes = [
     path: '/detail',
     component: detail,
   },
+  {
+    path: '/departmentsetting',
+    redirect: '/featuredmedical'
+  }, {
+    path: '/introductpro',
+    redirect: '/featuredmedical'
+  }
   // {
   //   name: '医院概况',
   //   path: '/overview',
