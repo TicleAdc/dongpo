@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 0 10%;
+        background-color: #e8f1fa;
+        /* overflow: hidden; */
+      }
+      .body {
+        background-color: #fff;
+      }
+      .header {
+        width: 100%;
+        height: 150px;
+        background-color: #4d5aa2;
+        position: relative;
+      }
+      .backimg {
+        height: 150px;
+        width: 25%;
+        background-image: url(./img/医院文化背景@2x.png);
+        background-repeat: no-repeat;
+        float: right;
+        font-size: 36px;
+        color: white;
+        text-align: center;
+        line-height: 150px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+      }
+      ul {
+        top: 110px;
+        position: relative;
+        display: flex;
+        list-style: none;
+        padding: 5px 15%;
+      }
+      li {
+        padding: 5px 30px;
+        cursor: pointer;
+      }
+      .checked {
+        border-top: 2px solid #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <div class="header">
+        <div class="backimg">医院概况</div>
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="./introduction.html">医院介绍</a>
+            </li>
+            <li>
+              <a href="./leaderteam.html">领导团队</a>
+            </li>
+            <li>
+              <a class="checked" href="./hospitalhonor.html">医院荣誉</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content"></div>
+    </div>
+  </body>
+</html>
