@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-09-24 14:51:52
  * @FilePath: /dongpo/src/components/common/mainComponent.vue
- * @LastEditTime: 2020-09-28 15:30:43
+ * @LastEditTime: 2020-09-30 10:38:21
 -->
 <template>
   <div class="routeData">
@@ -15,6 +15,7 @@
             :label="item.name"
             :name="item.path"
             :key="item.path"
+            @tab-click="changeRoute"
           >
           </el-tab-pane>
         </el-tabs>
@@ -34,14 +35,11 @@ export default {
       activeName: '',
       routeData: [],
       index: '',
+      title: this.$route.name,
     };
   },
   props: {
     currentRoute: {
-      type: String,
-      required: true,
-    },
-    title: {
       type: String,
       required: true,
     },
@@ -60,6 +58,11 @@ export default {
         children: childrenIndex,
       });
       // console.log(this.$store.state.selectIndex);
+    },
+  },
+  methods: {
+    changeRoute() {
+      console.log(1);
     },
   },
   model: {
@@ -128,23 +131,21 @@ a:visited {
 </style>
 
 <style lang="less">
-.announcement {
-  .el-tabs__nav-wrap.is-top {
-    background-color: #4d5aa2;
+.el-tabs__nav-wrap.is-top {
+  background-color: #4d5aa2;
+  color: white;
+  padding-left: 15%;
+  margin: 15px 0 0px;
+  .el-tabs__item.is-active {
     color: white;
-    padding-left: 15%;
-    margin: 15px 0 0px;
-    .el-tabs__item.is-active {
-      color: white;
-    }
-    .el-tabs__item {
-      color: rgba(255, 255, 255, 0.384);
-      padding: 0 30px;
-    }
-    .el-tabs__active-bar {
-      background-color: #fff;
-      bottom: inherit;
-    }
+  }
+  .el-tabs__item {
+    color: rgba(255, 255, 255, 0.384);
+    padding: 0 30px;
+  }
+  .el-tabs__active-bar {
+    background-color: #fff;
+    bottom: inherit;
   }
 }
 </style>
