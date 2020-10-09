@@ -1,0 +1,20 @@
+@media screen and (max-width: 720px) {
+  .home-container.main-foot .foot-link-container {
+    display: none;
+  }
+  .foot-logo {
+    display: none;
+  }
+  .flex-box.foot-container {
+    border: none;
+    color: white;
+    background-color: #2b4366;
+  }
+  .support {
+    border: none;
+    border-top: none !important;
+  }
+  .foot-qrcode {
+    display: none;
+  }
+}

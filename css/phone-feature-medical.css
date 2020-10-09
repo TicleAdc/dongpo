@@ -1,0 +1,14 @@
+@import 'phone-foot.css';
+@media screen and (max-width: 720px) {
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  body .home-container,
+  body .featured-medical {
+    width: inherit;
+  }
+  body .head-form {
+    padding: 0;
+  }
+}
