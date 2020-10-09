@@ -4,16 +4,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <title>首页</title>
   <link rel="stylesheet" href="./js/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="./js/swiper-bundle.min.js"></script>
 </head>
 
 <body>
- 
-  <div class="home_center">
+  <div class="home-container">
+    <link rel="stylesheet" href="css/head.css">
+    <div class="head-top">
+      <div class="head-top-container flex-box">
+        <img class="head-logo" src="./img/home/logo.png" alt="东坡医院">
+        <p class="head-phone">门诊电话：028-38235760</p>
+        <div class="head-link flex-1">
+          <a href="#">
+            <img src="./img/home/web.png" alt="微博">
+          </a>
+          <a href="#">
+            <img src="./img/home/webChat.png" alt="微信">
+          </a>
+        </div>
+      </div>
+    </div>
+    <form class="head-form">
+      <input type="text" placeholder="请输入搜索内容">
+      <button class="head-search">
+        <img src="./img/home/search.svg" alt="搜索">
+      </button>
+    </form>
+    <div class="head-nav-container">
+      <ul class="head-nav flex-box">
+        <li class="active"><a href="">首页</a>
+          <ul class="head-nav-list"></ul>
+        </li>
+        <li><a href="">医院概况</a>
+          <ul class="head-nav-list">
+            <li><a href="">医院介绍</a></li>
+            <li><a href="">领导团队</a></li>
+            <li><a href="">医院荣誉</a></li>
+          </ul>
+        </li>
+        <li><a href="">医疗服务</a>
+          <ul class="head-nav-list">
+            <li><a href="">预约挂号</a></li>
+            <li><a href="">报告查询</a></li>
+            <li><a href="">院内导航</a></li>
+            <li><a href="">就诊指南</a></li>
+            <li><a href="">体检查询</a></li>
+            <li><a href="">常见问题</a></li>
+          </ul>
+        </li>
+        <li><a href="">母婴保健</a></li>
+        <li><a href="">新闻动态</a>
+          <ul class="head-nav-list">
+            <li><a href="">医院新闻</a></li>
+            <li><a href="">业界新闻</a></li>
+            <li><a href="">媒体指导</a></li>
+          </ul>
+        </li>
+        <li><a href="">特色医疗</a>
+          <ul class="head-nav-list">
+            <li><a href="">科室设置</a></li>
+            <li><a href="">专家介绍</a></li>
+          </ul>
+        </li>
+        <li><a href="">党群工作</a></li>
+        <li><a href="">医院文化</a>
+          <ul class="head-nav-list">
+            <li><a href="">品牌形象</a></li>
+            <li><a href="">院训宗旨</a></li>
+            <li><a href="">特色文化</a></li>
+            <li><a href="">职工风采</a></li>
+          </ul>
+        </li>
+        <li><a href="">专题活动</a></li>
+        <li><a href="">健康科普</a>
+          <ul class="head-nav-list">
+            <li><a href="">在线辟谣</a></li>
+            <li><a href="">健康宝典</a></li>
+            <li><a href="">情满东坡</a></li>
+          </ul>
+        </li>
+        <li><a href="">通知公告</a>
+          <ul class="head-nav-list">
+            <li><a href="">医院公告</a></li>
+            <li><a href="">招标信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="home_center main-container">
     <div class="swiper-container index-swiper index-top-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -31,31 +113,30 @@
     </div>
     <!--分割  -->
     <div class="service_entrance">
-      <div class="card">
+      <a href="#" class="card">
         <div class="img"><img src="img/home/physicalExamination2@2x.png" alt=""></div>
-        <div class="icon"><img src="img/home/register@2x.png" alt=""></div>
-        <div class="name"></div>
+        <!-- <div class="icon"><img src="img/home/register@2x.png" alt=""></div> -->
         <div class="name">预约挂号</div>
         <button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
-      </div>
-      <div class="card">
+      </a>
+      <a href="#" class="card">
         <div class="img"><img src="img/home/ReportQuery2@2x.png" alt=""></div>
-        <div class="icon"><img src="img/home/ReportQuery@2x.png" alt=""></div>
-        <div class="name"></div>
-        <div class="name">报告查询</div><button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
-      </div>
-      <div class="card">
+        <!-- <div class="icon"><img src="img/home/ReportQuery@2x.png" alt=""></div> -->
+        <div class="name">报告查询</div>
+        <button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
+      </a>
+      <a href="#" class="card">
         <div class="img"><img src="img/home/momAndBaby2@2x.png" alt=""></div>
-        <div class="icon"><img src="img/home/momAndBaby@2x.png" alt=""></div>
-        <div class="name"></div>
-        <div class="name">母婴保健</div><button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
-      </div>
-      <div class="card">
+        <!-- <div class="icon"><img src="img/home/momAndBaby@2x.png" alt=""></div> -->
+        <div class="name">母婴保健</div>
+        <button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
+      </a>
+      <a href="#" class="card">
         <div class="img"><img src="img/home/physicalExamination2@2x.png" alt=""></div>
-        <div class="icon"><img src="img/home/physicalExamination@2x.png" alt=""></div>
-        <div class="name"></div>
-        <div class="name">体检查询</div><button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
-      </div>
+        <!-- <div class="icon"><img src="img/home/physicalExamination@2x.png" alt=""></div> -->
+        <div class="name">体检查询</div>
+        <button><img src="img/home/CheckMore@2x.png" alt=""> 查看更多</button>
+      </a>
     </div>
     <!--分割  -->
     <div class="tabs">
@@ -72,24 +153,156 @@
               <img src="./img/main.png" alt="">
             </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination swiper-pagination-bullets">
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet"></span>
+          </div>
         </div>
       </div>
       <div class="news-container">
         <ul class="tab-list">
-          <li class="active"> 医院新闻 </li>
-          <li> 媒体报道 </li>
-          <li> 公示公告 </li>
-          <li> 采购招标 </li>
+          <li class="active">
+            <p>医院新闻</p>
+            <ul class="news-list index-news-list">
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.10</span>
+                  <span class="title">入学体检 | 神兽即将归来</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">眉山市东坡妇女保健院2020年产儿科适宜技术培训会圆满结束培训会圆满结束</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">东坡区妇幼保健院开展消防安全演练和安全工作培训会</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.04</span>
+                  <span class="title">东坡妇幼保健行业</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.03</span>
+                  <span class="title">眉山市欢度国庆节</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>媒体报道</p>
+            <ul class="news-list index-news-list">
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.10</span>
+                  <span class="title">媒体报道 | 神兽即将归来</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">眉山市东坡妇女保健院2020年产儿科适宜技术培训会圆满结束培训会圆满结束</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">东坡区妇幼保健院开展消防安全演练和安全工作培训会</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.04</span>
+                  <span class="title">东坡妇幼保健行业</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.03</span>
+                  <span class="title">眉山市欢度国庆节</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>公示公告</p>
+            <ul class="news-list index-news-list">
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.10</span>
+                  <span class="title">公示公告 | 神兽即将归来</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">眉山市东坡妇女保健院2020年产儿科适宜技术培训会圆满结束培训会圆满结束</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">东坡区妇幼保健院开展消防安全演练和安全工作培训会</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.04</span>
+                  <span class="title">东坡妇幼保健行业</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.03</span>
+                  <span class="title">眉山市欢度国庆节</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>采购招标</p>
+            <ul class="news-list index-news-list">
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.10</span>
+                  <span class="title">采购招标 | 神兽即将归来</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">眉山市东坡妇女保健院2020年产儿科适宜技术培训会圆满结束培训会圆满结束</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.05</span>
+                  <span class="title">东坡区妇幼保健院开展消防安全演练和安全工作培训会</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.04</span>
+                  <span class="title">东坡妇幼保健行业</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="time">2020.09.03</span>
+                  <span class="title">眉山市欢度国庆节</span>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="tab-more"><span>查看更多</span></li>
-        </ul>
-        <ul class="news-list">
-          <li><span class="time">2020.09.10</span><span class="title">入学体检 | 神兽即将归来</span></li>
-          <li><span class="time">2020.09.05</span><span class="title">眉山市东坡妇女保健院2020年产儿科适宜技术培训会圆满结束培训会圆满结束</span></li>
-          <li><span class="time">2020.09.05</span><span class="title">东坡区妇幼保健院开展消防安全演练和安全工作培训会</span></li>
-          <li><span class="time">2020.09.04</span><span class="title">东坡妇幼保健行业</span></li>
-          <li><span class="time">2020.09.03</span><span class="title">眉山市欢度国庆节</span></li>
         </ul>
       </div>
     </div>
@@ -273,11 +486,11 @@
           </div>
           <div class="contents">
             <div class="contents">
-              <div class="header">
+              <!-- <div class="header">
                 <div class="inImg"><img src="img/home/PartyMassWorkPic@2x.png" alt=""></div>
                 <div class="topic"> 中共眉山市东坡区妇幼保健计划生育 服务中心支部委员会庆祝 . . . </div>
               </div>
-              <div class="time"><span>2020-9-30</span></div>
+              <div class="time"><span>2020-9-30</span></div> -->
               <div class="context">
                 <ul>
                   <li><i class="el-icon-caret-left"></i>以巡查促整改 严标准促提升——眉山市医疗机构巡查反馈会在东坡妇幼... </li>
@@ -297,29 +510,48 @@
         <div class="img"><img src="img/home/thematicActivities@2x.png" alt=""></div>
       </div>
       <div class="contents">
-        <div>
-          <div class="activity">
-            <div class="activeImglist">
-              <div class="active">
-                <div></div><img src="img/home/thematicActivities4@2x.png" alt="">
+        <div class="activity flex-box">
+          <ul class="img-list flex-box flex-1">
+            <li class="active">
+              <div class="item-img">
+                <img src="img/home/thematicActivities4@2x.png" alt="">
               </div>
-              <div class="active brightness"><img src="img/home/thematicActivities2.png" alt=""></div>
-              <div class="active brightness"><img src="img/home/thematicActivities3.png" alt=""></div>
-              <div class="active brightness"><img src="img/home/thematicActivities4.png" alt=""></div>
-              <div class="more">
-                <div class="little"></div>
-                <div class="little"></div>
-                <div class="little"></div>
+              <div class="showtext">
+                <div class="mainbox">第一张图片对应的文字</div>
               </div>
+            </li>
+            <li>
+              <div class="item-img">
+                <img src="img/home/thematicActivities2.png" alt="">
+              </div>
+              <div class="showtext">
+                <div class="mainbox">第一张图片对应的文字</div>
+              </div>
+            </li>
+            <li>
+              <div class="item-img">
+                <img src="img/home/thematicActivities3.png" alt="">
+              </div>
+              <div class="showtext">
+                <div class="mainbox">第一张图片对应的文字</div>
+              </div>
+            </li>
+            <li>
+              <div class="item-img">
+                <img src="img/home/thematicActivities4.png" alt="">
+              </div>
+              <div class="showtext">
+                <div class="mainbox">第一张图片对应的文字</div>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="activity-more">
+            <div class="more">
+              <div class="little"></div>
+              <div class="little"></div>
+              <div class="little"></div>
             </div>
-            <div class="showtext">
-              <div class="triple" style="left: 10%;"></div>
-              <div class="mainbox">第一张图片对应的文字</div>
-            </div>
-            <!---->
-            <!---->
-            <!---->
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -364,6 +596,173 @@
     </div>
   </div>
   <script src="./js/index.js"></script>
+  <div class="home-container main-foot">
+    <link rel="stylesheet" href="./css/foot.css">
+    <div class="back-top">
+      <p>返回此页面顶部</p>
+    </div>
+    <div class="flex-box foot-container">
+      <div class="foot-about">
+        <p class="foot-about-title">医院地址</p>
+        <p>眉山市东坡区府街92号</p>
+        <p class="foot-about-title">联系信息</p>
+        <p>妇产科电话： 028-38235760</p>
+        <p>儿科电话： 028-38225907</p>
+        <p class="foot-about-title">自媒体矩阵</p>
+        <p>微信公众号： 眉山市东坡区妇幼保健院</p>
+        <p>新浪微博号： 眉山东坡妇幼</p>
+        <p>今日头条号： 坡区妇幼保健院</p>
+        <p>网易新闻号： 眉山市东坡区妇幼保健院</p>
+        <p>搜狐新闻号： 东坡区妇幼保健院</p>
+        <img class="foot-qrcode" src="./img/qrCode.png" alt="二维码">
+        <p class="foot-wechat">微信公众号</p>
+        <div class="support">
+          <p>网络备案： 川ICP备1601453号-1</p>
+          <p>眉山市东坡区妇幼保I</p>
+          <p>技术支持：汤谷互动</p>
+        </div>
+      </div>
+      <div class="foot-link-container">
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">医院概况</a>
+          </li>
+          <li>
+            <a href="#">医院介绍</a>
+          </li>
+          <li>
+            <a href="#">现任领导</a>
+          </li>
+          <li>
+            <a href="#">医院荣誉</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">医疗服务</a>
+          </li>
+          <li>
+            <a href="#">预约挂号</a>
+          </li>
+          <li>
+            <a href="#">报告查询</a>
+          </li>
+          <li>
+            <a href="#">院内导航</a>
+          </li>
+          <li>
+            <a href="#">就诊指导</a>
+          </li>
+          <li>
+            <a href="#">体检查询</a>
+          </li>
+          <li>
+            <a href="#">常见问题</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">母婴保健</a>
+          </li>
+        </ul>
+      </div>
+      <div class="foot-link-container">
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">新闻动态</a>
+          </li>
+          <li>
+            <a href="#">医院新闻</a>
+          </li>
+          <li>
+            <a href="#">业界新闻</a>
+          </li>
+          <li>
+            <a href="#">媒体报道</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">特色医疗</a>
+          </li>
+          <li>
+            <a href="#">预防接种</a>
+          </li>
+          <li>
+            <a href="#">儿科</a>
+          </li>
+          <li>
+            <a href="#">妇产科门诊部</a>
+          </li>
+          <li>
+            <a href="#">妇产科住院部</a>
+          </li>
+          <li>
+            <a href="#">检验科</a>
+          </li>
+          <li>
+            <a href="#">超声科</a>
+          </li>
+          <li>
+            <a href="#">麻醉手术室</a>
+          </li>
+          <li>
+            <a href="#">专家介绍</a>
+          </li>
+        </ul>
+      </div>
+      <div class="foot-link-container">
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">党群工作</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">医院文化</a>
+          </li>
+          <li>
+            <a href="#">品牌形象</a>
+          </li>
+          <li>
+            <a href="#">院训宗旨</a>
+          </li>
+          <li>
+            <a href="#">特色文化</a>
+          </li>
+          <li>
+            <a href="#">职工风采</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">专题活动</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">健康科普</a>
+          </li>
+        </ul>
+        <ul class="foot-link">
+          <li class="foot-link-title">
+            <a href="#">通知公告</a>
+          </li>
+          <li>
+            <a href="#">医院公告</a>
+          </li>
+          <li>
+            <a href="#">招标信息</a>
+          </li>
+          <li>
+            <a href="#">招聘信息</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-logo"></div>
+    <script src="./js/foot.js"></script>
+  </div>
 </body>
 
 </html>

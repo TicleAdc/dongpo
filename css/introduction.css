@@ -1,0 +1,125 @@
+.introduction-body p {
+  text-indent: 2em;
+  font-size: 1.4rem;
+}
+.top {
+  display: flex;
+  padding: 20px 30px;
+  /* justify-content: space-between; */
+}
+.content p {
+  font-size: 1.4rem;
+}
+.topimg {
+  width: 200rem;
+  margin-right: 20px;
+}
+.topimg img {
+  width: 100%;
+}
+.rightline {
+  display: inline-block;
+  width: calc(100% - 40px);
+  background: lightgrey;
+  height: 1px;
+}
+.point {
+  display: inline-block;
+  width: 40px;
+  height: 7px;
+  background-color: #4a5da3;
+}
+.topcontent .title {
+  font-size: 1.4rem;
+}
+.topcontent .content {
+  padding: 0 20px;
+  color: #4d4d4d;
+}
+.topcontent .content p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+.introduction-body a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1.4rem;
+}
+.introduction-body ul {
+  top: 110px;
+  position: relative;
+  display: flex;
+  list-style: none;
+  padding: 5px 15%;
+}
+.introduction-body li {
+  padding: 5px 30px;
+  cursor: pointer;
+}
+.checked {
+  border-top: 2px solid #fff;
+}
+.mid {
+  width: 100%;
+  background-color: rgba(173, 169, 169, 0.767);
+  padding: 30px 0;
+  height: 150px;
+}
+.count {
+  display: flex;
+  float: right;
+  /* position: relative; */
+}
+.personcount {
+  border: 1px solid #fff;
+  padding: 30px;
+  margin: 0 20px;
+  width: 25%;
+}
+.personcount .num {
+  font-size: 24px;
+  /* color: white; */
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+.des {
+  font-size: 10px;
+}
+.bottom {
+  padding: 10px 30px;
+}
+.bottomleft {
+  margin-top: -90px;
+  float: left;
+  /* width: 20%; */
+  background-color: #4a5da3;
+  /* height: 200px; */
+  padding: 60px 6%;
+  padding-bottom: 150px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.pic img {
+  height: 130px;
+}
+.phone {
+  padding: 0 5px;
+  font-size: 14px;
+  color: #fff;
+}
+.contactway {
+  margin-bottom: 20px;
+}
+.bottomcontent p {
+  margin: 10px;
+  font-size: 1.2rem;
+  color: #4d4d4d
+}
+.bottomcontent {
+  padding-bottom: 60px;
+}
+.phonecall {
+  text-indent: 0;
+  color: #fff;
+}

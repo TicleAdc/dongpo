@@ -1,0 +1,31 @@
+.news-pic-top img {
+  width: 100%;
+}
+.news-pic-list {
+  padding: 5rem 0;
+}
+.news-pic-list li {
+  padding: 1rem;
+  margin-top: 2rem;
+  border-bottom: 1px dashed #a1a6b3;
+}
+.news-pic-list li:last-child {
+  border-bottom: none;
+}
+.news-pic-list img {
+  height: 10rem;
+}
+.news-description {
+  margin-left: 2rem;
+  flex-direction: column;
+}
+.news-description h1 {
+  margin-bottom: 1rem;
+}
+.news-description p {
+  color: #4d4d4d;
+  font-size: 1.4rem;
+}
+.news-description .news-time {
+  font-size: 1.2rem;
+}

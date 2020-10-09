@@ -1,0 +1,37 @@
+.news-list-title {
+  height: 4rem;
+  padding: 4rem 2rem 0 2rem;
+  background: url("../img/professorback@2x.png") no-repeat;
+  background-size: auto 50%;
+  background-position: 8rem 3rem;
+}
+.news-list {
+  font-size: 1.2rem;
+  color: #4d4d4d;
+  padding: 1rem 0 4rem 0;
+}
+.news-list-title p {
+  font-size: 2rem;
+}
+.news-list li {
+  padding-left: 2rem;
+  padding-right: 0;
+}
+.news-list li::after {
+  content: none;
+}
+.news-list li::before {
+    content: "";
+    display: block;
+    font-size: 0;
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    border: 2px solid #000;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    transform: rotate(135deg);
+}
+.news-list a {
+  color: #4d4d4d;
+}

@@ -1,0 +1,14 @@
+.news-title {
+  font-weight: 400;
+  text-align: center;
+  padding: 5rem 0;
+  color: #4a5da3;
+}
+.news-content {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #4d4d4d;
+}
+.news-content p {
+  padding: 1.5rem 2rem;
+}

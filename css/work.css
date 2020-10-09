@@ -1,0 +1,153 @@
+.header {
+    background-color: #a8250f;
+}
+
+.work-container {
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.partyTitle {
+    position: relative;
+    color: #4d5aa2;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 22px;
+    width: 100%;
+    justify-content: flex-end;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.partyTitle p {
+    text-align: left;
+    flex: 10;
+    color: #595757;
+}
+
+.partyTitle img {
+    width: 41px;
+    height: 41px;
+    flex: 0.1;
+    -webkit-mask-image: url("../img/title_img.png");
+    background-color: #a8250f;
+    -webkit-mask-size: 100%;
+}
+
+.partyTitle .line {
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    height: 4px;
+    background-color: #a8250f;
+    z-index: 1;
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    list-style: none;
+    width: 3rem;
+}
+
+.dynamicContain {
+    display: flex;
+    margin-top: 20px;
+}
+
+.dynamicContain .dynamicLeft {
+    flex: 1;
+    margin-right: 40px;
+}
+
+.dynamicContain .dynamicLeft .big {
+    min-width: 425px;
+    min-height: 300px;
+    margin-right: 40px;
+    width: 100%;
+}
+
+.dynamicContain .dynamicRight {
+    flex: 1.5;
+    overflow: hidden;
+    align-items: center;
+}
+
+.dynamicRight .top {
+    display: flex;
+}
+
+.dynamicRight .top .small {
+    flex: 1;
+    margin-right: 30px;
+    min-width: 200px;
+    min-height: 150px;
+    width: 100%;
+    height: 100%;
+}
+
+.right-content {
+    flex: 1.5;
+    position: relative;
+}
+
+.right-content p {
+    color: #4a5da3;
+    text-overflow: ellipsis;
+    height: 46px;
+    font-size: 1.4rem;
+}
+
+.right-content span {
+    position: absolute;
+    bottom: 0;
+    color: grey;
+    font-size: 14px;
+}
+
+.msg-list {
+    font-size: 1.2rem;
+    color: #4d4d4d;
+    padding: 1rem 0 4rem 0;
+}
+
+.list {
+    padding-left: 2rem;
+    padding-right: 0;
+    position: relative;
+    height: 3rem;
+    line-height: 3rem;
+    border-bottom: 1px solid #dfe1e6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list::before {
+    content: "";
+    display: block;
+    font-size: 0;
+    position: absolute;
+    top: 1.3rem;
+    left: 1rem;
+    border: 2px solid #000;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    transform: rotate(135deg);
+}
+
+.msg-list .list a {
+    color: #4d4d4d;
+}
+
+.constructIncorrupt {
+    display: flex;
+    margin-top: 20px;
+}
+
+.construction {
+    flex: 1;
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+.incorrupt {
+    flex: 1;
+    overflow: hidden;
+}

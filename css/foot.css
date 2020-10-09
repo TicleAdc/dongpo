@@ -2,6 +2,25 @@
   margin-top: 2rem;
   border: 1px solid #dfe1e6;
 }
+.back-top {
+  padding: 2rem 2rem 0 0;
+  cursor: pointer;
+}
+.back-top p {
+  text-align: right;
+}
+.back-top p::before {
+  content: "";
+  display:inline-block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border: .25rem solid #4d4d4d;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(135deg);
+  margin-right: 1rem;
+}
 .foot-about {
   flex: 4;
   background: url("../img/ButtomLeftLogo.png") no-repeat;
@@ -42,7 +61,7 @@
 .foot-link li {
   height: 3rem;
   line-height: 3rem;
-  color: #717787;
+  color: #4d4d4d;
   padding: .5rem 0 0 1rem;
 }
 .foot-link li::before {
@@ -51,7 +70,7 @@
   width: 0;
   height: 0;
   font-size: 0;
-  border: .3rem solid #717787;
+  border: .25rem solid #4d4d4d;
   border-top-color: transparent;
   border-right-color: transparent;
   transform: rotate(-135deg);
