@@ -1,0 +1,134 @@
+@media screen and (max-width: 1024px) {
+  /* 头部隐藏 */
+  .head-top {
+    display: none;
+  }
+  .head-form {
+    background-size: auto 10rem !important;
+  }
+  /* card按钮 */
+  .service_entrance > .card > .img > img {
+    display: none;
+  }
+  .service_entrance > .card > .img {
+    background-image: url(../img/register@2x.png);
+    width: 100%;
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-size: 15rem;
+    background-position: 2rem center;
+  }
+  .card {
+    box-shadow: 0 0 0 !important;
+  }
+  .card > .name {
+    font-size: 3rem !important;
+  }
+  .card > button {
+    display: none;
+  }
+  .card:nth-child(2) > .img {
+    background-image: url(../img/ReportQuery@2x.png);
+  }
+  .card:nth-child(3) > .img {
+    background-image: url(../img/Pediatrics@2x.png);
+  }
+  .card:nth-child(4) > .img {
+    background-image: url(../img/physicalExamination@2x.png);
+  }
+  /* tabs */
+  /* .tabs {
+    display: initial !important;
+  } */
+  /* departments */
+  .pinklogo {
+    background-color: #fff !important;
+    margin: 0 !important;
+  }
+  .logoimg {
+    padding: 2rem 10rem;
+    background-color: #ffeaef;
+  }
+  .pinklogo > .logoimg > img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .iconlist {
+    margin-top: 3rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: initial !important;
+  }
+  .icon > div > img {
+    width: 15rem !important;
+    height: 15rem !important;
+  }
+  .icon > div {
+    padding: 2rem;
+  }
+  .icon > .name {
+    font-size: 2.4rem !important;
+  }
+  /* professor */
+  .cardlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+  }
+  .personcard {
+    width: 100% !important;
+    height: 20rem;
+    position: relative;
+  }
+  .personcard > .img > img {
+    width: 20rem !important;
+    height: 20rem;
+  }
+  .personcard > .img {
+    width: 27% !important;
+    position: absolute;
+  }
+  .personcard > .describe {
+    position: absolute;
+    left: 20rem;
+  }
+  .personcard > .describe > .introduction::before {
+    width: 4.4rem !important;
+    height: 4.4rem !important;
+    line-height: 4.4rem !important;
+    font-size: 2.4rem !important;
+  }
+  .personcard > .describe > .introduction {
+    font-size: 2.8rem !important;
+  }
+  .detail {
+    font-size: 2rem !important;
+  }
+  /* outpatient information */
+  .container > .map {
+    display: none;
+  }
+  .container {
+    display: initial !important;
+    /* width: 70%; */
+    /* padding: 0 2rem; */
+  }
+  .container .information .out {
+    width: 100% !important;
+    height: 13rem !important;
+    border-radius: 2rem;
+  }
+  .container .information .out .title {
+    height: 13rem !important;
+    line-height: 13rem !important;
+    font-size: 4rem !important;
+    border-radius: 2rem;
+  }
+  .include p {
+    font-size: 3rem;
+    padding-left: 1rem;
+  }
+  .information {
+    padding: 0 5rem;
+  }
+} ;
