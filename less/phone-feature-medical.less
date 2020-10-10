@@ -9,6 +9,7 @@
     .home-container,
     .featured-medical {
       width: inherit;
+      color: black;
       > section {
         display: none;
       }
@@ -16,11 +17,163 @@
         > section {
           display: none;
         }
+
         .main {
-          padding: 0 12px;
+          padding: 0 0px;
+          .context {
+            border-bottom: none;
+            .description {
+              background-color: #fff;
+              color: black;
+              position: relative;
+              margin-top: 0;
+              margin-bottom: 0;
+              height: 70px;
+              line-height: 50px;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+              padding: 0;
+              width: inherit;
+              border-radius: 0;
+              display: flex;
+              align-items: flex-end;
+              padding-left: 30px;
+              &::before {
+                content: ' ';
+                background-color: #e6e6e6;
+                display: block;
+                height: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+              }
+              &::after {
+                content: ' ';
+                display: block;
+                position: absolute;
+                width: 7px;
+                height: 17px;
+                background: #4a5da3;
+                top: 35px;
+                left: 20px;
+              }
+            }
+            .text-context {
+              color: black;
+              font-size: 17px;
+              font-family: SourceHanSansCN-Light-GBpc-EUC-H;
+              padding-right: 2rem;
+            }
+          }
+          .main-container {
+            color: black;
+            padding-right: 2rem;
+            margin-right: 0;
+            width: inherit;
+            .description {
+              background-color: #fff;
+              color: black;
+              position: relative;
+              margin-top: 0;
+              margin-bottom: 0;
+              height: 70px;
+              line-height: 50px;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+              padding: 0;
+              width: inherit;
+              border-radius: 0;
+              display: flex;
+              align-items: flex-end;
+              padding-left: 30px;
+              &::before {
+                content: ' ';
+                background-color: #e6e6e6;
+                display: block;
+                height: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+              }
+              &::after {
+                content: ' ';
+                display: block;
+                position: absolute;
+                width: 7px;
+                height: 17px;
+                background: #4a5da3;
+                top: 35px;
+                left: 20px;
+              }
+            }
+            .expert-introduction {
+              width: inherit;
+              margin-left: 2rem;
+              box-shadow: none;
+              border: 1px solid #b1b1b1;
+              padding-top: 0;
+              overflow: hidden;
+            }
+          }
+          .pages {
+            margin-bottom: 20px;
+          }
+          > .description {
+            background-color: #fff;
+            color: black;
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 70px;
+            line-height: 50px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+            padding: 0;
+            width: inherit;
+            border-radius: 0;
+            display: flex;
+            align-items: flex-end;
+            padding-left: 30px;
+            &::before {
+              content: ' ';
+              background-color: #e6e6e6;
+              display: block;
+              height: 10px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100vw;
+            }
+            &::after {
+              content: ' ';
+              display: block;
+              position: absolute;
+              width: 7px;
+              height: 17px;
+              background: #4a5da3;
+              top: 35px;
+              left: 20px;
+            }
+          }
         }
+        @padding: 12px;
         .ks_title {
-          background: url(../img/) no-repeat;
+          background: url() no-repeat;
+          background-color: #4a5da3;
+          height: 82px;
+          color: white;
+          padding-left: @padding;
+          line-height: 82px;
+          font-size: 19px;
+          font-family: TRENDS;
+          &::after {
+            content: ' ';
+            background: url(../img/professorback.png);
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-size: auto 100%;
+            background-position: 8rem top;
+          }
         }
       }
     }

@@ -10,6 +10,7 @@
   body .home-container,
   body .featured-medical {
     width: inherit;
+    color: black;
   }
   body .home-container > section,
   body .featured-medical > section {
@@ -21,11 +22,176 @@
   }
   body .home-container .flex-box.main-featured-medical .main,
   body .featured-medical .flex-box.main-featured-medical .main {
-    padding: 0 12px;
+    padding: 0 0px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .context,
+  body .featured-medical .flex-box.main-featured-medical .main .context {
+    border-bottom: none;
+  }
+  body .home-container .flex-box.main-featured-medical .main .context .description,
+  body .featured-medical .flex-box.main-featured-medical .main .context .description {
+    background-color: #fff;
+    color: black;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 70px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 0;
+    width: inherit;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 30px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .context .description::before,
+  body .featured-medical .flex-box.main-featured-medical .main .context .description::before {
+    content: ' ';
+    background-color: #e6e6e6;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+  body .home-container .flex-box.main-featured-medical .main .context .description::after,
+  body .featured-medical .flex-box.main-featured-medical .main .context .description::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 17px;
+    background: #4a5da3;
+    top: 35px;
+    left: 20px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .context .text-context,
+  body .featured-medical .flex-box.main-featured-medical .main .context .text-context {
+    color: black;
+    font-size: 17px;
+    font-family: SourceHanSansCN-Light-GBpc-EUC-H;
+    padding-right: 2rem;
+  }
+  body .home-container .flex-box.main-featured-medical .main .main-container,
+  body .featured-medical .flex-box.main-featured-medical .main .main-container {
+    color: black;
+    padding-right: 2rem;
+    margin-right: 0;
+    width: inherit;
+  }
+  body .home-container .flex-box.main-featured-medical .main .main-container .description,
+  body .featured-medical .flex-box.main-featured-medical .main .main-container .description {
+    background-color: #fff;
+    color: black;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 70px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 0;
+    width: inherit;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 30px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .main-container .description::before,
+  body .featured-medical .flex-box.main-featured-medical .main .main-container .description::before {
+    content: ' ';
+    background-color: #e6e6e6;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+  body .home-container .flex-box.main-featured-medical .main .main-container .description::after,
+  body .featured-medical .flex-box.main-featured-medical .main .main-container .description::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 17px;
+    background: #4a5da3;
+    top: 35px;
+    left: 20px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .main-container .expert-introduction,
+  body .featured-medical .flex-box.main-featured-medical .main .main-container .expert-introduction {
+    width: inherit;
+    margin-left: 2rem;
+    box-shadow: none;
+    border: 1px solid #b1b1b1;
+    padding-top: 0;
+    overflow: hidden;
+  }
+  body .home-container .flex-box.main-featured-medical .main .pages,
+  body .featured-medical .flex-box.main-featured-medical .main .pages {
+    margin-bottom: 20px;
+  }
+  body .home-container .flex-box.main-featured-medical .main > .description,
+  body .featured-medical .flex-box.main-featured-medical .main > .description {
+    background-color: #fff;
+    color: black;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 70px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 0;
+    width: inherit;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 30px;
+  }
+  body .home-container .flex-box.main-featured-medical .main > .description::before,
+  body .featured-medical .flex-box.main-featured-medical .main > .description::before {
+    content: ' ';
+    background-color: #e6e6e6;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+  body .home-container .flex-box.main-featured-medical .main > .description::after,
+  body .featured-medical .flex-box.main-featured-medical .main > .description::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 17px;
+    background: #4a5da3;
+    top: 35px;
+    left: 20px;
   }
   body .home-container .flex-box.main-featured-medical .ks_title,
   body .featured-medical .flex-box.main-featured-medical .ks_title {
-    background: url(../img/) no-repeat;
+    background: url() no-repeat;
+    background-color: #4a5da3;
+    height: 82px;
+    color: white;
+    padding-left: 12px;
+    line-height: 82px;
+    font-size: 19px;
+    font-family: TRENDS;
+  }
+  body .home-container .flex-box.main-featured-medical .ks_title::after,
+  body .featured-medical .flex-box.main-featured-medical .ks_title::after {
+    content: ' ';
+    background: url(../img/professorback.png);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: auto 100%;
+    background-position: 8rem top;
   }
   body .head-form {
     padding: 0;
