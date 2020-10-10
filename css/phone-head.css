@@ -1,37 +1,31 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 720px) {
   /* 头部隐藏 */
   .head-top {
     background-color: #4a5da3 !important;
-    height: 2rem !important;
+    height: 2vh !important;
     width: 100%;
   }
   .head-top .head-top-container {
     display: none;
   }
   .head-form {
-    background-size: auto 12rem !important;
-    height: 17rem !important;
+    background-size: auto 20vh !important;
+    height: 22vh !important;
+    padding: 5vh !important;
   }
   .head-form input {
-    margin: 0 1rem;
-    position: relative;
-    top: 9rem;
-    width: 100% !important;
-    height: 7rem !important;
-    font-size: 3rem !important;
-    border-radius: 5rem;
+    display: none !important;
   }
   .head-form button {
     display: none;
   }
   .head-form:before {
     content: url(../img/daohang.png);
-    width: 5rem !important;
-    height: 5rem !important;
+    width: 3vh !important;
+    height: 3vh !important;
     display: block;
     position: relative;
-    left: 68rem;
-    top: 3rem;
+    left: 190vw;
   }
   .head-nav-container {
     display: none;
