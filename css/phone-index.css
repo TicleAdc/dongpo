@@ -9,12 +9,9 @@
     height: 2vh !important;
     background-color: #4a5da3 !important;
   }
-  .head-nav-container {
-    display: none;
-  }
   .head-form > input {
     position: relative;
-    top: 48rem;
+    top: 50rem;
     width: 100% !important;
     height: 13vh !important;
     font-size: 3rem !important;
@@ -90,18 +87,39 @@
     padding-bottom: 0 !important;
   }
   .tab-list > li {
-    width: 25% !important;
+    width: 28% !important;
+    margin: 2% 2% 0 2%;
+  }
+  /* .tab-list > li:first-child {
+    margin-left: 10%;
+  } */
+  .tab-list > .active {
+    border-bottom: 1vh solid #4a5da3;
   }
   .tab-list > li > p {
     font-size: 3rem;
     font-weight: 400 !important;
-    margin: 3% 5% 0 20%;
+    /* margin: 3% 5% 0 20%; */
     padding-bottom: 3vh;
-    border-bottom: 1vh solid #4a5da3;
+    /* border-bottom: 1vh solid #4a5da3; */
   }
   .tab-more {
-    position: relative;
-    top: 55vh;
+    position: absolute;
+    top: 147vh;
+    /* flex: initial !important; */
+  }
+  .tab-more > span {
+    background-color: #fff !important;
+    border: 1px solid #4a5da3;
+    color: #4a5da3 !important;
+    display: block;
+    width: 310%;
+    text-align: center;
+    font-size: 4rem !important;
+    padding: 4rem !important;
+    border-radius: 5rem !important;
+    /* height: 10rem !important; */
+    /* vertical-align: middle; */
   }
   .news-list > li {
     height: 20vh !important;
@@ -113,16 +131,18 @@
     top: 2vh;
     left: -25%;
     width: 30vw;
+    font-weight: 400;
   }
   .news-list > li > a > .time {
     font-size: 2.4rem;
     position: relative;
     top: 15vh;
+    color: #808080;
   }
   /* departments */
   .pinklogo {
     background-color: #fff !important;
-    margin: 180vh 0 0 !important;
+    margin: 155vh 0 0 !important;
   }
   .logoimg {
     padding: 2rem 10rem;
@@ -207,5 +227,9 @@
   }
   .information {
     padding: 0 5rem;
+  }
+  /* partywork */
+  .all {
+    display: none !important;
   }
 } ;
