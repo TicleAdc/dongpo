@@ -1,4 +1,5 @@
 @import './phone-foot.css';
+// @import './phone-head.css';
 @media screen and (max-width: 720px) {
   body {
     background-color: #fff;
@@ -20,6 +21,9 @@
 
         .main {
           padding: 0 0px;
+          width: inherit;
+          display: flex;
+          flex-direction: column;
           .context {
             border-bottom: none;
             .description {
@@ -117,6 +121,14 @@
           }
           .pages {
             margin-bottom: 20px;
+          }
+          .visit {
+            width: inherit;
+            overflow: hidden;
+            width: 90%;
+            height: 100px;
+            margin: 0 auto;
+            margin-top: 12px;
           }
           > .description {
             background-color: #fff;

@@ -23,6 +23,9 @@
   body .home-container .flex-box.main-featured-medical .main,
   body .featured-medical .flex-box.main-featured-medical .main {
     padding: 0 0px;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
   }
   body .home-container .flex-box.main-featured-medical .main .context,
   body .featured-medical .flex-box.main-featured-medical .main .context {
@@ -132,6 +135,15 @@
   body .home-container .flex-box.main-featured-medical .main .pages,
   body .featured-medical .flex-box.main-featured-medical .main .pages {
     margin-bottom: 20px;
+  }
+  body .home-container .flex-box.main-featured-medical .main .visit,
+  body .featured-medical .flex-box.main-featured-medical .main .visit {
+    width: inherit;
+    overflow: hidden;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 12px;
   }
   body .home-container .flex-box.main-featured-medical .main > .description,
   body .featured-medical .flex-box.main-featured-medical .main > .description {
