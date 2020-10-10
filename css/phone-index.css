@@ -6,7 +6,7 @@
   }
   .head-top {
     width: 100% !important;
-    height: 1.5rem !important;
+    height: 2vh !important;
     background-color: #4a5da3 !important;
   }
   .head-nav-container {
@@ -15,25 +15,25 @@
   .head-form > input {
     margin: 0 1rem;
     position: relative;
-    top: 48rem;
+    top: 77vh;
     width: 100% !important;
-    height: 7rem !important;
+    height: 13vh !important;
     font-size: 3rem !important;
     border-radius: 5rem;
   }
   .head-form {
-    background-size: auto 78% !important;
-    height: 17rem !important;
-    margin-top: 0 !important;
+    background-size: auto 75% !important;
+    height: 22vh !important;
+    /* margin-top: 0 !important; */
+    padding: 5vh !important;
   }
   .head-form:before {
     content: url(../img/daohang.png);
-    width: 5rem !important;
-    height: 5rem !important;
+    width: 3vh !important;
+    height: 3vh !important;
     display: block;
     position: relative;
-    left: 68rem;
-    top: 3rem;
+    left: 83%;
   }
   .head-form > button {
     display: none;
@@ -88,24 +88,42 @@
     justify-content: space-between;
     border-radius: 5rem 5rem 0 0;
     border-bottom: 1px solid #4a5da3 !important;
+    padding-bottom: 0 !important;
   }
   .tab-list > li {
     width: 25% !important;
   }
   .tab-list > li > p {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 400 !important;
-    /* padding: 5vh 3vw 0 3vw; */
-    /* border-bottom: 1rem solid #4a5da3; */
+    margin: 5vh 1.5vw 0 17vw;
+    padding-bottom: 3vh;
+    border-bottom: 1vh solid #4a5da3;
   }
   .tab-more {
     position: relative;
     top: 55vh;
   }
+  .news-list > li {
+    height: 20vh !important;
+    padding: 3vh;
+  }
+  .news-list > li > a > .title {
+    font-size: 4rem;
+    position: relative;
+    top: 2vh;
+    left: -32vh;
+    width: 30vw;
+  }
+  .news-list > li > a > .time {
+    font-size: 2.4rem;
+    position: relative;
+    top: 15vh;
+  }
   /* departments */
   .pinklogo {
     background-color: #fff !important;
-    margin: 34rem 0 0 !important;
+    margin: 180vh 0 0 !important;
   }
   .logoimg {
     padding: 2rem 10rem;
