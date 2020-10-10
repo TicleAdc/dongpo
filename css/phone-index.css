@@ -1,12 +1,8 @@
 @media screen and (max-width: 1024px) {
-  /* 头部隐藏 */
-  .head-top {
-    display: none;
-  }
-  .head-form {
-    background-size: auto 10rem !important;
-  }
   /* card按钮 */
+  .service_entrance {
+    padding-top: 13rem !important;
+  }
   .service_entrance > .card > .img > img {
     display: none;
   }
