@@ -35,7 +35,7 @@
     </form>
     <div class="head-nav-container">
       <ul class="head-nav flex-box">
-        <li class="active"><a href="">首页</a>
+        <li><a href="">首页</a>
           <ul class="head-nav-list"></ul>
         </li>
         <li><a href="">医院概况</a>
@@ -94,6 +94,7 @@
         </li>
       </ul>
     </div>
+    <script src="./js/head.js"></script>
   </div>
   <div class="home_center main-container">
     <div class="swiper-container index-swiper index-top-swiper">
@@ -144,13 +145,16 @@
         <div class="swiper-container index-swiper index-banner-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./img/main.png" alt="">
+              <img style="width: auto;" width="100%" src="http://182.43.139.247:8080/upload/1/cms/content/1602232001140.png" alt="">
+              <p>东坡妇幼保健院开展活动（现代执行模式）</p>
             </div>
             <div class="swiper-slide">
               <img src="./img/main@2x.png" alt="">
+              <p>东坡妇幼保健院开展活动（现代执行模式）</p>
             </div>
             <div class="swiper-slide">
               <img src="./img/main.png" alt="">
+              <p>东坡妇幼保健院开展活动（现代执行模式）</p>
             </div>
           </div>
           <div class="swiper-pagination swiper-pagination-bullets">
@@ -302,7 +306,7 @@
               </li>
             </ul>
           </li>
-          <li class="tab-more"><span>查看更多</span></li>
+          <li class="tab-more"><a href="#">查看更多</a></li>
         </ul>
       </div>
     </div>
@@ -310,54 +314,56 @@
     <div class="pinklogo">
       <div class="logoimg"><img src="img/home/PinkLogo@2x.png" alt=""></div>
       <div class="iconlist">
-        <div class="icon">
+        <a class="icon">
           <div><img src="img/home/vaccination@2x.png" alt="" class="img"></div>
           <div class="name">预防接种</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/Pediatrics@2x.png" alt="" class="img"></div>
           <div class="name">儿科</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/PediatricsHealth.png" alt="" class="img">
           </div>
           <div class="name">儿童保健科</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/DOG@2x.png" alt="" class="img"></div>
           <div class="name">妇产科住院部</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/newBorn@2x.png" alt="" class="img"></div>
           <div class="name">新生儿病区</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/childrenMessage@2x.png" alt="" class="img"></div>
           <div class="name">小儿中医推拿</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/OGC@2x.png" alt="" class="img"></div>
           <div class="name">妇产科门诊部</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/ClinicalLaboratory@2x.png" alt="" class="img"></div>
           <div class="name">检验科</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/Ultrasonography@2x.png" alt="" class="img"></div>
           <div class="name">超声科</div>
-        </div>
-        <div class="icon">
+        </a>
+        <a class="icon">
           <div><img src="img/home/vaccination@2x.png" alt="" class="img"></div>
           <div class="name">麻醉手术室</div>
-        </div>
+        </a>
       </div>
     </div>
     <!-- 分割 -->
     <div class="main">
       <div class="title">
         <div class="img"><img src="img/home/introducePressor@2x.png" alt="">
-          <div class="checkmore">查看更多</div>
+          <div class="checkmore">
+            <a href="http://182.43.139.247:8080/html/1//dongpofuyouguanwang/teseyiliao/zhuanjiajieshao/index.html">查看更多</a>
+          </div>
         </div>
       </div>
       <div class="contents">
@@ -407,7 +413,9 @@
     <div class="main">
       <div class="title">
         <div class="img"><img src="img/home/HealthLeading@2x.png" alt="">
-          <div class="checkmore">查看更多</div>
+          <div class="checkmore">
+            <a href="http://182.43.139.247:8080/html/1//dongpofuyouguanwang/teseyiliao/zhuanjiajieshao/index.html">查看更多</a>
+          </div>
         </div>
       </div>
       <div class="contents">
@@ -517,7 +525,10 @@
                 <img src="img/home/thematicActivities4@2x.png" alt="">
               </div>
               <div class="showtext">
-                <div class="mainbox">第一张图片对应的文字</div>
+                <div class="mainbox">
+                  第一张图片对应的文字
+                  <a href="#" class="text-more"><span>查看更多</span></a>
+                </div>
               </div>
             </li>
             <li>
@@ -525,7 +536,10 @@
                 <img src="img/home/thematicActivities2.png" alt="">
               </div>
               <div class="showtext">
-                <div class="mainbox">第一张图片对应的文字</div>
+                <div class="mainbox">
+                  第二张图片对应的文字
+                  <a href="#" class="text-more"><span>查看更多</span></a>
+                </div>
               </div>
             </li>
             <li>
@@ -533,7 +547,10 @@
                 <img src="img/home/thematicActivities3.png" alt="">
               </div>
               <div class="showtext">
-                <div class="mainbox">第一张图片对应的文字</div>
+                <div class="mainbox">
+                  第三张图片对应的文字
+                  <a href="#" class="text-more"><span>查看更多</span></a>
+                </div>
               </div>
             </li>
             <li>
@@ -541,7 +558,10 @@
                 <img src="img/home/thematicActivities4.png" alt="">
               </div>
               <div class="showtext">
-                <div class="mainbox">第一张图片对应的文字</div>
+                <div class="mainbox">
+                  第四张图片对应的文字
+                  <a href="#" class="text-more"><span>查看更多</span></a>
+                </div>
               </div>
             </li>
           </ul>

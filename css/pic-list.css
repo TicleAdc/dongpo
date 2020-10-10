@@ -22,7 +22,8 @@
 .container {
     background-color: white;
     width: 25%;
-    margin-right: 30px;
+    margin-right: 2rem;
+    padding: 1rem 2rem;
 }
 
 
