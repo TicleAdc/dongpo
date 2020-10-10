@@ -7,16 +7,44 @@
   .foot-logo {
     display: none;
   }
+  .back-top {
+    display: none;
+  }
   .flex-box.foot-container {
     border: none;
     color: white;
     background-color: #2b4366;
-  }
-  .support {
-    border: none;
-    border-top: none !important;
-  }
-  .foot-qrcode {
-    display: none;
+    .foot-wechat {
+      margin-bottom: 0;
+    }
+
+    .foot-qrcode {
+      display: none;
+    }
+
+    .foot-about {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-family: SourceHanSansCN-Light-GBpc-EUC-H;
+      padding-top: 9rem;
+      p {
+        padding-left: 0;
+        width: 80%;
+      }
+      .support {
+        border: none;
+        border-top: none !important;
+        width: 80%;
+        p {
+          &:first-child {
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
   }
 }

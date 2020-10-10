@@ -1,6 +1,7 @@
 @import './phone-foot.css';
 @media screen and (max-width: 720px) {
   body {
+    background-color: #fff;
     * {
       max-width: none !important;
       min-width: auto !important;
@@ -8,6 +9,20 @@
     .home-container,
     .featured-medical {
       width: inherit;
+      > section {
+        display: none;
+      }
+      .flex-box.main-featured-medical {
+        > section {
+          display: none;
+        }
+        .main {
+          padding: 0 12px;
+        }
+        .ks_title {
+          background: url(../img/) no-repeat;
+        }
+      }
     }
     .head-form {
       padding: 0;
