@@ -1,5 +1,43 @@
 @import './phone-foot.css';
 @media screen and (max-width: 1024px) {
+  /* head */
+  .head-top-container {
+    display: none !important;
+  }
+  .head-top {
+    width: 100% !important;
+    height: 1.5rem !important;
+    background-color: #4a5da3 !important;
+  }
+  .head-nav-container {
+    display: none;
+  }
+  .head-form > input {
+    margin: 0 1rem;
+    position: relative;
+    top: 48rem;
+    width: 100% !important;
+    height: 7rem !important;
+    font-size: 3rem !important;
+    border-radius: 5rem;
+  }
+  .head-form {
+    background-size: auto 12rem !important;
+    height: 17rem !important;
+    margin-top: 0 !important;
+  }
+  .head-form:before {
+    content: url(../img/daohang.png);
+    width: 5rem !important;
+    height: 5rem !important;
+    display: block;
+    position: relative;
+    left: 68rem;
+    top: 3rem;
+  }
+  .head-form > button {
+    display: none;
+  }
   /* card按钮 */
   .service_entrance {
     padding-top: 13rem !important;
