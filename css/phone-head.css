@@ -1,6 +1,11 @@
 @media screen and (max-width: 1024px) {
   /* 头部隐藏 */
   .head-top {
+    background-color: #4a5da3 !important;
+    height: 2rem !important;
+    width: 100%;
+  }
+  .head-top .head-top-container {
     display: none;
   }
   .head-form {
