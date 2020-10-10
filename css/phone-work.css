@@ -1,0 +1,160 @@
+@import 'phone-foot.css';
+@media screen and (max-width: 720px) {
+  body {
+    background-color: #fff;
+  }
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  body .home-container,
+  body .main-container {
+    width: inherit;
+    padding: 0;
+  }
+  body .main-container .header {
+    height: 80px;
+    overflow: hidden;
+  }
+  body .main-container .header .backimg {
+    float: left;
+    background-image: url();
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    font-family: TRENDS;
+  }
+  body .main-container .header .backimg::after {
+    background-image: url(../img/cultureback.png);
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 150px;
+    top: 0;
+    left: 200%;
+    z-index: 10;
+  }
+  body .main-container .partyTitle {
+    background-color: #fff;
+    color: black;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 70px;
+    line-height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+    padding: 0;
+    width: inherit;
+    border-radius: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 30px;
+  }
+  body .main-container .partyTitle::before {
+    content: ' ';
+    background-color: #e6e6e6;
+    display: block;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+  }
+  body .main-container .partyTitle::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 17px;
+    background: #a8250f;
+    top: 35px;
+    left: 20px;
+  }
+  body .main-container .partyTitle .line {
+    display: none;
+  }
+  body .main-container .dynamicContain {
+    padding: 0 18px;
+    display: block;
+  }
+  body .main-container .dynamicContain .dynamicLeft {
+    margin-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  }
+  body .main-container .dynamicContain .dynamicLeft .big {
+    margin-right: 0;
+  }
+  body .main-container .dynamicContain .dynamicRight {
+    height: 425px;
+  }
+  body .main-container .dynamicContain .dynamicRight .top {
+    display: block;
+    height: 87px;
+    color: black;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  }
+  body .main-container .dynamicContain .dynamicRight .top .small {
+    margin-right: 0;
+    float: right;
+    right: 0;
+    width: 124px;
+    height: 84px;
+    opacity: 1;
+    border-radius: 5px;
+    min-height: 0;
+  }
+  body .main-container .dynamicContain .dynamicRight .top .right-content p {
+    color: black;
+    font-size: 18px;
+    font-family: SourceHanSansCN-Normal-GBpc-EUC-H;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  body .main-container .dynamicContain .dynamicRight .top .right-content span {
+    bottom: -40px;
+  }
+  body .main-container .dynamicContain .dynamicRight .msg-list ul > li.list {
+    height: 60px;
+  }
+  body .main-container .dynamicContain .dynamicRight .msg-list ul > li.list::before {
+    display: none;
+  }
+  body .main-container .dynamicContain .dynamicRight .msg-list ul > li.list::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: url('../img/箭头.png');
+    width: 7px;
+    height: 10px;
+    background-position: 100% 100%;
+    background-size: cover;
+  }
+  body .main-container .constructIncorrupt {
+    display: block;
+  }
+  body .main-container .constructIncorrupt .construction {
+    margin-right: 0;
+  }
+  body .main-container .constructIncorrupt .msg-list ul > li.list {
+    height: 60px;
+  }
+  body .main-container .constructIncorrupt .msg-list ul > li.list::before {
+    display: none;
+  }
+  body .main-container .constructIncorrupt .msg-list ul > li.list::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 5%;
+    background: url('../img/箭头.png');
+    width: 7px;
+    height: 10px;
+    background-position: 100% 100%;
+    background-size: cover;
+  }
+}
