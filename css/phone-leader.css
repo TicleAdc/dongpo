@@ -14,8 +14,10 @@
     width: initial !important;
   }
   .header .head-menu {
+    display: none;
     height: initial;
     position: relative;
+    top: 10rem;
   }
   .header .head-menu .head-menu-list {
     padding: 0;

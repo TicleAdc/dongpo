@@ -1,5 +1,6 @@
 @media screen and (max-width: 720px) {
   .header .head-menu {
+    display: none;
     height: initial;
     position: relative;
     top: 133vh;
@@ -40,9 +41,6 @@
   }
   .time {
     margin-left: 0;
-  }
-  .hospitalhonor-body {
-    margin-bottom: 30vh;
   }
   .head-menu-list li:first-child {
     display: none;
