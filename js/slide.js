@@ -6,7 +6,7 @@ var slide = {
     var list = root.querySelectorAll('img');
     var self = this;
     this.list = [];
-    [].forEach(list, function (img) {
+    [].forEach.call(list, function (img) {
       self.list.push(img);
       img.addEventListener('click', self.show.bind(self));
     });
