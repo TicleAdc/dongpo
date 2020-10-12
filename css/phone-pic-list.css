@@ -1,0 +1,50 @@
+@media screen and (max-width: 720px) {
+  .header .head-menu {
+    height: initial;
+    position: relative;
+    top: 133vh;
+  }
+  .header .head-menu .head-menu-list {
+    top: 0;
+    padding: 0 0 0 2rem;
+    width: 100%;
+    display: initial;
+  }
+  .header .head-menu .head-menu-list li {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+  }
+  .header .head-menu .head-menu-list li a {
+    color: black;
+  }
+  .pages {
+    display: none;
+  }
+  .content {
+    padding: 0;
+  }
+  .content .container {
+    margin-right: initial;
+    padding: 2rem 2rem 0 2rem;
+    width: 36%;
+  }
+  .content .container .column .img {
+    padding: 0;
+    border: initial;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .round {
+    display: none;
+  }
+  .time {
+    margin-left: 0;
+  }
+  .hospitalhonor-body {
+    margin-bottom: 30vh;
+  }
+  .head-menu-list li:first-child {
+    display: none;
+  }
+}

@@ -13,7 +13,26 @@
   .main-container{
     width: initial !important;
   }
-  .header {
+  .header{
+    .head-menu{
+      height: initial;
+      position: relative;
+        top: 65rem;
+      .head-menu-list{
+        padding: 0 0 0 2rem;
+        width: 100%;
+        display: initial;
+        li{
+          border: 1px solid black;
+          margin-bottom: 1rem;
+          a{
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  .head-menu-list li:first-child{
     display: none;
   }
   .mid {
@@ -50,6 +69,8 @@
       .content {
         text-align: left;
         text-indent: 2em;
+        position: relative;
+        top: -8rem;
         p {
           padding: 0 5%;
           font-size: 1.4rem;

@@ -1,5 +1,36 @@
 @media screen and (max-width: 720px) {
   /* 头部隐藏 */
+  body {
+    background-color: #fff;
+  }
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  .home-container {
+    margin: 0;
+    width: 100%;
+  }
+  .main-container {
+    width: initial !important;
+  }
+  .header {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+    margin: 0 5%;
+    padding-right: 5%;
+    width: initial !important;
+    height: initial !important;
+  }
+  .header .backimg {
+    text-align: left;
+    background: none;
+    float: initial;
+    color: black !important;
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+  }
   .body {
     background-color: #fff;
   }
@@ -13,7 +44,6 @@
   }
   .head-form {
     background-size: auto 40%;
-    height: 22vh !important;
     padding: 5vh !important;
   }
   .head-form input {
@@ -29,7 +59,7 @@
     display: block;
     position: relative;
     left: 90%;
-    top: 2vh;
+    top: -3vh;
   }
   .head-nav-container {
     display: none;

@@ -13,25 +13,16 @@
   .main-container {
     width: initial !important;
   }
-  .header {
-    background-color: #fff;
-    border-bottom: 1px solid black;
-    margin: 0 5%;
-    padding-right: 5%;
-    width: initial;
-    height: initial;
-  }
-  .header .backimg {
-    text-align: left;
-    background: none;
-    float: initial;
-    color: black !important;
-    width: 100%;
-    height: 5rem;
-    line-height: 5rem;
-  }
   .header .head-menu {
-    display: none;
+    height: initial;
+    position: relative;
+  }
+  .header .head-menu .head-menu-list {
+    padding: 0;
+    position: initial;
+  }
+  .header .head-menu .head-menu-list li a {
+    color: black;
   }
   .expert-introduction {
     box-shadow: 0 0 0 !important;
