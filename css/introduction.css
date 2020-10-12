@@ -1,6 +1,6 @@
 .introduction-body p {
-  text-indent: 2em;
-  font-size: 1.4rem;
+  text-indent: 1rem;
+  font-size: 1.2rem;
 }
 .top {
   display: flex;
@@ -11,7 +11,7 @@
   font-size: 1.4rem;
 }
 .topimg {
-  width: 200rem;
+  width: 50rem;
   margin-right: 20px;
 }
 .topimg img {
@@ -35,6 +35,8 @@
 .topcontent .content {
   padding: 0 20px;
   color: #4d4d4d;
+  letter-spacing: .1rem;
+  line-height: 2rem;
 }
 .topcontent .content p {
   margin: 10px 0;
@@ -62,10 +64,12 @@
 }
 .mid {
   width: 100%;
-  background-color: rgba(173, 169, 169, 0.767);
-  padding: 30px 0;
-  height: 150px;
 }
+
+.mid img {
+  width: 100%;
+}
+
 .count {
   display: flex;
   float: right;
@@ -87,21 +91,22 @@
   font-size: 10px;
 }
 .bottom {
-  padding: 10px 30px;
+  padding: 1rem 2rem;
+  display: flex;
 }
 .bottomleft {
-  margin-top: -90px;
-  float: left;
-  /* width: 20%; */
+  margin-top: -7rem;
+  width: 18rem;
   background-color: #4a5da3;
-  /* height: 200px; */
-  padding: 60px 6%;
-  padding-bottom: 150px;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  padding: 5rem 6%;
+  padding-bottom: 12rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  margin-left: -2rem;
 }
 .pic img {
-  height: 130px;
+  width: 100%;
 }
 .phone {
   padding: 0 5px;
@@ -118,6 +123,7 @@
 }
 .bottomcontent {
   padding-bottom: 60px;
+  flex: 1;
 }
 .phonecall {
   text-indent: 0;

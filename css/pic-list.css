@@ -21,8 +21,8 @@
 
 .container {
     background-color: white;
-    width: 25%;
-    margin-right: 30px;
+    width: 26%;
+    padding: 1rem 3.66%;
 }
 
 
@@ -64,8 +64,7 @@
 }
 
 .content {
-    padding: 30px;
+    padding: 2rem 4%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
