@@ -91,6 +91,7 @@ a:hover {
     position: absolute;
     width: 5rem;
     height: 5rem;
+    border-radius: 50%;
     margin-left: 4rem;
     background: url("../img/home/preview.png") no-repeat;
     background-size: 100%;
@@ -1038,4 +1039,84 @@ li {
 
 .pages .page-current a {
     color: #fff;
+}
+
+.slide-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+.hide {
+    display: none;
+}
+
+.slide-list {
+    position: absolute;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slide-list img {
+    max-width: 80%;
+    margin-top: 50vh;
+    transform: translate3d(0, -50%, 0);
+}
+
+.slide-container .swiper-button-prev::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-left: 4rem;
+    background: url("../img/home/preview.png") no-repeat;
+    background-size: 100%;
+}
+
+.slide-container .swiper-button-next::after {
+    content: "";
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 4rem;
+    background: url("../img/home/next.png") no-repeat;
+    background-size: 100%;
+}
+
+.swiper-close {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    z-index: 100;
+}
+.swiper-close::before,
+.swiper-close::after {
+    content: "";
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 4rem;
+    height: .1rem;
+    background-color: #fff;
+    transform: rotate(45deg);
+    margin: 2rem 0 0 0;
+}
+.swiper-close::after {
+    transform: rotate(135deg);
+    margin: -.1rem 0 0 -.1rem;
 }

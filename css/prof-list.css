@@ -27,15 +27,12 @@
 
 .expert-introduction .left {
     width: 10rem;
-    display: flex;
-    flex-direction: column;
     position: relative;
     overflow: hidden;
 }
 
 .expert-introduction .left>.foot {
     background-color: #e8f1fa;
-    flex: 0.82;
     position: absolute;
     bottom: 0;
     width: 100%;

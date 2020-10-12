@@ -9,7 +9,7 @@ var head = {
     var current = null;
     var ul;
     if (!active) {
-      list.forEach(function (a) {
+      [].forEach(list, function (a) {
         var similar = self.similar(location.href, a.href) - 0;
         result.push({
           similar: similar,

@@ -43,19 +43,20 @@
 }
 
 .head-form input {
-  height: 2rem;
+  height: 3rem;
   width: 20rem;
   padding: 0 0 0 2rem;
   border: 1px solid #dfe1e6;
 }
 
 .head-search {
-  width: 5rem;
-  height: 2.2rem;
+  width: 10rem;
+  height: 3.15rem;
   border: none;
   padding: 0;
-  color: #dfe1e6;
-  transform: translate3d(0, .55rem, 0);
+  background-color: #4a5da3;
+  cursor: pointer;
+  transform: translate3d(0, .5rem, 0);
 }
 
 .head-nav-container {
