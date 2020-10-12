@@ -13,7 +13,24 @@
   .main-container {
     width: initial !important;
   }
-  .header {
+  .header .head-menu {
+    height: initial;
+    position: relative;
+    top: 65rem;
+  }
+  .header .head-menu .head-menu-list {
+    padding: 0 0 0 2rem;
+    width: 100%;
+    display: initial;
+  }
+  .header .head-menu .head-menu-list li {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+  }
+  .header .head-menu .head-menu-list li a {
+    color: black;
+  }
+  .head-menu-list li:first-child {
     display: none;
   }
   .mid {
@@ -50,6 +67,8 @@
   .top .topcontent .content {
     text-align: left;
     text-indent: 2em;
+    position: relative;
+    top: -8rem;
   }
   .top .topcontent .content p {
     padding: 0 5%;
