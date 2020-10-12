@@ -1,0 +1,33 @@
+@import 'phone-foot.css';
+@import 'phone-head.css';
+@media screen and (max-width: 720px) {
+  body {
+    background-color: #fff;
+  }
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  body .home-container,
+  body .main-container {
+    width: inherit;
+    padding: 0;
+  }
+  body .main-container .header {
+    height: 80px;
+    overflow: hidden;
+  }
+  body .picture-list {
+    padding-top: 0;
+    text-align: center;
+  }
+  body .picture-list > li {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 43%;
+  }
+  body .picture-list > li:nth-child(2n-1):last-child {
+    margin-left: -35%;
+    left: -5%;
+  }
+}
