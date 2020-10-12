@@ -74,9 +74,12 @@
     font-size: 1.4rem;
     padding-left: 2rem;
     margin-bottom: -1rem;
+    background: url("../img/CheckMore@2x.png") no-repeat;
+    background-size: 1.5rem;
+    background-position: left center;
 }
 
-.expert-introduction .right h3::before{
+/* .expert-introduction .right h3::before{
     content: ">";
     display: inline-block;
     color: #fff;
@@ -91,7 +94,7 @@
     text-align: center;
     border: none;
     transform: translateY(-.2rem);
-}
+} */
 
 .expert-introduction .right h3:empty {
     margin-bottom: 0;

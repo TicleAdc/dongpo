@@ -179,7 +179,7 @@
 
 .menu .title::after,
 .menu-list > li:nth-child(2):after {
-    content: '>';
+    content: ">";
     position: absolute;
     font-family: serif, fangsong;
     font-size: 28px;

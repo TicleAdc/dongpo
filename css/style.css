@@ -369,9 +369,13 @@ a:hover {
     color: #4a5da3;
     font-size: 1.4rem;
     margin-bottom: .5rem;
+    text-indent: 2rem;
+    background: url("../img/CheckMore@2x.png") no-repeat;
+    background-size: 1.5rem;
+    background-position: left center;
 }
 
-.personcard .describe .introduction::before{
+/* .personcard .describe .introduction::before{
     content: ">";
     display: inline-block;
     color: #fff;
@@ -386,7 +390,7 @@ a:hover {
     text-align: center;
     border: none;
     transform: translateY(-.2rem);
-}
+} */
 
 .personcard .describe .detail {
     font-size: 10.81px;
@@ -682,7 +686,11 @@ a:hover {
     color: #4a5da3;
     display: block;
     text-align: right;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
+    margin-right: 1.5rem;
+    background: url("../img/CheckMore@2x.png") no-repeat;
+    background-size: 1rem;
+    background-position: right center;
 }
 
 .img-list .text-more span {
@@ -690,7 +698,7 @@ a:hover {
     transform: scale(.8);
 }
 
-.img-list .text-more::after {
+/* .img-list .text-more::after {
     content: ">";
     display: inline-block;
     color: #4a5da3;
@@ -705,7 +713,7 @@ a:hover {
     margin-left: .5em;
     text-align: center;
     transform: none;
-}
+} */
 
 .active .item-img::before,
 .img-list li:hover .item-img::before {
