@@ -1,8 +1,25 @@
 @import './phone-foot.css';
 @media screen and (max-width: 720px) {
+  body{
+    background-color: #fff;
+  }
+  * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  .home-container {
+    margin: 0;
+    width: 100% !important;
+  }
+  .main-container {
+    width: initial !important;
+  }
   /* head */
   .head-top-container {
     display: none !important;
+  }
+  .head-nav-container{
+    display: none;
   }
   .head-top {
     width: 100% !important;
@@ -11,32 +28,36 @@
   }
   .head-form > input {
     position: relative;
-    top: 50rem;
+    top: 43vh;
     width: 100% !important;
-    height: 13vh !important;
-    font-size: 3rem !important;
+    height: 5vh !important;
+    font-size: 1.4rem !important;
     border-radius: 5rem;
+    /* padding: 0; */
   }
   .head-form {
-    background-size: auto 70% !important;
+    background-size: auto 3.5rem !important;
     height: 22vh !important;
     /* margin-top: 0 !important; */
-    padding: 5vh !important;
+    /* padding: 5vh !important; */
+    margin-top: 0 !important;
   }
   .head-form:before {
     content: url(../img/daohang.png);
-    width: 3vh !important;
-    height: 3vh !important;
+    width: 0 !important;
+    height: 0 !important;
     display: block;
     position: relative;
     left: 85%;
+    top: 2vh;
   }
   .head-form > button {
     display: none;
   }
   /* card按钮 */
   .service_entrance {
-    padding-top: 13rem !important;
+    padding: 9vh 0 0 0 !important;
+    /* padding-top: 9vh !important; */
     display: flex;
     justify-content: space-between;
   }
@@ -45,16 +66,17 @@
   }
   .service_entrance > .card > .img {
     background-image: url(../img/register@2x.png);
-    height: 15rem;
+    height: 15vh;
     background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: 2rem center;
+    background-size: 85%;
+    background-position: 1rem;
   }
   .card {
     box-shadow: 0 0 0 !important;
   }
   .card > .name {
-    font-size: 3rem !important;
+    font-size: 1.5rem !important;
+    margin: 1vh 0 !important;
   }
   .card > button {
     display: none;
@@ -71,6 +93,7 @@
   /* tabs */
   .tabs {
     display: initial !important;
+    padding: 0 !important;
   }
   .swiper-slide {
     width: 100% !important;
@@ -97,15 +120,16 @@
     border-bottom: 1vh solid #4a5da3;
   }
   .tab-list > li > p {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 400 !important;
     /* margin: 3% 5% 0 20%; */
-    padding-bottom: 3vh;
+    /* padding-bottom: 3vh; */
     /* border-bottom: 1vh solid #4a5da3; */
   }
   .tab-more {
     position: absolute;
-    top: 147vh;
+    top: 59vh;
+    width: 30%;
     /* flex: initial !important; */
   }
   .tab-more > span {
@@ -115,34 +139,42 @@
     display: block;
     width: 310%;
     text-align: center;
-    font-size: 4rem !important;
-    padding: 4rem !important;
+    font-size: 2rem !important;
+    padding: 1rem !important;
     border-radius: 5rem !important;
     /* height: 10rem !important; */
     /* vertical-align: middle; */
   }
   .news-list > li {
-    height: 20vh !important;
-    padding: 3vh;
+    height: 10vh !important;
+    /* text-overflow: clip !important; */
+    padding-right: 0;
+  }
+  .news-list > li > a{
+    width: 40vw;
   }
   .news-list > li > a > .title {
-    font-size: 4rem;
+    /* display: inline-block; */
+    font-size: 1.6rem;
     position: relative;
-    top: 2vh;
-    left: -25%;
-    width: 30vw;
-    font-weight: 400;
+    top: 1vh;
+    left: -7.4rem;
+    width: 100%;
+    /* width: 30vw; */
   }
   .news-list > li > a > .time {
-    font-size: 2.4rem;
+    font-size: .4rem;
     position: relative;
-    top: 15vh;
+    top: 5vh;
     color: #808080;
+  }
+  .news-list > li::after{
+    display: none !important;
   }
   /* departments */
   .pinklogo {
     background-color: #fff !important;
-    margin: 155vh 0 0 !important;
+    margin: 65vh 0 0 !important;
   }
   .logoimg {
     padding: 2rem 10rem;
@@ -153,55 +185,66 @@
     height: 100% !important;
   }
   .iconlist {
+    padding: 0 !important;
     margin-top: 3rem !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: initial !important;
   }
-  .icon > div > img {
-    width: 15rem !important;
-    height: 15rem !important;
+  .icon{
+    width: 25%;
   }
-  .icon > div {
-    padding: 2rem;
+  .icon > div > img {
+    width: 60% !important;
+    height: 60% !important;
   }
   .icon > .name {
-    font-size: 2.4rem !important;
+    font-size: .4rem !important;
   }
   /* professor */
+  .main .title .img img{
+    height: initial;
+  }
+  .checkmore{
+    display: none;
+    top: -6vh !important;
+    right: -25rem !important;
+    font-size: 1rem;
+    width: 4.4rem !important;
+    height: 1.5rem !important;
+    line-height: 1.5rem !important;
+  }
   .cardlist {
     display: flex;
     flex-direction: column;
     justify-content: initial;
   }
+  .main .contents{
+    padding: 0 !important;
+  }
   .personcard {
     width: 100% !important;
-    height: 20rem;
+    /* height: 20rem; */
     position: relative;
-  }
-  .personcard > .img > img {
-    width: 20rem !important;
-    height: 20rem;
-  }
-  .personcard > .img {
-    width: 27% !important;
-    position: absolute;
   }
   .personcard > .describe {
     position: absolute;
-    left: 20rem;
+    left: 10rem;
+  }
+  .personcard .img img{
+    width: 82% !important;
   }
   .personcard > .describe > .introduction::before {
-    width: 4.4rem !important;
-    height: 4.4rem !important;
-    line-height: 4.4rem !important;
-    font-size: 2.4rem !important;
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+    line-height: 1.4rem !important;
+    font-size: 1rem !important;
   }
   .personcard > .describe > .introduction {
-    font-size: 2.8rem !important;
+    font-size: .8rem !important;
   }
   .detail {
-    font-size: 2.4rem !important;
+    font-size: .4rem !important;
   }
   /* outpatient information */
   .container > .map {
@@ -211,22 +254,24 @@
     display: initial !important;
   }
   .container .information .out {
-    width: 100% !important;
-    height: 13rem !important;
-    border-radius: 2rem;
+    width: 90% !important;
+    height: 4.7rem !important;
+    border-radius: 1rem;
   }
   .container .information .out .title {
-    height: 13rem !important;
-    line-height: 13rem !important;
-    font-size: 4rem !important;
-    border-radius: 2rem;
+    height: 4.7rem !important;
+    line-height: 4rem !important;
+    font-size: .5rem !important;
+    border-radius: 1rem;
+    width: 8rem;
+    text-align: center;
   }
   .include p {
-    font-size: 3rem;
+    font-size: .5rem;
     padding-left: 1rem;
   }
   .information {
-    padding: 0 5rem;
+    padding: 0 1rem;
   }
   /* partywork */
   .all {

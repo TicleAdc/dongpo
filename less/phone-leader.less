@@ -1,0 +1,65 @@
+@media screen and (max-width: 720px) {
+  body{
+    background-color: #fff;
+    * {
+      max-width: none !important;
+      min-width: auto !important;
+    }
+  }
+  .home-container{
+    margin: 0;
+    width: 100%;
+  }
+  .main-container{
+    width: initial !important;
+  }
+  .header {
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    margin: 0 5%;
+    padding-right: 5%;
+    width: initial;
+    .backimg {
+      text-align: left;
+      background: none;
+      float: initial;
+      color: black !important;
+      width: 100%;
+      // border-bottom: 1vh solid black;
+    }
+    .head-menu {
+      display: none;
+    }
+  }
+  .expert-introduction{
+    box-shadow: 0 0 0 !important;
+    border: 1px solid black !important;
+    padding-top: 0;
+    .left{
+      display: initial;
+      .foot{
+        // background-color: white;
+        // top: 0;
+        // bottom: initial;
+        // left: 5rem;
+        display: none;
+      }
+    }
+    .right{
+      .content::after{
+        content: '吴勇';
+        font-size: 2rem;
+      }
+      .content{
+        margin-top: 0;
+        padding: 0 2.5rem;
+      }
+      p{
+        font-size: 1rem;
+      }
+      img{
+        display: none;
+      }
+    }
+  }
+}

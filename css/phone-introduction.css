@@ -1,4 +1,18 @@
 @media screen and (max-width: 720px) {
+  body {
+    background-color: #fff;
+  }
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  .home-container {
+    margin: 0;
+    width: 100%;
+  }
+  .main-container {
+    width: initial !important;
+  }
   .header {
     display: none;
   }
@@ -10,11 +24,11 @@
   }
   .top {
     display: initial;
+    text-align: center;
   }
   .top .topimg {
-    padding-top: 20vh;
     width: 100%;
-    padding: 20vh 10vw 0 10vw;
+    padding: 0;
   }
   .top .topimg img {
     width: 90% !important;
@@ -33,9 +47,13 @@
   .top .topcontent .line .point {
     display: none;
   }
+  .top .topcontent .content {
+    text-align: left;
+    text-indent: 2em;
+  }
   .top .topcontent .content p {
     padding: 0 5%;
-    font-size: 4rem;
+    font-size: 1.4rem;
     margin-bottom: 3rem;
   }
 }
