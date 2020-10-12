@@ -17,6 +17,9 @@
     height: 80px;
     overflow: hidden;
   }
+  body .main-container .header .head-menu {
+    display: none;
+  }
   body .picture-list {
     padding-top: 0;
     text-align: center;
@@ -29,5 +32,19 @@
   body .picture-list > li:nth-child(2n-1):last-child {
     margin-left: -35%;
     left: -5%;
+  }
+  body .pages {
+    display: none;
+  }
+  body .content {
+    padding: 0;
+  }
+  body .content .container {
+    margin-right: initial;
+    flex: 30%;
+  }
+  body .content .container .column .img {
+    border: initial;
+    padding: 0;
   }
 }
