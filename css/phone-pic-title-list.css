@@ -1,5 +1,5 @@
 @import 'phone-foot.css';
-@import 'phone-foot.css';
+@import 'phone-head.css';
 @media screen and (max-width: 720px) {
   body {
     background-color: #fff;
