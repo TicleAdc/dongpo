@@ -1,0 +1,58 @@
+@import 'phone-foot.css';
+@media screen and (max-width: 720px) {
+  body {
+    background-color: #fff;
+  }
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
+  }
+  body .home-container,
+  body .main-container {
+    width: inherit;
+    padding: 0;
+  }
+  body .header {
+    background-color: #fff !important;
+    border-bottom: 1px solid black;
+    margin: 0 5%;
+    padding-right: 5%;
+  }
+  body .header .backimg {
+    text-align: left;
+    background: none;
+    float: initial;
+    color: black !important;
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+  }
+  body .main-container .header {
+    height: 80px;
+    overflow: hidden;
+    width: inherit;
+  }
+  body .main-container .header .backimg {
+    float: left;
+    background-image: url();
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    font-family: TRENDS;
+  }
+  body .main-container .header .backimg::after {
+    background-image: url(../img/cultureback.png);
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 150px;
+    top: 0;
+    left: 200%;
+    z-index: 10;
+  }
+  body .news-list {
+    padding: 10px 12px;
+  }
+}

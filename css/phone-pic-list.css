@@ -1,48 +1,33 @@
+@import 'phone-foot.css';
+@import 'phone-head.css';
 @media screen and (max-width: 720px) {
-  .header .head-menu {
-    display: none;
-    height: initial;
-    position: relative;
-    top: 133vh;
+  body {
+    background-color: #fff;
   }
-  .header .head-menu .head-menu-list {
-    top: 0;
-    padding: 0 0 0 2rem;
-    width: 100%;
-    display: initial;
+  body * {
+    max-width: none !important;
+    min-width: auto !important;
   }
-  .header .head-menu .head-menu-list li {
-    border: 1px solid black;
-    margin-bottom: 1rem;
-  }
-  .header .head-menu .head-menu-list li a {
-    color: black;
-  }
-  .pages {
-    display: none;
-  }
-  .content {
+  body .home-container,
+  body .main-container {
+    width: inherit;
     padding: 0;
   }
-  .content .container {
-    margin-right: initial;
-    padding: 2rem 2rem 0 2rem;
-    width: 36%;
+  body .main-container .header {
+    height: 80px;
+    overflow: hidden;
   }
-  .content .container .column .img {
-    padding: 0;
-    border: initial;
+  body .picture-list {
+    padding-top: 0;
+    text-align: center;
   }
-  .title {
-    font-size: 1.5rem;
+  body .picture-list > li {
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 43%;
   }
-  .round {
-    display: none;
-  }
-  .time {
-    margin-left: 0;
-  }
-  .head-menu-list li:first-child {
-    display: none;
+  body .picture-list > li:nth-child(2n-1):last-child {
+    margin-left: -35%;
+    left: -5%;
   }
 }
