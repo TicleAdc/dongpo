@@ -27,19 +27,24 @@
     color: black;
   }
   .expert-introduction {
+    min-height: inherit !important;
+    display: inherit;
     box-shadow: 0 0 0 !important;
     border: 1px solid black !important;
     padding-top: 0;
   }
   .expert-introduction .left {
+    float: left;
+    overflow: hidden;
     display: initial;
-    width: 30%;
   }
   .expert-introduction .left .foot {
     display: none;
   }
   .expert-introduction .right {
-    padding: 2%;
+    overflow: hidden;
+    height: 111px;
+    padding: 1%;
   }
   .expert-introduction .right .content::before {
     content: '吴勇';

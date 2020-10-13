@@ -44,7 +44,7 @@
     display: none;
   }
   .head-form {
-    background-size: auto 40%;
+    background-size: auto 50% !important;
     margin-top: 0 !important;
     padding: 5vh !important;
   }
