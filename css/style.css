@@ -1146,9 +1146,13 @@ li {
 .swiper-pagination-bullet{
     margin: 2px 0 !important;
 } */
-.swiper-container{
-    display: flex;
-    flex-direction: column;
+.index-banner-swiper{
+    overflow: hidden;
+    height: 201px;
+}
+.index-banner-swiper .swiper-slide{
+    height: 201px;
+    flex-shrink: 0;
 }
 .swiper-pagination-bullet-active{
     background-color: orange;

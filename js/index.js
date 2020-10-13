@@ -12,7 +12,7 @@ var index = {
       },
     });
     new Swiper('.index-banner-swiper', {
-      // direction: 'vertical',
+      direction: 'vertical',
       followFinger: false,
       mousewheel: true,
       navigation: {
