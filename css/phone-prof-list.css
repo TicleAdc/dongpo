@@ -216,4 +216,7 @@
   body .head-form {
     padding: 0;
   }
+  body .position {
+    display: none;
+  }
 }
