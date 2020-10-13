@@ -592,8 +592,8 @@ a:hover {
 .container .information .out .include img {
     position: relative;
     width: 48%;
-    top: -51px;
-    right: -78%
+    top: -57px;
+    right: -81%
 }
 
 .container .map {
@@ -1136,4 +1136,20 @@ li {
 .swiper-close::after {
     transform: rotate(135deg);
     margin: -.1rem 0 0 -.1rem;
+}
+/* .swiper-pagination-bullets{
+    display: flex;
+    flex-direction: column;
+    top: 65%;
+    left: 95% !important;
+}
+.swiper-pagination-bullet{
+    margin: 2px 0 !important;
+} */
+.swiper-container{
+    display: flex;
+    flex-direction: column;
+}
+.swiper-pagination-bullet-active{
+    background-color: orange;
 }
