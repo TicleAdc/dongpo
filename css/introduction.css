@@ -37,10 +37,12 @@
   color: #4d4d4d;
   letter-spacing: .1rem;
   line-height: 2rem;
+  font-family: 宋体, SimSun;
 }
 .topcontent .content p {
   margin: 10px 0;
-  font-size: 1.2rem;
+  font-size: 1.34rem;
+  line-height: 2em;
 }
 .introduction-body a {
   color: white;
@@ -64,6 +66,7 @@
 }
 .mid {
   width: 100%;
+  position: relative;
 }
 
 .mid img {
@@ -71,24 +74,32 @@
 }
 
 .count {
+  display: -ms-flexbox;
   display: flex;
-  float: right;
-  /* position: relative; */
+  position: absolute;
+  width: 60%;
+  height: 10rem;
+  margin: -13rem 0 0 30rem;
 }
 .personcount {
-  border: 1px solid #fff;
-  padding: 30px;
+  padding: 2.5rem 0 0 0;
   margin: 0 20px;
-  width: 25%;
+  width: 30%;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 2rem;
+  color: #fff;
+  text-align: center;
 }
 .personcount .num {
-  font-size: 24px;
-  /* color: white; */
+  font-size: 2rem;
+  padding-bottom: .2rem;
+  margin-right: 1rem;
   display: inline-block;
   border-bottom: 1px solid #fff;
 }
 .des {
-  font-size: 10px;
+  display: block;
+  padding-top: 2rem;
 }
 .bottom {
   padding: 1rem 2rem;
@@ -97,7 +108,7 @@
 .bottomleft {
   margin-top: -7rem;
   width: 18rem;
-  background-color: #4a5da3;
+  background-color: #fae7eb;
   padding: 5rem 6%;
   padding-bottom: 12rem;
   margin-right: 2rem;
@@ -109,9 +120,12 @@
   width: 100%;
 }
 .phone {
-  padding: 0 5px;
+  padding: 0;
   font-size: 14px;
-  color: #fff;
+  color: #e2a1ba;
+}
+.phone h2 {
+  font-size: 1.6rem;
 }
 .contactway {
   margin-bottom: 20px;
@@ -125,7 +139,6 @@
   padding-bottom: 60px;
   flex: 1;
 }
-.phonecall {
+.phone .phonecall {
   text-indent: 0;
-  color: #fff;
 }
