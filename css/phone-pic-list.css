@@ -37,14 +37,27 @@
     display: none;
   }
   body .content {
-    padding: 0;
+    padding: 1rem;
   }
   body .content .container {
-    margin-right: initial;
+    margin-right: inherit;
     flex: 30%;
+    padding: 1rem 1rem 0;
   }
   body .content .container .column .img {
-    border: initial;
+    border: inherit;
     padding: 0;
+    margin-bottom: 0;
+  }
+  body .content .container .round {
+    display: none;
+  }
+  body .content .container .time {
+    margin-left: inherit;
+    color: #afa9a9;
+  }
+  body .content .container .title {
+    font-size: 1.5rem;
+    color: black;
   }
 }

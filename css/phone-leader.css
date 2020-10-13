@@ -38,12 +38,22 @@
   .expert-introduction .left .foot {
     display: none;
   }
-  .expert-introduction .right .content::after {
+  .expert-introduction .right {
+    padding: 2%;
+  }
+  .expert-introduction .right .content::before {
     content: '吴勇';
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #4a5da3;
     position: relative;
     left: -2.5rem;
+  }
+  .expert-introduction .right .content::after {
+    content: '院长';
+    font-size: 1rem;
+    color: gray;
+    position: relative;
+    left: -1.5rem;
   }
   .expert-introduction .right .content {
     margin-top: 0;

@@ -14,6 +14,7 @@
     width: initial !important;
   }
   .header .head-menu {
+    display: none;
     height: initial;
     position: relative;
     top: 65rem;
