@@ -13,11 +13,11 @@
     width: inherit;
     padding: 0;
   }
-  body img {
-    width: 100%;
-  }
   body .pages {
     margin-top: 10px;
+  }
+  body .head-menu {
+    display: none;
   }
   body .main-container .news-title,
   body .main-container .news-content {
@@ -25,6 +25,12 @@
   }
   body .main-container .news-info {
     margin: 0 18px;
+  }
+  body .main-container .news-content {
+    overflow: hidden;
+  }
+  body .main-container .news-video-title {
+    margin-top: 10px;
   }
   body .main-container .header {
     height: 60px;
@@ -40,7 +46,7 @@
     width: 100%;
     height: 100%;
     text-align: left;
-    line-height: 80px;
+    line-height: 40px;
     color: black;
     font-size: 19px;
   }

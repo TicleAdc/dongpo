@@ -13,6 +13,16 @@
     width: inherit;
     padding: 0;
   }
+  body .head-menu {
+    display: none;
+  }
+  body img {
+    width: 100%;
+  }
+  body .pic-news-list {
+    margin-top: 0;
+    padding-top: 0;
+  }
   body .head-menu-list,
   body .pic-news-title {
     background: url(phone-news-pic-news.css);
@@ -46,9 +56,9 @@
   body .main-container .header .backimg {
     background: url();
     width: 100%;
-    height: 100%;
     text-align: left;
-    line-height: 80px;
+    height: 40px;
+    line-height: 40px;
     color: black;
     font-size: 19px;
   }

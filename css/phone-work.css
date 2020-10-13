@@ -14,15 +14,16 @@
     padding: 0;
   }
   body .main-container .header {
-    height: 80px;
+    height: 60px;
     overflow: hidden;
+    border-bottom: none;
   }
   body .main-container .header .backimg {
     float: left;
     background-image: url();
     position: relative;
-    height: 80px;
-    line-height: 80px;
+    height: 60px;
+    line-height: 60px;
     font-size: 19px;
     font-family: TRENDS;
   }
