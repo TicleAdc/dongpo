@@ -8,6 +8,9 @@
     max-width: none !important;
     min-width: auto !important;
   }
+  body .pages {
+    display: none;
+  }
   body .home-container,
   body .featured-medical {
     width: inherit;
