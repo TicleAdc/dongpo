@@ -1,8 +1,29 @@
+.news-container {
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
 .news-title {
   font-weight: 400;
-  text-align: center;
-  padding: 5rem 0;
+  text-align: left;
+  padding: 5rem 0 0 0;
   color: #4a5da3;
+}
+.news-video-title {
+  text-align: center;
+}
+.news-info {
+  padding: 1rem 0;
+  color: #4d4d4d;
+  border-bottom: 1px solid #b1b1b1;
+}
+.news-video-info {
+  text-align: center;
+  font-size: 1rem;
+}
+.news-video-info span,
+.news-info span {
+  padding-right: 1rem;
+  color: #aaa;
 }
 .news-content {
   font-size: 1.4rem;
@@ -10,5 +31,10 @@
   color: #4d4d4d;
 }
 .news-content p {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0;
+}
+.news-content video {
+  display: block;
+  max-width: 60%;
+  margin: 2rem auto 1rem auto;
 }

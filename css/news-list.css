@@ -10,6 +10,9 @@
   color: #4d4d4d;
   padding: 1rem 0 4rem 0;
 }
+.news-title {
+  padding-left: 2rem;
+}
 .news-list-title p {
   font-size: 2rem;
 }

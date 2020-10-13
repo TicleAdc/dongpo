@@ -4,6 +4,8 @@
 }
 
 .featured-medical .main-featured-medical {
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
@@ -16,9 +18,14 @@
 .featured-medical .main-featured-medical .aside {
     width: 177.91px;
     height: 506.54px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -ms-flex: 0.168;
     flex: 0.168;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-item-align: center;
     align-items: center;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.247);
     font-size: 19.11px;
@@ -26,6 +33,8 @@
 
 .featured-medical .main-featured-medical .aside .header {
     height: 44px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +47,7 @@
 .featured-medical .main-featured-medical .aside .de {
     height: 413px;
     display: flex;
+    -ms-flex-direction: column;
     flex-direction: column;
     justify-content: center;
     font-size: 15.29px;
@@ -46,7 +56,9 @@
 }
 
 .featured-medical .main-featured-medical .aside .de li {
+    -ms-flex: 1;
     flex: 1;
+    display: -ms-flexbox;
     display: flex;
     align-items: center;
 }
@@ -58,11 +70,13 @@
 }
 
 .featured-medical .main-featured-medical .main {
+    -ms-flex: 1;
     flex: 1;
     padding: 0 36px;
 }
 
 .featured-medical .main-featured-medical .main .title {
+    -ms-flex: .83;
     flex: 0.83;
     padding: 0 36px;
 }
@@ -78,6 +92,7 @@
 }
 
 .featured-medical .top-header {
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -164,7 +179,7 @@
 
 .menu .title::after,
 .menu-list > li:nth-child(2):after {
-    content: '>';
+    content: ">";
     position: absolute;
     font-family: serif, fangsong;
     font-size: 28px;
@@ -195,11 +210,17 @@
     position: relative;
 }
 
+.menu_foot.active a,
 .menu-list li.active,
 .menu-list li.active > a {
     color: #4a5da3;
 }
 
+.menu_foot.active a {
+    font-weight: 400;
+}
+
+.menu_foot.active a::before,
 .menu-list li.active::before {
     content: '';
     position: absolute;
@@ -209,6 +230,9 @@
     margin: 1.8rem 0 0 -1.2rem;
     border-radius: 50%;
     background-color: #4a5da3;
+}
+.menu_foot.active a::before {
+    margin-top: 1rem;
 }
 .menu-list li.menu-child-title::before {
     content: none;

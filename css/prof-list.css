@@ -27,15 +27,12 @@
 
 .expert-introduction .left {
     width: 10rem;
-    display: flex;
-    flex-direction: column;
     position: relative;
     overflow: hidden;
 }
 
 .expert-introduction .left>.foot {
     background-color: #e8f1fa;
-    flex: 0.82;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -77,9 +74,12 @@
     font-size: 1.4rem;
     padding-left: 2rem;
     margin-bottom: -1rem;
+    background: url("../img/CheckMore@2x.png") no-repeat;
+    background-size: 1.5rem;
+    background-position: left center;
 }
 
-.expert-introduction .right h3::before{
+/* .expert-introduction .right h3::before{
     content: ">";
     display: inline-block;
     color: #fff;
@@ -94,7 +94,7 @@
     text-align: center;
     border: none;
     transform: translateY(-.2rem);
-}
+} */
 
 .expert-introduction .right h3:empty {
     margin-bottom: 0;

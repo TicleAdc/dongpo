@@ -38,18 +38,22 @@ var index = {
     });
   },
   initTabs: function () {
-    var list = document.querySelectorAll('.news-container .tab-list > li');
+    var container = document.querySelector('.news-container');
+    var list = container.querySelectorAll('.tab-list > li');
+    var more = container.querySelector('.tab-more a');
     if (list.length === 0) return;
-    list.forEach(function (li) {
+    [].forEach.call(list, function (li, index) {
+      if (index === list.length - 1) return;
       li.addEventListener('click', checkList);
     });
     checkList({
       currentTarget: list[0]
     });
-    function checkList(e) {
-      list.forEach(function (li) {
+    function checkList (e) {
+      [].forEach.call(list, function (li) {
         if (li === e.currentTarget) {
           li.classList.add('active');
+          more.setAttribute('href', li.getAttribute('href'));
         } else {
           li.classList.remove('active');
         }
@@ -59,14 +63,14 @@ var index = {
   initImgList: function () {
     var list = document.querySelectorAll('.img-list > li');
     if (list.length === 0) return;
-    list.forEach(function (li) {
+    [].forEach.call(list, function (li) {
       li.addEventListener('click', checkList);
     });
     checkList({
       currentTarget: list[0]
     });
     function checkList(e) {
-      list.forEach(function (li) {
+      [].forEach.call(list, function (li) {
         if (li === e.currentTarget) {
           li.classList.add('active');
         } else {

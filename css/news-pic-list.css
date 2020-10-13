@@ -13,7 +13,8 @@
   border-bottom: none;
 }
 .news-pic-list img {
-  height: 10rem;
+  width: 12rem;
+  max-height: 10rem;
 }
 .news-description {
   margin-left: 2rem;

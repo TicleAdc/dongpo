@@ -78,11 +78,18 @@
 }
 .foot-link .foot-link-title {
   height: 2rem;
+  line-height: 2rem;
   color: #293040;
   padding: 0;
-  margin-bottom: 1rem;
+  text-indent: 2rem;
+  background: url("../img/CheckMore@2x.png") no-repeat;
+  background-size: 1.5rem;
+  background-position: left center;
 }
 .foot-link .foot-link-title::before {
+  content: none;
+}
+/* .foot-link .foot-link-title::before {
   content: ">";
   display: inline-block;
   color: #fff;
@@ -97,7 +104,7 @@
   text-align: center;
   border: none;
   transform: none;
-}
+} */
 
 .foot-logo {
   text-align: center;
