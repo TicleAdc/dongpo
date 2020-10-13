@@ -92,9 +92,16 @@ a:hover {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    margin-left: 4rem;
+    margin-left: 2rem;
     background: url("../img/home/preview.png") no-repeat;
     background-size: 100%;
+}
+
+.slide-container .swiper-button-prev,
+.slide-container .swiper-button-next,
+.index-swiper .swiper-button-prev,
+.index-swiper .swiper-button-next {
+    background: none;
 }
 
 .full-swiper .swiper-button-next::after,
@@ -103,7 +110,7 @@ a:hover {
     position: absolute;
     width: 5rem;
     height: 5rem;
-    margin-right: 4rem;
+    right: 2rem;
     background: url("../img/home/next.png") no-repeat;
     background-size: 100%;
 }
@@ -1090,7 +1097,7 @@ li {
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    margin-left: 4rem;
+    margin-left: 2rem;
     background: url("../img/home/preview.png") no-repeat;
     background-size: 100%;
 }
@@ -1100,7 +1107,7 @@ li {
     position: absolute;
     width: 5rem;
     height: 5rem;
-    margin-right: 4rem;
+    right: 2rem;
     background: url("../img/home/next.png") no-repeat;
     background-size: 100%;
 }
