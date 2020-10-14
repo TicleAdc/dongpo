@@ -76,7 +76,7 @@
     padding: 0;
   }
   .home-container .head-form > input {
-    display: block;
+    display: none;
     position: relative;
     margin: -1rem;
     top: 43vh;
@@ -98,7 +98,7 @@
   }
   /* card按钮 */
   .service_entrance {
-    padding: 7vh 0 0 0 !important;
+    padding: 1rem 0 0 0 !important;
     /* padding-top: 9vh !important; */
     display: flex;
     justify-content: space-between;
@@ -415,7 +415,7 @@
     padding: 0 1rem;
   }
 }
-@media screen and (max-width: 720px) and screen and (max-width: 360px) {
+@media screen and (max-width: 360px) {
   .container .information .out .title {
     display: none;
     width: 0;
