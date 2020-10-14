@@ -49,6 +49,10 @@
     padding: 0;
     margin-bottom: 0;
   }
+  body .content .container .column .img img {
+    height: 160px;
+    min-height: inherit;
+  }
   body .content .container .round {
     display: none;
   }
@@ -59,5 +63,15 @@
   body .content .container .title {
     font-size: 1.2rem;
     color: black;
+  }
+}
+@media screen and (max-width: 560px) {
+  .content .container .column .img img {
+    height: 140px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .content .container .column .img img {
+    height: 120px !important;
   }
 }
