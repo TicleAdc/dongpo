@@ -94,6 +94,9 @@
   .top .topimg img {
     width: 90% ;
   }
+  .top .topcontent {
+    display: none;
+  }
   .top .topcontent .title {
     position: relative;
     top: -64rem;
