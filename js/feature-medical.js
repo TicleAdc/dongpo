@@ -18,36 +18,41 @@ var feature = {
   },
 };
 feature.init();
-if (document.querySelector('#ks_title')) {
-  document.querySelector('#ks_title').onclick = function () {
-    var menu = document.querySelector('#menu');
-    if (getComputedStyle(menu).display === 'none') {
-      menu.style.display = 'block';
-    } else {
-      menu.style.display = 'none';
+
+onresize = function initClick() {
+  if (document.documentElement.clientWidth < 721) {
+    if (document.querySelector('#ks_title')) {
+      document.querySelector('#ks_title').onclick = function () {
+        var menu = document.querySelector('#menu');
+        if (getComputedStyle(menu).display === 'none') {
+          menu.style.display = 'block';
+        } else {
+          menu.style.display = 'none';
+        }
+      };
+      document.documentElement.onclick = function (e) {
+        var ksTitle = document.querySelector('#ks_title');
+        var menu = document.querySelector('#menu');
+        if (e.target !== ksTitle) {
+          menu.style.display = 'none';
+        }
+      };
+    } else if (document.querySelector('#path-nav')) {
+      document.querySelector('#path-nav').onclick = function () {
+        var menu = document.querySelector('#menu');
+        if (getComputedStyle(menu).display === 'none') {
+          menu.style.display = 'block';
+        } else {
+          menu.style.display = 'none';
+        }
+      };
+      document.documentElement.onclick = function (e) {
+        var ksTitle = document.querySelector('#path-nav');
+        var menu = document.querySelector('#menu');
+        if (e.target !== ksTitle) {
+          menu.style.display = 'none';
+        }
+      };
     }
-  };
-  document.documentElement.onclick = function (e) {
-    var ksTitle = document.querySelector('#ks_title');
-    var menu = document.querySelector('#menu');
-    if (e.target !== ksTitle) {
-      menu.style.display = 'none';
-    }
-  };
-} else if (document.querySelector('#path-nav')) {
-  document.querySelector('#path-nav').onclick = function () {
-    var menu = document.querySelector('#menu');
-    if (getComputedStyle(menu).display === 'none') {
-      menu.style.display = 'block';
-    } else {
-      menu.style.display = 'none';
-    }
-  };
-  document.documentElement.onclick = function (e) {
-    var ksTitle = document.querySelector('#path-nav');
-    var menu = document.querySelector('#menu');
-    if (e.target !== ksTitle) {
-      menu.style.display = 'none';
-    }
-  };
-}
+  }
+};
