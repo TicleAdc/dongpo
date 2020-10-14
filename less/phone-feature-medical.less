@@ -18,8 +18,15 @@
         display: none;
       }
       .flex-box.main-featured-medical {
-        > section {
+        > section.menu {
           display: none;
+          position: absolute;
+          z-index: 10;
+          right: 5%;
+          border: 1px solid black;
+          top: 250px;
+          background-color: #fff;
+          padding-right: 0;
         }
 
         .main {
@@ -186,14 +193,22 @@
           line-height: 82px;
           font-size: 19px;
           font-family: TRENDS;
+          position: relative;
+          pointer-events: none;
+          user-select: none;
           &::after {
             content: ' ';
-            background: url(../img/professorback.png);
+            background: url(../img/导航.png);
             display: inline-block;
             width: 30px;
             height: 30px;
             background-size: auto 100%;
             background-position: 8rem top;
+            position: absolute;
+            right: 12px;
+            top: 26px;
+            cursor: pointer;
+            pointer-events: auto;
           }
         }
       }

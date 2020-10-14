@@ -16,13 +16,36 @@
     width: inherit;
     color: black;
   }
-  body .home-container > section,
-  body .featured-medical > section {
+  body .home-container #path-nav::after,
+  body .featured-medical #path-nav::after {
+    content: ' ';
+    background: url('/img/导航.png');
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: auto 100%;
+    background-position: 8rem top;
+    position: absolute;
+    right: 18px;
+    top: 160px;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+  }
+  body .home-container .path-nav,
+  body .featured-medical .path-nav {
     display: none;
   }
-  body .home-container .flex-box.main-featured-medical > section,
-  body .featured-medical .flex-box.main-featured-medical > section {
+  body .home-container .flex-box.main-featured-medical > section.menu,
+  body .featured-medical .flex-box.main-featured-medical > section.menu {
     display: none;
+    position: absolute;
+    z-index: 10;
+    right: 5%;
+    border: 1px solid black;
+    top: 200px;
+    background-color: #fff;
+    padding-right: 0;
   }
   body .home-container .flex-box.main-featured-medical .main,
   body .featured-medical .flex-box.main-featured-medical .main {

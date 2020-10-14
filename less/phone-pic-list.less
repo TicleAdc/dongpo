@@ -13,11 +13,26 @@
       width: inherit;
       padding: 0;
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+    .swiper-wrapper {
+      img {
+        width: 100% !important;
+      }
+    }
     .main-container {
       .header {
         height: 80px;
         overflow: hidden;
-        .head-menu{
+        margin: 0;
+        padding: 0;
+        color: white;
+        .backimg {
+          color: white;
+        }
+        .head-menu {
           display: none;
         }
       }
@@ -40,31 +55,31 @@
         }
       }
     }
-    .pages{
+    .pages {
       display: none;
     }
-    .content{
+    .content {
       padding: 1rem;
-      .container{
+      .container {
         margin-right: inherit;
         flex: 30%;
-        padding: 1rem 1rem; 
-        .column{
+        padding: 1rem 1rem;
+        .column {
           width: 100%;
-          .img{
+          .img {
             border: inherit;
             padding: 0;
             margin-bottom: 0;
-            img{
+            img {
               height: 160px;
               min-height: inherit;
             }
           }
         }
-        .round{
+        .round {
           display: none;
         }
-        .time{
+        .time {
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -72,7 +87,7 @@
           margin-left: inherit;
           color: #afa9a9;
         }
-        .title{
+        .title {
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -84,12 +99,12 @@
     }
   }
 }
-@media screen and (max-width:560px) {
-  .content{
-    .container{
-      .column{
-        .img{
-          img{
+@media screen and (max-width: 560px) {
+  .content {
+    .container {
+      .column {
+        .img {
+          img {
             height: 140px !important;
           }
         }
@@ -97,12 +112,12 @@
     }
   }
 }
-@media screen and (max-width:480px) {
-  .content{
-    .container{
-      .column{
-        .img{
-          img{
+@media screen and (max-width: 480px) {
+  .content {
+    .container {
+      .column {
+        .img {
+          img {
             height: 120px !important;
           }
         }

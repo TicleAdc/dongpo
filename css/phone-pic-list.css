@@ -13,9 +13,22 @@
     width: inherit;
     padding: 0;
   }
+  body .swiper-button-prev,
+  body .swiper-button-next {
+    display: none;
+  }
+  body .swiper-wrapper img {
+    width: 100% !important;
+  }
   body .main-container .header {
     height: 80px;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  body .main-container .header .backimg {
+    color: white;
   }
   body .main-container .header .head-menu {
     display: none;
