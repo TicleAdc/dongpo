@@ -81,19 +81,18 @@ var index = {
     }
   },
   checkMobile: function () {
+    if (!window.isMobile) return;
     var activity = document.querySelector('.activity');
     if (!activity) return;
     var ul = activity.querySelector('ul');
     var list = ul.querySelectorAll('li');
-    if (window.isMobile) {
-      activity.classList.remove('flex-box');
-      activity.classList.add('swiper-container');
-      ul.classList.add('swiper-wrapper');
-      [].forEach.call(list, function (li) {
-        li.classList.add('swiper-slide');
-      });
-      new Swiper('.activity');
-    }
+    activity.classList.remove('flex-box');
+    activity.classList.add('swiper-container');
+    ul.classList.add('swiper-wrapper');
+    [].forEach.call(list, function (li) {
+      li.classList.add('swiper-slide');
+    });
+    new Swiper('.activity');
   }
 }
 index.init();
