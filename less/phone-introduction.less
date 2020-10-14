@@ -37,10 +37,59 @@
     display: none;
   }
   .mid {
-    display: none;
+    // display: none;
+    img{
+      height: 20vh;
+    }
+    .count{
+      width: inherit;
+      top: 4vh;
+      margin: 0;
+      .personcount{
+        padding: 1.5rem 0 0 0;
+        height: 6rem;
+        overflow: hidden;
+        .num{
+          font-size: .5rem;
+        }
+        .des{
+          padding: 0 .5rem;
+        }
+      }
+    }
   }
   .bottom {
-    display: none;
+    // display: none;
+    padding: 0;
+    display: inherit;
+    .bottomleft{
+      background-color: #fff;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      .phone{
+        padding-left: .5rem;
+        h2{
+          font-size: .6rem;
+        }
+        .phonecall{
+          font-size: .2rem;
+        }
+      }
+    }
+    .bottomcontent{
+      text-align: left;
+        text-indent: 2em;
+        // position: relative;
+        // top: -8rem;
+        p {
+          line-height: 2em;
+          padding: 0 5%;
+          font-size: 1.4rem;
+          margin-bottom: 3rem;
+        }
+    }
   }
   .top {
     display: initial;

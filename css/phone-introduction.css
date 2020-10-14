@@ -34,11 +34,54 @@
   .head-menu-list li:first-child {
     display: none;
   }
-  .mid {
-    display: none;
+  .mid img {
+    height: 20vh;
+  }
+  .mid .count {
+    width: inherit;
+    top: 4vh;
+    margin: 0;
+  }
+  .mid .count .personcount {
+    padding: 1.5rem 0 0 0;
+    height: 6rem;
+    overflow: hidden;
+  }
+  .mid .count .personcount .num {
+    font-size: 0.5rem;
+  }
+  .mid .count .personcount .des {
+    padding: 0 0.5rem;
   }
   .bottom {
-    display: none;
+    padding: 0;
+    display: inherit;
+  }
+  .bottom .bottomleft {
+    background-color: #fff;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .bottom .bottomleft .phone {
+    padding-left: 0.5rem;
+  }
+  .bottom .bottomleft .phone h2 {
+    font-size: 0.6rem;
+  }
+  .bottom .bottomleft .phone .phonecall {
+    font-size: 0.2rem;
+  }
+  .bottom .bottomcontent {
+    text-align: left;
+    text-indent: 2em;
+  }
+  .bottom .bottomcontent p {
+    line-height: 2em;
+    padding: 0 5%;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
   }
   .top {
     display: initial;
