@@ -13,6 +13,10 @@
     width: inherit;
     padding: 0;
   }
+  body video {
+    background-color: black;
+    width: 80%;
+  }
   body .pages {
     margin-top: 10px;
   }
