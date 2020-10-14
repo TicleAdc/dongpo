@@ -17,7 +17,8 @@
     margin-bottom: 0;
   }
   .flex-box.foot-container .foot-qrcode {
-    display: none;
+    margin-left: -65%;
+    margin-bottom: 10px;
   }
   .flex-box.foot-container .foot-about {
     margin: 0 auto;
@@ -40,5 +41,10 @@
   }
   .flex-box.foot-container .foot-about .support p:first-child {
     padding-bottom: 20px;
+  }
+}
+@media screen and (max-width: 267px) {
+  .foot-qrcode {
+    margin-left: -50% !important;
   }
 }
