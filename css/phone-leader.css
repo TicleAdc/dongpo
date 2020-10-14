@@ -36,6 +36,7 @@
   .expert-introduction .left {
     overflow: hidden;
     display: initial;
+    padding: 2px;
   }
   .expert-introduction .left img {
     width: 100%;
@@ -50,7 +51,6 @@
   }
   .expert-introduction .right {
     overflow: hidden;
-    height: 125px;
     padding: 1%;
   }
   .expert-introduction .right .content {
