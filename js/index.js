@@ -3,6 +3,7 @@ var index = {
     this.initSwiper();
     this.initTabs();
     this.initImgList();
+    this.checkMobile();
   },
   initSwiper: function () {
     new Swiper('.index-top-swiper', {
@@ -16,7 +17,7 @@ var index = {
       followFinger: false,
       mousewheel: true,
       navigation: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination'
       },
       on: {
         init: function (swiper) {
@@ -34,7 +35,7 @@ var index = {
           slide.addClass('ani-slide');
           console.log(this);
         },
-      },
+      }
     });
   },
   initTabs: function () {
@@ -47,9 +48,9 @@ var index = {
       li.addEventListener('click', checkList);
     });
     checkList({
-      currentTarget: list[0],
+      currentTarget: list[0]
     });
-    function checkList(e) {
+    function checkList (e) {
       [].forEach.call(list, function (li) {
         if (li === e.currentTarget) {
           li.classList.add('active');
@@ -57,7 +58,7 @@ var index = {
         } else {
           li.classList.remove('active');
         }
-      });
+      })
     }
   },
   initImgList: function () {
@@ -67,7 +68,7 @@ var index = {
       li.addEventListener('click', checkList);
     });
     checkList({
-      currentTarget: list[0],
+      currentTarget: list[0]
     });
     function checkList(e) {
       [].forEach.call(list, function (li) {
@@ -76,10 +77,25 @@ var index = {
         } else {
           li.classList.remove('active');
         }
-      });
+      })
     }
   },
-};
+  checkMobile: function () {
+    var activity = document.querySelector('.activity');
+    if (!activity) return;
+    var ul = activity.querySelector('ul');
+    var list = ul.querySelectorAll('li');
+    activity.classList.remove('flex-box');
+    activity.classList.add('swiper-container');
+    ul.classList.add('swiper-wrapper');
+    [].forEach.call(list, function (li) {
+      li.classList.add('swiper-slide');
+    });
+    if (window.isMobile) {
+      new Swiper('.activity');
+    }
+  }
+}
 index.init();
 
 // var swiper = new Swiper('.swiper-container', {

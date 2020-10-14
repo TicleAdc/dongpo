@@ -76,7 +76,7 @@
     padding: 0;
   }
   .home-container .head-form > input {
-    display: none;
+    display: block;
     position: relative;
     margin: -1rem;
     top: 43vh;
@@ -142,7 +142,7 @@
     padding: 0 !important;
   }
   .swiper-slide {
-    width: 100% !important;
+    width: 100%;
   }
   .index-banner-swiper img {
     width: inherit !important;
@@ -308,11 +308,30 @@
     display: none;
   }
   /* 专题活动 */
+  .activity .activity-more {
+    width: 90%;
+  }
   .activity-more {
+    display: block;
+    border-radius: 2rem;
+    margin: 2rem auto 0 auto;
+    border: 1px solid #a8250f;
+    cursor: pointer;
+  }
+  .activity-more::after {
+    content: "浏览更多 +";
+    display: block;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #a8250f;
+  }
+  .activity-more .more {
     display: none;
   }
   .activity {
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
+    margin-left: -1rem;
   }
   li.active::after {
     display: none;
@@ -414,6 +433,15 @@
   .information {
     padding: 0 1rem;
   }
+  .img-list li {
+    flex: none;
+    padding: 0 1rem;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .img-list .item-img::before {
+    background: none;
 }
 @media screen and (max-width: 360px) {
   .container .information .out .title {
