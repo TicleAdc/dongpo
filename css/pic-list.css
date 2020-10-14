@@ -38,6 +38,7 @@
 
 .img img {
     width: 100%;
+    height: 220px;
 }
 
 .titlepart {
@@ -67,4 +68,16 @@
     padding: 2rem 4%;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width:1600px){
+    .column .img img{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width:1440px){
+    .column .img img{
+        height: 180px;
+    }
 }
