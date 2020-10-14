@@ -13,6 +13,9 @@
     width: inherit;
     padding: 0;
   }
+  body .dynamicContain .dynamicRight .msg-list ul > li.list a {
+    line-height: 60px;
+  }
   body .main-container .header {
     height: 60px;
     overflow: hidden;
@@ -143,6 +146,9 @@
   }
   body .main-container .constructIncorrupt .msg-list ul > li.list {
     height: 60px;
+  }
+  body .main-container .constructIncorrupt .msg-list ul > li.list a {
+    line-height: 60px;
   }
   body .main-container .constructIncorrupt .msg-list ul > li.list::before {
     display: none;
