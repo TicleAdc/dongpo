@@ -23,7 +23,7 @@
     position: absolute;
     margin: -1rem;
     top: 43vh;
-    width: 100% !important;
+    width: 80% !important;
     height: 5vh !important;
     font-size: 1.4rem !important;
     border-radius: 5rem;
@@ -217,6 +217,7 @@
     padding: 0 !important;
   }
   .personcard {
+    margin: 15px 0;
     width: 100% !important;
     /* height: 20rem; */
     position: relative;
