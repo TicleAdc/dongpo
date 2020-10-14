@@ -220,6 +220,7 @@
     width: 100% !important;
     /* height: 20rem; */
     position: relative;
+    overflow: hidden;
   }
   .personcard > .describe {
     position: absolute;
