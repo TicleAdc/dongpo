@@ -15,41 +15,15 @@
     width: initial !important;
   }
   /* head */
-  .head-top-container {
-    display: none
-  }
-  .head-top {
-    width: 100%;
-    height: 2vh;
-    background-color: #4a5da3;
-  }
-  .head-form > input {
+  .home-container .head-form>input {
+    display: block;
     position: relative;
+    margin: -1rem;
     top: 43vh;
     width: 100% !important;
     height: 5vh !important;
     font-size: 1.4rem !important;
     border-radius: 5rem;
-    /* padding: 0; */
-  }
-  .head-form {
-    background-size: auto 3.5rem !important;
-    height: 22vh !important;
-    /* margin-top: 0 !important; */
-    /* padding: 5vh !important; */
-    margin-top: 0 !important;
-  }
-  /* .head-form:before {
-    content: url(../img/daohang.png);
-    width: 0 !important;
-    height: 0 !important;
-    display: block;
-    position: relative;
-    left: 85%;
-    top: 2vh;
-  } */
-  .head-form > button {
-    display: none;
   }
   /* top banner */
   .swiper-button-prev,
