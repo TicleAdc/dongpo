@@ -10,6 +10,7 @@
   .back-top {
     display: none;
   }
+
   .flex-box.foot-container {
     border: none;
     color: white;
@@ -19,7 +20,9 @@
     }
 
     .foot-qrcode {
-      display: none;
+      // display: none;
+      margin-left: -65%;
+      margin-bottom: 10px;
     }
 
     .foot-about {
@@ -46,5 +49,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 267px) {
+  .foot-qrcode {
+    margin-left: -50% !important;
   }
 }
