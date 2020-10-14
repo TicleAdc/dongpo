@@ -64,6 +64,9 @@
     color: #333333;
     font-size: 18px;
     font-family: SourceHanSansCN-Normal-GBpc-EUC-H;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   body .main-container .news-pic-list > li > .flex-box .news-description .flex-1 {
     display: none;
@@ -71,6 +74,9 @@
   body .main-container .news-pic-list > li > .flex-box .news-description .news-time {
     color: #808080;
     margin-top: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   body .picture-list {
     padding-top: 0;
