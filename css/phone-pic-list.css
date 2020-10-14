@@ -42,7 +42,7 @@
   body .content .container {
     margin-right: inherit;
     flex: 30%;
-    padding: 1rem 1rem 0;
+    padding: 1rem 1rem;
   }
   body .content .container .column .img {
     border: inherit;
@@ -57,7 +57,7 @@
     color: #afa9a9;
   }
   body .content .container .title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: black;
   }
 }

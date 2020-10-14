@@ -31,48 +31,42 @@
     }
   }
   .expert-introduction{
-    min-height: inherit !important;
-    display: inherit;
+    min-height:0 !important;
+    display: flex;
     box-shadow: 0 0 0 !important;
     border: 1px solid black !important;
     padding-top: 0;
     .left{
-      float: left;
+      // float: left;
       overflow: hidden;
       display: initial;
+      img{
+        width: 100%;
+      }
       // width: 30%;
       .foot{
-        // background-color: white;
-        // top: 0;
-        // bottom: initial;
-        // left: 5rem;
+        float: left;
+        background-color: white;
+        top: 0;
+        bottom: initial;
+        left: 5rem;
         display: none;
       }
     }
     .right{
       overflow: hidden;
-      height: 111px;
+      height: 125px;
       padding: 1%;
-      .content::before{
-        content: '吴勇';
-        font-size: 1.5rem;
-        color:#4a5da3;
-        position: relative;
-        left: -2.5rem;
-      }
-      .content::after{
-        content: '院长';
-        font-size: 1rem;
-        color:gray;
-        position: relative;
-        left: -1.5rem;
-      }
       .content{
+        // display: none;
         margin-top: 0;
         padding: 0 2.5rem;
       }
       p{
         font-size: 1rem;
+      }
+      p:nth-child(2){
+        margin-top: 2rem;
       }
       img{
         display: none;

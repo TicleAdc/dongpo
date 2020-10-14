@@ -66,17 +66,21 @@
   }
   .service_entrance > .card > .img {
     background-image: url(../img/register@2x.png);
-    height: 15vh;
+    height: 10vh;
     background-repeat: no-repeat;
-    background-size: 85%;
+    background-size: 59%;
     background-position: 1rem;
+    padding-left: 2%;
   }
   .card {
     box-shadow: 0 0 0 !important;
   }
   .card > .name {
-    font-size: 1.5rem !important;
+    font-size: .5rem !important;
     margin: 1vh 0 !important;
+    position: relative;
+    left: -2vw;
+    top: -0.5rem;
   }
   .card > button {
     display: none;
@@ -193,6 +197,7 @@
   }
   .icon{
     width: 25%;
+    margin-bottom: 2rem;
   }
   .icon > div > img {
     width: 60% !important;
@@ -200,6 +205,7 @@
   }
   .icon > .name {
     font-size: .4rem !important;
+    color:#b4a8a8 !important;
   }
   /* professor */
   .main .title .img img{
@@ -253,22 +259,43 @@
   .container {
     display: initial !important;
   }
+  .information{
+    padding-left: 0 !important;
+  }
   .container .information .out {
     width: 90% !important;
-    height: 4.7rem !important;
+    height: 5rem !important;
     border-radius: 1rem;
+    position: relative;
+    /* min-width: 350px !important; */
+    /* overflow: hidden; */
   }
   .container .information .out .title {
-    height: 4.7rem !important;
-    line-height: 4rem !important;
+    height: 5rem !important;
+    line-height: 5rem !important;
     font-size: .5rem !important;
     border-radius: 1rem;
-    width: 8rem;
+    width: 25%;
     text-align: center;
+    min-width: 106px;
+  }
+  .include{
+    /* position: relative; */
+    height: 4.7rem !important;
+    overflow: hidden;
+    white-space: nowrap;
   }
   .include p {
     font-size: .5rem;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
+    overflow: hidden;
+  }
+  .include img{
+    position: absolute !important;
+    right: 1% !important;
+    width: 58px !important;
+    top: 0 !important;
+    height: 58px;
   }
   .information {
     padding: 0 1rem;
@@ -276,5 +303,13 @@
   /* partywork */
   .all {
     display: none !important;
+  }
+  @media screen and (max-width:360px){
+    .container .information .out .title{
+      display: none;
+      width: 0;
+      min-width: none !important;
+      background-color: #fff !important;
+    }
   }
 } ;

@@ -564,23 +564,24 @@ a:hover {
 }
 
 .container .information .out {
-    width: 108%;
+    width: 110%;
     display: flex;
-    margin: 10px 0;
-    border: 1px solid #000
+    margin: 10px 0 0;
+    border: 1px solid #000;
+    height: 70px;
 }
 
 .container .information .out .title {
     background-color: #4a5da3;
     color: #fff;
-    height: 65px;
-    line-height: 65px;
+    height: 70px;
+    line-height: 70px;
     font-size: 15px;
     padding: 0 10px
 }
 
 .container .information .out .include {
-    height: 60px;
+    height: 70px;
     font-size: 10.81px;
     padding: 5px 5px 0 5px
 }
@@ -592,8 +593,8 @@ a:hover {
 .container .information .out .include img {
     position: relative;
     width: 48%;
-    top: -57px;
-    right: -81%
+    top: -53px;
+    right: -82%
 }
 
 .container .map {
