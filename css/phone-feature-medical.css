@@ -219,4 +219,7 @@
   body .head-form {
     padding: 0;
   }
+  body .flex-1.main .main-container {
+    margin-left: 0;
+  }
 }
