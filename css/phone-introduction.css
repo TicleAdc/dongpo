@@ -54,23 +54,26 @@
     padding: 0 0.5rem;
   }
   .bottom {
+    position: relative;
     padding: 0;
     display: inherit;
+    padding-bottom: 52rem;
   }
   .bottom .bottomleft {
+    position: absolute;
     background-color: #fff;
-    display: flex;
     margin: 0;
-    padding: 0;
-    width: 100%;
+    padding: 4%;
+    width: 90%;
+    bottom: 0;
   }
-  .bottom .bottomleft .phone {
+  .bottom .bottomleft .contactway .phone {
     padding-left: 0.5rem;
   }
-  .bottom .bottomleft .phone h2 {
+  .bottom .bottomleft .contactway .phone h2 {
     font-size: 0.6rem;
   }
-  .bottom .bottomleft .phone .phonecall {
+  .bottom .bottomleft .contactway .phone .phonecall {
     font-size: 0.2rem;
   }
   .bottom .bottomcontent {

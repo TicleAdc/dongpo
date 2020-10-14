@@ -60,21 +60,27 @@
   }
   .bottom {
     // display: none;
+    position: relative;
     padding: 0;
     display: inherit;
+    padding-bottom: 52rem;
     .bottomleft{
+      position: absolute;
       background-color: #fff;
-      display: flex;
+      // display: flex;
       margin: 0;
-      padding: 0;
-      width: 100%;
-      .phone{
-        padding-left: .5rem;
-        h2{
-          font-size: .6rem;
-        }
-        .phonecall{
-          font-size: .2rem;
+      padding: 4%;
+      width: 90%;
+      bottom: 0;
+      .contactway{
+        .phone{
+          padding-left: .5rem;
+          h2{
+            font-size: .6rem;
+          }
+          .phonecall{
+            font-size: .2rem;
+          }
         }
       }
     }
