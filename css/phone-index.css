@@ -90,10 +90,7 @@
     display: none;
   }
   .index-top-swiper .swiper-wrapper {
-    height: 210px;
-  }
-  .index-top-swiper .swiper-wrapper .swiper-slide {
-    height: 210px;
+    margin-bottom: 2rem;
   }
   /* card按钮 */
   .service_entrance {
