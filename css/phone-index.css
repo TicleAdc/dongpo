@@ -150,6 +150,9 @@
     width: 30%;
     /* flex: initial !important; */
   }
+  .tab-more a{
+    color: #4a5da3;
+  }
   .tab-more > span {
     background-color: #fff !important;
     border: 1px solid #4a5da3;
@@ -266,6 +269,79 @@
   .detail {
     font-size: .4rem !important;
   }
+  /* partywork */
+  .all {
+    display: none !important;
+  }
+
+  .healthcard .head{
+    display: none;
+  }
+  /* 专题活动 */
+  .activity-more{
+    display: none;
+  }
+  .activity{
+    margin-bottom: 8rem;
+  }
+  li.active::after{
+    display: none;
+  }
+  .showtext .mainbox{
+    display: none;
+  }
+
+  .title .img img{
+    display: none;
+  }
+  
+  .main{
+    padding: 0 !important;
+  }
+
+  .main .contents{
+    top: -1rem;
+    position: relative;
+    padding: 30px  !important;
+    /* border: 1px solid black; */
+    border-radius: 1rem 1rem 0 0;
+    background-color: #fff;
+  }
+
+  .main .title{
+    height: 10vh !important;
+    background-color: #4a5da3;
+    background-repeat: no-repeat;
+    background-image: url(../img/professorback.png);
+    background-position: right;
+  }
+  .main .title .img{
+    height: 10vh;
+  }
+  .main .title .img::before{
+    content: "专家介绍";
+    font-size: 2rem;
+    color: #fff;
+    line-height: 10vh;
+    margin-left: 1rem;
+  }
+  
+  .main:nth-child(n+8) > .title{
+    background-color: #A8250F ;
+  }
+  .main:nth-child(n+6) > .title > .img::before{
+    content: "健康科普";
+  }
+  .main:nth-child(n+7) > .title > .img::before{
+    content: "专题活动";
+  }
+  .main:nth-child(n+9) > .title > .img::before{
+    content: "门诊信息";
+  }
+
+  .main:nth-child(n+9) > .title{
+    background-color: #4a5da3; ;
+  }
   /* outpatient information */
   .container > .map {
     display: none;
@@ -313,10 +389,6 @@
   }
   .information {
     padding: 0 1rem;
-  }
-  /* partywork */
-  .all {
-    display: none !important;
   }
   @media screen and (max-width:360px){
     .container .information .out .title{
