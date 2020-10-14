@@ -583,7 +583,8 @@ a:hover {
 .container .information .out .include {
     height: 70px;
     font-size: 10.81px;
-    padding: 5px 5px 0 5px
+    padding: 5px 5px 0 5px;
+    position: relative;
 }
 
 .container .information .out .include p {
@@ -591,10 +592,10 @@ a:hover {
 }
 
 .container .information .out .include img {
-    position: relative;
+    position: absolute;
     width: 48%;
-    top: -53px;
-    right: -82%
+    top: 5px;
+    right: -48%
 }
 
 .container .map {

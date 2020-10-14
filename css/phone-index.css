@@ -98,7 +98,7 @@
   }
   /* card按钮 */
   .service_entrance {
-    padding: 1rem 0 0 0 !important;
+    padding: 7vh 0 0 0 !important;
     /* padding-top: 9vh !important; */
     display: flex;
     justify-content: space-between;
@@ -142,7 +142,7 @@
     padding: 0 !important;
   }
   .swiper-slide {
-    width: 100%;
+    width: 100% !important;
   }
   .index-banner-swiper img {
     width: inherit !important;
@@ -308,30 +308,11 @@
     display: none;
   }
   /* 专题活动 */
-  .activity .activity-more {
-    width: 90%;
-  }
   .activity-more {
-    display: block;
-    border-radius: 2rem;
-    margin: 2rem auto 0 auto;
-    border: 1px solid #a8250f;
-    cursor: pointer;
-  }
-  .activity-more::after {
-    content: "浏览更多 +";
-    display: block;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    text-align: center;
-    color: #a8250f;
-  }
-  .activity-more .more {
     display: none;
   }
   .activity {
-    margin-bottom: 2rem;
-    margin-left: -1rem;
+    margin-bottom: 8rem;
   }
   li.active::after {
     display: none;
@@ -413,8 +394,9 @@
     min-width: 106px;
   }
   .include {
-    /* position: relative; */
+    position: relative;
     height: 4.7rem !important;
+    width: 355px;
     overflow: hidden;
     white-space: nowrap;
   }
@@ -433,15 +415,6 @@
   .information {
     padding: 0 1rem;
   }
-  .img-list li {
-    flex: none;
-    padding: 0 1rem;
-    margin: 0;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .img-list .item-img::before {
-    background: none;
 }
 @media screen and (max-width: 360px) {
   .container .information .out .title {
