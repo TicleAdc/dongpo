@@ -42,7 +42,7 @@
     /* padding: 5vh !important; */
     margin-top: 0 !important;
   }
-  .head-form:before {
+  /* .head-form:before {
     content: url(../img/daohang.png);
     width: 0 !important;
     height: 0 !important;
@@ -50,13 +50,24 @@
     position: relative;
     left: 85%;
     top: 2vh;
-  }
+  } */
   .head-form > button {
     display: none;
   }
+  /* top banner */
+  .swiper-button-prev,
+  .swiper-button-next{
+    display: none;
+  }
+  .index-top-swiper .swiper-wrapper{
+    height: 210px;
+  }
+  .index-top-swiper .swiper-wrapper .swiper-slide{
+    height: 210px;
+  }
   /* card按钮 */
   .service_entrance {
-    padding: 9vh 0 0 0 !important;
+    padding: 7vh 0 0 0 !important;
     /* padding-top: 9vh !important; */
     display: flex;
     justify-content: space-between;
@@ -101,6 +112,9 @@
   }
   .swiper-slide {
     width: 100% !important;
+  } 
+  .index-banner-swiper img{
+    width: inherit !important;
   }
   .index-banners {
     width: 100% !important;
