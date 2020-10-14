@@ -16,7 +16,7 @@ var index = {
       followFinger: false,
       mousewheel: true,
       navigation: {
-        el: '.swiper-pagination'
+        el: '.swiper-pagination',
       },
       on: {
         init: function (swiper) {
@@ -34,7 +34,7 @@ var index = {
           slide.addClass('ani-slide');
           console.log(this);
         },
-      }
+      },
     });
   },
   initTabs: function () {
@@ -47,9 +47,9 @@ var index = {
       li.addEventListener('click', checkList);
     });
     checkList({
-      currentTarget: list[0]
+      currentTarget: list[0],
     });
-    function checkList (e) {
+    function checkList(e) {
       [].forEach.call(list, function (li) {
         if (li === e.currentTarget) {
           li.classList.add('active');
@@ -57,7 +57,7 @@ var index = {
         } else {
           li.classList.remove('active');
         }
-      })
+      });
     }
   },
   initImgList: function () {
@@ -67,7 +67,7 @@ var index = {
       li.addEventListener('click', checkList);
     });
     checkList({
-      currentTarget: list[0]
+      currentTarget: list[0],
     });
     function checkList(e) {
       [].forEach.call(list, function (li) {
@@ -76,12 +76,11 @@ var index = {
         } else {
           li.classList.remove('active');
         }
-      })
+      });
     }
-  }
-}
+  },
+};
 index.init();
-
 
 // var swiper = new Swiper('.swiper-container', {
 //   direction: 'vertical',
@@ -109,3 +108,24 @@ index.init();
 //     },
 //   }
 // });
+
+var cards = document.getElementsByClassName('healthcard');
+var childs = document.getElementsByClassName('kepu-header-child');
+var showCard = 0;
+
+cards[showCard].style.display = 'block';
+
+for (let a = 0; a < childs.length; a++) {
+  childs[a].onclick = function () {
+    cards[a].style.display = 'block';
+    childs[a].querySelector('span').style =
+      ' border-bottom: 2px solid #4a5da3;padding-bottom: 5px;';
+    [...document.getElementsByClassName('healthcard')].forEach((v, i) => {
+      if (i !== a) {
+        childs[i].querySelector('span').style =
+          'border-bottom: 0px solid #4a5da3; padding-bottom: 5px;';
+        cards[i].style.display = 'none';
+      }
+    });
+  };
+}

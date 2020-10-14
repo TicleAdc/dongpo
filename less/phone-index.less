@@ -1,9 +1,10 @@
-@import 'phone-foot.css';
+@import './phone-foot.css';
 @media screen and (min-width: 720px) {
   .kepu-header {
     display: none;
   }
 }
+
 @media screen and (max-width: 720px) {
   body {
     background-color: #fff;
@@ -16,17 +17,19 @@
     margin-bottom: 20px;
     margin-left: 10px;
     margin-right: 10px;
-  }
-  .kepu-header .child {
-    flex: 1;
-    text-align: center;
-    line-height: 58px;
-    font-size: 15px;
-    font-family: SourceHanSansCN-Heavy-GBpc-EUC-H;
-  }
-  .kepu-header .child:first-child span {
-    border-bottom: 2px solid #4a5da3;
-    padding-bottom: 5px;
+    .child {
+      flex: 1;
+      text-align: center;
+      line-height: 58px;
+      font-size: 15px;
+      font-family: SourceHanSansCN-Heavy-GBpc-EUC-H;
+    }
+    .child:first-child {
+      span {
+        border-bottom: 2px solid #4a5da3;
+        padding-bottom: 5px;
+      }
+    }
   }
   * {
     max-width: none !important;
@@ -35,18 +38,24 @@
   .contents {
     padding: 0;
   }
-  .home_center .main .test-contents {
-    padding: 0 20px !important;
-    border: none !important;
-    border-radius: 0;
-  }
-  .home_center .main .test-contents ul li {
-    height: 50px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
-    list-style: none;
-  }
-  .home_center .main .test-contents ul li .circle {
-    display: none;
+  .home_center {
+    .main {
+      .test-contents {
+        padding: 0 20px !important;
+        border: none !important;
+        border-radius: 0;
+        ul {
+          li {
+            height: 50px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+            list-style: none;
+            .circle {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
   .home-container {
     margin: 0;
@@ -58,6 +67,7 @@
   /* head */
   .list .healthcard {
     display: none;
+    width: 100%;
     width: 100%;
     border: none;
   }
@@ -304,6 +314,7 @@
   .all {
     display: none !important;
   }
+
   .healthcard .head {
     display: none;
   }
@@ -320,12 +331,15 @@
   .showtext .mainbox {
     display: none;
   }
+
   .title .img img {
     display: none;
   }
+
   .main {
     padding: 0 !important;
   }
+
   .main .contents {
     top: -1rem;
     position: relative;
@@ -334,6 +348,7 @@
     border-radius: 1rem 1rem 0 0;
     background-color: #fff;
   }
+
   .main .title {
     height: 10vh !important;
     background-color: #4a5da3;
@@ -351,6 +366,7 @@
     line-height: 10vh;
     margin-left: 1rem;
   }
+
   .main:nth-child(n + 8) > .title {
     background-color: #a8250f;
   }
@@ -363,6 +379,7 @@
   .main:nth-child(n + 9) > .title > .img::before {
     content: '门诊信息';
   }
+
   .main:nth-child(n + 9) > .title {
     background-color: #4a5da3;
   }
@@ -414,12 +431,12 @@
   .information {
     padding: 0 1rem;
   }
-}
-@media screen and (max-width: 720px) and screen and (max-width: 360px) {
-  .container .information .out .title {
-    display: none;
-    width: 0;
-    min-width: none !important;
-    background-color: #fff !important;
+  @media screen and (max-width: 360px) {
+    .container .information .out .title {
+      display: none;
+      width: 0;
+      min-width: none !important;
+      background-color: #fff !important;
+    }
   }
-}
+} ;
