@@ -51,6 +51,7 @@
   }
   .expert-introduction .right {
     overflow: hidden;
+    height: 118px;
     padding: 1%;
   }
   .expert-introduction .right .content {
