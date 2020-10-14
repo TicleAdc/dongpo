@@ -42,7 +42,7 @@
     /* padding: 5vh !important; */
     margin-top: 0 !important;
   }
-  .head-form:before {
+  /* .head-form:before {
     content: url(../img/daohang.png);
     width: 0 !important;
     height: 0 !important;
@@ -50,7 +50,7 @@
     position: relative;
     left: 85%;
     top: 2vh;
-  }
+  } */
   .head-form > button {
     display: none;
   }
