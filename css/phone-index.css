@@ -15,9 +15,12 @@
     width: initial !important;
   }
   /* head */
-  .home-container .head-form>input {
-    display: block;
+  .head-form{
     position: relative;
+  }
+  .home-container .head-form>input {
+    display: none;
+    position: absolute;
     margin: -1rem;
     top: 43vh;
     width: 100% !important;
@@ -38,8 +41,7 @@
   }
   /* card按钮 */
   .service_entrance {
-    padding: 7vh 0 0 0 !important;
-    /* padding-top: 9vh !important; */
+    padding: 2rem 0 0 0 !important;
     display: flex;
     justify-content: space-between;
   }
