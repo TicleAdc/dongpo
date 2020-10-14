@@ -144,24 +144,22 @@
   .tab-more {
     position: absolute;
     top: 59vh;
-    width: 30%;
-    /* flex: initial !important; */
+    width: 100%;
   }
-  .tab-more a{
-    color: #4a5da3;
-  }
-  .tab-more > span {
+  .tab-more > a {
     background-color: #fff !important;
     border: 1px solid #4a5da3;
     color: #4a5da3 !important;
     display: block;
-    width: 310%;
+    width: 300%;
     text-align: center;
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     padding: 1rem !important;
     border-radius: 5rem !important;
-    /* height: 10rem !important; */
-    /* vertical-align: middle; */
+  }
+  .tab-more a::after{
+    content: "+";
+    color: #4a5da3;
   }
   .news-list > li {
     height: 10vh !important;
