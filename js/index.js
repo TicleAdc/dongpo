@@ -85,13 +85,13 @@ var index = {
     if (!activity) return;
     var ul = activity.querySelector('ul');
     var list = ul.querySelectorAll('li');
-    activity.classList.remove('flex-box');
-    activity.classList.add('swiper-container');
-    ul.classList.add('swiper-wrapper');
-    [].forEach.call(list, function (li) {
-      li.classList.add('swiper-slide');
-    });
     if (window.isMobile) {
+      activity.classList.remove('flex-box');
+      activity.classList.add('swiper-container');
+      ul.classList.add('swiper-wrapper');
+      [].forEach.call(list, function (li) {
+        li.classList.add('swiper-slide');
+      });
       new Swiper('.activity');
     }
   }
