@@ -44,6 +44,9 @@
     flex: 30%;
     padding: 1rem 1rem;
   }
+  body .content .container .column {
+    width: 100%;
+  }
   body .content .container .column .img {
     border: inherit;
     padding: 0;
@@ -57,11 +60,15 @@
     display: none;
   }
   body .content .container .time {
+    overflow: hidden;
+    width: 100px;
     margin-left: inherit;
     color: #afa9a9;
   }
   body .content .container .title {
+    overflow: hidden;
     font-size: 1.2rem;
+    width: 120px;
     color: black;
   }
 }
