@@ -1,5 +1,12 @@
 var head = {
   init: function () {
+    if (this.checkBrowser()) {
+      this.initMobileMenu();
+    } else {
+      this.initPcMenu();
+    }
+  },
+  initPcMenu: function () {
     var container = document.querySelector('.head-nav-container');
     var active = container.querySelector('.active');
     var child = container.querySelector('.head-nav-list .active');
@@ -31,6 +38,54 @@ var head = {
     }
     if (child) {
       child.parentElement.parentElement.classList.add('active');
+    }
+  },
+  initMobileMenu: function () {
+    var form = document.querySelector('.head-form');
+    var container = document.querySelector('.head-nav-container');
+    if (!form || !container) return;
+    var headTop = document.querySelector('.head-top').cloneNode(true);
+    var headForm = document.querySelector('.head-form').cloneNode(true);
+    var foot = document.querySelector('.main-foot').cloneNode(true);
+    var main = document.createElement('div');
+    var button = document.createElement('button');
+    var close = document.createElement('i');
+    main.classList.add('nav-container');
+    main.classList.add('head-nav-hide');
+    button.classList.add('head-nav-button');
+    close.classList.add('head-nav-close');
+    button.addEventListener('click', show);
+    close.addEventListener('click', hide);
+    form.appendChild(button);
+    main.appendChild(headTop);
+    main.appendChild(headForm);
+    main.appendChild(container);
+    main.appendChild(foot);
+    main.insertBefore(close, main.firstChild);
+    document.body.appendChild(main);
+    function show (e) {
+      e.preventDefault();
+      main.classList.remove('head-nav-hide');
+      main.classList.add('head-nav-show');
+    }
+    function hide () {
+      main.classList.remove('head-nav-show');
+      main.classList.add('head-nav-hide');
+    }
+  },
+  checkBrowser: function () {
+    window.addEventListener('resize', checkIsMobile);
+    return checkIsMobile();
+    function checkIsMobile () {
+      var maxWidth = 720;
+      var width = document.documentElement.clientWidth || document.body.clientWidth;
+      var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
+      if (isMobile || width <= maxWidth) {
+        window.isMobile = true;
+      } else {
+        window.isMobile = false;
+      }
+      return window.isMobile;
     }
   },
   similar: function similar (s, t, f) {
