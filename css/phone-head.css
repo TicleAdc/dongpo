@@ -15,18 +15,18 @@
     width: initial !important;
   }
   .header {
-    background-color: #fff !important;
+    background-color: #fff;
     border-bottom: 1px solid rgba(120, 117, 117, 0.845);
     margin: 0 5%;
     padding-right: 5%;
-    width: initial !important;
-    height: initial !important;
+    width: initial;
+    height: initial;
   }
   .header .backimg {
     text-align: left;
     background: none;
     float: initial;
-    color: black !important;
+    color: black;
     width: 100%;
     height: 5rem;
     line-height: 5rem;
@@ -36,25 +36,141 @@
     background-color: #fff;
   }
   .head-top {
-    background-color: #4a5da3 !important;
-    height: 1vh !important;
+    background-color: #4a5da3;
+    height: 1vh;
     width: 100%;
   }
   .head-top .head-top-container {
     display: none;
   }
   .head-form {
-    background-size: auto 50% !important;
-    margin-top: 0 !important;
-    padding: 5vh !important;
+    background-size: auto 50%;
+    margin-top: 0;
+    padding: 5vh;
   }
   .head-form input {
-    display: none !important;
+    display: none;
   }
   .head-form button {
     display: none;
   }
-  .head-nav-container {
-    display: none;
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: #fff;
+    z-index: 999;
+  }
+  .nav-container .head-top {
+    height: 0.3rem;
+    padding: 0;
+  }
+  .nav-container .head-form {
+    padding: 0;
+    margin-bottom: 6rem;
+    height: 6rem !important;
+    box-shadow: 0 0.1rem 0.4rem #333;
+  }
+  .nav-container .head-form input {
+    display: block;
+    top: 8rem;
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .nav-container .head-nav-container {
+    box-sizing: border-box;
+    border-top: 2px solid #dfe1e6;
+    padding: 1rem;
+  }
+  .head-nav {
+    border-top: 1px solid #dfe1e6;
+    display: block;
+    text-align: left;
+  }
+  .head-nav > li {
+    position: relative;
+    height: auto;
+    border: none;
+  }
+  .head-nav > li.active {
+    background-color: unset;
+    color: unset;
+  }
+  .head-nav > li.active a {
+    color: unset;
+  }
+  .head-nav > li > a {
+    display: block;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-bottom: 1px solid #dfe1e6;
+  }
+  .head-nav > li > a::after {
+    content: ">";
+    color: #aaa;
+    font-weight: 200;
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+  }
+  .head-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .head-nav-list li {
+    width: 45%;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0 0 0;
+    background-color: #dfe1e6;
+  }
+  .head-nav > li:hover .head-nav-list {
+    display: flex;
+  }
+  .head-nav-list li:hover {
+    background-color: #dfe1e6;
+  }
+  .head-nav > li:hover,
+  .head-nav > li:hover > a,
+  .head-nav-list li:hover a {
+    background-color: transparent;
+    color: unset;
+  }
+  .head-nav-show,
+  .head-nav-hide {
+    transition: transform 0.3s;
+  }
+  .head-nav-hide {
+    transform: translate3d(100%, 0, 0);
+  }
+  .head-nav-show {
+    transform: translate3d(0, 0, 0);
+  }
+  .head-nav-close {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    right: 2rem;
+    top: 2.5rem;
+    background: url("../img/guanbi1-copy.png") no-repeat;
+    background-size: 100%;
+    background-position: top right;
+  }
+  .head-form .head-nav-button {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 3rem;
+    right: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background: url("../img/daohang.png") no-repeat;
+    background-position: top right;
   }
 }
