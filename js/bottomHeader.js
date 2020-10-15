@@ -4,7 +4,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-10-15 15:15:02
  * @FilePath: /dongpo/js/bottomHeader.js
- * @LastEditTime: 2020-10-15 17:03:13
+ * @LastEditTime: 2020-10-15 17:55:02
  */
 // 在手机版下的导航头部
 function getScrollbarWidth() {
@@ -31,25 +31,25 @@ function getScrollbarWidth() {
   return scrollbarWidth; //返回滚动条宽度
 }
 
-var moveheader = function moveheader() {
-  if (document.documentElement.clientWidth + getScrollbarWidth() < 720) {
-    document
-      .getElementsByClassName('main-foot')[0]
-      .parentElement.insertBefore(
-        document.getElementById('head-menu-list'),
-        document.getElementsByClassName('main-foot')[0]
-      );
-  } else {
-    //复原
-    document
-      .getElementsByClassName('head-menu')[0]
-      .appendChild(document.getElementById('head-menu-list'));
-  }
-};
-
 try {
-  onload = moveheader;
-  onresize = moveheader;
+  var moveheader = function moveheader() {
+    if (document.documentElement.clientWidth + getScrollbarWidth() < 720) {
+      document
+        .getElementsByClassName('main-foot')[0]
+        .parentElement.insertBefore(
+          document.getElementsByClassName('head-menu-list')[0],
+          document.getElementsByClassName('main-foot')[0]
+        );
+    } else {
+      //复原
+      document
+        .getElementsByClassName('head-menu')[0]
+        .appendChild(document.getElementsByClassName('head-menu-list')[0]);
+    }
+  };
 } catch (error) {
   console.log(error);
 }
+
+onload = moveheader;
+onresize = moveheader;
