@@ -77,11 +77,12 @@
   }
   .home-container .head-form > input {
     display: block;
-    position: absolute;
-    margin: 70vw 0 0 -4%;
-    width: 80%;
-    height: 3rem;
-    font-size: 1.4rem;
+    position: relative;
+    margin: -1rem;
+    top: 43vh;
+    width: 100% !important;
+    height: 5vh !important;
+    font-size: 1.4rem !important;
     border-radius: 5rem;
   }
   /* top banner */
@@ -90,7 +91,10 @@
     display: none;
   }
   .index-top-swiper .swiper-wrapper {
-    margin-bottom: 2rem;
+    height: 210px;
+  }
+  .index-top-swiper .swiper-wrapper .swiper-slide {
+    height: 210px;
   }
   /* card按钮 */
   .service_entrance {
@@ -177,17 +181,18 @@
     width: 30%;
     /* flex: initial !important; */
   }
-  .tab-more a {
+  .tab-more a::after {
+    content: "+";
     color: #4a5da3;
   }
-  .tab-more > span {
+  .tab-more > a {
     background-color: #fff !important;
     border: 1px solid #4a5da3;
     color: #4a5da3 !important;
     display: block;
     width: 310%;
     text-align: center;
-    font-size: 2rem !important;
+    font-size: 1rem !important;
     padding: 1rem !important;
     border-radius: 5rem !important;
     /* height: 10rem !important; */
@@ -196,7 +201,7 @@
   .news-list > li {
     height: 10vh !important;
     /* text-overflow: clip !important; */
-    padding-right: 0;
+    padding: 0 1rem;
   }
   .news-list > li > a {
     width: 40vw;
