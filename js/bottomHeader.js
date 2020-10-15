@@ -4,7 +4,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-10-15 15:15:02
  * @FilePath: /dongpo/js/bottomHeader.js
- * @LastEditTime: 2020-10-15 17:49:28
+ * @LastEditTime: 2020-10-15 17:55:02
  */
 // 在手机版下的导航头部
 function getScrollbarWidth() {
@@ -37,14 +37,14 @@ try {
       document
         .getElementsByClassName('main-foot')[0]
         .parentElement.insertBefore(
-          document.getElementById('head-menu-list'),
+          document.getElementsByClassName('head-menu-list')[0],
           document.getElementsByClassName('main-foot')[0]
         );
     } else {
       //复原
       document
         .getElementsByClassName('head-menu')[0]
-        .appendChild(document.getElementById('head-menu-list'));
+        .appendChild(document.getElementsByClassName('head-menu-list')[0]);
     }
   };
 } catch (error) {
