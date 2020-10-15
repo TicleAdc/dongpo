@@ -78,14 +78,13 @@
     transform: none;
   }
   body .news-list .flex-box .flex-1 {
-    width: 60%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     display: inline-block;
   }
   body .news-list .flex-box span {
-    width: 50%;
+    min-width: 10rem;
     text-align: right;
   }
 }

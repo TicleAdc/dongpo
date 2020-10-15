@@ -120,12 +120,11 @@
   }
   .home-container .head-form > input {
     display: block;
-    position: relative;
-    margin: -1rem;
-    top: 43vh;
-    width: 100% !important;
-    height: 5vh !important;
-    font-size: 1.4rem !important;
+    position: absolute;
+    margin: 70vw 0 0 -2vw;
+    width: 80%;
+    height: 3rem;
+    font-size: 1.4rem;
     border-radius: 5rem;
   }
   /* top banner */
@@ -157,8 +156,8 @@
     background-position: 1rem;
     padding-left: 2%;
   }
-  .card {
-    box-shadow: 0 0 0 !important;
+  .service_entrance .card {
+    box-shadow: none;
   }
   .card > .name {
     font-size: 1.2rem !important;
@@ -260,7 +259,7 @@
     /* width: 30vw; */
   }
   .news-list > li > a > .time {
-    font-size: 0.4rem;
+    font-size: 1rem;
     position: relative;
     top: 5vh;
     color: #808080;
@@ -429,7 +428,7 @@
   .container .information .out .title {
     height: 5rem !important;
     line-height: 5rem !important;
-    font-size: 0.5rem !important;
+    font-size: 1rem;
     border-radius: 1rem;
     width: 25%;
     text-align: center;
@@ -443,7 +442,7 @@
     white-space: nowrap;
   }
   .include p {
-    font-size: 0.5rem;
+    font-size: 1rem;
     /* padding-left: 1rem; */
     overflow: hidden;
   }
