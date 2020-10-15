@@ -134,15 +134,18 @@
     font-size: 1.4rem;
     padding: 1rem;
     border-bottom: 1px solid #dfe1e6;
+    background: url('../img/more.png') no-repeat;
+    background-size: 2rem 1.5rem;
+    background-position: right center;
   }
-  .head-nav > li > a::after {
-    content: '>';
+  /* .head-nav > li > a::after {
+    content: ">";
     color: #aaa;
     font-weight: 200;
     font-size: 2rem;
     position: absolute;
     right: 0;
-  }
+  } */
   .head-nav-list {
     display: flex;
     flex-wrap: wrap;
@@ -155,6 +158,9 @@
     border-radius: 0.5rem;
     margin: 1rem 0 0 0;
     background-color: #dfe1e6;
+  }
+  .head-nav-list a {
+    display: block;
   }
   .head-nav > li:hover .head-nav-list {
     display: flex;

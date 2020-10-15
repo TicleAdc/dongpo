@@ -13,8 +13,8 @@ var index = {
       },
     });
     new Swiper('.index-banner-swiper', {
-      direction: 'vertical',
-      followFinger: false,
+      direction: window.isMobile ? 'horizontal' : 'vertical',
+      followFinger: true,
       mousewheel: true,
       navigation: {
         el: '.swiper-pagination',
