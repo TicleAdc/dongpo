@@ -23,6 +23,10 @@
       line-height: 58px;
       font-size: 15px;
       font-family: SourceHanSansCN-Heavy-GBpc-EUC-H;
+      span {
+        cursor: pointer;
+        user-select: none;
+      }
     }
     .child:first-child {
       span {
@@ -70,6 +74,29 @@
     width: 100%;
     width: 100%;
     border: none;
+    .content {
+      ul {
+        li {
+          position: relative;
+          span.time {
+            display: block;
+            text-align: left;
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 5%;
+            background: url('../img/箭头.png');
+            width: 7px;
+            height: 10px;
+            background-position: 100% 100%;
+            background-size: cover;
+          }
+        }
+      }
+    }
   }
   .list {
     padding: 0;
@@ -192,7 +219,7 @@
     /* flex: initial !important; */
   }
   .tab-more a::after {
-    content: "+";
+    content: '+';
     color: #4a5da3;
   }
   .tab-more > a {
@@ -416,7 +443,7 @@
     min-width: 106px;
   }
   .include {
-    position: relative; 
+    position: relative;
     height: 4.7rem !important;
     width: 355px;
     overflow: hidden;
@@ -437,7 +464,7 @@
   .information {
     padding: 0 1rem;
   }
-} ;
+}
 @media screen and (max-width: 360px) {
   .container .information .out .title {
     display: none;
