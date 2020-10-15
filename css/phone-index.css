@@ -305,10 +305,7 @@
     width: 100% !important;
     /* height: 20rem; */
     position: relative;
-  }
-  .personcard > .describe {
-    position: absolute;
-    left: 10rem;
+    flex-direction: row-reverse;
   }
   .personcard .img img {
     width: 82% !important;
