@@ -19,7 +19,9 @@ var feature = {
 };
 feature.init();
 
-onresize = function initClick() {
+onload = initClick;
+onresize = initClick;
+function initClick() {
   if (document.documentElement.clientWidth < 721) {
     if (document.querySelector('#ks_title')) {
       document.querySelector('#ks_title').onclick = function () {
@@ -55,4 +57,4 @@ onresize = function initClick() {
       };
     }
   }
-};
+}
