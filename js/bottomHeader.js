@@ -4,7 +4,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-10-15 15:15:02
  * @FilePath: /dongpo/js/bottomHeader.js
- * @LastEditTime: 2020-10-15 17:55:02
+ * @LastEditTime: 2020-10-15 21:48:04
  */
 // 在手机版下的导航头部
 function getScrollbarWidth() {
@@ -31,8 +31,9 @@ function getScrollbarWidth() {
   return scrollbarWidth; //返回滚动条宽度
 }
 
-try {
-  var moveheader = function moveheader() {
+var moveheader = function () {
+  try {
+    console.log(1);
     if (document.documentElement.clientWidth + getScrollbarWidth() < 720) {
       document
         .getElementsByClassName('main-foot')[0]
@@ -46,10 +47,11 @@ try {
         .getElementsByClassName('head-menu')[0]
         .appendChild(document.getElementsByClassName('head-menu-list')[0]);
     }
-  };
-} catch (error) {
-  console.log(error);
+  } catch (error) {
+    console.log(error);
+  }
+};
+if (document.getElementsByClassName('featured-medical').length === 0) {
+  window.onload = moveheader;
+  window.onresize = moveheader;
 }
-
-onload = moveheader;
-onresize = moveheader;
