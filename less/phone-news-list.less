@@ -55,6 +55,25 @@
     .news-list {
       padding: 10px 12px;
       .flex-box {
+        padding-left: 0;
+        position: relative;
+        &::before {
+          content: none;
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 11px;
+          right: 0%;
+          background: url('/img/箭头.png');
+          width: 7px;
+          height: 10px;
+          background-position: 100% 100%;
+          background-size: cover;
+          border: none;
+          transform: none;
+        }
         .flex-1 {
           width: 60%;
           white-space: nowrap;
