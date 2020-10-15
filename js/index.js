@@ -130,6 +130,21 @@ var showCard = 0;
 
 cards[showCard].style.display = 'block';
 
+// for (let a = 0; a < childs.length; a++) {
+//   childs[a].onclick = function () {
+//     cards[a].style.display = 'block';
+//     childs[a].querySelector('span').style =
+//       ' border-bottom: 2px solid #4a5da3;padding-bottom: 5px;';
+//     [...document.getElementsByClassName('healthcard')].forEach((v, i) => {
+//       if (i !== a) {
+//         childs[i].querySelector('span').style =
+//           'border-bottom: 0px solid #4a5da3; padding-bottom: 5px;';
+//         cards[i].style.display = 'none';
+//       }
+//     });
+//   };
+// }
+
 ('use strict');
 
 function _toConsumableArray(arr) {
