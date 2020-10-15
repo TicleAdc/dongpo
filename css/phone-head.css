@@ -19,6 +19,7 @@
     width: inherit;
     padding: 0;
     display: block;
+    position: relative;
   }
   .main-container .head-menu-list::before {
     content: ' ';
@@ -37,6 +38,7 @@
   }
   .main-container .head-menu-list li a {
     color: black;
+    font-weight: 400;
   }
   .header {
     background-color: #fff;
