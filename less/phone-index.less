@@ -56,6 +56,26 @@
             .circle {
               display: none;
             }
+            span {
+              font-size: 16px;
+            }
+            span.time {
+              font-size: 10px;
+            }
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 11px;
+              right: 0%;
+              background: url('/img/jiantou.png');
+              width: 7px;
+              height: 10px;
+              background-position: 100% 100%;
+              background-size: cover;
+              border: none;
+              transform: none;
+            }
           }
         }
       }
@@ -88,7 +108,7 @@
             position: absolute;
             top: 20px;
             right: 5%;
-            background: url('../img/箭头.png');
+            background: url('../img/jiantou.png');
             width: 7px;
             height: 10px;
             background-position: 100% 100%;

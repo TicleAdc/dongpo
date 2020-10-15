@@ -7,6 +7,10 @@
     max-width: none !important;
     min-width: auto !important;
   }
+  body img {
+    width: 100% !important;
+    height: 100% !important;
+  }
   body .home-container,
   body .main-container {
     width: inherit;
@@ -65,7 +69,7 @@
     position: absolute;
     top: 11px;
     right: 0%;
-    background: url('/img/箭头.png');
+    background: url('/img/jiantou.png');
     width: 7px;
     height: 10px;
     background-position: 100% 100%;
