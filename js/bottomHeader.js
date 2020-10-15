@@ -1,13 +1,15 @@
+'use strict';
+
 /*
  * @Author: Spring Breeze
  * @Date: 2020-10-15 15:15:02
  * @FilePath: /dongpo/js/bottomHeader.js
- * @LastEditTime: 2020-10-15 15:34:26
+ * @LastEditTime: 2020-10-15 15:39:58
  */
 // 在手机版下的导航头部
-
 function getScrollbarWidth() {
-  var odiv = document.createElement('div'), //创建一个div
+  var odiv = document.createElement('div'),
+    //创建一个div
     styles = {
       width: '100px',
       height: '100px',
@@ -15,14 +17,21 @@ function getScrollbarWidth() {
     },
     i,
     scrollbarWidth;
-  for (i in styles) odiv.style[i] = styles[i];
+
+  for (i in styles) {
+    odiv.style[i] = styles[i];
+  }
+
   document.body.appendChild(odiv); //把div添加到body中
+
   scrollbarWidth = odiv.offsetWidth - odiv.clientWidth; //相减
+
   odiv.remove(); //移除创建的div
+
   return scrollbarWidth; //返回滚动条宽度
 }
 
-const moveheader = () => {
+var moveheader = function moveheader() {
   if (document.documentElement.clientWidth + getScrollbarWidth() < 720) {
     if (document.getElementById('main-container')) {
       document
@@ -38,5 +47,6 @@ const moveheader = () => {
     }
   }
 };
+
 onload = moveheader;
 onresize = moveheader;
