@@ -2,7 +2,7 @@
  * @Author: Spring Breeze
  * @Date: 2020-10-15 15:15:02
  * @FilePath: /dongpo/js/bottomHeader.js
- * @LastEditTime: 2020-10-15 15:20:46
+ * @LastEditTime: 2020-10-15 15:34:26
  */
 // 在手机版下的导航头部
 
@@ -24,33 +24,14 @@ function getScrollbarWidth() {
 
 const moveheader = () => {
   if (document.documentElement.clientWidth + getScrollbarWidth() < 720) {
-    // 医院介绍
-    if (document.getElementById('introduction-body')) {
+    if (document.getElementById('main-container')) {
       document
-        .getElementById('introduction-body')
-        .appendChild(document.getElementById('head-menu-list'));
-      // leader
-    } else if (document.getElementById('leader-main-container')) {
-      document
-        .getElementById('leader-main-container')
-        .appendChild(document.getElementById('head-menu-list'));
-    } else if (document.getElementById('news-list-container')) {
-      document
-        .getElementById('news-list-container')
+        .getElementById('main-container')
         .appendChild(document.getElementById('head-menu-list'));
     }
   } else {
     //复原
-    if (document.getElementById('introduction-body')) {
-      document
-        .getElementsByClassName('head-menu')[0]
-        .appendChild(document.getElementById('head-menu-list'));
-      // leader
-    } else if (document.getElementById('leader-main-container')) {
-      document
-        .getElementsByClassName('head-menu')[0]
-        .appendChild(document.getElementById('head-menu-list'));
-    } else if (document.getElementById('news-list-container')) {
+    if (document.getElementById('main-container')) {
       document
         .getElementsByClassName('head-menu')[0]
         .appendChild(document.getElementById('head-menu-list'));
