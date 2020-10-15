@@ -141,7 +141,7 @@
     box-shadow: 0 0 0 !important;
   }
   .card > .name {
-    font-size: 0.5rem !important;
+    font-size: 1.2rem !important;
     margin: 1vh 0 !important;
     position: relative;
     left: -2vw;
@@ -277,8 +277,8 @@
     height: 60% !important;
   }
   .icon > .name {
-    font-size: 0.4rem !important;
-    color: #b4a8a8 !important;
+    font-size: 1.2rem !important;
+    color: #6c6a6a !important;
   }
   /* professor */
   .main .title .img img {
