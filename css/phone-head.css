@@ -14,21 +14,21 @@
   .main-container {
     width: initial !important;
   }
-  .main-container .head-menu-list {
+  body .head-menu-list {
     top: 0;
     width: inherit;
     padding: 0;
     display: block;
     position: relative;
   }
-  .main-container .head-menu-list::before {
+  body .head-menu-list::before {
     content: ' ';
     width: 100%;
     display: block;
     height: 10px;
     background-color: #e6e6e6;
   }
-  .main-container .head-menu-list li {
+  body .head-menu-list li {
     padding: 0;
     height: 43px;
     line-height: 43px;
@@ -36,9 +36,9 @@
     margin: 0 20px;
     margin-top: 10px;
   }
-  .main-container .head-menu-list li a {
+  body .head-menu-list li a {
     color: black;
-    font-weight: 400;
+    font-weight: 400 !important;
   }
   .header {
     background-color: #fff;
