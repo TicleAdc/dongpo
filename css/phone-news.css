@@ -13,9 +13,9 @@
     width: inherit;
     padding: 0;
   }
-  body img {
+  body .news-container img {
     width: 100% !important;
-    margin-left: -33px !important;
+    height: 100% !important;
   }
   body video {
     width: 80% !important;
