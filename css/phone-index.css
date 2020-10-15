@@ -189,7 +189,7 @@
     margin-left: 10%;
   } */
   .tab-list > .active {
-    border-bottom: 1vh solid #4a5da3;
+    border-bottom: 0.5vh solid #4a5da3;
   }
   .tab-list > li > p {
     font-size: 1.5rem;
@@ -225,13 +225,14 @@
     height: 10vh !important;
     /* text-overflow: clip !important; */
     padding: 0 1rem;
+    margin: 0 1rem;
   }
   .news-list > li > a {
     width: 40vw;
   }
   .news-list > li > a > .title {
     /* display: inline-block; */
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     position: relative;
     top: 1vh;
     left: -7.4rem;
