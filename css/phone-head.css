@@ -76,7 +76,8 @@
   .head-form {
     background-size: auto 50%;
     margin-top: 0;
-    padding: 5vh;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   }
   .head-form input {
     display: none;
@@ -205,7 +206,7 @@
     position: absolute;
     width: 2rem;
     height: 3rem;
-    top: 2rem;
+    top: 4rem;
     right: 1.5rem;
     border: none;
     outline: none;
