@@ -58,6 +58,9 @@
     line-height: 5rem;
     font-size: 2rem;
   }
+  .head-nav-container {
+    display: none;
+  }
   .body {
     background-color: #fff;
   }
@@ -110,6 +113,7 @@
     border-radius: 2rem;
   }
   .nav-container .head-nav-container {
+    display: block;
     box-sizing: border-box;
     border-top: 2px solid #dfe1e6;
     padding: 1rem;
