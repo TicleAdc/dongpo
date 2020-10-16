@@ -87,4 +87,8 @@
     min-width: 10rem;
     text-align: right;
   }
+  body .foot-qrcode {
+    width: 6rem !important;
+    height: inherit !important;
+  }
 }
