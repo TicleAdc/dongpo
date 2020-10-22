@@ -82,8 +82,11 @@
 }
 
 .head-nav-list {
-  display: none;
+  visibility: hidden;
   background-color: rgba(255, 255, 255, 0.6);
+  transform: scale3d(1, 0, 1);
+  transform-origin: top;
+  transition: transform .3s;
 }
 
 .head-nav-list li {
@@ -109,7 +112,8 @@
 }
 
 .head-nav>li:hover .head-nav-list {
-  display: block;
+  visibility: visible;
+  transform: scale3d(1, 1, 1);
 }
 
 .head-nav-list li:hover {
