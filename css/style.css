@@ -202,6 +202,7 @@ a:hover {
 
 .tabs .news-container {
     flex: 1;
+    overflow: hidden;
 }
 
 .tabs .tab-list {
@@ -256,6 +257,58 @@ a:hover {
 
 .tab-list li.active .index-news-list {
     display: block;
+}
+
+@keyframes left-enter {
+    from {
+        transform: translate3d(-100%, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes right-enter {
+    from {
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes left-leave {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes right-leave {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+.index-news-list.left-enter {
+    animation: left-enter .3s 1;
+}
+.index-news-list.right-enter {
+    animation: right-enter .3s 1;
+}
+.index-news-list.left-leave {
+    animation: left-leave .3s 1;
+}
+.index-news-list.right-leave {
+    animation: right-leave .3s 1;
 }
 
 .news-list li {
@@ -326,20 +379,47 @@ a:hover {
 }
 
 .pinklogo .iconlist .icon {
-    cursor: pointer
+    cursor: pointer;
 }
 
 @keyframes shake {
-    from {
-        transform: translate3d(-.1rem, 0, 0);
+    10% {
+        transform: scale3d(.8, .8, .8);
     }
-    to {
-        transform: translate3d(.1rem, 0, 0);
+    20% {
+        transform: rotate3d(0, 0, 1, -30deg) scale3d(1.2, 1.2, 1.2);
+    }
+    30% {
+        transform: rotate3d(0, 0, 1, 30deg) scale3d(1.2, 1.2, 1.2);
+    }
+    40% {
+        transform: rotate3d(0, 0, 1, -30deg) scale3d(1.2, 1.2, 1.2);
+    }
+    50% {
+        transform: rotate3d(0, 0, 1, 30deg) scale3d(1.2, 1.2, 1.2);
+    }
+    60% {
+        transform: rotate3d(0, 0, 1, -30deg) scale3d(1.2, 1.2, 1.2);
+    }
+
+    70% {
+        transform: rotate3d(0, 0, 1, 30deg) scale3d(1.2, 1.2, 1.2);
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, -30deg) scale3d(1.2, 1.2, 1.2);
+    }
+
+    90% {
+        transform: rotate3d(0, 0, 1, 30deg) scale3d(1.2, 1.2, 1.2);
+    }
+    100% {
+        transform: none;
     }
 }
 
-.pinklogo .iconlist .icon:hover {
-    animation: shake .1s 3;
+.pinklogo .iconlist .icon:hover img {
+    animation: shake 1s 1;
 }
 
 .pinklogo .iconlist .icon .name {
@@ -590,15 +670,15 @@ a:hover {
 
 .container .information {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    min-width: 24rem;
 }
 
 .container .information .out {
-    width: 110%;
     display: flex;
-    margin: 10px 0 0;
-    border: 1px solid #000;
+    margin: 1.5rem 0 0;
     height: 70px;
+    box-shadow: 1px 1px 6px 0 #4d4d4d;
 }
 
 .container .information .out .title {
@@ -612,7 +692,7 @@ a:hover {
 
 .container .information .out .include {
     height: 70px;
-    font-size: 10.81px;
+    flex: 1;
     padding: 5px 5px 0 5px;
     position: relative;
 }
@@ -623,15 +703,16 @@ a:hover {
 
 .container .information .out .include img {
     position: absolute;
-    width: 48%;
-    top: 5px;
-    right: -48%
+    width: 4rem;
+    top: .8rem;
+    right: .5rem;
 }
 
 .container .map {
     margin-top: 10px;
-    width: 68%;
-    height: 240px
+    flex: 1;
+    height: 22rem;
+    margin-left: 2rem;
 }
 
 .container .map img {
