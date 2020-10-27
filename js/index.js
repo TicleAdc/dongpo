@@ -7,6 +7,10 @@ var index = {
   },
   initSwiper: function () {
     new Swiper('.index-top-swiper', {
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -16,6 +20,10 @@ var index = {
       direction: window.isMobile ? 'horizontal' : 'vertical',
       followFinger: true,
       mousewheel: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
       navigation: {
         el: '.swiper-pagination',
       },
