@@ -145,10 +145,10 @@
   }
   body .home-container .flex-box.main-featured-medical .main .main-container .expert-introduction .right,
   body .featured-medical .flex-box.main-featured-medical .main .main-container .expert-introduction .right {
-    padding-right: 0;
-    overflow: hidden;
+    padding-right: 1rem;
+    overflow-y: auto;
     text-overflow: ellipsis;
-    height: 130px;
+    max-height: 13.5rem;
   }
   body .home-container .flex-box.main-featured-medical .main .pages,
   body .featured-medical .flex-box.main-featured-medical .main .pages {

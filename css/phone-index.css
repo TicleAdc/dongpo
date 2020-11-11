@@ -120,11 +120,12 @@
   }
   .home-container .head-form > input {
     display: block;
-    position: absolute;
-    margin: 70vw 0 0 -2vw;
-    width: 80%;
-    height: 3rem;
-    font-size: 1.4rem;
+    position: relative;
+    margin: -1rem;
+    top: 43vh;
+    width: 100% !important;
+    height: 5vh !important;
+    font-size: 1.4rem !important;
     border-radius: 5rem;
   }
   /* top banner */
@@ -156,8 +157,8 @@
     background-position: 1rem;
     padding-left: 2%;
   }
-  .service_entrance .card {
-    box-shadow: none;
+  .card {
+    box-shadow: 0 0 0 !important;
   }
   .card > .name {
     font-size: 1.2rem !important;
@@ -182,6 +183,9 @@
   .tabs {
     display: initial !important;
     padding: 0 !important;
+  }
+  .tabs .news-container {
+    overflow: visible;
   }
   .swiper-slide {
     width: 100% !important;
@@ -259,7 +263,7 @@
     /* width: 30vw; */
   }
   .news-list > li > a > .time {
-    font-size: 1rem;
+    font-size: 0.4rem;
     position: relative;
     top: 5vh;
     color: #808080;
@@ -336,10 +340,16 @@
     font-size: 1rem !important;
   }
   .personcard > .describe > .introduction {
-    font-size: 0.8rem !important;
+    font-size: 2rem;
+    background-size: 2rem;
+    text-indent: 3rem;
+    margin: 4rem 0 0 0;
   }
-  .detail {
-    font-size: 0.4rem !important;
+  .personcard .describe .detail {
+    width: calc(100% + 12rem);
+    margin-left: -12rem;
+    margin-top: 7rem;
+    font-size: 1rem;
   }
   /* partywork */
   .all {
@@ -428,7 +438,7 @@
   .container .information .out .title {
     height: 5rem !important;
     line-height: 5rem !important;
-    font-size: 1rem;
+    font-size: 0.5rem !important;
     border-radius: 1rem;
     width: 25%;
     text-align: center;
@@ -442,7 +452,7 @@
     white-space: nowrap;
   }
   .include p {
-    font-size: 1rem;
+    font-size: 0.5rem;
     /* padding-left: 1rem; */
     overflow: hidden;
   }
